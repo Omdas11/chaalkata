@@ -11,6 +11,7 @@ import {
 } from '../engine';
 import { GAME_META } from '../gameMeta';
 import BoardView from './BoardView';
+import { isSoundMuted, playSound, setSoundMuted } from '../sound';
 
 interface GamePageProps {
   id: string;
@@ -19,6 +20,15 @@ interface GamePageProps {
 
 type Mode = '2p' | 'ai';
 
+/** Deterministic confetti pieces for the winner banner (no Math.random in render). */
+const CONFETTI_COLORS = ['#d97706', '#f5ead6', '#b45309', '#e9b44c', '#f7f1e3'];
+const CONFETTI_PIECES = Array.from({ length: 18 }, (_, i) => ({
+  left: (i * 53 + 7) % 100,
+  color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+  delay: ((i * 37) % 10) * 0.28,
+  dur: 2.2 + ((i * 29) % 10) * 0.12,
+}));
+
 export default function GamePage({ id, onBack }: GamePageProps) {
   const board = useMemo(() => getBoard(id), [id]);
   const meta = GAME_META[id];
@@ -26,6 +36,7 @@ export default function GamePage({ id, onBack }: GamePageProps) {
   const [mode, setMode] = useState<Mode>('2p');
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [openAcc, setOpenAcc] = useState<'history' | 'rules' | 'caveat' | null>(null);
+  const [muted, setMuted] = useState(isSoundMuted);
   const aiTimer = useRef<number | null>(null);
   const stateRef = useRef(state);
   stateRef.current = state;
@@ -36,12 +47,26 @@ export default function GamePage({ id, onBack }: GamePageProps) {
     setSelectedId(null);
   };
 
+  const toggleMute = () => {
+    const next = !muted;
+    setSoundMuted(next);
+    setMuted(next);
+    if (!next) playSound('click'); // audible confirmation when unmuting
+  };
+
+  /** Sounds for a completed move: tap on placement, knock on capture. */
+  const playMoveSounds = (mv: Move) => {
+    playSound('place');
+    if (mv.captures.length > 0) playSound('capture');
+  };
+
   // AI plays side B after a short delay
   useEffect(() => {
     if (mode !== 'ai' || state.turn !== 'B' || state.winner) return;
     aiTimer.current = window.setTimeout(() => {
       const mv = aiChooseMove(stateRef.current);
       if (mv) {
+        playMoveSounds(mv);
         setState((s) => applyMove(s, mv));
         setSelectedId(null);
       }
@@ -55,6 +80,23 @@ export default function GamePage({ id, onBack }: GamePageProps) {
   const targetsFor = (from: string): Move[] => allLegal.filter((m) => m.from === from);
   const legalTargetIds = selectedId ? targetsFor(selectedId).map((m) => m.to) : [];
 
+  // Subtle tick on turn change (not on first render, not after game over).
+  const firstTurn = useRef(true);
+  useEffect(() => {
+    if (firstTurn.current) {
+      firstTurn.current = false;
+      return;
+    }
+    if (!state.winner) playSound('turn');
+  }, [state.turn, state.history.length, state.winner]);
+
+  // Win fanfare when a winner first appears.
+  const prevWinner = useRef<string | null>(null);
+  useEffect(() => {
+    if (state.winner && prevWinner.current !== state.winner) playSound('win');
+    prevWinner.current = state.winner;
+  }, [state.winner]);
+
   const occupant: Record<string, 'A' | 'B' | null> = {};
   for (const p of board.points) occupant[p.id] = state.occupant[p.id] ?? null;
 
@@ -65,9 +107,17 @@ export default function GamePage({ id, onBack }: GamePageProps) {
     if (selectedId && legalTargetIds.includes(pid)) {
       const mv = targetsFor(selectedId).find((m) => m.to === pid);
       if (mv) {
+        playMoveSounds(mv);
         setState((s) => applyMove(s, mv));
         setSelectedId(null);
       }
+      return;
+    }
+    if (selectedId && occ !== state.turn) {
+      // A piece is selected and the tap hit an illegal target
+      // (empty non-target point or an enemy piece): buzz and deselect.
+      setSelectedId(null);
+      playSound('invalid');
       return;
     }
     if (occ === state.turn && allLegal.some((m) => m.from === pid)) {
@@ -81,6 +131,7 @@ export default function GamePage({ id, onBack }: GamePageProps) {
   };
 
   const lastPath = state.history.length ? state.history[state.history.length - 1].path : [];
+  const lastMove = state.history.length ? state.history[state.history.length - 1] : null;
   const countA = pieceCount(state, 'A');
   const countB = pieceCount(state, 'B');
 
@@ -99,16 +150,25 @@ export default function GamePage({ id, onBack }: GamePageProps) {
   return (
     <div className="game-page">
       <header className="game-topbar">
-        <button className="link-btn" onClick={onBack}>← Tree</button>
+        <button className="link-btn" onClick={() => { playSound('click'); onBack(); }}>← Tree</button>
         <div className="mode-toggle" role="group" aria-label="Game mode">
-          <button className={mode === '2p' ? 'active' : ''} onClick={() => { setMode('2p'); restart(); }}>
+          <button className={mode === '2p' ? 'active' : ''} onClick={() => { playSound('click'); setMode('2p'); restart(); }}>
             2 players
           </button>
-          <button className={mode === 'ai' ? 'active' : ''} onClick={() => { setMode('ai'); restart(); }}>
+          <button className={mode === 'ai' ? 'active' : ''} onClick={() => { playSound('click'); setMode('ai'); restart(); }}>
             vs AI
           </button>
         </div>
-        <button className="link-btn" onClick={restart}>↻ Restart</button>
+        <button className="link-btn" onClick={() => { playSound('click'); restart(); }}>↻ Restart</button>
+        <button
+          className="mute-btn"
+          onClick={toggleMute}
+          aria-pressed={muted}
+          aria-label={muted ? 'Unmute sounds' : 'Mute sounds'}
+          title={muted ? 'Unmute sounds' : 'Mute sounds'}
+        >
+          {muted ? '🔇' : '🔊'}
+        </button>
       </header>
 
       <div className="game-title">
@@ -119,7 +179,9 @@ export default function GamePage({ id, onBack }: GamePageProps) {
       {!state.winner && (
         <div className={`turn-banner turn-${state.turn}`}>
           <span className="turn-dot" />
-          {mode === 'ai' && state.turn === 'B' ? 'AI is thinking…' : `${turnName} to move`}
+          <span className="turn-text" key={`${state.turn}-${state.history.length}`}>
+            {mode === 'ai' && state.turn === 'B' ? 'AI is thinking…' : `${turnName} to move`}
+          </span>
           {allLegal.some((m) => m.captures.length > 0) && id !== 'sixteen-soldiers' && (
             <span className="capture-note"> — capture is compulsory</span>
           )}
@@ -128,11 +190,25 @@ export default function GamePage({ id, onBack }: GamePageProps) {
 
       {state.winner && (
         <div className="winner-banner">
+          <div className="confetti-field" aria-hidden="true">
+            {CONFETTI_PIECES.map((c, i) => (
+              <span
+                key={i}
+                className="confetti"
+                style={{
+                  left: `${c.left}%`,
+                  background: c.color,
+                  animationDelay: `${c.delay}s`,
+                  animationDuration: `${c.dur}s`,
+                }}
+              />
+            ))}
+          </div>
           <div className="winner-title">
             {state.winner === 'draw' ? 'Draw' : `${winnerName} wins`}
           </div>
           {state.winReason && <div className="winner-reason">{state.winReason}</div>}
-          <button className="btn-primary" onClick={restart}>Play again</button>
+          <button className="btn-primary" onClick={() => { playSound('click'); restart(); }}>Play again</button>
         </div>
       )}
 
@@ -145,6 +221,10 @@ export default function GamePage({ id, onBack }: GamePageProps) {
           lastMovePath={lastPath}
           interactive={!state.winner && !(mode === 'ai' && state.turn === 'B')}
           onPointTap={onPointTap}
+          moveSeq={state.history.length}
+          landedId={lastMove?.to ?? null}
+          lastCaptured={lastMove?.captures ?? []}
+          lastMoveSide={lastMove?.side ?? null}
         />
       </div>
 
@@ -157,8 +237,8 @@ export default function GamePage({ id, onBack }: GamePageProps) {
         </div>
       </div>
       <div className="tray-row">
-        <div>Captured by Maroon {tray(state.capturesA, 'tray-a')}</div>
-        <div>Captured by Ivory {tray(state.capturesB, 'tray-b')}</div>
+        <div><span className="tray-label">Captured by Maroon</span> {tray(state.capturesA, 'tray-a')}</div>
+        <div><span className="tray-label">Captured by Ivory</span> {tray(state.capturesB, 'tray-b')}</div>
       </div>
 
       {state.history.length > 0 && (
