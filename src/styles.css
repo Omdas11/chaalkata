@@ -685,6 +685,69 @@ main {
 
 .accordions { margin-top: 0.25rem; min-width: 0; }
 
+/* ---------- Sound toggle ---------- */
+
+.mute-btn {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.55rem;
+  font-size: 1.05rem;
+  line-height: 1;
+  padding: 0.35rem 0.45rem;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: transform var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+
+.mute-btn:hover { background: var(--paper-deep); }
+.mute-btn:active { transform: scale(0.94); }
+.mute-btn:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
+
+/* small corner button on the landing hero */
+.hero-mute {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.8rem;
+  z-index: 2;
+}
+
+/* ---------- Paper texture backdrop (CC0 ambientCG paper-tile.jpg) ---------- */
+
+/* Subtle fixed paper grain over the whole page. Kept at very low opacity so
+   text stays crisp; position:fixed + inset:0 means it can never affect
+   scrollWidth or layout. pointer-events:none keeps it out of the way. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-image: url("/assets/paper-tile.jpg");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.055;
+  pointer-events: none;
+}
+
+/* ---------- Decorations (original CC0 SVGs) ---------- */
+
+/* "boss" marker on the Sixteen Soldiers card */
+.boss-crown {
+  height: 0.95em;
+  width: auto;
+  margin-left: 0.4rem;
+  vertical-align: -0.12em;
+  filter: drop-shadow(0 1px 1px rgba(124, 45, 18, 0.3));
+}
+
+/* ornamental divider above the footer */
+.divider-ornament {
+  display: block;
+  width: min(24rem, 72%);
+  height: auto;
+  margin: 0 auto 1.2rem;
+  opacity: 0.9;
+}
+
 /* ---------- Larger screens ---------- */
 
 @media (min-width: 44rem) {
