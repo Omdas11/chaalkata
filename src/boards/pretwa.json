@@ -1,0 +1,288 @@
+{
+  "id": "pretwa",
+  "name": "Pretwa",
+  "piecesPerSide": 9,
+  "region": "Bihar, India",
+  "boardDescription": "Three concentric circles divided by three equally spaced diameters (six spokes); 19 intersection points including the center where the diameters meet.",
+  "points": [
+    {
+      "id": "p0",
+      "x": 0.5,
+      "y": 0.5
+    },
+    {
+      "id": "p1",
+      "x": 0.5,
+      "y": 0.35
+    },
+    {
+      "id": "p2",
+      "x": 0.5,
+      "y": 0.2
+    },
+    {
+      "id": "p3",
+      "x": 0.5,
+      "y": 0.05
+    },
+    {
+      "id": "p4",
+      "x": 0.6299,
+      "y": 0.425
+    },
+    {
+      "id": "p5",
+      "x": 0.7598,
+      "y": 0.35
+    },
+    {
+      "id": "p6",
+      "x": 0.8897,
+      "y": 0.275
+    },
+    {
+      "id": "p7",
+      "x": 0.6299,
+      "y": 0.575
+    },
+    {
+      "id": "p8",
+      "x": 0.7598,
+      "y": 0.65
+    },
+    {
+      "id": "p9",
+      "x": 0.8897,
+      "y": 0.725
+    },
+    {
+      "id": "p10",
+      "x": 0.5,
+      "y": 0.65
+    },
+    {
+      "id": "p11",
+      "x": 0.5,
+      "y": 0.8
+    },
+    {
+      "id": "p12",
+      "x": 0.5,
+      "y": 0.95
+    },
+    {
+      "id": "p13",
+      "x": 0.3701,
+      "y": 0.575
+    },
+    {
+      "id": "p14",
+      "x": 0.2402,
+      "y": 0.65
+    },
+    {
+      "id": "p15",
+      "x": 0.1103,
+      "y": 0.725
+    },
+    {
+      "id": "p16",
+      "x": 0.3701,
+      "y": 0.425
+    },
+    {
+      "id": "p17",
+      "x": 0.2402,
+      "y": 0.35
+    },
+    {
+      "id": "p18",
+      "x": 0.1103,
+      "y": 0.275
+    }
+  ],
+  "edges": [
+    [
+      "p1",
+      "p4"
+    ],
+    [
+      "p4",
+      "p7"
+    ],
+    [
+      "p7",
+      "p10"
+    ],
+    [
+      "p10",
+      "p13"
+    ],
+    [
+      "p13",
+      "p16"
+    ],
+    [
+      "p16",
+      "p1"
+    ],
+    [
+      "p2",
+      "p5"
+    ],
+    [
+      "p5",
+      "p8"
+    ],
+    [
+      "p8",
+      "p11"
+    ],
+    [
+      "p11",
+      "p14"
+    ],
+    [
+      "p14",
+      "p17"
+    ],
+    [
+      "p17",
+      "p2"
+    ],
+    [
+      "p3",
+      "p6"
+    ],
+    [
+      "p6",
+      "p9"
+    ],
+    [
+      "p9",
+      "p12"
+    ],
+    [
+      "p12",
+      "p15"
+    ],
+    [
+      "p15",
+      "p18"
+    ],
+    [
+      "p18",
+      "p3"
+    ],
+    [
+      "p0",
+      "p1"
+    ],
+    [
+      "p1",
+      "p2"
+    ],
+    [
+      "p2",
+      "p3"
+    ],
+    [
+      "p0",
+      "p4"
+    ],
+    [
+      "p4",
+      "p5"
+    ],
+    [
+      "p5",
+      "p6"
+    ],
+    [
+      "p0",
+      "p7"
+    ],
+    [
+      "p7",
+      "p8"
+    ],
+    [
+      "p8",
+      "p9"
+    ],
+    [
+      "p0",
+      "p10"
+    ],
+    [
+      "p10",
+      "p11"
+    ],
+    [
+      "p11",
+      "p12"
+    ],
+    [
+      "p0",
+      "p13"
+    ],
+    [
+      "p13",
+      "p14"
+    ],
+    [
+      "p14",
+      "p15"
+    ],
+    [
+      "p0",
+      "p16"
+    ],
+    [
+      "p16",
+      "p17"
+    ],
+    [
+      "p17",
+      "p18"
+    ]
+  ],
+  "start": {
+    "sideA": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p16",
+      "p17",
+      "p18"
+    ],
+    "sideB": [
+      "p7",
+      "p8",
+      "p9",
+      "p10",
+      "p11",
+      "p12",
+      "p13",
+      "p14",
+      "p15"
+    ]
+  },
+  "ruleNotes": "Captures compulsory, by the short leap as in draughts/Alquerque; each capture must run exclusively along one concentric circle or one diameter, but consecutive captures in one turn may switch between them. Win by capturing all enemy pieces or reducing them to three (some sources say capture-all only). Stalemate loses; if no more captures are possible, the player with more pieces wins, equal counts draw.",
+  "confidence": "high",
+  "sources": [
+    "H.J.R. Murray, A History of Board-Games Other Than Chess (1952), p.71 (via Wikipedia 'Pretwa' article)",
+    "Mats Winther, 'Indian War-games' (mats-winther.github.io/bg/indian_wg.htm) \u2014 board diagram with starting layout (verified by pixel measurement: 9 pieces on 3 consecutive spokes per side, center vacant)",
+    "Wikipedia 'Pretwa' \u2014 3 concentric circles, 3 diameters, 19 points; 9 pieces per player on three consecutive radiuses; captures compulsory",
+    "github.com/husainkorasawala/pretwa \u2014 '3 concentric circles with 6 lines radiating from a centre point'; beads on 9 intersections of 3 adjacent radii; win by reducing opponent to 3",
+    "theindianspirit.com 'Pretwa' \u2014 move/capture along lines or arcs; winner captures the entire opposing force"
+  ],
+  "gaps": [
+    "Murray's original 1952 text not directly consulted (all located PDF mirrors returned errors/redirects); board and start data via secondary sources citing Murray",
+    "Win condition disputed between sources: Wikipedia/GitHub/Winther's Zillions implementation say capture-all or reduce-to-3; theindianspirit.com says capture-all only",
+    "Starting player not documented \u2014 sources say players choose color and who starts"
+  ]
+}

@@ -1,0 +1,400 @@
+{
+  "id": "sumi-naga-war-game",
+  "name": "Sümi Naga 'war game' (unnamed)",
+  "piecesPerSide": 11,
+  "region": "Nagaland, India — Sümi (Sema) Naga",
+  "boardDescription": "Standard 25-point Alquerque board: a 5x5 lattice of intersection points with orthogonal lines and one diagonal per unit square; the diagonals form X's centered on each 2x2 quadrant (Hutton, The Sema Nagas, Diagrams I-II: the war game is 'played on the same board' as the tiger-and-goats game).",
+  "points": [
+    {
+      "id": "p0",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "p1",
+      "x": 0.25,
+      "y": 0.0
+    },
+    {
+      "id": "p2",
+      "x": 0.5,
+      "y": 0.0
+    },
+    {
+      "id": "p3",
+      "x": 0.75,
+      "y": 0.0
+    },
+    {
+      "id": "p4",
+      "x": 1.0,
+      "y": 0.0
+    },
+    {
+      "id": "p5",
+      "x": 0.0,
+      "y": 0.25
+    },
+    {
+      "id": "p6",
+      "x": 0.25,
+      "y": 0.25
+    },
+    {
+      "id": "p7",
+      "x": 0.5,
+      "y": 0.25
+    },
+    {
+      "id": "p8",
+      "x": 0.75,
+      "y": 0.25
+    },
+    {
+      "id": "p9",
+      "x": 1.0,
+      "y": 0.25
+    },
+    {
+      "id": "p10",
+      "x": 0.0,
+      "y": 0.5
+    },
+    {
+      "id": "p11",
+      "x": 0.25,
+      "y": 0.5
+    },
+    {
+      "id": "p12",
+      "x": 0.5,
+      "y": 0.5
+    },
+    {
+      "id": "p13",
+      "x": 0.75,
+      "y": 0.5
+    },
+    {
+      "id": "p14",
+      "x": 1.0,
+      "y": 0.5
+    },
+    {
+      "id": "p15",
+      "x": 0.0,
+      "y": 0.75
+    },
+    {
+      "id": "p16",
+      "x": 0.25,
+      "y": 0.75
+    },
+    {
+      "id": "p17",
+      "x": 0.5,
+      "y": 0.75
+    },
+    {
+      "id": "p18",
+      "x": 0.75,
+      "y": 0.75
+    },
+    {
+      "id": "p19",
+      "x": 1.0,
+      "y": 0.75
+    },
+    {
+      "id": "p20",
+      "x": 0.0,
+      "y": 1.0
+    },
+    {
+      "id": "p21",
+      "x": 0.25,
+      "y": 1.0
+    },
+    {
+      "id": "p22",
+      "x": 0.5,
+      "y": 1.0
+    },
+    {
+      "id": "p23",
+      "x": 0.75,
+      "y": 1.0
+    },
+    {
+      "id": "p24",
+      "x": 1.0,
+      "y": 1.0
+    }
+  ],
+  "edges": [
+    [
+      "p0",
+      "p1"
+    ],
+    [
+      "p1",
+      "p2"
+    ],
+    [
+      "p2",
+      "p3"
+    ],
+    [
+      "p3",
+      "p4"
+    ],
+    [
+      "p5",
+      "p6"
+    ],
+    [
+      "p6",
+      "p7"
+    ],
+    [
+      "p7",
+      "p8"
+    ],
+    [
+      "p8",
+      "p9"
+    ],
+    [
+      "p10",
+      "p11"
+    ],
+    [
+      "p11",
+      "p12"
+    ],
+    [
+      "p12",
+      "p13"
+    ],
+    [
+      "p13",
+      "p14"
+    ],
+    [
+      "p15",
+      "p16"
+    ],
+    [
+      "p16",
+      "p17"
+    ],
+    [
+      "p17",
+      "p18"
+    ],
+    [
+      "p18",
+      "p19"
+    ],
+    [
+      "p20",
+      "p21"
+    ],
+    [
+      "p21",
+      "p22"
+    ],
+    [
+      "p22",
+      "p23"
+    ],
+    [
+      "p23",
+      "p24"
+    ],
+    [
+      "p0",
+      "p5"
+    ],
+    [
+      "p5",
+      "p10"
+    ],
+    [
+      "p10",
+      "p15"
+    ],
+    [
+      "p15",
+      "p20"
+    ],
+    [
+      "p1",
+      "p6"
+    ],
+    [
+      "p6",
+      "p11"
+    ],
+    [
+      "p11",
+      "p16"
+    ],
+    [
+      "p16",
+      "p21"
+    ],
+    [
+      "p2",
+      "p7"
+    ],
+    [
+      "p7",
+      "p12"
+    ],
+    [
+      "p12",
+      "p17"
+    ],
+    [
+      "p17",
+      "p22"
+    ],
+    [
+      "p3",
+      "p8"
+    ],
+    [
+      "p8",
+      "p13"
+    ],
+    [
+      "p13",
+      "p18"
+    ],
+    [
+      "p18",
+      "p23"
+    ],
+    [
+      "p4",
+      "p9"
+    ],
+    [
+      "p9",
+      "p14"
+    ],
+    [
+      "p14",
+      "p19"
+    ],
+    [
+      "p19",
+      "p24"
+    ],
+    [
+      "p0",
+      "p6"
+    ],
+    [
+      "p2",
+      "p6"
+    ],
+    [
+      "p2",
+      "p8"
+    ],
+    [
+      "p4",
+      "p8"
+    ],
+    [
+      "p6",
+      "p10"
+    ],
+    [
+      "p6",
+      "p12"
+    ],
+    [
+      "p8",
+      "p12"
+    ],
+    [
+      "p8",
+      "p14"
+    ],
+    [
+      "p10",
+      "p16"
+    ],
+    [
+      "p12",
+      "p16"
+    ],
+    [
+      "p12",
+      "p18"
+    ],
+    [
+      "p14",
+      "p18"
+    ],
+    [
+      "p16",
+      "p20"
+    ],
+    [
+      "p16",
+      "p22"
+    ],
+    [
+      "p18",
+      "p22"
+    ],
+    [
+      "p18",
+      "p24"
+    ]
+  ],
+  "start": {
+    "sideA": [
+      "p0",
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8",
+      "p9",
+      "p10"
+    ],
+    "sideB": [
+      "p15",
+      "p16",
+      "p17",
+      "p18",
+      "p19",
+      "p20",
+      "p21",
+      "p22",
+      "p23",
+      "p24",
+      "p14"
+    ]
+  },
+  "ruleNotes": "Each side places ten men on the two back lines; the eleventh men occupy the outside places on the middle line — Diagram II shows sideA's at (0,2) and sideB's at (4,2). Moves are 'along the intersecting lines not further than one point at a time', capturing by jumping over an adjacent opposing piece into the vacant point behind it, 'as in draughts'. 'The side which eats up the greater number of its \"enemies\" wins' (Hutton) — most captures, not capture-all.",
+  "confidence": "high",
+  "sources": [
+    "J.H. Hutton, The Sema Nagas (1921), p. 111 — 'a second game known as the war game is played on the same board, each side using eleven pieces ... Each player places ten men on the two back lines of his side of the board, and the two eleventh men occupy the outside places on the middle line ... The side which eats up the greater number of its \"enemies\" wins.'",
+    "Hutton, The Sema Nagas, Diagrams I-II (facing p. 110) — Diagram II shows the 11-per-side setup with eleventh men at (0,2) [top side] and (4,2) [bottom side].",
+    "Ludii DLP Evidence 1680 'Sümi Naga Game (War)' — 11 pieces each (cross-check; Ludii's gloss of the eleventh man as 'to the left of the player' is not followed — the diagram is encoded as drawn)."
+  ],
+  "gaps": [
+    "The game is unnamed by Hutton ('a second game known as the war game'); no proper name is invented here.",
+    "Starting player not documented — omitted.",
+    "Ludii (Evidence 1680) describes the eleventh man as occupying the middle-line point 'to the left of the player'; Hutton's Diagram II instead shows 180°-rotational symmetry (top side left, bottom side right), which is what is encoded."
+  ]
+}

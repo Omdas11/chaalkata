@@ -1,0 +1,285 @@
+{
+  "id": "dash-guti",
+  "name": "Dash-Guti",
+  "piecesPerSide": 10,
+  "region": "Central Provinces, India (also United Provinces, Karwi Subdivision, where it is called Kowwu Dunki)",
+  "boardDescription": "Lau Kata Kati 'butterfly' board (two triangles joined at a common vertex, 19 points) plus two short line segments attached to the common vertex, one on each side exterior to the triangles; 21 points total.",
+  "points": [
+    {
+      "id": "p0",
+      "x": 0.5,
+      "y": 0.5
+    },
+    {
+      "id": "p1",
+      "x": 0.2,
+      "y": 0.08
+    },
+    {
+      "id": "p2",
+      "x": 0.5,
+      "y": 0.08
+    },
+    {
+      "id": "p3",
+      "x": 0.8,
+      "y": 0.08
+    },
+    {
+      "id": "p4",
+      "x": 0.3071,
+      "y": 0.23
+    },
+    {
+      "id": "p5",
+      "x": 0.5,
+      "y": 0.23
+    },
+    {
+      "id": "p6",
+      "x": 0.6929,
+      "y": 0.23
+    },
+    {
+      "id": "p7",
+      "x": 0.4143,
+      "y": 0.38
+    },
+    {
+      "id": "p8",
+      "x": 0.5,
+      "y": 0.38
+    },
+    {
+      "id": "p9",
+      "x": 0.5857,
+      "y": 0.38
+    },
+    {
+      "id": "p10",
+      "x": 0.2,
+      "y": 0.92
+    },
+    {
+      "id": "p11",
+      "x": 0.5,
+      "y": 0.92
+    },
+    {
+      "id": "p12",
+      "x": 0.8,
+      "y": 0.92
+    },
+    {
+      "id": "p13",
+      "x": 0.3071,
+      "y": 0.77
+    },
+    {
+      "id": "p14",
+      "x": 0.5,
+      "y": 0.77
+    },
+    {
+      "id": "p15",
+      "x": 0.6929,
+      "y": 0.77
+    },
+    {
+      "id": "p16",
+      "x": 0.4143,
+      "y": 0.62
+    },
+    {
+      "id": "p17",
+      "x": 0.5,
+      "y": 0.62
+    },
+    {
+      "id": "p18",
+      "x": 0.5857,
+      "y": 0.62
+    },
+    {
+      "id": "p19",
+      "x": 0.05,
+      "y": 0.5
+    },
+    {
+      "id": "p20",
+      "x": 0.95,
+      "y": 0.5
+    }
+  ],
+  "edges": [
+    [
+      "p1",
+      "p2"
+    ],
+    [
+      "p2",
+      "p3"
+    ],
+    [
+      "p4",
+      "p5"
+    ],
+    [
+      "p5",
+      "p6"
+    ],
+    [
+      "p7",
+      "p8"
+    ],
+    [
+      "p8",
+      "p9"
+    ],
+    [
+      "p1",
+      "p4"
+    ],
+    [
+      "p4",
+      "p7"
+    ],
+    [
+      "p7",
+      "p0"
+    ],
+    [
+      "p3",
+      "p6"
+    ],
+    [
+      "p6",
+      "p9"
+    ],
+    [
+      "p9",
+      "p0"
+    ],
+    [
+      "p2",
+      "p5"
+    ],
+    [
+      "p5",
+      "p8"
+    ],
+    [
+      "p8",
+      "p0"
+    ],
+    [
+      "p10",
+      "p11"
+    ],
+    [
+      "p11",
+      "p12"
+    ],
+    [
+      "p13",
+      "p14"
+    ],
+    [
+      "p14",
+      "p15"
+    ],
+    [
+      "p16",
+      "p17"
+    ],
+    [
+      "p17",
+      "p18"
+    ],
+    [
+      "p10",
+      "p13"
+    ],
+    [
+      "p13",
+      "p16"
+    ],
+    [
+      "p16",
+      "p0"
+    ],
+    [
+      "p12",
+      "p15"
+    ],
+    [
+      "p15",
+      "p18"
+    ],
+    [
+      "p18",
+      "p0"
+    ],
+    [
+      "p11",
+      "p14"
+    ],
+    [
+      "p14",
+      "p17"
+    ],
+    [
+      "p17",
+      "p0"
+    ],
+    [
+      "p19",
+      "p0"
+    ],
+    [
+      "p0",
+      "p20"
+    ]
+  ],
+  "start": {
+    "sideA": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8",
+      "p9",
+      "p19"
+    ],
+    "sideB": [
+      "p10",
+      "p11",
+      "p12",
+      "p13",
+      "p14",
+      "p15",
+      "p16",
+      "p17",
+      "p18",
+      "p20"
+    ]
+  },
+  "ruleNotes": "Captures compulsory, by the short leap as in draughts/Alquerque, in a straight line following the board pattern; multiple captures per turn allowed. Win by capturing all enemy pieces. Stalemate loses; if no more captures are possible, the player with more pieces wins, equal counts draw. Each player's 10th piece starts on the antenna endpoint on that player's right-hand side (left end for the top player, right end for the bottom player).",
+  "confidence": "high",
+  "sources": [
+    "H.J.R. Murray, A History of Board-Games Other Than Chess (1952), p.70 (via Wikipedia 'Dash-guti' article)",
+    "Mats Winther, 'Indian War-games' (mats-winther.github.io/bg/indian_wg.htm) \u2014 board diagram with starting layout (verified by pixel measurement: 9 pieces per triangle + 1 on antenna per side, center vacant; antenna stubs horizontal through the vertex)",
+    "Wikipedia 'Dash-guti' \u2014 Lau kata kati board + two line segments at the vertex, one per side, exterior to both triangles; 19 intersections + 2 endpoints = 21 points",
+    "Wikipedia 'Lau kata kati' \u2014 base board: two triangles at a common vertex, 19 intersection points, ranks of 3+3+3+vertex",
+    "bead.game/games/traditional/dash-guti \u2014 each player places their 10th bead on the right-hand point of the arm from the middle point",
+    "en-academic.com (older Wikipedia text) \u2014 10th piece 'on the end of an antenna that is on the right side of the player'"
+  ],
+  "gaps": [
+    "Murray's original 1952 text not directly consulted (all located PDF mirrors returned errors/redirects); board and start data via secondary sources citing Murray",
+    "Starting player not documented \u2014 sources say players choose color and who starts",
+    "Murray's exact wording ('segments' vs 'lines') for the antenna stubs unverified beyond Wikipedia's 'two line segments'"
+  ]
+}

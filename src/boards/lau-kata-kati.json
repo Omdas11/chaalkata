@@ -1,0 +1,263 @@
+{
+  "id": "lau-kata-kati",
+  "name": "Lau Kata Kati",
+  "piecesPerSide": 9,
+  "region": "Lower Bengal (also played as Kowwu Dunki)",
+  "boardDescription": "Two triangular halves sharing a single central apex (butterfly board); each triangle is subdivided by two breadthwise lines, with one perpendicular line running through both triangles and the shared apex.",
+  "points": [
+    {
+      "id": "p0",
+      "x": 0.2,
+      "y": 0.0
+    },
+    {
+      "id": "p1",
+      "x": 0.5,
+      "y": 0.0
+    },
+    {
+      "id": "p2",
+      "x": 0.8,
+      "y": 0.0
+    },
+    {
+      "id": "p3",
+      "x": 0.3,
+      "y": 0.1667
+    },
+    {
+      "id": "p4",
+      "x": 0.5,
+      "y": 0.1667
+    },
+    {
+      "id": "p5",
+      "x": 0.7,
+      "y": 0.1667
+    },
+    {
+      "id": "p6",
+      "x": 0.4,
+      "y": 0.3333
+    },
+    {
+      "id": "p7",
+      "x": 0.5,
+      "y": 0.3333
+    },
+    {
+      "id": "p8",
+      "x": 0.6,
+      "y": 0.3333
+    },
+    {
+      "id": "p9",
+      "x": 0.5,
+      "y": 0.5
+    },
+    {
+      "id": "p10",
+      "x": 0.4,
+      "y": 0.6667
+    },
+    {
+      "id": "p11",
+      "x": 0.5,
+      "y": 0.6667
+    },
+    {
+      "id": "p12",
+      "x": 0.6,
+      "y": 0.6667
+    },
+    {
+      "id": "p13",
+      "x": 0.3,
+      "y": 0.8333
+    },
+    {
+      "id": "p14",
+      "x": 0.5,
+      "y": 0.8333
+    },
+    {
+      "id": "p15",
+      "x": 0.7,
+      "y": 0.8333
+    },
+    {
+      "id": "p16",
+      "x": 0.2,
+      "y": 1.0
+    },
+    {
+      "id": "p17",
+      "x": 0.5,
+      "y": 1.0
+    },
+    {
+      "id": "p18",
+      "x": 0.8,
+      "y": 1.0
+    }
+  ],
+  "edges": [
+    [
+      "p0",
+      "p3"
+    ],
+    [
+      "p3",
+      "p6"
+    ],
+    [
+      "p6",
+      "p9"
+    ],
+    [
+      "p2",
+      "p5"
+    ],
+    [
+      "p5",
+      "p8"
+    ],
+    [
+      "p8",
+      "p9"
+    ],
+    [
+      "p1",
+      "p4"
+    ],
+    [
+      "p4",
+      "p7"
+    ],
+    [
+      "p7",
+      "p9"
+    ],
+    [
+      "p0",
+      "p1"
+    ],
+    [
+      "p1",
+      "p2"
+    ],
+    [
+      "p3",
+      "p4"
+    ],
+    [
+      "p4",
+      "p5"
+    ],
+    [
+      "p6",
+      "p7"
+    ],
+    [
+      "p7",
+      "p8"
+    ],
+    [
+      "p16",
+      "p13"
+    ],
+    [
+      "p13",
+      "p10"
+    ],
+    [
+      "p10",
+      "p9"
+    ],
+    [
+      "p18",
+      "p15"
+    ],
+    [
+      "p15",
+      "p12"
+    ],
+    [
+      "p12",
+      "p9"
+    ],
+    [
+      "p17",
+      "p14"
+    ],
+    [
+      "p14",
+      "p11"
+    ],
+    [
+      "p11",
+      "p9"
+    ],
+    [
+      "p16",
+      "p17"
+    ],
+    [
+      "p17",
+      "p18"
+    ],
+    [
+      "p13",
+      "p14"
+    ],
+    [
+      "p14",
+      "p15"
+    ],
+    [
+      "p10",
+      "p11"
+    ],
+    [
+      "p11",
+      "p12"
+    ]
+  ],
+  "start": {
+    "sideA": [
+      "p0",
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8"
+    ],
+    "sideB": [
+      "p10",
+      "p11",
+      "p12",
+      "p13",
+      "p14",
+      "p15",
+      "p16",
+      "p17",
+      "p18"
+    ]
+  },
+  "ruleNotes": "Each side occupies all 9 points of its triangle; the shared central apex starts empty. Moves go to adjacent empty points along drawn lines. Captures are by the short leap and are compulsory, and continued captures from the landing point are compulsory. A player unable to move loses; if neither can capture further, the player holding more pieces wins (equal pieces = tie).",
+  "confidence": "high",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Lau_kata_kati (observed 2026-09-27): two triangles share one apex; two breadthwise lines subdivide each triangle; one perpendicular line through both triangles and shared apex; 19 intersections; each side occupies all 9 points of one triangle, shared apex empty; players choose who starts; captures compulsory incl. chained captures; blocked player loses; piece-majority decides otherwise",
+    "https://ludii.games/details.php?keyword=Lau%20kata%20kati and https://ludii.games/lud/games/Lau%20Kata%20Kati.lud (observed 2026-09-27): board built from two wedges sharing an apex; setup places each side on the 9 points of one triangle; rules text confirms shared apex empty",
+    "https://www.bead.game/games/traditional/lau-kata-kati (observed 2026-09-27): 9 pieces per side, opposite triangles, middle empty, mandatory and chained captures",
+    "https://www.whatdowedoallday.com/lau-kata-kati/ (observed 2026-09-27): two triangles, two cross-lines per triangle, one line through both triangles and center; setup image inspected"
+  ],
+  "gaps": [
+    "startingPlayer omitted: sources say the players choose/agree who starts rather than fixing it",
+    "No diagonal lines are drawn on the board; none included (Ludii's hidden-diagonal graphics flag was treated as a rendering artifact, not a drawn edge)",
+    "Murray (1952) p.70 cited via Wikipedia/Ludii but a clean scan was not obtained; geometry cross-checked against the board image instead"
+  ]
+}
