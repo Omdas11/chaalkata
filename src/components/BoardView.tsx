@@ -11,6 +11,14 @@ export interface BoardViewProps {
   onPointTap?: (id: string) => void;
   /** Compact, non-interactive card preview */
   preview?: boolean;
+  /** Increments every move; replays one-shot animations (ghost, bursts) */
+  moveSeq?: number;
+  /** Point id the last move landed on (landing pop) */
+  landedId?: string | null;
+  /** Point ids captured by the last move (burst rings) */
+  lastCaptured?: string[];
+  /** Side that made the last move (ghost dot colour) */
+  lastMoveSide?: Side | null;
 }
 
 const PIECE_A = '#7c2d12';
@@ -26,6 +34,10 @@ export default function BoardView({
   interactive = false,
   onPointTap,
   preview = false,
+  moveSeq = 0,
+  landedId = null,
+  lastCaptured = [],
+  lastMoveSide = null,
 }: BoardViewProps) {
   const { viewBox, pts, w, h } = useMemo(() => {
     let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
@@ -47,6 +59,11 @@ export default function BoardView({
   const targetSet = useMemo(() => new Set(legalTargets), [legalTargets]);
   const pathSet = useMemo(() => new Set(lastMovePath), [lastMovePath]);
 
+  // Unique gradient ids per board so the 8 home-page previews don't collide
+  const gradA = `ck-pa-${board.id}`;
+  const gradB = `ck-pb-${board.id}`;
+  const ghostPathId = `ck-ghost-${board.id}`;
+
   // Draw edges; highlight the last-move trail
   const edges = board.edges.map(([a, b], i) => {
     const pa = pts.get(a), pb = pts.get(b);
@@ -64,16 +81,37 @@ export default function BoardView({
     );
   });
 
+  // Invisible path the move-ghost travels (SMIL animateMotion follows it)
+  const ghostD = useMemo(() => {
+    if (moveSeq < 1 || lastMovePath.length < 2) return null;
+    const coords = lastMovePath
+      .map((pid) => pts.get(pid))
+      .filter((p): p is { x: number; y: number } => !!p)
+      .map((p) => `${p.x} ${p.y}`);
+    return coords.length > 1 ? `M ${coords.join(' L ')}` : null;
+  }, [moveSeq, lastMovePath, pts]);
+
   const points = board.points.map((p) => {
     const occ = occupant[p.id];
     const isSel = selectedId === p.id;
     const isTarget = targetSet.has(p.id);
     const r = isSel ? pieceR * 1.25 : pieceR;
+    const tappable = interactive && onPointTap;
+    const label = occ
+      ? `Point ${p.id}, ${occ === 'A' ? 'Maroon' : 'Ivory'} piece${isSel ? ', selected' : ''}${isTarget ? ', legal target' : ''}`
+      : `Point ${p.id}, empty${isTarget ? ', legal target' : ''}`;
     return (
       <g
         key={p.id}
-        onClick={interactive && onPointTap ? () => onPointTap(p.id) : undefined}
-        style={interactive && onPointTap ? { cursor: 'pointer' } : undefined}
+        className={tappable ? 'pt' : undefined}
+        onClick={tappable ? () => onPointTap(p.id) : undefined}
+        onKeyDown={tappable ? (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPointTap(p.id); }
+        } : undefined}
+        role={tappable ? 'button' : undefined}
+        tabIndex={tappable ? 0 : undefined}
+        aria-label={tappable ? label : undefined}
+        style={tappable ? { cursor: 'pointer' } : undefined}
       >
         {/* fat invisible hit area when interactive */}
         {interactive && <circle cx={p.x} cy={p.y} r={pieceR * 2.1} fill="transparent" />}
@@ -81,7 +119,8 @@ export default function BoardView({
           <g>
             <circle
               cx={p.x} cy={p.y} r={r}
-              fill={occ === 'A' ? PIECE_A : PIECE_B}
+              className={landedId === p.id ? 'land' : undefined}
+              fill={occ === 'A' ? `url(#${gradA})` : `url(#${gradB})`}
               stroke={isSel ? '#d97706' : STROKE}
               strokeWidth={isSel ? lineW * 2.2 : lineW * 1.4}
             />
@@ -90,6 +129,7 @@ export default function BoardView({
                 cx={p.x} cy={p.y} r={r * 1.45}
                 fill="none" stroke="#d97706" strokeWidth={lineW}
                 strokeDasharray={`${lineW * 2} ${lineW * 1.6}`}
+                className="sel-ring"
               />
             )}
           </g>
@@ -115,8 +155,47 @@ export default function BoardView({
       aria-label={preview ? `${board.name} board preview` : `${board.name} board`}
       style={{ width: '100%', height: 'auto', display: 'block', touchAction: 'manipulation' }}
     >
+      <defs>
+        <radialGradient id={gradA} cx="35%" cy="30%" r="85%">
+          <stop offset="0%" stopColor="#a5441f" />
+          <stop offset="100%" stopColor="#6e2710" />
+        </radialGradient>
+        <radialGradient id={gradB} cx="35%" cy="30%" r="85%">
+          <stop offset="0%" stopColor="#fffdf6" />
+          <stop offset="100%" stopColor="#e3cfa5" />
+        </radialGradient>
+      </defs>
       {edges}
       {points}
+      {/* capture bursts: expanding rings where pieces were just taken */}
+      {!preview && lastCaptured.map((pid) => {
+        const pt = pts.get(pid);
+        if (!pt) return null;
+        return (
+          <circle
+            key={`${moveSeq}-${pid}`}
+            cx={pt.x} cy={pt.y} r={pieceR * 1.1}
+            className="cap-burst"
+            aria-hidden="true"
+          />
+        );
+      })}
+      {/* move ghost: dot sliding along the last-move path */}
+      {!preview && ghostD && lastMoveSide && (
+        <g key={`ghost-${moveSeq}`} className="move-ghost" aria-hidden="true">
+          <path id={ghostPathId} d={ghostD} fill="none" />
+          <circle
+            r={pieceR * 0.62}
+            fill={lastMoveSide === 'A' ? PIECE_A : PIECE_B}
+            stroke={STROKE}
+            strokeWidth={lineW}
+          >
+            <animateMotion dur="0.32s" fill="freeze" rotate="0">
+              <mpath href={`#${ghostPathId}`} />
+            </animateMotion>
+          </circle>
+        </g>
+      )}
     </svg>
   );
 }
