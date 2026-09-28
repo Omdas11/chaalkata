@@ -6,10 +6,17 @@
 @import "@fontsource/hind-siliguri/400.css";
 @import "@fontsource/hind-siliguri/600.css";
 
-/* Chaal-Kaata nature identity. Soil + leaf palette.
-   Page background: warm village-soil gradient (the classic look).
-   Panels: realistic leaves in varied greens with soil-brown ink. */
+/* Chaal-Kaata nature identity. Soil + leaf palette, text set directly over
+   the photographic leaf canopy (no cards — the jungle stays visible).
+   Proportions follow the golden ratio φ = 1.618. */
 :root {
+ --phi: 1.6180339887;
+ /* golden spacing scale: 1, φ, φ², φ³ */
+ --sp-1: 1rem;
+ --sp-2: 1.618rem;
+ --sp-3: 2.618rem;
+ --sp-4: 4.236rem;
+ --header-h: calc(3rem * var(--phi));
  /* soil shades */
  --soil-950: #241a10;
  --soil-900: #3e2c1c;
@@ -37,12 +44,6 @@
  --clay: #b5623a;
  --clay-deep: #7e3f24;
  --shadow: rgba(12, 7, 3, 0.5);
- /* legacy aliases */
- --soil-dark: var(--soil-900);
- --soil-deep: #2c1f15;
- --soil: var(--soil-700);
- --soil-light: var(--soil-600);
- --indigo: #2b3a67;
 }
 
 *,
@@ -59,9 +60,7 @@ body {
 
 body {
  overflow-x: clip;
- background:
- radial-gradient(120% 90% at 50% 20%, #6b4a2e 0%, #4a3220 55%, #3e2c1c 100%);
- background-attachment: fixed;
+ background: #16280f;
  color: var(--chalk);
  font-family: "Hind", "Hind Siliguri", system-ui, sans-serif;
  font-size: 19px;
@@ -98,6 +97,7 @@ img {
  font-family: "Hind Siliguri", "Hind", system-ui, sans-serif;
 }
 
+/* type scale on φ: 1.618 / 2.618 / 4.236 */
 h1,
 h2,
 h3 {
@@ -135,6 +135,206 @@ a:hover {
  margin-inline: auto;
 }
 
+/* page clears the fixed header; text floats over the canopy */
+.page-main {
+ position: relative;
+ z-index: 2;
+ padding-top: calc(var(--header-h) + var(--sp-1));
+ padding-bottom: var(--sp-4);
+}
+
+.page-main > section + section {
+ margin-top: var(--sp-3);
+}
+
+/* readable text directly over the photo: soft drop shadow */
+.page-main h1,
+.page-main h2,
+.page-main .lede,
+.hero-tagline {
+ text-shadow: 0 2px 18px rgba(8, 5, 2, 0.92), 0 1px 4px rgba(8, 5, 2, 0.95);
+}
+
+.lede {
+ font-size: 1.25rem;
+ max-width: 38rem;
+ color: var(--chalk);
+}
+
+/* ---------- fixed header: hamburger + animated wordmark + language ---------- */
+.site-header {
+ position: fixed;
+ inset: 0 0 auto 0;
+ z-index: 50;
+ height: var(--header-h);
+ display: flex;
+ align-items: center;
+ gap: var(--sp-1);
+ padding: 0 clamp(0.9rem, 4vw, 1.618rem);
+ background: linear-gradient(180deg, rgba(20, 12, 6, 0.88), rgba(20, 12, 6, 0.62));
+ -webkit-backdrop-filter: blur(12px);
+ backdrop-filter: blur(12px);
+ border-bottom: 1px solid rgba(224, 165, 38, 0.22);
+}
+
+.wordmark {
+ font-family: "Yatra One", "Hind", system-ui, sans-serif;
+ font-size: clamp(1.5rem, 5vw, 1.9rem);
+ letter-spacing: 0.02em;
+ text-decoration: none;
+ margin-inline: auto;
+ background: linear-gradient(100deg,
+   var(--chalk) 15%,
+   var(--turmeric) 38%,
+   #ffedbe 50%,
+   var(--turmeric) 62%,
+   var(--chalk) 85%);
+ background-size: 220% 100%;
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+ animation: wordmark-sheen 7s ease-in-out infinite;
+}
+
+.wordmark:hover {
+ color: transparent;
+}
+
+.wordmark--sm {
+ font-size: 1.3rem;
+ margin: 0;
+ animation: none;
+ background: none;
+ color: var(--turmeric);
+ -webkit-text-fill-color: var(--turmeric);
+}
+
+@keyframes wordmark-sheen {
+ 0%, 100% { background-position: 112% 0; }
+ 50% { background-position: -12% 0; }
+}
+
+.hamburger {
+ display: inline-flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 6px;
+ width: 48px;
+ height: 48px;
+ flex: none;
+ background: transparent;
+ border: 2px solid rgba(241, 233, 216, 0.35);
+ border-radius: 12px;
+ cursor: pointer;
+ padding: 0;
+}
+
+.hamburger span {
+ display: block;
+ width: 22px;
+ height: 2.5px;
+ border-radius: 2px;
+ background: var(--chalk);
+ transition: transform 220ms ease-out, opacity 220ms ease-out;
+}
+
+.hamburger:hover {
+ border-color: var(--turmeric);
+}
+
+.hamburger--close {
+ border-color: transparent;
+}
+
+.hamburger--close span:nth-child(1) {
+ transform: translateY(8.5px) rotate(45deg);
+}
+
+.hamburger--close span:nth-child(2) {
+ opacity: 0;
+}
+
+.hamburger--close span:nth-child(3) {
+ transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* ---------- slide-in drawer ---------- */
+.drawer-scrim {
+ position: fixed;
+ inset: 0;
+ z-index: 65;
+ background: rgba(10, 6, 3, 0.6);
+ opacity: 0;
+ pointer-events: none;
+ transition: opacity 260ms ease-out;
+}
+
+.drawer-scrim--open {
+ opacity: 1;
+ pointer-events: auto;
+}
+
+.drawer {
+ position: fixed;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ z-index: 70;
+ width: min(22rem, 88vw);
+ overflow-y: auto;
+ overscroll-behavior: contain;
+ background: linear-gradient(160deg, rgba(48, 34, 21, 0.97), rgba(30, 20, 12, 0.95));
+ -webkit-backdrop-filter: blur(14px);
+ backdrop-filter: blur(14px);
+ border-left: 1px solid rgba(224, 165, 38, 0.3);
+ box-shadow: -24px 0 60px rgba(0, 0, 0, 0.55);
+ transform: translateX(103%);
+ transition: transform 300ms cubic-bezier(0.32, 0.72, 0.28, 1);
+ padding: 1.2rem 1.4rem 2.5rem;
+ visibility: hidden;
+}
+
+.drawer--open {
+ transform: translateX(0);
+ visibility: visible;
+}
+
+.drawer-head {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ margin-bottom: var(--sp-1);
+}
+
+.drawer-section + .drawer-section {
+ margin-top: var(--sp-2);
+ padding-top: var(--sp-2);
+ border-top: 1px solid rgba(241, 233, 216, 0.14);
+}
+
+.drawer-controls {
+ display: grid;
+ gap: 0.7rem;
+}
+
+.drawer-controls .btn-clay {
+ width: 100%;
+}
+
+.drawer-controls .seg-row {
+ display: flex;
+ gap: 0.5rem;
+ flex-wrap: wrap;
+}
+
+.drawer-controls .seg-row .btn-clay {
+ flex: 1 1 0;
+ width: auto;
+ padding-left: 0.6em;
+ padding-right: 0.6em;
+}
+
 /* ---------- photographic leaf canopy: full-viewport background ---------- */
 .canopy {
  position: fixed;
@@ -149,7 +349,6 @@ a:hover {
  width: 100%;
  height: 100%;
  object-fit: cover;
- will-change: transform;
 }
 
 /* dark scrim so text stays readable over the photo */
@@ -159,11 +358,11 @@ a:hover {
  z-index: 1;
  pointer-events: none;
  background:
-  linear-gradient(180deg, rgba(16, 9, 3, 0.62) 0%, rgba(16, 9, 3, 0.28) 26%, rgba(16, 9, 3, 0.12) 50%, rgba(16, 9, 3, 0.34) 78%, rgba(16, 9, 3, 0.66) 100%),
+  linear-gradient(180deg, rgba(16, 9, 3, 0.66) 0%, rgba(16, 9, 3, 0.34) 26%, rgba(16, 9, 3, 0.18) 50%, rgba(16, 9, 3, 0.4) 78%, rgba(16, 9, 3, 0.7) 100%),
   radial-gradient(120% 100% at 50% 42%, transparent 42%, rgba(16, 9, 3, 0.5) 100%);
 }
 
-/* ---------- floating photo leaves (screen-blend, gyro on wrapper) ---------- */
+/* ---------- floating photo leaves (screen-blend, gentle drift) ---------- */
 .photo-leaves {
  position: fixed;
  inset: 0;
@@ -174,7 +373,6 @@ a:hover {
 
 .photo-leaf {
  position: absolute;
- will-change: transform;
 }
 
 .photo-leaf__img {
@@ -190,116 +388,20 @@ a:hover {
  to { transform: translate3d(16px, 14px, 0) rotate(calc(var(--leaf-rot, 0deg) + 8deg)); }
 }
 
-/* ---------- frosted panel: light card over the canopy ---------- */
-.leaf-panel {
- position: relative;
- color: var(--soil-950);
- max-width: 100%;
- border-radius: 22px;
- background: linear-gradient(160deg, rgba(246, 242, 226, 0.95), rgba(233, 221, 193, 0.92));
- -webkit-backdrop-filter: blur(10px);
- backdrop-filter: blur(10px);
- border: 1px solid rgba(255, 255, 255, 0.45);
- box-shadow: 0 18px 50px rgba(10, 5, 2, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.55);
- padding: clamp(1.5rem, 5vw, 2.8rem);
- will-change: transform;
-}
-
-.leaf-panel h1,
-.leaf-panel h2,
-.leaf-panel h3 {
- color: var(--soil-950);
-}
-
-.leaf-panel .eyebrow {
- color: var(--leaf-800);
-}
-
-.leaf-panel a {
- color: var(--leaf-900);
-}
-
-.leaf-panel a:hover {
- color: var(--soil-950);
-}
-
-.leaf-panel .hl-turmeric {
- color: #8a4a06;
-}
-
-.leaf-panel .row-action {
- color: var(--soil-950);
-}
-
-.leaf-panel .row-action:hover {
- background: rgba(30, 61, 26, 0.08);
-}
-
-.leaf-panel .row-action .arr {
- color: var(--leaf-700);
-}
-
-.leaf-panel .stamp {
- color: #a12318;
- border-color: #a12318;
- background: rgba(179, 38, 30, 0.07);
-}
-
-.leaf-panel .btn-clay--ghost {
- color: var(--soil-950);
- border-color: rgba(36, 26, 16, 0.55);
-}
-
-.leaf-panel .btn-clay--ghost:hover {
- border-color: var(--leaf-700);
- color: var(--leaf-800);
-}
-
-.leaf-panel .howto-steps li {
- background: rgba(255, 255, 255, 0.5);
- border-color: rgba(30, 61, 26, 0.2);
-}
-
-.leaf-panel .a11y-board:focus-within {
- background: rgba(255, 255, 255, 0.55);
- border-color: var(--leaf-700);
-}
-
-.leaf-panel .a11y-board p {
- color: rgba(36, 26, 16, 0.78);
-}
-
-.leaf-panel .a11y-board button {
- border-color: rgba(36, 26, 16, 0.5);
- background: rgba(255, 255, 255, 0.4);
- color: var(--soil-950);
-}
-
-.leaf-panel .a11y-board button[data-side="A"] {
- border-color: var(--leaf-700);
-}
-
-.leaf-panel .a11y-board button[data-active="true"] {
- background: rgba(224, 165, 38, 0.4);
-}
-
-.leaf-panel .a11y-board button:focus-visible {
- outline-color: var(--leaf-700);
-}
-
 /* ---------- language toggle ---------- */
 .lang-toggle {
  display: inline-flex;
- border: 2px solid rgba(36, 26, 16, 0.4);
+ border: 2px solid rgba(241, 233, 216, 0.4);
  border-radius: 999px;
  overflow: hidden;
- background: rgba(255, 255, 255, 0.35);
+ background: rgba(20, 12, 6, 0.4);
+ flex: none;
 }
 
 .lang-toggle button {
  border: 0;
  background: transparent;
- color: var(--soil-950);
+ color: var(--chalk);
  font-family: "Hind", "Hind Siliguri", sans-serif;
  font-weight: 600;
  font-size: 0.95rem;
@@ -312,6 +414,12 @@ a:hover {
 .lang-toggle button[aria-pressed="true"] {
  background: var(--leaf-700);
  color: var(--leaf-50);
+}
+
+.lang-toggle--compact button {
+ padding: 0.4em 0.8em;
+ min-height: 40px;
+ font-size: 0.85rem;
 }
 
 /* ---------- gamosa divider: red weave with chalk ticks ---------- */
@@ -352,6 +460,7 @@ a:hover {
  color: var(--turmeric);
  letter-spacing: 0.06em;
  margin: 0 0 0.4em;
+ text-shadow: 0 1px 8px rgba(8, 5, 2, 0.9);
 }
 
 /* ---------- buttons ---------- */
@@ -386,7 +495,7 @@ a:hover {
 }
 
 .btn-clay--ghost {
- background: transparent;
+ background: rgba(20, 12, 6, 0.35);
  color: var(--chalk);
  border: 2px solid rgba(241, 233, 216, 0.55);
  box-shadow: none;
@@ -451,7 +560,9 @@ a:hover {
  font-family: "Kalam", cursive;
  font-size: 1.25rem;
  color: var(--chalk);
- background: rgba(44, 31, 21, 0.55);
+ background: rgba(30, 20, 12, 0.72);
+ -webkit-backdrop-filter: blur(6px);
+ backdrop-filter: blur(6px);
  border: 1px solid rgba(224, 165, 38, 0.35);
  border-radius: 10px;
  padding: 0.55em 1em;
@@ -511,6 +622,20 @@ a:hover {
  }
 }
 
+/* ---------- full-bleed board stage: the canvas breaks out of .wrap ---------- */
+.board-stage {
+ position: relative;
+ width: 100vw;
+ margin-left: calc(50% - 50vw);
+ height: min(80vh, 720px);
+ min-height: 440px;
+}
+
+.board-stage > div {
+ width: 100%;
+ height: 100%;
+}
+
 /* ---------- game-over dialog ---------- */
 .dialog-overlay {
  position: fixed;
@@ -527,6 +652,12 @@ a:hover {
 .dialog {
  width: min(26rem, 100%);
  text-align: center;
+ color: var(--chalk);
+ background: linear-gradient(160deg, rgba(52, 36, 22, 0.97), rgba(34, 22, 13, 0.96));
+ border: 1px solid rgba(224, 165, 38, 0.35);
+ border-radius: 18px;
+ padding: 2rem;
+ box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
 }
 
 .dialog h2 {
@@ -543,6 +674,75 @@ a:hover {
  justify-content: center;
  flex-wrap: wrap;
  margin-top: 1.25rem;
+}
+
+/* ---------- swipeable game carousel (home) ---------- */
+.carousel-wrap {
+ position: relative;
+}
+
+.carousel {
+ display: flex;
+ gap: var(--sp-1);
+ overflow-x: auto;
+ scroll-snap-type: x mandatory;
+ padding: 0.5rem max(1rem, calc(50vw - 36rem)) 1.5rem;
+ margin-inline: max(-1rem, calc(-50vw + 36rem));
+ -webkit-overflow-scrolling: touch;
+ scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+ display: none;
+}
+
+.game-card {
+ scroll-snap-align: center;
+ flex: 0 0 min(74vw, 300px);
+ aspect-ratio: 1 / var(--phi);
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-end;
+ gap: 0.5rem;
+ padding: 1.4rem;
+ border-radius: 20px;
+ text-decoration: none;
+ color: var(--chalk);
+ background: linear-gradient(165deg, rgba(52, 36, 22, 0.9), rgba(26, 17, 10, 0.88));
+ -webkit-backdrop-filter: blur(8px);
+ backdrop-filter: blur(8px);
+ border: 1px solid rgba(241, 233, 216, 0.16);
+ box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+ position: relative;
+ overflow: hidden;
+}
+
+.game-card--playable {
+ border-color: rgba(224, 165, 38, 0.65);
+ box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(224, 165, 38, 0.25), 0 0 42px rgba(224, 165, 38, 0.12);
+}
+
+.game-card h3 {
+ margin: 0;
+ font-size: 1.6rem;
+ text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.game-card p {
+ margin: 0;
+ color: var(--chalk-dim);
+ font-size: 1rem;
+}
+
+.game-card .card-motif {
+ position: absolute;
+ top: 1rem;
+ right: 1rem;
+ opacity: 0.9;
+}
+
+.game-card .card-cta {
+ margin-top: 0.4rem;
 }
 
 /* ---------- accessible (screen-reader / keyboard) board ---------- */
@@ -572,7 +772,7 @@ a:hover {
 
 .a11y-board:focus-within {
  position: relative;
- background: var(--soil-deep);
+ background: rgba(30, 20, 12, 0.9);
  border: 1px solid var(--turmeric);
  border-radius: 10px;
  padding: 0.8rem;
@@ -624,9 +824,11 @@ a:hover {
 /* ---------- footer ---------- */
 .site-footer {
  text-align: center;
- padding: 2.5rem 0 3rem;
+ padding: var(--sp-3) 0 var(--sp-4);
  color: var(--chalk-dim);
  font-size: 0.95rem;
+ position: relative;
+ z-index: 2;
 }
 
 .site-footer a {
@@ -652,8 +854,10 @@ a:hover {
  grid-template-columns: 72px 1fr;
  gap: 0.9rem;
  align-items: center;
- background: rgba(44, 31, 21, 0.5);
- border: 1px solid rgba(241, 233, 216, 0.12);
+ background: rgba(30, 20, 12, 0.66);
+ -webkit-backdrop-filter: blur(6px);
+ backdrop-filter: blur(6px);
+ border: 1px solid rgba(241, 233, 216, 0.14);
  border-radius: 10px;
  padding: 0.7rem 0.9rem;
 }
@@ -667,6 +871,20 @@ a:hover {
 .howto-steps p {
  margin: 0;
  font-size: 1rem;
+}
+
+/* diagrams were drawn soil-ink on leaf; re-ink them chalk on dark */
+.howto-steps svg [stroke="#241a10"] {
+ stroke: var(--chalk);
+}
+
+.howto-steps svg [fill="#241a10"] {
+ fill: var(--chalk);
+}
+
+.howto-steps strong.howto-step-title {
+ color: var(--turmeric);
+ font-size: 1.1rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -685,21 +903,14 @@ a:hover {
  animation: none !important;
  }
 
- .leaf-panel,
- .photo-leaf,
- .canopy__img {
- transform: none !important;
+ .wordmark {
+ animation: none;
  }
 }
 
 @media (max-width: 560px) {
  body {
  font-size: 17px;
- }
-
- .earth-panel {
- padding: 1.1rem;
- border-radius: 10px;
  }
 
  .howto-steps li {
@@ -709,5 +920,10 @@ a:hover {
  .howto-steps svg {
  width: 56px;
  height: 56px;
+ }
+
+ .board-stage {
+ height: 78vh;
+ min-height: 420px;
  }
 }

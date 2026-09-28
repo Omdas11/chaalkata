@@ -1,5 +1,5 @@
 interface IconProps {
-  name: "sound-on" | "sound-off" | "restart" | "undo" | "close" | "play" | "users";
+  name: "sound-on" | "sound-off" | "restart" | "undo" | "close" | "play" | "users" | "home" | "book" | "scroll" | "code";
   size?: number;
 }
 
@@ -67,6 +67,38 @@ export default function Icon({ name, size = 20 }: IconProps) {
           <path d="M2.5 20a6.5 6.5 0 0 1 13 0" />
           <path d="M16 5a3.5 3.5 0 0 1 0 6.8" />
           <path d="M17.5 14.5a6.5 6.5 0 0 1 4 5.5" />
+        </svg>
+      );
+    case "home":
+      return (
+        <svg {...common}>
+          <path d="M3 11l9-8 9 8" />
+          <path d="M5.5 9.5V21h13V9.5" />
+          <path d="M10 21v-6h4v6" />
+        </svg>
+      );
+    case "book":
+      return (
+        <svg {...common}>
+          <path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" />
+          <path d="M4 19a2 2 0 0 1 2-2h13" />
+          <path d="M9 7h7" />
+        </svg>
+      );
+    case "scroll":
+      return (
+        <svg {...common}>
+          <path d="M7 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7" />
+          <path d="M7 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2" />
+          <path d="M7 4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2" />
+          <path d="M11 9h5M11 13h5" />
+        </svg>
+      );
+    case "code":
+      return (
+        <svg {...common}>
+          <path d="M8 6l-5 6 5 6" />
+          <path d="M16 6l5 6-5 6" />
         </svg>
       );
   }

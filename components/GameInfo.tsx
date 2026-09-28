@@ -97,7 +97,7 @@ export function HowToPlay() {
             <li key={s.title}>
               <Diagram />
               <p>
-                <strong className="font-hand" style={{ color: "#1e3d1a", fontSize: "1.1rem" }}>
+                <strong className="font-hand howto-step-title">
                   {i + 1}. {s.title}.{" "}
                 </strong>
                 {s.text}
@@ -154,7 +154,7 @@ export function FamilyLinks() {
         {t.family.text}
       </p>
       <p>
-        <Link href="/#more-games" className="row-action" style={{ display: "inline-flex" }}>
+        <Link href="/" className="row-action" style={{ display: "inline-flex" }}>
           <span className="arr">←</span> {t.family.seeAll}
         </Link>
       </p>

@@ -4,16 +4,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Board3D, { type LastMove } from "../../../components/Board3D";
 import AccessibleBoard from "../../../components/AccessibleBoard";
-import LeafPanel from "../../../components/LeafPanel";
 import PhotoLeafField from "../../../components/PhotoLeafField";
 import LeafCanopy from "../../../components/LeafCanopy";
 import GamosaStrip from "../../../components/GamosaStrip";
 import Icon from "../../../components/Icon";
 import Footer from "../../../components/Footer";
-import AccountChip from "../../../components/AccountChip";
+import { MenuDrawer } from "../../../components/SiteChrome";
 import Ambience from "../../../components/Ambience";
-import LangToggle from "../../../components/LangToggle";
-import { HowToPlay, HistoryBlurb, FamilyLinks } from "../../../components/GameInfo";
 import {
   buzz,
   ensureAudio,
@@ -342,81 +339,99 @@ export default function LauKataKatiPage() {
 
   const diffLabel = (d: Difficulty) => t.game[d];
 
+  const controls = (
+    <div className="drawer-controls">
+      <div className="seg-row" role="group" aria-label={t.game.twoPlayers}>
+        <button
+          className={`btn-clay btn-clay--sm ${mode === "2p" ? "" : "btn-clay--ghost"}`}
+          onClick={() => switchMode("2p")}
+          aria-pressed={mode === "2p"}
+        >
+          <Icon name="users" size={16} /> {t.game.twoPlayers}
+        </button>
+        <button
+          className={`btn-clay btn-clay--sm ${mode === "ai" ? "" : "btn-clay--ghost"}`}
+          onClick={() => switchMode("ai")}
+          aria-pressed={mode === "ai"}
+        >
+          {t.game.vsAi}
+        </button>
+      </div>
+      {mode === "ai" && (
+        <div className="seg-row" role="group" aria-label={t.game.difficulty}>
+          {DIFFICULTY_IDS.map((d) => (
+            <button
+              key={d}
+              className={`btn-clay btn-clay--sm ${difficulty === d ? "" : "btn-clay--ghost"}`}
+              onClick={() => changeDifficulty(d)}
+              aria-pressed={difficulty === d}
+            >
+              {diffLabel(d)}
+            </button>
+          ))}
+        </div>
+      )}
+      <button className="btn-clay btn-clay--sm btn-clay--ghost" onClick={restart}>
+        <Icon name="restart" size={16} /> {t.game.restart}
+      </button>
+      {mode === "ai" && (
+        <button className="btn-clay btn-clay--sm btn-clay--ghost" onClick={undo} disabled={!canUndo}>
+          <Icon name="undo" size={16} /> {t.game.undo}
+        </button>
+      )}
+      <button
+        className="btn-clay btn-clay--sm btn-clay--ghost"
+        onClick={toggleMute}
+        aria-pressed={muted}
+        aria-label={muted ? t.game.unmute : t.game.mute}
+        title={muted ? t.game.unmute : t.game.mute}
+      >
+        {muted ? <><Icon name="sound-off" size={16} /> {t.game.soundOff}</> : <><Icon name="sound-on" size={16} /> {t.game.soundOn}</>}
+      </button>
+      {saveAvailable && state.history.length === 0 && (
+        <button className="btn-clay btn-clay--sm" onClick={resume}>
+          {t.game.resume}
+        </button>
+      )}
+    </div>
+  );
+
   return (
     <>
       <LeafCanopy />
       <PhotoLeafField />
       <Ambience />
-      <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "2.5rem 0 2rem" }}>
-        <LeafPanel labelledBy="lkk-title">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem" }}>
-            <Link href="/" className="row-action" style={{ display: "inline-flex", paddingLeft: 0 }}>
-              <span className="arr">←</span> {t.game.back}
-            </Link>
-            <LangToggle />
-          </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoGame",
+            name: "Lau Kata Kati",
+            alternateName: "Kowwu Dunki",
+            url: "https://chaalkata.vercel.app/play/lau-kata-kati",
+            description:
+              "Play Lau Kata Kati, a classic Indian board game. Nine stones a side, cuts compulsory. Free browser play vs AI or a friend.",
+            genre: ["Board Game", "Strategy"],
+            playMode: ["SinglePlayer", "MultiPlayer"],
+            applicationCategory: "Game",
+            operatingSystem: "Web",
+            inLanguage: ["en", "bn"],
+            offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+          }),
+        }}
+      />
+      <MenuDrawer controls={controls} />
+      <main className="wrap page-main">
+        <section aria-labelledby="lkk-title">
           <p className="eyebrow">{t.game.region}</p>
-          <h1 id="lkk-title" className="font-display" style={{ margin: "0 0 .25rem" }}>
+          <h1 id="lkk-title" className="font-display">
             {t.game.title}
           </h1>
-          <p className="font-body" style={{ fontSize: "1.2rem", maxWidth: "36rem" }}>{t.game.rules}</p>
-          <p style={{ margin: ".25rem 0 .75rem" }}>
-            <AccountChip />
-          </p>
+          <p className="lede font-body">{t.game.rules}</p>
+        </section>
 
-          <div style={{ display: "flex", flexWrap: "wrap", gap: ".6rem", alignItems: "center", margin: "1rem 0" }}>
-            <button
-              className={`btn-clay ${mode === "2p" ? "" : "btn-clay--ghost"}`}
-              onClick={() => switchMode("2p")}
-              aria-pressed={mode === "2p"}
-            >
-              <Icon name="users" size={18} /> {t.game.twoPlayers}
-            </button>
-            <button
-              className={`btn-clay ${mode === "ai" ? "" : "btn-clay--ghost"}`}
-              onClick={() => switchMode("ai")}
-              aria-pressed={mode === "ai"}
-            >
-              {t.game.vsAi}
-            </button>
-            {mode === "ai" && (
-              <div role="group" aria-label={t.game.difficulty} style={{ display: "inline-flex", gap: ".4rem", alignItems: "center" }}>
-                {DIFFICULTY_IDS.map((d) => (
-                  <button
-                    key={d}
-                    className={`btn-clay btn-clay--sm ${difficulty === d ? "" : "btn-clay--ghost"}`}
-                    onClick={() => changeDifficulty(d)}
-                    aria-pressed={difficulty === d}
-                  >
-                    {diffLabel(d)}
-                  </button>
-                ))}
-              </div>
-            )}
-            <button className="btn-clay btn-clay--ghost" onClick={restart}>
-              <Icon name="restart" size={18} /> {t.game.restart}
-            </button>
-            {mode === "ai" && (
-              <button className="btn-clay btn-clay--ghost" onClick={undo} disabled={!canUndo}>
-                <Icon name="undo" size={18} /> {t.game.undo}
-              </button>
-            )}
-            <button
-              className="btn-clay btn-clay--ghost"
-              onClick={toggleMute}
-              aria-pressed={muted}
-              aria-label={muted ? t.game.unmute : t.game.mute}
-              title={muted ? t.game.unmute : t.game.mute}
-            >
-              {muted ? <><Icon name="sound-off" size={18} /> {t.game.soundOff}</> : <><Icon name="sound-on" size={18} /> {t.game.soundOn}</>}
-            </button>
-            {saveAvailable && state.history.length === 0 && (
-              <button className="btn-clay" onClick={resume}>
-                {t.game.resume}
-              </button>
-            )}
-          </div>
-
+        <section aria-label={t.game.moves} style={{ marginTop: "1.2rem" }}>
           {notice && (
             <p className="notice" role="alert">
               {notice}
@@ -459,15 +474,7 @@ export default function LauKataKatiPage() {
             onSelectPoint={onSelectPoint}
           />
 
-          <div
-            style={{
-              height: "min(74vh, 640px)",
-              minHeight: 420,
-              position: "relative",
-              margin: "0 auto",
-              maxWidth: 640,
-            }}
-          >
+          <div className="board-stage">
             <Board3D
               board={board}
               occupant={state.occupant}
@@ -481,9 +488,9 @@ export default function LauKataKatiPage() {
               lastMove={lastMove}
             />
           </div>
+        </section>
 
-          <GamosaStrip />
-
+        <section aria-label={t.game.moves}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}>
             <div>
               <p className="eyebrow">{t.game.capturedBy(t.game.dark)}</p>
@@ -527,19 +534,22 @@ export default function LauKataKatiPage() {
           )}
 
           <GamosaStrip />
-          <HowToPlay />
-          <GamosaStrip />
-          <HistoryBlurb />
-          <GamosaStrip />
-          <FamilyLinks />
-        </LeafPanel>
+          <nav aria-label={t.menu.nav} style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
+            <Link href="/how-to-play/lau-kata-kati" className="btn-clay btn-clay--ghost btn-clay--sm">
+              <Icon name="book" size={16} /> {t.menu.howToPlay}
+            </Link>
+            <Link href="/history/lau-kata-kati" className="btn-clay btn-clay--ghost btn-clay--sm">
+              <Icon name="scroll" size={16} /> {t.menu.history}
+            </Link>
+          </nav>
+        </section>
 
         <Footer />
       </main>
 
       {showDialog && (
         <div className="dialog-overlay" onKeyDown={(e) => e.key === "Escape" && setDismissed(true)}>
-          <LeafPanel className="dialog" labelledBy="game-over-title">
+          <div className="dialog">
             <div
               ref={dialogRef}
               tabIndex={-1}
@@ -565,7 +575,7 @@ export default function LauKataKatiPage() {
                 </Link>
               </div>
             </div>
-          </LeafPanel>
+          </div>
         </div>
       )}
     </>

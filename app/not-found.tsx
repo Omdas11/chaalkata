@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import LeafPanel from "../components/LeafPanel";
-import PhotoLeafField from "../components/PhotoLeafField";
 import LeafCanopy from "../components/LeafCanopy";
+import PhotoLeafField from "../components/PhotoLeafField";
+import { MenuDrawer } from "../components/SiteChrome";
 import GamosaStrip from "../components/GamosaStrip";
 import Footer from "../components/Footer";
-import LangToggle from "../components/LangToggle";
 import { useLang } from "../lib/i18n";
 
 export default function NotFound() {
@@ -15,16 +14,14 @@ export default function NotFound() {
     <>
       <LeafCanopy />
       <PhotoLeafField />
-      <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "4rem 0" }}>
-        <LeafPanel labelledBy="nf-title">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", marginBottom: "0.4em" }}>
-            <span className="stamp">404</span>
-            <LangToggle />
-          </div>
-          <h1 id="nf-title" className="font-display">
+      <MenuDrawer />
+      <main className="wrap page-main">
+        <section aria-labelledby="nf-title" style={{ textAlign: "center", padding: "4rem 0" }}>
+          <span className="stamp">404</span>
+          <h1 id="nf-title" className="font-display" style={{ marginTop: "0.6em" }}>
             {t.notFound.title}
           </h1>
-          <p className="font-body" style={{ fontSize: "1.2rem" }}>
+          <p className="lede font-body" style={{ marginInline: "auto" }}>
             {t.notFound.text}
           </p>
           <GamosaStrip />
@@ -33,7 +30,7 @@ export default function NotFound() {
               ← {t.notFound.home}
             </Link>
           </p>
-        </LeafPanel>
+        </section>
         <Footer />
       </main>
     </>

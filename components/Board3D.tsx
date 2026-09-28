@@ -432,6 +432,10 @@ export default function Board3D({
       for (let i = 0; i < 24; i++) {
         camera.position.set(0, 10.5 * k, -8.5 * k);
         camera.lookAt(0, 0, -0.5);
+        // updateMatrixWorld is REQUIRED before project(): without it,
+        // matrixWorldInverse stays stale between iterations (it is only
+        // refreshed on render), and the fit math tests the wrong pose.
+        camera.updateMatrixWorld();
         camera.updateProjectionMatrix();
         let m = 0;
         for (const c of fitCorners) {

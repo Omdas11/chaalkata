@@ -1,7 +1,6 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { useTilt } from "./Tilt";
 
 const LEAVES = [
   { src: "/leaves/leaf-mango.jpg",  left: "2%",  top: "4%",  size: 150, depth: 1.0,  dur: "9s",  delay: "0s",  rot: -14 },
@@ -12,17 +11,12 @@ const LEAVES = [
   { src: "/leaves/leaf-lobed.jpg",  left: "84%", top: "80%", size: 160, depth: 0.8,  dur: "11s", delay: "-5s", rot: -8 },
 ];
 
-/** Photorealistic floating leaves on black, blended with `screen` so the black
- *  vanishes. Gyro parallax lives on the wrapper; the sway animation lives on
- *  the inner image (a CSS animation would override an inline transform on the
- *  same element, which is what broke gyro before). */
+/** Photorealistic floating leaves on black, blended with `screen` so the
+ *  black vanishes. Gentle CSS drift only — the gyro parallax is gone. */
 export default function PhotoLeafField() {
-  const { x, y } = useTilt();
   return (
     <div className="photo-leaves" aria-hidden="true">
       {LEAVES.map((l, i) => {
-        const dx = x * 26 * l.depth;
-        const dy = y * 22 * l.depth;
         const imgStyle = {
           width: l.size,
           animationDuration: l.dur,
@@ -31,15 +25,7 @@ export default function PhotoLeafField() {
           "--leaf-rot": `${l.rot}deg`,
         } as CSSProperties;
         return (
-          <div
-            key={i}
-            className="photo-leaf"
-            style={{
-              left: l.left,
-              top: l.top,
-              transform: `translate3d(${dx.toFixed(1)}px, ${dy.toFixed(1)}px, 0)`,
-            }}
-          >
+          <div key={i} className="photo-leaf" style={{ left: l.left, top: l.top }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={l.src} alt="" className="photo-leaf__img" style={imgStyle} />
           </div>

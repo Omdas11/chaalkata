@@ -3,10 +3,10 @@
 import { useLang, type Lang } from "../lib/i18n";
 
 /** One-tap language switch. Shows a single language at a time across the UI. */
-export default function LangToggle() {
+export default function LangToggle({ compact = false }: { compact?: boolean }) {
   const { lang, setLang, t } = useLang();
   return (
-    <div className="lang-toggle" role="group" aria-label={t.langLabel}>
+    <div className={`lang-toggle${compact ? " lang-toggle--compact" : ""}`} role="group" aria-label={t.langLabel}>
       {(["en", "bn"] as Lang[]).map((l) => (
         <button
           key={l}
