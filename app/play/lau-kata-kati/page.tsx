@@ -4,8 +4,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Board3D, { type LastMove } from "../../../components/Board3D";
 import AccessibleBoard from "../../../components/AccessibleBoard";
-import PhotoLeafField from "../../../components/PhotoLeafField";
-import LeafCanopy from "../../../components/LeafCanopy";
 import GamosaStrip from "../../../components/GamosaStrip";
 import Icon from "../../../components/Icon";
 import Footer from "../../../components/Footer";
@@ -398,8 +396,6 @@ export default function LauKataKatiPage() {
 
   return (
     <>
-      <LeafCanopy />
-      <PhotoLeafField />
       <Ambience />
       <script
         type="application/ld+json"

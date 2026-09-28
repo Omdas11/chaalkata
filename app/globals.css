@@ -6,9 +6,10 @@
 @import "@fontsource/hind-siliguri/400.css";
 @import "@fontsource/hind-siliguri/600.css";
 
-/* Chaal-Kaata nature identity. Soil + leaf palette, text set directly over
-   the photographic leaf canopy (no cards — the jungle stays visible).
-   Proportions follow the golden ratio φ = 1.618. */
+/* Chaal-Kaata identity. Text set directly over the theme background
+   (no cards — the mood stays visible). Proportions follow φ = 1.618.
+   Theme tokens: raat (dark earth, default), jungle (deep green),
+   alo (warm daylight paper). */
 :root {
  --phi: 1.6180339887;
  /* golden spacing scale: 1, φ, φ², φ³ */
@@ -38,42 +39,66 @@
  /* accents */
  --turmeric: #e0a526;
  --turmeric-deep: #b45309;
- --chalk: #f1e9d8;
- --chalk-dim: rgba(241, 233, 216, 0.72);
+ --chalk: #f4ecdb;
+ --chalk-dim: rgba(244, 236, 219, 0.74);
  --gamosa-red: #b3261e;
  --clay: #b5623a;
  --clay-deep: #7e3f24;
  --shadow: rgba(12, 7, 3, 0.5);
+ /* theme-aware surfaces (overridden per theme below) */
+ --line: rgba(244, 236, 219, 0.2);
+ --card-bg: linear-gradient(165deg, rgba(43, 29, 18, 0.92), rgba(19, 13, 8, 0.9));
+ --drawer-bg: linear-gradient(160deg, rgba(26, 19, 12, 0.97), rgba(15, 10, 6, 0.95));
+ --panel-bg: rgba(24, 17, 10, 0.55);
+ --header-bg: linear-gradient(180deg, rgba(20, 12, 6, 0.88), rgba(20, 12, 6, 0.62));
+ --text-glow: 0 2px 12px rgba(0, 0, 0, 0.8);
  /* shape language: clay tablets (chamfered, hand-cut) */
  --shape-btn: 4px 16px 4px 16px;
  --shape-card: 8px 28px 8px 28px;
  --shape-chip: 3px 12px 3px 12px;
- --bg-ink: #2a1e12;
+ --bg-ink: #0f0b07;
 }
 
-/* canopy theme: leaf shapes, photo background */
-[data-theme="canopy"] {
+/* jungle theme: deep green shade, leaf shapes */
+[data-theme="jungle"] {
  --shape-btn: 20px 6px 20px 6px;
  --shape-card: 34px 8px 34px 8px;
  --shape-chip: 14px 4px 14px 4px;
- --bg-ink: #16280f;
+ --bg-ink: #0a1a11;
+ --chalk: #edf3e0;
+ --chalk-dim: rgba(237, 243, 224, 0.74);
+ --line: rgba(237, 243, 224, 0.2);
+ --card-bg: linear-gradient(165deg, rgba(26, 54, 34, 0.92), rgba(11, 27, 17, 0.9));
+ --drawer-bg: linear-gradient(160deg, rgba(18, 40, 25, 0.97), rgba(8, 20, 12, 0.95));
+ --panel-bg: rgba(16, 36, 22, 0.55);
+ --header-bg: linear-gradient(180deg, rgba(10, 24, 14, 0.9), rgba(10, 24, 14, 0.62));
 }
 
-/* night theme: sharp shards */
-[data-theme="night"] {
- --shape-btn: 3px;
- --shape-card: 3px;
- --shape-chip: 3px;
- --bg-ink: #0d1021;
- --turmeric: #f0b429;
- --chalk: #ece7f5;
- --chalk-dim: rgba(236, 231, 245, 0.72);
+/* alo theme: warm daylight paper, dark ink text */
+[data-theme="alo"] {
+ --shape-btn: 3px 18px 3px 18px;
+ --shape-card: 6px 30px 6px 30px;
+ --shape-chip: 2px 14px 2px 14px;
+ --bg-ink: #efe3cb;
+ --turmeric: #b45309;
+ --chalk: #2b1f13;
+ --chalk-dim: rgba(43, 31, 19, 0.74);
+ --line: rgba(43, 31, 19, 0.26);
+ --card-bg: linear-gradient(165deg, rgba(255, 252, 243, 0.96), rgba(238, 224, 194, 0.94));
+ --drawer-bg: linear-gradient(160deg, rgba(250, 244, 228, 0.98), rgba(238, 226, 196, 0.96));
+ --panel-bg: rgba(255, 252, 243, 0.6);
+ --header-bg: linear-gradient(180deg, rgba(244, 233, 210, 0.94), rgba(244, 233, 210, 0.68));
+ --text-glow: none;
+ --shadow: rgba(60, 40, 20, 0.25);
 }
 
 *,
 *::before,
 *::after {
  box-sizing: border-box;
+ /* Android Chrome paints a blue tap flash on touched elements; the game
+    gives its own selection feedback, so this is always unwanted. */
+ -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -90,6 +115,8 @@ body {
  font-size: 19px;
  line-height: 1.5;
  min-height: 100vh;
+ /* no double-tap-zoom delay: taps on stones register instantly */
+ touch-action: manipulation;
 }
 
 /* ---- theme backgrounds (fixed layers, toggled by data-theme) ---- */
@@ -100,38 +127,40 @@ body {
  pointer-events: none;
  display: none;
 }
-[data-theme="soil"] .theme-bg--soil,
-[data-theme="night"] .theme-bg--night {
+[data-theme="raat"] .theme-bg--raat,
+[data-theme="jungle"] .theme-bg--jungle,
+[data-theme="alo"] .theme-bg--alo {
  display: block;
 }
-/* soil: simple packed earth, subtle grain */
-.theme-bg--soil {
+/* raat: near-black warm earth, faint hearth glow up top, vignette below */
+.theme-bg--raat {
  background:
-  radial-gradient(120% 90% at 50% 0%, rgba(107, 74, 46, 0.55), transparent 60%),
-  radial-gradient(100% 70% at 50% 110%, rgba(20, 12, 6, 0.8), transparent 65%),
-  repeating-linear-gradient(47deg, rgba(0, 0, 0, 0.05) 0 2px, transparent 2px 5px),
-  linear-gradient(180deg, #3a2a18 0%, #2a1e12 45%, #1c130b 100%);
+  radial-gradient(110% 70% at 50% 0%, rgba(150, 104, 58, 0.28), transparent 60%),
+  radial-gradient(90% 60% at 50% 115%, rgba(0, 0, 0, 0.75), transparent 65%),
+  repeating-linear-gradient(47deg, rgba(0, 0, 0, 0.06) 0 2px, transparent 2px 5px),
+  linear-gradient(180deg, #1d130b 0%, #0f0b07 55%, #080503 100%);
 }
-/* night: monsoon night sky with fireflies */
-.theme-bg--night {
+/* jungle: deep green shade with soft leaf-bokeh, CSS only */
+.theme-bg--jungle {
  background:
-  radial-gradient(60% 40% at 78% 12%, rgba(240, 180, 41, 0.16), transparent 70%),
-  radial-gradient(2px 2px at 12% 22%, rgba(255, 244, 200, 0.9), transparent 60%),
-  radial-gradient(2px 2px at 32% 8%, rgba(255, 244, 200, 0.7), transparent 60%),
-  radial-gradient(1.5px 1.5px at 55% 30%, rgba(255, 244, 200, 0.8), transparent 60%),
-  radial-gradient(2px 2px at 71% 44%, rgba(190, 255, 170, 0.9), transparent 60%),
-  radial-gradient(1.5px 1.5px at 86% 62%, rgba(190, 255, 170, 0.75), transparent 60%),
-  radial-gradient(2px 2px at 24% 58%, rgba(255, 244, 200, 0.65), transparent 60%),
-  radial-gradient(1.5px 1.5px at 44% 74%, rgba(190, 255, 170, 0.7), transparent 60%),
-  radial-gradient(2px 2px at 63% 82%, rgba(255, 244, 200, 0.6), transparent 60%),
-  linear-gradient(180deg, #141a38 0%, #0d1021 55%, #070912 100%);
+  radial-gradient(70% 50% at 18% 8%, rgba(90, 143, 62, 0.25), transparent 65%),
+  radial-gradient(60% 45% at 86% 22%, rgba(60, 110, 50, 0.22), transparent 65%),
+  radial-gradient(90% 55% at 50% 115%, rgba(0, 0, 0, 0.6), transparent 65%),
+  radial-gradient(3px 3px at 14% 28%, rgba(200, 230, 170, 0.5), transparent 60%),
+  radial-gradient(2px 2px at 34% 12%, rgba(200, 230, 170, 0.35), transparent 60%),
+  radial-gradient(2.5px 2.5px at 58% 34%, rgba(170, 215, 140, 0.4), transparent 60%),
+  radial-gradient(2px 2px at 76% 52%, rgba(200, 230, 170, 0.3), transparent 60%),
+  radial-gradient(3px 3px at 88% 68%, rgba(170, 215, 140, 0.35), transparent 60%),
+  radial-gradient(2px 2px at 26% 62%, rgba(200, 230, 170, 0.28), transparent 60%),
+  radial-gradient(2.5px 2.5px at 46% 80%, rgba(170, 215, 140, 0.3), transparent 60%),
+  linear-gradient(180deg, #12291a 0%, #0a1a11 55%, #060f0a 100%);
 }
-/* canopy photo layers only show in the canopy theme */
-.canopy-layer {
- display: none;
-}
-[data-theme="canopy"] .canopy-layer {
- display: block;
+/* alo: warm khadi paper for daylight play */
+.theme-bg--alo {
+ background:
+  radial-gradient(120% 80% at 50% 0%, rgba(255, 253, 242, 0.9), transparent 60%),
+  repeating-linear-gradient(47deg, rgba(120, 90, 50, 0.05) 0 2px, transparent 2px 5px),
+  linear-gradient(180deg, #f4e9d2 0%, #efe3cb 55%, #e2d0ac 100%);
 }
 
 img {
@@ -218,7 +247,7 @@ a:hover {
 .page-main h2,
 .page-main .lede,
 .hero-tagline {
- text-shadow: 0 2px 18px rgba(8, 5, 2, 0.92), 0 1px 4px rgba(8, 5, 2, 0.95);
+ text-shadow: var(--text-glow);
 }
 
 .lede {
@@ -237,7 +266,7 @@ a:hover {
  align-items: center;
  gap: var(--sp-1);
  padding: 0 clamp(0.9rem, 4vw, 1.618rem);
- background: linear-gradient(180deg, rgba(20, 12, 6, 0.88), rgba(20, 12, 6, 0.62));
+ background: var(--header-bg);
  -webkit-backdrop-filter: blur(12px);
  backdrop-filter: blur(12px);
  border-bottom: 1px solid rgba(224, 165, 38, 0.22);
@@ -290,7 +319,7 @@ a:hover {
  height: 48px;
  flex: none;
  background: transparent;
- border: 2px solid rgba(241, 233, 216, 0.35);
+ border: 2px solid var(--line);
  border-radius: 12px;
  cursor: pointer;
  padding: 0;
@@ -350,7 +379,7 @@ a:hover {
  width: min(22rem, 88vw);
  overflow-y: auto;
  overscroll-behavior: contain;
- background: linear-gradient(160deg, rgba(48, 34, 21, 0.97), rgba(30, 20, 12, 0.95));
+ background: var(--drawer-bg);
  -webkit-backdrop-filter: blur(14px);
  backdrop-filter: blur(14px);
  border-left: 1px solid rgba(224, 165, 38, 0.3);
@@ -376,7 +405,7 @@ a:hover {
 .drawer-section + .drawer-section {
  margin-top: var(--sp-2);
  padding-top: var(--sp-2);
- border-top: 1px solid rgba(241, 233, 216, 0.14);
+ border-top: 1px solid var(--line);
 }
 
 .drawer-controls {
@@ -401,66 +430,13 @@ a:hover {
  padding-right: 0.6em;
 }
 
-/* ---------- photographic leaf canopy: full-viewport background ---------- */
-.canopy {
- position: fixed;
- inset: 0;
- z-index: 0;
- overflow: hidden;
- pointer-events: none;
- background: #16280f;
-}
-
-.canopy__img {
- width: 100%;
- height: 100%;
- object-fit: cover;
-}
-
-/* dark scrim so text stays readable over the photo */
-.scrim {
- position: fixed;
- inset: 0;
- z-index: 1;
- pointer-events: none;
- background:
-  linear-gradient(180deg, rgba(16, 9, 3, 0.66) 0%, rgba(16, 9, 3, 0.34) 26%, rgba(16, 9, 3, 0.18) 50%, rgba(16, 9, 3, 0.4) 78%, rgba(16, 9, 3, 0.7) 100%),
-  radial-gradient(120% 100% at 50% 42%, transparent 42%, rgba(16, 9, 3, 0.5) 100%);
-}
-
-/* ---------- floating photo leaves (screen-blend, gentle drift) ---------- */
-.photo-leaves {
- position: fixed;
- inset: 0;
- z-index: 1;
- pointer-events: none;
- overflow: hidden;
-}
-
-.photo-leaf {
- position: absolute;
-}
-
-.photo-leaf__img {
- display: block;
- height: auto;
- mix-blend-mode: screen;
- filter: saturate(1.06);
- animation: photo-drift 11s ease-in-out infinite alternate;
-}
-
-@keyframes photo-drift {
- from { transform: translate3d(-16px, -12px, 0) rotate(calc(var(--leaf-rot, 0deg) - 8deg)); }
- to { transform: translate3d(16px, 14px, 0) rotate(calc(var(--leaf-rot, 0deg) + 8deg)); }
-}
-
 /* ---------- language toggle ---------- */
 .lang-toggle {
  display: inline-flex;
- border: 2px solid rgba(241, 233, 216, 0.4);
+ border: 2px solid var(--line);
  border-radius: 999px;
  overflow: hidden;
- background: rgba(20, 12, 6, 0.4);
+ background: var(--panel-bg);
  flex: none;
 }
 
@@ -526,7 +502,7 @@ a:hover {
  color: var(--turmeric);
  letter-spacing: 0.06em;
  margin: 0 0 0.4em;
- text-shadow: 0 1px 8px rgba(8, 5, 2, 0.9);
+ text-shadow: var(--text-glow);
 }
 
 /* ---------- buttons ---------- */
@@ -561,9 +537,9 @@ a:hover {
 }
 
 .btn-clay--ghost {
- background: rgba(20, 12, 6, 0.35);
+ background: var(--panel-bg);
  color: var(--chalk);
- border: 2px solid rgba(241, 233, 216, 0.55);
+ border: 2px solid var(--line);
  box-shadow: none;
 }
 
@@ -626,7 +602,7 @@ a:hover {
  font-family: "Kalam", cursive;
  font-size: 1.25rem;
  color: var(--chalk);
- background: rgba(30, 20, 12, 0.72);
+ background: var(--panel-bg);
  -webkit-backdrop-filter: blur(6px);
  backdrop-filter: blur(6px);
  border: 1px solid rgba(224, 165, 38, 0.35);
@@ -719,7 +695,7 @@ a:hover {
  width: min(26rem, 100%);
  text-align: center;
  color: var(--chalk);
- background: linear-gradient(160deg, rgba(52, 36, 22, 0.97), rgba(34, 22, 13, 0.96));
+ background: var(--card-bg);
  border: 1px solid rgba(224, 165, 38, 0.35);
  border-radius: 18px;
  padding: 2rem;
@@ -782,10 +758,10 @@ a:hover {
  border-radius: var(--shape-card);
  text-decoration: none;
  color: var(--chalk);
- background: linear-gradient(165deg, rgba(52, 36, 22, 0.9), rgba(26, 17, 10, 0.88));
+ background: var(--card-bg);
  -webkit-backdrop-filter: blur(8px);
  backdrop-filter: blur(8px);
- border: 1px solid rgba(241, 233, 216, 0.16);
+ border: 1px solid var(--line);
  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
  position: relative;
  overflow: hidden;
@@ -799,7 +775,7 @@ a:hover {
 .game-card h3 {
  margin: 0;
  font-size: 1.6rem;
- text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+ text-shadow: var(--text-glow);
 }
 
 .game-card p {
@@ -846,7 +822,7 @@ a:hover {
 
 .a11y-board:focus-within {
  position: relative;
- background: rgba(30, 20, 12, 0.9);
+ background: var(--panel-bg);
  border: 1px solid var(--turmeric);
  border-radius: 10px;
  padding: 0.8rem;
@@ -869,7 +845,7 @@ a:hover {
  min-width: 44px;
  min-height: 44px;
  border-radius: 8px;
- border: 1px solid rgba(241, 233, 216, 0.4);
+ border: 1px solid var(--line);
  background: rgba(241, 233, 216, 0.06);
  color: var(--chalk);
  font-family: "Hind", sans-serif;
@@ -928,10 +904,10 @@ a:hover {
  grid-template-columns: 72px 1fr;
  gap: 0.9rem;
  align-items: center;
- background: rgba(30, 20, 12, 0.66);
+ background: var(--panel-bg);
  -webkit-backdrop-filter: blur(6px);
  backdrop-filter: blur(6px);
- border: 1px solid rgba(241, 233, 216, 0.14);
+ border: 1px solid var(--line);
  border-radius: 10px;
  padding: 0.7rem 0.9rem;
 }
@@ -1014,8 +990,8 @@ a:hover {
  align-items: center;
  gap: 0.45rem;
  padding: 0.7rem 0.4rem;
- background: rgba(20, 12, 6, 0.35);
- border: 2px solid rgba(241, 233, 216, 0.25);
+ background: var(--panel-bg);
+ border: 2px solid var(--line);
  border-radius: var(--shape-chip);
  color: var(--chalk);
  cursor: pointer;
@@ -1033,16 +1009,16 @@ a:hover {
  width: 2rem;
  height: 2rem;
  border-radius: 50%;
- border: 1px solid rgba(241, 233, 216, 0.4);
+ border: 1px solid var(--line);
 }
-.theme-pick--soil .theme-pick__swatch {
- background: radial-gradient(circle at 35% 30%, #8a6a45, #3a2a18 70%);
+.theme-pick--raat .theme-pick__swatch {
+ background: radial-gradient(circle at 35% 30%, #8a6a45, #0f0b07 70%);
 }
-.theme-pick--canopy .theme-pick__swatch {
- background: radial-gradient(circle at 35% 30%, #7bae4f, #16280f 70%);
+.theme-pick--jungle .theme-pick__swatch {
+ background: radial-gradient(circle at 35% 30%, #7bae4f, #0a1a11 70%);
 }
-.theme-pick--night .theme-pick__swatch {
- background: radial-gradient(circle at 65% 30%, #f0b429 0 12%, #141a38 45%, #070912 100%);
+.theme-pick--alo .theme-pick__swatch {
+ background: radial-gradient(circle at 35% 30%, #fffdf4, #e2d0ac 70%);
 }
 .theme-pick__name {
  font-size: 0.85rem;
@@ -1060,8 +1036,8 @@ a:hover {
  flex: 1 1 7rem;
  text-align: center;
  padding: 0.9rem 0.6rem;
- background: rgba(20, 12, 6, 0.45);
- border: 1px solid rgba(241, 233, 216, 0.22);
+ background: var(--panel-bg);
+ border: 1px solid var(--line);
  border-radius: var(--shape-card);
 }
 .stat-chip__num {
@@ -1090,8 +1066,8 @@ a:hover {
  align-items: center;
  gap: 0.8rem;
  padding: 0.7rem 0.9rem;
- background: rgba(20, 12, 6, 0.45);
- border: 1px solid rgba(241, 233, 216, 0.18);
+ background: var(--panel-bg);
+ border: 1px solid var(--line);
  border-radius: var(--shape-chip);
  font-size: 0.95rem;
 }
@@ -1116,7 +1092,7 @@ a:hover {
 }
 .empty-note {
  padding: 1.2rem;
- border: 1px dashed rgba(241, 233, 216, 0.35);
+ border: 1px dashed var(--line);
  border-radius: var(--shape-card);
  color: var(--chalk-dim);
  text-align: center;
@@ -1127,7 +1103,7 @@ a:hover {
  text-transform: uppercase;
  letter-spacing: 0.14em;
  padding: 0.25rem 0.7rem;
- border: 1px solid rgba(241, 233, 216, 0.35);
+ border: 1px solid var(--line);
  border-radius: var(--shape-chip);
  color: var(--chalk-dim);
 }

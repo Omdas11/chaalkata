@@ -52,9 +52,9 @@ const en = {
     source: "Source code",
   },
   themes: {
-    soil: { name: "Soil", desc: "Packed earth and clay tablets — simple as the village ground." },
-    canopy: { name: "Canopy", desc: "Lush green canopy and leaf-shaped pieces — play under the trees." },
-    night: { name: "Night", desc: "Deep monsoon night with fireflies and sharp shards — play after dark." },
+    raat: { name: "Raat", desc: "Near-black earth, low and calm — easy on the eyes, best after dark." },
+    jungle: { name: "Jungle", desc: "Deep green shade under the leaves — the board as a forest clearing." },
+    alo: { name: "Alo", desc: "Warm daylight paper — for slow morning games with chai." },
   },
   profile: {
     title: "Your Corner of the Courtyard",
@@ -254,9 +254,9 @@ const bn: Dict = {
     source: "সোর্স কোড",
   },
   themes: {
-    soil: { name: "মাটি", desc: "এঁটেল মাটি আর মাটির ঘুঁটি — গ্রামের উঠোনের মতো সাদামাটা।" },
-    canopy: { name: "পাতার ছাউনি", desc: "ঘন সবুজ পাতার ছাউনি আর পাতা-ঘুঁটি — গাছের ছায়ায় খেলা।" },
-    night: { name: "বর্ষার রাত", desc: "গভীর বর্ষার রাত, জোনাকি আর ধারালো ঘুঁটি — আঁধার নামার পরের খেলা।" },
+    raat: { name: "রাত", desc: "ঘন অন্ধকার মাটি, চোখের জন্য আরাম — রাতের খেলার জন্য।" },
+    jungle: { name: "জঙ্গল", desc: "পাতার নিচে গভীর সবুজ ছায়া — জঙ্গলের ফাঁকে বোর্ড।" },
+    alo: { name: "আলো", desc: "উষ্ণ দিনের আলোর কাগজ — চায়ের কাপে সকালের খেলা।" },
   },
   profile: {
     title: "উঠোনে তোমার কোণ",

@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import LeafCanopy from "../../../components/LeafCanopy";
-import PhotoLeafField from "../../../components/PhotoLeafField";
 import { MenuDrawer } from "../../../components/SiteChrome";
 import GamosaStrip from "../../../components/GamosaStrip";
 import Footer from "../../../components/Footer";
@@ -14,8 +12,6 @@ export function HowToPlayClient() {
   const { t } = useLang();
   return (
     <>
-      <LeafCanopy />
-      <PhotoLeafField />
       <MenuDrawer />
       <main className="wrap page-main">
         <HowToPlay />

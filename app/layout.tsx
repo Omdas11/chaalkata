@@ -5,12 +5,12 @@ import { ThemeProvider } from "../lib/theme";
 import { SiteHeader } from "../components/SiteChrome";
 
 /** Applies the stored theme before first paint (no flash). */
-const THEME_BOOT = `(function(){try{var t=localStorage.getItem('ck-theme');if(t==='canopy'||t==='night'){document.documentElement.dataset.theme=t}else{document.documentElement.dataset.theme='soil'}}catch(e){document.documentElement.dataset.theme='soil'}})();`;
+const THEME_BOOT = `(function(){try{var t=localStorage.getItem('ck-theme');var m={soil:'raat',canopy:'jungle',night:'raat',raat:'raat',jungle:'jungle',alo:'alo'};document.documentElement.dataset.theme=m[t]||'raat'}catch(e){document.documentElement.dataset.theme='raat'}})();`;
 
 const SITE_URL = "https://chaalkata.vercel.app";
 
 export const viewport: Viewport = {
-  themeColor: "#16280f",
+  themeColor: "#0f0b07",
 };
 
 export const metadata: Metadata = {
@@ -77,8 +77,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeProvider>
           <LanguageProvider>
-            <div className="theme-bg theme-bg--soil" aria-hidden="true" />
-            <div className="theme-bg theme-bg--night" aria-hidden="true" />
+            <div className="theme-bg theme-bg--raat" aria-hidden="true" />
+            <div className="theme-bg theme-bg--jungle" aria-hidden="true" />
+            <div className="theme-bg theme-bg--alo" aria-hidden="true" />
             <SiteHeader />
             {children}
             <script

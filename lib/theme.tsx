@@ -2,28 +2,35 @@
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-export type ThemeId = "soil" | "canopy" | "night";
-export const THEMES: ThemeId[] = ["soil", "canopy", "night"];
+export type ThemeId = "raat" | "jungle" | "alo";
+export const THEMES: ThemeId[] = ["raat", "jungle", "alo"];
 
 const KEY = "ck-theme";
 
+/** Maps retired theme ids (soil/canopy/night) to the new set. */
+function migrate(v: string | null): ThemeId | null {
+  if (v === "raat" || v === "jungle" || v === "alo") return v;
+  if (v === "soil") return "raat";
+  if (v === "canopy") return "jungle";
+  if (v === "night") return "raat";
+  return null;
+}
+
 function readTheme(): ThemeId {
   try {
-    const v = localStorage.getItem(KEY);
-    if (v === "soil" || v === "canopy" || v === "night") return v;
+    return migrate(localStorage.getItem(KEY)) ?? "raat";
   } catch {
-    /* ignore */
+    return "raat";
   }
-  return "soil";
 }
 
 const ThemeCtx = createContext<{ theme: ThemeId; setTheme: (t: ThemeId) => void }>({
-  theme: "soil",
+  theme: "raat",
   setTheme: () => {},
 });
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeId>("soil");
+  const [theme, setThemeState] = useState<ThemeId>("raat");
 
   useEffect(() => {
     setThemeState(readTheme());
