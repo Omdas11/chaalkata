@@ -112,12 +112,14 @@ export default function Board3D({
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
-    camera.position.set(0, 10.5, 8.5);
-    camera.lookAt(0, 0, 0.5);
+    // Side A (the human's dark stones) sits at negative world-z, so the camera
+    // looks from -z: your own stones are on the near edge of the board.
+    camera.position.set(0, 10.5, -8.5);
+    camera.lookAt(0, 0, -0.5);
 
     scene.add(new THREE.HemisphereLight(0xfff2dd, 0x3e2c1c, 0.85));
     const sun = new THREE.DirectionalLight(0xffd9a0, 1.5);
-    sun.position.set(6, 12, 4);
+    sun.position.set(6, 12, -4);
     sun.castShadow = true;
     sun.shadow.camera.left = -9;
     sun.shadow.camera.right = 9;

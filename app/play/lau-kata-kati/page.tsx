@@ -5,8 +5,18 @@ import Link from "next/link";
 import Board3D, { type LastMove } from "../../../components/Board3D";
 import PaperPanel from "../../../components/PaperPanel";
 import AccountChip from "../../../components/AccountChip";
+import Ambience from "../../../components/Ambience";
 import SoilBackdrop, { SoilVignette } from "../../../components/SoilBackdrop";
 import SoilScene from "../../../components/SoilScene";
+import {
+  ensureAudio,
+  getMuted,
+  playCapture,
+  playMove,
+  playSelect,
+  playWin,
+  setMuted,
+} from "../../../lib/sounds";
 import {
   aiChooseMove,
   applyMove,
@@ -45,8 +55,20 @@ export default function LauKataKatiPage() {
   const [lastMove, setLastMove] = useState<LastMove | null>(null);
   const [mode, setMode] = useState<"ai" | "2p">("ai");
   const [saveAvailable, setSaveAvailable] = useState(false);
+  const [muted, setMutedState] = useState(false);
   const startTime = useRef(Date.now());
   const resultSaved = useRef(false);
+
+  useEffect(() => {
+    setMutedState(getMuted());
+  }, []);
+
+  const toggleMute = () => {
+    ensureAudio();
+    const next = !muted;
+    setMuted(next);
+    setMutedState(next);
+  };
 
   const moves = useMemo(() => legalMoves(state), [state]);
   const selectedMoves = useMemo(
@@ -61,6 +83,9 @@ export default function LauKataKatiPage() {
     setSelected(null);
     setMoveSeq((s) => s + 1);
     setLastMove({ from: mv.from, to: mv.to, path: mv.path, captures: mv.captures });
+    ensureAudio();
+    if (mv.captures.length > 0) playCapture();
+    else playMove();
   };
   const doMoveRef = useRef(doMove);
   doMoveRef.current = doMove;
@@ -68,8 +93,12 @@ export default function LauKataKatiPage() {
   const onSelectPoint = (pid: string) => {
     if (state.winner) return;
     if (mode === "ai" && state.turn === "B") return; // AI's turn
+    ensureAudio();
     if (state.occupant[pid] === state.turn) {
-      setSelected((s) => (s === pid ? null : pid));
+      setSelected((s) => {
+        if (s !== pid) playSelect();
+        return s === pid ? null : pid;
+      });
       return;
     }
     if (selected) {
@@ -112,6 +141,8 @@ export default function LauKataKatiPage() {
   useEffect(() => {
     if (!state.winner || resultSaved.current) return;
     resultSaved.current = true;
+    ensureAudio();
+    if (state.winner !== "draw") playWin();
     getStorage()
       .saveResult({
         gameId: GAME_ID,
@@ -166,6 +197,7 @@ export default function LauKataKatiPage() {
       <SoilBackdrop />
       <SoilScene />
       <SoilVignette />
+      <Ambience />
       <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "2.5rem 0 4rem" }}>
         <PaperPanel tilt="l" tape={["tl", "tr"]} labelledBy="lkk-title">
           <p>
@@ -199,6 +231,15 @@ export default function LauKataKatiPage() {
             </button>
             <button className="btn-ink btn-ink--ghost font-condensed" onClick={restart}>
               ↻ Restart
+            </button>
+            <button
+              className="btn-ink btn-ink--ghost font-condensed"
+              onClick={toggleMute}
+              aria-pressed={muted}
+              aria-label={muted ? "Unmute sounds" : "Mute sounds"}
+              title={muted ? "Unmute sounds" : "Mute sounds"}
+            >
+              {muted ? "🔇 Muted" : "🔊 Sound"}
             </button>
             {saveAvailable && state.history.length === 0 && (
               <button className="btn-ink font-condensed" onClick={resume}>
