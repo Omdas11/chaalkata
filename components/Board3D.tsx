@@ -418,6 +418,10 @@ export default function Board3D({
       const h = mount.clientHeight;
       if (w === 0 || h === 0) return;
       camera.aspect = w / h;
+      // Zoom in on narrow/portrait screens so the board fills the frame.
+      const zoom = camera.aspect < 0.85 ? 0.72 : camera.aspect < 1.2 ? 0.86 : 1;
+      camera.position.set(0, 10.5 * zoom, -8.5 * zoom);
+      camera.lookAt(0, 0, -0.5);
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
     };

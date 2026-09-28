@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import LeafPanel from "../components/LeafPanel";
-import LeafField from "../components/LeafField";
+import PhotoLeafField from "../components/PhotoLeafField";
+import LeafCanopy from "../components/LeafCanopy";
 import GamosaStrip from "../components/GamosaStrip";
-import SoilBackdrop, { SoilVignette } from "../components/SoilBackdrop";
-import SoilScene from "../components/SoilScene";
 import Footer from "../components/Footer";
 import LangToggle from "../components/LangToggle";
 import { useLang } from "../lib/i18n";
@@ -14,12 +13,10 @@ export default function NotFound() {
   const { t } = useLang();
   return (
     <>
-      <SoilBackdrop />
-      <SoilScene />
-      <LeafField />
-      <SoilVignette />
+      <LeafCanopy />
+      <PhotoLeafField />
       <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "4rem 0" }}>
-        <LeafPanel shape="mango" labelledBy="nf-title">
+        <LeafPanel labelledBy="nf-title">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", marginBottom: "0.4em" }}>
             <span className="stamp">404</span>
             <LangToggle />

@@ -5,15 +5,14 @@ import Link from "next/link";
 import Board3D, { type LastMove } from "../../../components/Board3D";
 import AccessibleBoard from "../../../components/AccessibleBoard";
 import LeafPanel from "../../../components/LeafPanel";
-import LeafField from "../../../components/LeafField";
+import PhotoLeafField from "../../../components/PhotoLeafField";
+import LeafCanopy from "../../../components/LeafCanopy";
 import GamosaStrip from "../../../components/GamosaStrip";
 import Icon from "../../../components/Icon";
 import Footer from "../../../components/Footer";
 import AccountChip from "../../../components/AccountChip";
 import Ambience from "../../../components/Ambience";
 import LangToggle from "../../../components/LangToggle";
-import SoilBackdrop, { SoilVignette } from "../../../components/SoilBackdrop";
-import SoilScene from "../../../components/SoilScene";
 import { HowToPlay, HistoryBlurb, FamilyLinks } from "../../../components/GameInfo";
 import {
   buzz,
@@ -345,13 +344,11 @@ export default function LauKataKatiPage() {
 
   return (
     <>
-      <SoilBackdrop />
-      <SoilScene />
-      <LeafField />
-      <SoilVignette />
+      <LeafCanopy />
+      <PhotoLeafField />
       <Ambience />
       <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "2.5rem 0 2rem" }}>
-        <LeafPanel shape="lobed" labelledBy="lkk-title">
+        <LeafPanel labelledBy="lkk-title">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem" }}>
             <Link href="/" className="row-action" style={{ display: "inline-flex", paddingLeft: 0 }}>
               <span className="arr">←</span> {t.game.back}
@@ -464,8 +461,8 @@ export default function LauKataKatiPage() {
 
           <div
             style={{
-              height: "min(66vh, 560px)",
-              minHeight: 340,
+              height: "min(74vh, 640px)",
+              minHeight: 420,
               position: "relative",
               margin: "0 auto",
               maxWidth: 640,
@@ -542,7 +539,7 @@ export default function LauKataKatiPage() {
 
       {showDialog && (
         <div className="dialog-overlay" onKeyDown={(e) => e.key === "Escape" && setDismissed(true)}>
-          <LeafPanel shape="peepal" className="dialog" labelledBy="game-over-title">
+          <LeafPanel className="dialog" labelledBy="game-over-title">
             <div
               ref={dialogRef}
               tabIndex={-1}

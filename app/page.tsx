@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import SoilBackdrop, { SoilVignette } from "../components/SoilBackdrop";
-import SoilScene from "../components/SoilScene";
-import LeafField from "../components/LeafField";
+import LeafCanopy from "../components/LeafCanopy";
+import PhotoLeafField from "../components/PhotoLeafField";
 import LeafPanel from "../components/LeafPanel";
 import GamosaStrip from "../components/GamosaStrip";
 import Footer from "../components/Footer";
@@ -27,12 +26,10 @@ export default function Home() {
   const { t } = useLang();
   return (
     <>
-      <SoilBackdrop />
-      <SoilScene />
-      <LeafField />
-      <SoilVignette />
+      <LeafCanopy />
+      <PhotoLeafField />
       <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "4rem 0 2rem" }}>
-        <LeafPanel shape="mango" labelledBy="ck-title">
+        <LeafPanel labelledBy="ck-title">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", marginBottom: "0.4em" }}>
             <p className="eyebrow" style={{ margin: 0 }}>{t.home.eyebrow}</p>
             <LangToggle />
@@ -58,7 +55,7 @@ export default function Home() {
 
         <div style={{ height: "3rem" }} />
 
-        <LeafPanel shape="peepal" labelledBy="more-games">
+        <LeafPanel labelledBy="more-games">
           <p className="eyebrow">{t.home.benchEyebrow}</p>
           <h2 id="more-games" className="font-display">
             {t.home.benchTitle}
