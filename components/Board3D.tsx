@@ -24,6 +24,8 @@ interface Board3DProps {
   selectedMoves: Move[];
   /** Points holding the current side's pieces (hover cursor). */
   activePoints: string[];
+  /** Points whose stones can capture right now (compulsory-capture hint). */
+  captureFrom: string[];
   onSelectPoint: (pointId: string) => void;
   /** Increments every applied move; drives the travel animation. */
   moveSeq: number;
@@ -45,13 +47,18 @@ function hashStr(s: string): number {
   return (h >>> 0) / 4294967296;
 }
 
-function makeStoneGeometry(seed: string): THREE.BufferGeometry {
-  const geo = new THREE.DodecahedronGeometry(PIECE_R, 0);
+/** Stone geometry, shape-coded by side so color is never the only signal:
+ *  dark stones are rough dodecahedrons, pale stones smoother icosahedrons. */
+function makeStoneGeometry(seed: string, side: Side): THREE.BufferGeometry {
+  const geo = side === "A"
+    ? new THREE.DodecahedronGeometry(PIECE_R, 0)
+    : new THREE.IcosahedronGeometry(PIECE_R, 1);
   const pos = geo.attributes.position;
   const v = new THREE.Vector3();
+  const rough = side === "A" ? 0.28 : 0.14;
   for (let i = 0; i < pos.count; i++) {
     v.set(pos.getX(i), pos.getY(i), pos.getZ(i));
-    const s = 0.86 + hashStr(seed + ":" + i) * 0.28;
+    const s = 1 - rough / 2 + hashStr(seed + ":" + i) * rough;
     v.multiplyScalar(s);
     v.y *= 0.82; // squat pebble
     pos.setXYZ(i, v.x, v.y, v.z);
@@ -75,10 +82,12 @@ interface SceneApi {
 }
 
 /**
- * 3D board: lines etched into packed earth, procedural stone pieces.
+ * 3D board: lines scratched into packed earth, procedural stone pieces
+ * (shape-coded: rough dark dodecahedrons, smooth pale icosahedrons).
  * Selection is purely local (lift + ring + target markers) — it never
  * touches the scene background, so the old "board goes black on select"
- * bug class cannot recur.
+ * bug class cannot recur. The canvas is presentational; keyboard and
+ * screen-reader users get an equivalent button board beside it.
  */
 export default function Board3D({
   board,
@@ -87,6 +96,7 @@ export default function Board3D({
   selected,
   selectedMoves,
   activePoints,
+  captureFrom,
   onSelectPoint,
   moveSeq,
   lastMove,
@@ -95,8 +105,8 @@ export default function Board3D({
   const apiRef = useRef<SceneApi | null>(null);
 
   // Latest props, mirrored for the scene (updated every render below).
-  const propsRef = useRef({ occupant, turn, selected, selectedMoves, activePoints, moveSeq, lastMove, onSelectPoint });
-  propsRef.current = { occupant, turn, selected, selectedMoves, activePoints, moveSeq, lastMove, onSelectPoint };
+  const propsRef = useRef({ occupant, turn, selected, selectedMoves, activePoints, captureFrom, moveSeq, lastMove, onSelectPoint });
+  propsRef.current = { occupant, turn, selected, selectedMoves, activePoints, captureFrom, moveSeq, lastMove, onSelectPoint };
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -149,22 +159,32 @@ export default function Board3D({
     rim.receiveShadow = true;
     boardGroup.add(rim);
 
-    // --- etched lines (dark grooves) + carved pits ---
+    // --- etched lines: hand-scratched grooves with a deterministic wobble ---
     const grooveMat = new THREE.MeshStandardMaterial({ color: 0x2e2013, roughness: 1 });
     const pitMat = new THREE.MeshStandardMaterial({ color: 0x241812, roughness: 1 });
     const up = new THREE.Vector3(0, 1, 0);
-    for (const [a, b] of board.edges) {
-      const pa = worldPos(board, a);
-      const pb = worldPos(board, b);
-      const len = pa.distanceTo(pb);
-      const groove = new THREE.Mesh(new THREE.PlaneGeometry(len, 0.15), grooveMat);
+    const addGroove = (p: THREE.Vector3, q: THREE.Vector3, width: number) => {
+      const len = p.distanceTo(q);
+      const groove = new THREE.Mesh(new THREE.PlaneGeometry(len + 0.08, width), grooveMat);
       groove.rotation.x = -Math.PI / 2;
-      groove.position.copy(pa).add(pb).multiplyScalar(0.5);
+      groove.position.copy(p).add(q).multiplyScalar(0.5);
       groove.position.y = 0.02;
-      const dir = pb.clone().sub(pa).normalize();
+      const dir = q.clone().sub(p).normalize();
       groove.rotateOnWorldAxis(up, -Math.atan2(dir.z, dir.x));
       groove.receiveShadow = true;
       boardGroup.add(groove);
+    };
+    for (const [a, b] of board.edges) {
+      const pa = worldPos(board, a);
+      const pb = worldPos(board, b);
+      // Scratched, not ruled: the midpoint wanders a little off the straight line.
+      const dir = pb.clone().sub(pa).normalize();
+      const perp = new THREE.Vector3(-dir.z, 0, dir.x);
+      const mid = pa.clone().add(pb).multiplyScalar(0.5)
+        .add(perp.multiplyScalar((hashStr(a + ">" + b) - 0.5) * 0.24));
+      const width = 0.12 + hashStr(b + ">" + a) * 0.07;
+      addGroove(pa, mid, width);
+      addGroove(mid, pb, width);
     }
     const pitGeo = new THREE.CircleGeometry(0.17, 20);
     for (const p of board.points) {
@@ -184,7 +204,7 @@ export default function Board3D({
     const travelling = new Set<THREE.Mesh>();
 
     const spawnPiece = (pointId: string, side: Side, animate: boolean) => {
-      const mesh = new THREE.Mesh(makeStoneGeometry(pointId), side === "A" ? matA : matB);
+      const mesh = new THREE.Mesh(makeStoneGeometry(pointId, side), side === "A" ? matA : matB);
       const w = worldPos(board, pointId);
       mesh.position.set(w.x, REST_Y, w.z);
       mesh.rotation.y = hashStr(pointId + side) * Math.PI * 2;
@@ -220,33 +240,39 @@ export default function Board3D({
 
     rebuildAll(P().occupant);
 
-    // --- selection ring + target markers ---
+    // --- selection ring + target markers + capture hints + last-move marker ---
     const ring = new THREE.Mesh(
       new THREE.RingGeometry(0.52, 0.66, 32),
-      new THREE.MeshBasicMaterial({ color: 0xd92b2b, transparent: true, opacity: 0.95, side: THREE.DoubleSide }),
+      new THREE.MeshBasicMaterial({ color: 0xb3261e, transparent: true, opacity: 0.95, side: THREE.DoubleSide }),
     );
     ring.rotation.x = -Math.PI / 2;
     ring.visible = false;
     boardGroup.add(ring);
 
     const markerGeo = new THREE.CircleGeometry(0.2, 20);
-    const markerMat = new THREE.MeshBasicMaterial({ color: 0xe8b84b, transparent: true, opacity: 0.95, side: THREE.DoubleSide });
+    const markerMat = new THREE.MeshBasicMaterial({ color: 0xe0a526, transparent: true, opacity: 0.95, side: THREE.DoubleSide });
+    const hintGeo = new THREE.RingGeometry(0.5, 0.6, 32);
+    const hintMat = new THREE.MeshBasicMaterial({ color: 0xe0a526, transparent: true, opacity: 0.7, side: THREE.DoubleSide });
     let markers: THREE.Mesh[] = [];
+    let hintRings: THREE.Mesh[] = [];
     let lastSelKey = "";
     const refreshMarkers = () => {
-      const { selected: sel, selectedMoves: moves } = P();
-      const key = (sel ?? "-") + "|" + moves.map((m) => m.to).sort().join(",");
+      const { selected: sel, selectedMoves: moves, captureFrom } = P();
+      const key = (sel ?? "-") + "|" + moves.map((m) => m.to).sort().join(",")
+        + "|" + [...captureFrom].sort().join(",");
       if (key === lastSelKey) return;
       lastSelKey = key;
       for (const m of markers) boardGroup.remove(m);
+      for (const h of hintRings) boardGroup.remove(h);
       markers = [];
+      hintRings = [];
       if (!sel) {
         ring.visible = false;
-        return;
+      } else {
+        const w = worldPos(board, sel);
+        ring.position.set(w.x, 0.04, w.z);
+        ring.visible = true;
       }
-      const w = worldPos(board, sel);
-      ring.position.set(w.x, 0.04, w.z);
-      ring.visible = true;
       const seen = new Set<string>();
       for (const mv of moves) {
         if (seen.has(mv.to)) continue;
@@ -259,8 +285,56 @@ export default function Board3D({
         boardGroup.add(mk);
         markers.push(mk);
       }
+      // When captures are compulsory, mark exactly the stones that can capture.
+      if (captureFrom.length > 0) {
+        for (const pid of captureFrom) {
+          if (pid === sel) continue;
+          const hw = worldPos(board, pid);
+          const h = new THREE.Mesh(hintGeo, hintMat);
+          h.rotation.x = -Math.PI / 2;
+          h.position.set(hw.x, 0.04, hw.z);
+          boardGroup.add(h);
+          hintRings.push(h);
+        }
+      }
     };
     refreshMarkers();
+
+    // --- last-move marker: turmeric ring where the stone landed,
+    //     gamosa-red discs on the points stones were taken from ---
+    const lastMoveGroup = new THREE.Group();
+    boardGroup.add(lastMoveGroup);
+    const clearGroup = (g: THREE.Group) => {
+      for (let i = g.children.length - 1; i >= 0; i--) {
+        const c = g.children[i] as THREE.Mesh;
+        g.remove(c);
+        c.geometry.dispose();
+        (c.material as THREE.Material).dispose();
+      }
+    };
+    const refreshLastMove = () => {
+      clearGroup(lastMoveGroup);
+      const lm = P().lastMove;
+      if (!lm) return;
+      const w = worldPos(board, lm.to);
+      const r = new THREE.Mesh(
+        new THREE.RingGeometry(0.5, 0.62, 32),
+        new THREE.MeshBasicMaterial({ color: 0xe0a526, transparent: true, opacity: 0.55, side: THREE.DoubleSide }),
+      );
+      r.rotation.x = -Math.PI / 2;
+      r.position.set(w.x, 0.045, w.z);
+      lastMoveGroup.add(r);
+      for (const cp of lm.captures) {
+        const cw = worldPos(board, cp);
+        const d = new THREE.Mesh(
+          new THREE.CircleGeometry(0.15, 16),
+          new THREE.MeshBasicMaterial({ color: 0xb3261e, transparent: true, opacity: 0.6, side: THREE.DoubleSide }),
+        );
+        d.rotation.x = -Math.PI / 2;
+        d.position.set(cw.x, 0.045, cw.z);
+        lastMoveGroup.add(d);
+      }
+    };
 
     // --- move animation driver ---
     let lastSeqApplied = P().moveSeq;
@@ -270,6 +344,7 @@ export default function Board3D({
         rebuildAll(occ);
         lastSelKey = "";
         refreshMarkers();
+        refreshLastMove();
         return;
       }
       for (const cp of lm.captures) removePiece(cp, true);
@@ -296,6 +371,7 @@ export default function Board3D({
       }
       lastSelKey = "";
       refreshMarkers();
+      refreshLastMove();
     };
 
     apiRef.current = {
@@ -397,6 +473,7 @@ export default function Board3D({
       if (ring.visible && !reduceMotion) {
         ring.scale.setScalar(1 + Math.sin(t * 5) * 0.07);
         for (const m of markers) m.scale.setScalar(1 + Math.sin(t * 5 + 1) * 0.12);
+        for (const h of hintRings) h.scale.setScalar(1 + Math.sin(t * 5 + 2) * 0.1);
       }
 
       renderer.render(scene, camera);
@@ -432,8 +509,9 @@ export default function Board3D({
   return (
     <div
       ref={mountRef}
-      role="application"
-      aria-label={`${board.name} 3D board. ${turn === "A" ? "Side A" : "Side B"} to move.`}
+      // The 3D canvas is presentational; the keyboard/screen-reader board
+      // beside it is the operable representation of the same game.
+      aria-hidden="true"
       style={{ width: "100%", height: "100%", minHeight: 320, touchAction: "manipulation" }}
     />
   );

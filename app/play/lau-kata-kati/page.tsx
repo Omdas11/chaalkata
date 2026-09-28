@@ -3,15 +3,22 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Board3D, { type LastMove } from "../../../components/Board3D";
-import PaperPanel from "../../../components/PaperPanel";
+import AccessibleBoard from "../../../components/AccessibleBoard";
+import EarthPanel from "../../../components/EarthPanel";
+import GamosaStrip from "../../../components/GamosaStrip";
+import Icon from "../../../components/Icon";
+import Footer from "../../../components/Footer";
 import AccountChip from "../../../components/AccountChip";
 import Ambience from "../../../components/Ambience";
 import SoilBackdrop, { SoilVignette } from "../../../components/SoilBackdrop";
 import SoilScene from "../../../components/SoilScene";
+import { HowToPlay, HistoryBlurb, FamilyLinks } from "../../../components/GameInfo";
 import {
+  buzz,
   ensureAudio,
   getMuted,
   playCapture,
+  playInvalid,
   playMove,
   playSelect,
   playWin,
@@ -23,6 +30,9 @@ import {
   getBoard,
   legalMoves,
   newGame,
+  normalizeState,
+  pieceCount,
+  type Difficulty,
   type GameState,
   type Move,
   type Side,
@@ -34,8 +44,14 @@ const board = getBoard(GAME_ID);
 
 const RULES_BLURB =
   "Two triangles share one apex. Each side holds its nine stones; the centre starts empty. " +
-  "Step along the etched lines. Captures are by the short leap — and they are compulsory, " +
+  "Step along the scratched lines. Captures are by the short leap — and they are compulsory, " +
   "chained while they last. If you cannot move, you lose; otherwise the most stones standing wins.";
+
+const DIFFICULTIES: Array<{ id: Difficulty; label: string; bn: string }> = [
+  { id: "easy", label: "Easy", bn: "সহজ" },
+  { id: "medium", label: "Medium", bn: "মাঝারি" },
+  { id: "hard", label: "Hard", bn: "কঠিন" },
+];
 
 function sideName(side: Side, mode: "ai" | "2p"): string {
   if (mode === "ai") return side === "A" ? "You (dark)" : "AI (pale)";
@@ -48,16 +64,55 @@ function isValidSaved(s: unknown): s is GameState {
   return g.boardId === GAME_ID && typeof g.occupant === "object" && Array.isArray(g.history);
 }
 
+function readLS(key: string): string | null {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeLS(key: string, value: string): void {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    /* ignore */
+  }
+}
+
+const pt = (id: string) => id.replace(/^p/, "");
+
+// Keyed by n at the call site so the pop animation replays on every capture.
+function CounterTick({ n }: { n: number }) {
+  return (
+    <span className="font-label counter-pop counter-pop--tick" style={{ marginLeft: 8 }}>
+      ×{n}
+    </span>
+  );
+}
+
 export default function LauKataKatiPage() {
   const [state, setState] = useState<GameState>(() => newGame(GAME_ID));
   const [selected, setSelected] = useState<string | null>(null);
   const [moveSeq, setMoveSeq] = useState(0);
   const [lastMove, setLastMove] = useState<LastMove | null>(null);
-  const [mode, setMode] = useState<"ai" | "2p">("ai");
+  const [mode, setMode] = useState<"ai" | "2p">(() => (readLS("ck-mode") === "2p" ? "2p" : "ai"));
+  const [difficulty, setDifficulty] = useState<Difficulty>(() => {
+    const d = readLS("ck-difficulty");
+    return d === "easy" || d === "hard" ? d : "medium";
+  });
   const [saveAvailable, setSaveAvailable] = useState(false);
-  const [muted, setMutedState] = useState(false);
+  const [muted, setMutedState] = useState(true);
+  const [notice, setNotice] = useState<string | null>(null);
+  const [announcement, setAnnouncement] = useState("");
+  const [canUndo, setCanUndo] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+
   const startTime = useRef(Date.now());
   const resultSaved = useRef(false);
+  const undoStack = useRef<GameState[]>([]);
+  const noticeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMutedState(getMuted());
@@ -70,22 +125,52 @@ export default function LauKataKatiPage() {
     setMutedState(next);
   };
 
+  const flashNotice = (msg: string) => {
+    setNotice(msg);
+    playInvalid();
+    if (noticeTimer.current) clearTimeout(noticeTimer.current);
+    noticeTimer.current = setTimeout(() => setNotice(null), 2600);
+  };
+
   const moves = useMemo(() => legalMoves(state), [state]);
   const selectedMoves = useMemo(
     () => (selected ? moves.filter((m) => m.from === selected) : []),
     [moves, selected],
   );
   const activePoints = useMemo(() => [...new Set(moves.map((m) => m.from))], [moves]);
+  const mustCapture = useMemo(() => moves.some((m) => m.captures.length > 0), [moves]);
+  const captureFrom = useMemo(
+    () => (mustCapture ? [...new Set(moves.filter((m) => m.captures.length > 0).map((m) => m.from))] : []),
+    [moves, mustCapture],
+  );
 
   const doMove = (mv: Move) => {
+    undoStack.current.push(state);
+    if (undoStack.current.length > 200) undoStack.current.shift();
+    setCanUndo(true);
+    const mover = state.turn;
     const ns = applyMove(state, mv);
     setState(ns);
     setSelected(null);
     setMoveSeq((s) => s + 1);
     setLastMove({ from: mv.from, to: mv.to, path: mv.path, captures: mv.captures });
     ensureAudio();
-    if (mv.captures.length > 0) playCapture();
-    else playMove();
+    if (mv.captures.length > 0) {
+      playCapture();
+      buzz([25, 40, 25]);
+    } else {
+      playMove();
+      buzz(15);
+    }
+    const cap = mv.captures.length > 0 ? `, capturing ${mv.captures.length}` : "";
+    let msg = `${sideName(mover, mode)}: point ${pt(mv.from)} to ${pt(mv.to)}${cap}. `;
+    if (ns.winner) {
+      msg += ns.winner === "draw" ? "Draw. " : `${sideName(ns.winner as Side, mode)} wins. `;
+      msg += ns.winReason ?? "";
+    } else {
+      msg += `${sideName(ns.turn, mode)} to move.`;
+    }
+    setAnnouncement(msg);
   };
   const doMoveRef = useRef(doMove);
   doMoveRef.current = doMove;
@@ -94,29 +179,46 @@ export default function LauKataKatiPage() {
     if (state.winner) return;
     if (mode === "ai" && state.turn === "B") return; // AI's turn
     ensureAudio();
+    if (selected) {
+      if (pid === selected) {
+        setSelected(null);
+        return;
+      }
+      const mv = moves.find((m) => m.from === selected && m.to === pid);
+      if (mv) {
+        doMoveRef.current(mv);
+        return;
+      }
+      // Tapping elsewhere: not a legal destination from the selected stone.
+      if (state.occupant[pid] !== state.turn) {
+        flashNotice(
+          mustCapture ? "Captures are compulsory — take the leap." : "That step isn't allowed.",
+        );
+        return;
+      }
+      // else: fall through and select the newly tapped own stone
+    }
     if (state.occupant[pid] === state.turn) {
-      setSelected((s) => {
-        if (s !== pid) playSelect();
-        return s === pid ? null : pid;
-      });
+      if (selected !== pid) playSelect();
+      setSelected(pid);
+      const mine = moves.filter((m) => m.from === pid);
+      if (mine.length === 0 && mustCapture) {
+        flashNotice("You must capture — only the marked stones can move.");
+      }
       return;
     }
-    if (selected) {
-      const mv = moves.find((m) => m.from === selected && m.to === pid);
-      if (mv) doMoveRef.current(mv);
-      else setSelected(null);
-    }
+    // Tapped an empty point or enemy stone with nothing selected: nothing to refuse yet.
   };
 
   // AI replies as Side B.
   useEffect(() => {
     if (mode !== "ai" || state.turn !== "B" || state.winner) return;
     const t = setTimeout(() => {
-      const mv = aiChooseMove(state);
+      const mv = aiChooseMove(state, difficulty);
       if (mv) doMoveRef.current(mv);
     }, 650);
     return () => clearTimeout(t);
-  }, [mode, state]);
+  }, [mode, state, difficulty]);
 
   // Auto-save after every move; offer resume on load.
   useEffect(() => {
@@ -155,42 +257,90 @@ export default function LauKataKatiPage() {
       .catch(() => {});
   }, [state.winner, state.history.length, mode]);
 
+  // Focus the game-over dialog for keyboard / screen-reader users.
+  const showDialog = !!state.winner && !dismissed;
+  useEffect(() => {
+    if (showDialog) dialogRef.current?.focus();
+  }, [showDialog]);
+
   const restart = () => {
     setState(newGame(GAME_ID));
     setSelected(null);
     setMoveSeq((s) => s + 1);
     setLastMove(null);
+    setNotice(null);
+    setDismissed(false);
+    setCanUndo(false);
+    undoStack.current = [];
     startTime.current = Date.now();
     resultSaved.current = false;
+    setAnnouncement("New game. You move first, with the dark stones.");
     getStorage().clearGame(GAME_ID).catch(() => {});
+  };
+
+  const switchMode = (m: "ai" | "2p") => {
+    setMode(m);
+    writeLS("ck-mode", m);
+    restart();
+  };
+
+  const changeDifficulty = (d: Difficulty) => {
+    setDifficulty(d);
+    writeLS("ck-difficulty", d);
+  };
+
+  const undo = () => {
+    const stack = undoStack.current;
+    if (stack.length === 0) return;
+    // Undo a full turn: your move plus the AI's reply (one move in 2p).
+    const steps = mode === "ai" ? 2 : 1;
+    let prev: GameState | undefined;
+    for (let i = 0; i < steps && stack.length > 0; i++) prev = stack.pop();
+    if (!prev) return;
+    setState(prev);
+    setSelected(null);
+    setMoveSeq((s) => s + 1);
+    setLastMove(null);
+    setDismissed(false);
+    setCanUndo(stack.length > 0);
+    resultSaved.current = prev.winner !== null;
+    setAnnouncement("Undone. Your move.");
   };
 
   const resume = async () => {
     const s = await getStorage().loadGame(GAME_ID).catch(() => null);
     if (s && isValidSaved(s.state)) {
-      setState(s.state as GameState);
+      setState(normalizeState(s.state as GameState));
       setSelected(null);
       setMoveSeq((n) => n + 1);
       setLastMove(null);
       setSaveAvailable(false);
+      setDismissed(false);
+      setCanUndo(false);
+      undoStack.current = [];
       startTime.current = Date.now();
       resultSaved.current = (s.state as GameState).winner !== null;
+      setAnnouncement("Saved game resumed.");
     }
   };
 
-  const switchMode = (m: "ai" | "2p") => {
-    setMode(m);
-    restart();
-  };
+  const thinking = mode === "ai" && state.turn === "B" && !state.winner;
 
-  const dots = (n: number, dark: boolean) => (
-    <span aria-hidden="true" style={{ letterSpacing: 2 }}>
-      {"●".repeat(Math.min(n, 18))}
-      <span className="font-type" style={{ fontSize: ".7rem", marginLeft: 6, color: dark ? "#2b2724" : "#8a7a5c" }}>
-        {n > 0 ? `×${n}` : "—"}
+  const dots = (n: number, label: string) => (
+    <span>
+      <span aria-hidden="true" style={{ letterSpacing: 2 }}>
+        {"●".repeat(Math.min(n, 18))}
       </span>
+      <CounterTick key={n} n={n} />
+      <span className="sr-only">{label}: {n}</span>
     </span>
   );
+
+  const resultText = state.winner
+    ? state.winner === "draw"
+      ? "Draw"
+      : `${sideName(state.winner as Side, mode)} wins`
+    : null;
 
   return (
     <>
@@ -198,8 +348,8 @@ export default function LauKataKatiPage() {
       <SoilScene />
       <SoilVignette />
       <Ambience />
-      <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "2.5rem 0 4rem" }}>
-        <PaperPanel tilt="l" tape={["tl", "tr"]} labelledBy="lkk-title">
+      <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "2.5rem 0 2rem" }}>
+        <EarthPanel tilt="l" labelledBy="lkk-title">
           <p>
             <Link href="/" className="row-action" style={{ display: "inline-flex", paddingLeft: 0 }}>
               <span className="arr">←</span> all games
@@ -207,7 +357,7 @@ export default function LauKataKatiPage() {
           </p>
           <p className="eyebrow">{board.region}</p>
           <h1 id="lkk-title" className="font-display" style={{ margin: "0 0 .25rem" }}>
-            {board.name}
+            {board.name} · <span className="font-bengali">লাউ কাটা কাটি</span>
           </h1>
           <p className="font-body" style={{ fontSize: "1.2rem", maxWidth: "36rem" }}>{RULES_BLURB}</p>
           <p style={{ margin: ".25rem 0 .75rem" }}>
@@ -216,57 +366,98 @@ export default function LauKataKatiPage() {
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: ".6rem", alignItems: "center", margin: "1rem 0" }}>
             <button
-              className={`btn-ink font-condensed ${mode === "2p" ? "" : "btn-ink--ghost"}`}
+              className={`btn-clay ${mode === "2p" ? "" : "btn-clay--ghost"}`}
               onClick={() => switchMode("2p")}
               aria-pressed={mode === "2p"}
             >
-              2 players
+              <Icon name="users" size={18} /> 2 players · <span className="font-bengali">দুজন</span>
             </button>
             <button
-              className={`btn-ink font-condensed ${mode === "ai" ? "" : "btn-ink--ghost"}`}
+              className={`btn-clay ${mode === "ai" ? "" : "btn-clay--ghost"}`}
               onClick={() => switchMode("ai")}
               aria-pressed={mode === "ai"}
             >
-              vs AI
+              vs AI · <span className="font-bengali">এআই</span>
             </button>
-            <button className="btn-ink btn-ink--ghost font-condensed" onClick={restart}>
-              ↻ Restart
+            {mode === "ai" && (
+              <div role="group" aria-label="AI difficulty" style={{ display: "inline-flex", gap: ".4rem", alignItems: "center" }}>
+                {DIFFICULTIES.map((d) => (
+                  <button
+                    key={d.id}
+                    className={`btn-clay btn-clay--sm ${difficulty === d.id ? "" : "btn-clay--ghost"}`}
+                    onClick={() => changeDifficulty(d.id)}
+                    aria-pressed={difficulty === d.id}
+                  >
+                    {d.label} · <span className="font-bengali">{d.bn}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+            <button className="btn-clay btn-clay--ghost" onClick={restart}>
+              <Icon name="restart" size={18} /> Restart
             </button>
+            {mode === "ai" && (
+              <button className="btn-clay btn-clay--ghost" onClick={undo} disabled={!canUndo}>
+                <Icon name="undo" size={18} /> Undo
+              </button>
+            )}
             <button
-              className="btn-ink btn-ink--ghost font-condensed"
+              className="btn-clay btn-clay--ghost"
               onClick={toggleMute}
               aria-pressed={muted}
               aria-label={muted ? "Unmute sounds" : "Mute sounds"}
               title={muted ? "Unmute sounds" : "Mute sounds"}
             >
-              {muted ? "🔇 Muted" : "🔊 Sound"}
+              {muted ? <><Icon name="sound-off" size={18} /> Muted</> : <><Icon name="sound-on" size={18} /> Sound</>}
             </button>
             {saveAvailable && state.history.length === 0 && (
-              <button className="btn-ink font-condensed" onClick={resume}>
+              <button className="btn-clay" onClick={resume}>
                 Resume saved game
               </button>
             )}
           </div>
 
+          {notice && (
+            <p className="notice" role="alert">
+              {notice}
+            </p>
+          )}
+
           <div
+            className={`turn-banner${mode === "2p" && state.turn === "B" ? " turn-banner--flip" : ""}`}
             role="status"
             aria-live="polite"
-            style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: ".5rem" }}
           >
-            {state.winner ? (
-              <span className="stamp" style={{ fontSize: ".95rem" }}>
-                {state.winner === "draw" ? "Draw" : `${sideName(state.winner as Side, mode)} wins`} — {state.winReason}
-              </span>
+            {!state.winner && (
+              <span
+                className="dot"
+                aria-hidden="true"
+                style={{ background: state.turn === "A" ? "#241a10" : "#e8dcc2" }}
+              />
+            )}
+            {resultText ? (
+              <span className="stamp" style={{ fontSize: ".95rem" }}>{resultText}</span>
             ) : (
-              <span className="font-display" style={{ fontSize: "1.5rem", color: "var(--ink)" }}>
-                {sideName(state.turn, mode)} to move
-                {mode === "ai" && state.turn === "B" ? "…" : ""}
+              <span>
+                {sideName(state.turn, mode)} to move{thinking ? " — AI is thinking…" : ""}
               </span>
             )}
-            <span className="font-type" style={{ fontSize: ".72rem", opacity: 0.8 }}>
+            <span className="font-label" style={{ opacity: 0.7, fontSize: ".72rem" }}>
               move {state.history.length + 1}
             </span>
           </div>
+
+          <div className="sr-only" aria-live="polite">
+            {announcement}
+          </div>
+
+          <AccessibleBoard
+            board={board}
+            occupant={state.occupant}
+            movable={activePoints}
+            selected={selected}
+            onSelectPoint={onSelectPoint}
+          />
 
           <div
             style={{
@@ -284,28 +475,33 @@ export default function LauKataKatiPage() {
               selected={selected}
               selectedMoves={selectedMoves}
               activePoints={activePoints}
+              captureFrom={captureFrom}
               onSelectPoint={onSelectPoint}
               moveSeq={moveSeq}
               lastMove={lastMove}
             />
           </div>
 
-          <hr className="perforation" />
+          <GamosaStrip />
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}>
             <div>
-              <p className="eyebrow">Captured by dark</p>
-              <p className="font-body" style={{ fontSize: "1.3rem", margin: ".25rem 0" }}>{dots(state.capturesA, true)}</p>
+              <p className="eyebrow">Captured by dark · <span className="font-bengali">কালো</span></p>
+              <p className="font-body" style={{ fontSize: "1.3rem", margin: ".25rem 0" }}>
+                {dots(state.capturesA, "stones captured by dark")}
+              </p>
             </div>
             <div>
-              <p className="eyebrow">Captured by pale</p>
-              <p className="font-body" style={{ fontSize: "1.3rem", margin: ".25rem 0" }}>{dots(state.capturesB, false)}</p>
+              <p className="eyebrow">Captured by pale · <span className="font-bengali">সাদা</span></p>
+              <p className="font-body" style={{ fontSize: "1.3rem", margin: ".25rem 0" }}>
+                {dots(state.capturesB, "stones captured by pale")}
+              </p>
             </div>
           </div>
 
           {state.history.length > 0 && (
             <>
-              <hr className="perforation" />
+              <GamosaStrip />
               <p className="eyebrow">Moves</p>
               <ol
                 reversed
@@ -320,17 +516,59 @@ export default function LauKataKatiPage() {
               >
                 {[...state.history].map((h, i) => (
                   <li key={i}>
-                    {h.side === "A" ? "Dark" : "Pale"}: {h.from} → {h.to}
+                    {h.side === "A" ? "Dark" : "Pale"}: {pt(h.from)} → {pt(h.to)}
                     {h.captures.length > 0 && (
-                      <strong style={{ color: "var(--accent)" }}> ×{h.captures.length}</strong>
+                      <strong className="hl-turmeric"> ×{h.captures.length}</strong>
                     )}
                   </li>
                 )).reverse()}
               </ol>
             </>
           )}
-        </PaperPanel>
+
+          <GamosaStrip />
+          <HowToPlay />
+          <GamosaStrip />
+          <HistoryBlurb />
+          <GamosaStrip />
+          <FamilyLinks />
+        </EarthPanel>
+
+        <Footer />
       </main>
+
+      {showDialog && (
+        <div className="dialog-overlay" onKeyDown={(e) => e.key === "Escape" && setDismissed(true)}>
+          <EarthPanel className="dialog" labelledBy="game-over-title">
+            <div
+              ref={dialogRef}
+              tabIndex={-1}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="game-over-title"
+              style={{ outline: "none" }}
+            >
+              <span className="stamp">{state.winner === "draw" ? "Draw" : "Game over"}</span>
+              <h2 id="game-over-title" className="font-display">
+                {resultText}
+              </h2>
+              <p className="font-body" style={{ opacity: 0.85 }}>{state.winReason}</p>
+              <p className="font-body">
+                Stones standing — <strong>dark {pieceCount(state, "A")}</strong>,{" "}
+                <strong>pale {pieceCount(state, "B")}</strong>
+              </p>
+              <div className="dialog-actions">
+                <button className="btn-clay" onClick={restart} autoFocus>
+                  <Icon name="play" size={18} /> Play again · <span className="font-bengali">আবার</span>
+                </button>
+                <Link href="/" className="btn-clay btn-clay--ghost">
+                  All games · <span className="font-bengali">সব খেলা</span>
+                </Link>
+              </div>
+            </div>
+          </EarthPanel>
+        </div>
+      )}
     </>
   );
 }

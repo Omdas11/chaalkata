@@ -1,18 +1,21 @@
 import Link from "next/link";
 import SoilBackdrop, { SoilVignette } from "../components/SoilBackdrop";
 import SoilScene from "../components/SoilScene";
-import PaperPanel from "../components/PaperPanel";
+import EarthPanel from "../components/EarthPanel";
+import GamosaStrip from "../components/GamosaStrip";
+import Footer from "../components/Footer";
 import AccountChip from "../components/AccountChip";
 import Leaderboard from "../components/Leaderboard";
+import Icon from "../components/Icon";
 
 const COMING = [
-  { name: "Pretwa", note: "the ring fighter" },
-  { name: "Dash-Guti", note: "ten aside" },
-  { name: "Egara-Guti", note: "eleven aside" },
-  { name: "Terhüchü v1", note: "Naga hills" },
-  { name: "Terhüchü v3", note: "Naga hills" },
-  { name: "Sümi Naga war game", note: "unnamed no more, soon" },
-  { name: "Sixteen Soldiers", note: "sixteen aside" },
+  { name: "Pretwa", bn: "প্রেত্বা", note: "the ring fighter" },
+  { name: "Dash-Guti", bn: "দশ-গুটি", note: "ten aside" },
+  { name: "Egara-Guti", bn: "এগারো-গুটি", note: "eleven aside" },
+  { name: "Terhüchü v1", bn: "", note: "Naga hills" },
+  { name: "Terhüchü v3", bn: "", note: "Naga hills" },
+  { name: "Sümi Naga war game", bn: "", note: "still unnamed — soon" },
+  { name: "Sixteen Soldiers", bn: "ষোলো সৈন্য", note: "sixteen aside" },
 ];
 
 export default function Home() {
@@ -21,38 +24,38 @@ export default function Home() {
       <SoilBackdrop />
       <SoilScene />
       <SoilVignette />
-      <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "4rem 0 5rem" }}>
-        <PaperPanel tilt="l" tape={["tl", "tr"]} labelledBy="ck-title">
-          <p className="eyebrow">Chaal-Kaata · চাল-কাটা</p>
+      <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "4rem 0 2rem" }}>
+        <EarthPanel tilt="l" labelledBy="ck-title">
+          <p className="eyebrow">Chaal-Kaata · <span className="font-bengali">চাল-কাটা</span></p>
           <h1 id="ck-title" className="font-display">
-            Move <span className="hl-badge">and</span> cut.
+            Move <span className="hl-turmeric">and</span> cut.
           </h1>
-          <p className="font-body" style={{ fontSize: "1.35rem", maxWidth: "34rem" }}>
+          <p className="font-body" style={{ fontSize: "1.3rem", maxWidth: "34rem" }}>
             A playable collection of lesser-known Indian board games in the
             Alquerque family — first scratched into village soil, now dug into
             this page.
           </p>
           <p>
-            <Link href="/play/lau-kata-kati" className="btn-ink font-condensed" style={{ textDecoration: "none", display: "inline-block" }}>
-              Play Lau Kata Kati
+            <Link href="/play/lau-kata-kati" className="btn-clay" style={{ textDecoration: "none" }}>
+              <Icon name="play" size={18} /> Play Lau Kata Kati · <span className="font-bengali">লাউ কাটা কাটি</span>
             </Link>
           </p>
-          <p className="font-type" style={{ fontSize: ".75rem", opacity: 0.75 }}>
+          <p className="font-label" style={{ opacity: 0.75, marginTop: "0.75rem" }}>
             9 pieces a side · Lower Bengal · captures compulsory
           </p>
-          <p style={{ marginTop: ".75rem" }}>
+          <p style={{ marginTop: "0.75rem" }}>
             <AccountChip />
           </p>
-        </PaperPanel>
+        </EarthPanel>
 
         <div style={{ height: "3rem" }} />
 
-        <PaperPanel tilt="r" tape="tc" labelledBy="more-games">
+        <EarthPanel tilt="r" labelledBy="more-games">
           <p className="eyebrow">On the bench</p>
-          <h2 id="more-games" className="font-display" style={{ fontSize: "1.9rem" }}>
+          <h2 id="more-games" className="font-display">
             More games, coming soon
           </h2>
-          <hr className="perforation" />
+          <GamosaStrip />
           {COMING.map((g) => (
             <div
               key={g.name}
@@ -61,25 +64,22 @@ export default function Home() {
               style={{ cursor: "default", justifyContent: "space-between" }}
             >
               <span>
-                <strong className="font-display">{g.name}</strong>
-                <span className="font-body" style={{ opacity: 0.75 }}> — {g.note}</span>
+                <strong className="font-display" style={{ fontWeight: 400 }}>{g.name}</strong>
+                {g.bn ? <span className="font-bengali" style={{ opacity: 0.7 }}> · {g.bn}</span> : null}
+                <span className="font-body" style={{ opacity: 0.7 }}> — {g.note}</span>
               </span>
-              <span className="stamp" style={{ fontSize: ".65rem" }}>soon</span>
+              <span className="stamp" style={{ fontSize: "0.65rem" }}>soon</span>
             </div>
           ))}
-          <hr className="perforation" />
+          <GamosaStrip />
           <Leaderboard gameId="lau-kata-kati" />
-          <hr className="perforation" />
+          <GamosaStrip />
           <p className="font-body" style={{ opacity: 0.8 }}>
             One game at a time, each rebuilt from scratch in real 3D.
           </p>
-        </PaperPanel>
+        </EarthPanel>
 
-        <footer style={{ textAlign: "center", marginTop: "3rem", color: "#D8CBB2" }}>
-          <p className="font-type" style={{ fontSize: ".72rem", opacity: 0.8 }}>
-            Chaal-Kaata · traditional games, digitised with care
-          </p>
-        </footer>
+        <Footer />
       </main>
     </>
   );

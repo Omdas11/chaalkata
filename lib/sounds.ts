@@ -1,6 +1,7 @@
 /* Tiny WebAudio synth for game sounds. No audio assets needed.
  * All sounds are no-ops when muted or when AudioContext is unavailable.
- * Mute state lives in localStorage under "ck-muted" and is shared with Ambience. */
+ * Mute state lives in localStorage under "ck-muted" and is shared with Ambience.
+ * Sound is OFF by default; the toggle persists the player's choice. */
 
 const MUTE_KEY = "ck-muted";
 
@@ -8,9 +9,10 @@ let ctx: AudioContext | null = null;
 
 export function getMuted(): boolean {
   try {
-    return localStorage.getItem(MUTE_KEY) === "1";
+    const v = localStorage.getItem(MUTE_KEY);
+    return v === null ? true : v === "1";
   } catch {
-    return false;
+    return true;
   }
 }
 
@@ -122,4 +124,17 @@ export function playWin(): void {
 /** Dull thud for a refused tap. */
 export function playInvalid(): void {
   tone(140, "square", 0.06, 0.09);
+}
+
+/** Haptic tap on move/capture. Only fires when sound is enabled
+ *  (the toggle covers both) and the device supports vibration. */
+export function buzz(pattern: number | number[]): void {
+  if (getMuted()) return;
+  try {
+    if (typeof navigator !== "undefined" && "vibrate" in navigator) {
+      navigator.vibrate(pattern);
+    }
+  } catch {
+    /* ignore */
+  }
 }

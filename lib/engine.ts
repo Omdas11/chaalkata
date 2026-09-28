@@ -39,6 +39,9 @@ export interface GameState {
   capturesA: number;
   capturesB: number;
   pliesSinceCapture: number;
+  /** Position repetition counts, for the threefold-repetition draw rule.
+   *  Key: side-to-move + sorted point:side pairs. Absent on legacy saves. */
+  positionCounts: Record<string, number>;
 }
 
 const SIXTEEN_SOLDIERS = 'sixteen-soldiers';
@@ -211,10 +214,13 @@ export function newGame(boardId: string): GameState {
   for (const p of board.start.sideB) occupant[p] = 'B';
   // No game documents a fixed first player; sources agree players choose.
   // Engine default: side A moves first.
-  return {
+  const state: GameState = {
     boardId, occupant, turn: 'A', winner: null, winReason: null,
     history: [], capturesA: 0, capturesB: 0, pliesSinceCapture: 0,
+    positionCounts: {},
   };
+  state.positionCounts[positionKey(state)] = 1;
+  return state;
 }
 
 export function pieceCount(state: GameState, side: Side): number {
@@ -224,6 +230,20 @@ export function pieceCount(state: GameState, side: Side): number {
 }
 
 function sideLabel(s: Side): string { return s === 'A' ? 'Side A' : 'Side B'; }
+
+/** Canonical key for the current position (occupancy + side to move). */
+export function positionKey(state: GameState): string {
+  const keys = Object.keys(state.occupant).sort();
+  return state.turn + '|' + keys.map(k => k + state.occupant[k]).join(',');
+}
+
+/** Fill in fields that older saved games (created before threefold draws) may lack. */
+export function normalizeState(state: GameState): GameState {
+  if (!state.positionCounts || typeof state.positionCounts !== 'object') {
+    state.positionCounts = {};
+  }
+  return state;
+}
 
 export function applyMove(state: GameState, move: Move): GameState {
   const mover = state.turn;
@@ -251,6 +271,7 @@ export function applyMove(state: GameState, move: Move): GameState {
     capturesA: capA,
     capturesB: capB,
     pliesSinceCapture,
+    positionCounts: {},
   };
 
   // 1. Capture-all: opponent has no pieces left.
@@ -286,7 +307,19 @@ export function applyMove(state: GameState, move: Move): GameState {
     return next;
   }
 
-  // 3. Anti-stall: 60 plies without a capture ends the game on material.
+  // 3. Threefold repetition: the same position (pieces + side to move)
+  //    occurring three times is a draw.
+  const counts: Record<string, number> = { ...(state.positionCounts ?? {}) };
+  const key = positionKey(next);
+  counts[key] = (counts[key] ?? 0) + 1;
+  next.positionCounts = counts;
+  if (counts[key] >= 3) {
+    next.winner = 'draw';
+    next.winReason = 'Draw — the same position occurred three times';
+    return next;
+  }
+
+  // 4. Anti-stall: 60 plies without a capture ends the game on material.
   if (pliesSinceCapture >= 60) {
     const pa = pieceCount(next, 'A'), pb = pieceCount(next, 'B');
     if (pa !== pb) {
@@ -300,9 +333,18 @@ export function applyMove(state: GameState, move: Move): GameState {
   return next;
 }
 
-export function aiChooseMove(state: GameState): Move | null {
+export type Difficulty = 'easy' | 'medium' | 'hard';
+
+export function aiChooseMove(state: GameState, difficulty: Difficulty = 'medium'): Move | null {
   const moves = legalMoves(state);
   if (moves.length === 0) return null;
+  if (difficulty === 'easy') {
+    // Easy: pure random legal move (still obeys compulsory capture,
+    // because legalMoves already filters).
+    return moves[Math.floor(Math.random() * moves.length)];
+  }
+  if (difficulty === 'hard') return aiHard(state);
+  // Medium: greedy — most captures wins, random among equals.
   let best = -1;
   let pool: Move[] = [];
   for (const m of moves) {
@@ -310,6 +352,55 @@ export function aiChooseMove(state: GameState): Move | null {
     else if (m.captures.length === best) pool.push(m);
   }
   return pool[Math.floor(Math.random() * pool.length)];
+}
+
+// ---- hard AI: negamax with alpha-beta pruning ----
+
+const HARD_DEPTH = 3;
+const HARD_NODE_CAP = 40000;
+let hardNodes = 0;
+
+/** Static evaluation from `side`'s perspective: material + captures. */
+function evaluate(state: GameState, side: Side): number {
+  const foe = other(side);
+  const pieces = pieceCount(state, side) - pieceCount(state, foe);
+  const caps = (side === 'A' ? state.capturesA : state.capturesB)
+    - (side === 'A' ? state.capturesB : state.capturesA);
+  return pieces * 10 + caps * 12;
+}
+
+function negamax(state: GameState, depth: number, alpha: number, beta: number, root: Side): number {
+  if (state.winner !== null) {
+    if (state.winner === 'draw') return 0;
+    return state.winner === root ? 100000 + depth : -(100000 + depth);
+  }
+  if (depth === 0 || ++hardNodes > HARD_NODE_CAP) {
+    const sign = state.turn === root ? 1 : -1;
+    return sign * evaluate(state, root);
+  }
+  let best = -Infinity;
+  for (const m of legalMoves(state)) {
+    const v = -negamax(applyMove(state, m), depth - 1, -beta, -alpha, root);
+    if (v > best) best = v;
+    if (best > alpha) alpha = best;
+    if (alpha >= beta) break;
+  }
+  return best;
+}
+
+function aiHard(state: GameState): Move | null {
+  const moves = legalMoves(state);
+  if (moves.length === 0) return null;
+  hardNodes = 0;
+  // Captures first: better move ordering, faster pruning.
+  const ordered = [...moves].sort((a, b) => b.captures.length - a.captures.length);
+  let best: Move | null = null;
+  let alpha = -Infinity;
+  for (const m of ordered) {
+    const v = -negamax(applyMove(state, m), HARD_DEPTH - 1, -Infinity, -alpha, state.turn);
+    if (best === null || v > alpha) { alpha = v; best = m; }
+  }
+  return best;
 }
 
 export function boardBounds(board: BoardDef): { minX: number; minY: number; maxX: number; maxY: number } {
