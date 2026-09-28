@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { LanguageProvider } from "../lib/i18n";
+import { TiltProvider } from "../components/Tilt";
 
 const SITE_URL = "https://chaalkata.vercel.app";
 
@@ -45,7 +47,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <LanguageProvider>
+          <TiltProvider>{children}</TiltProvider>
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

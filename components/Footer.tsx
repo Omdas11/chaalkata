@@ -1,20 +1,24 @@
+"use client";
+
 import GamosaStrip from "./GamosaStrip";
+import { useLang } from "../lib/i18n";
 
 const GITHUB = "https://github.com/Omdas11/chaalkata";
 
 /** Site footer: credit, source link, and the originality disclaimer. */
 export default function Footer() {
+  const { t } = useLang();
   return (
     <footer className="site-footer">
       <GamosaStrip />
       <p className="font-hand" style={{ fontSize: "1.05rem", color: "var(--chalk)" }}>
-        Chaal-Kaata · <span className="font-bengali">চাল-কাটা</span> — traditional games, dug up with care.
+        {t.footer.tagline}
       </p>
       <p>
-        <a href={GITHUB} target="_blank" rel="noreferrer">Source on GitHub</a>
+        <a href={GITHUB} target="_blank" rel="noreferrer">{t.footer.source}</a>
       </p>
       <p className="font-label" style={{ opacity: 0.75 }}>
-        Original design. Inspired by traditional games; not affiliated with any other site.
+        {t.footer.disclaimer}
       </p>
     </footer>
   );

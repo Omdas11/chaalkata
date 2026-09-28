@@ -8,10 +8,12 @@ import {
   signOut,
   supabaseConfigured,
 } from "../lib/auth";
+import { useLang } from "../lib/i18n";
 import type { Session } from "@supabase/supabase-js";
 
 /** Minimal account UI: magic-link sign-in when Supabase is configured. */
 export default function AccountChip() {
+  const { t } = useLang();
   const [enabled] = useState(supabaseConfigured);
   const [session, setSession] = useState<Session | null>(null);
   const [email, setEmail] = useState("");
@@ -30,9 +32,9 @@ export default function AccountChip() {
     const label = session.user.email ?? session.user.id.slice(0, 8);
     return (
       <span style={{ display: "inline-flex", gap: ".6rem", alignItems: "center" }}>
-        <span className="stamp" style={{ fontSize: ".68rem" }}>{label}</span>
-        <button className="btn-ink btn-ink--ghost font-condensed" style={{ fontSize: ".8rem", padding: ".45em 1em" }} onClick={() => signOut()}>
-          Sign out
+        <span className="stamp" style={{ fontSize: ".68rem" }} title={t.auth.signedInAs(label)}>{label}</span>
+        <button className="btn-clay btn-clay--sm btn-clay--ghost" onClick={() => signOut()}>
+          {t.auth.signOut}
         </button>
       </span>
     );
@@ -41,14 +43,14 @@ export default function AccountChip() {
   const send = async () => {
     const em = email.trim();
     if (!em || !em.includes("@")) {
-      setMsg("Enter an email address.");
+      setMsg(t.auth.emailPlaceholder);
       return;
     }
     setBusy(true);
     setMsg(null);
     const { error } = await signInWithEmail(em);
     setBusy(false);
-    setMsg(error ?? "Check your inbox for the sign-in link.");
+    setMsg(error ?? t.auth.checkEmail);
   };
 
   return (
@@ -57,24 +59,25 @@ export default function AccountChip() {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="you@example.com"
-        aria-label="Email for sign-in"
+        placeholder={t.auth.emailPlaceholder}
+        aria-label={t.auth.signIn}
         onKeyDown={(e) => { if (e.key === "Enter") send(); }}
         style={{
-          fontFamily: "Caveat, cursive",
+          fontFamily: "\"Hind\", sans-serif",
           fontSize: "1.05rem",
           padding: ".35em .7em",
-          borderRadius: 4,
-          border: "2px solid var(--ink)",
-          background: "rgba(255,255,255,.6)",
-          color: "var(--ink-body)",
+          borderRadius: 8,
+          border: "2px solid rgba(36,26,16,.5)",
+          background: "rgba(255,255,255,.5)",
+          color: "#241a10",
           maxWidth: "12rem",
+          minHeight: 44,
         }}
       />
-      <button className="btn-ink font-condensed" style={{ fontSize: ".8rem", padding: ".5em 1.1em" }} onClick={send} disabled={busy}>
-        {busy ? "Sending…" : "Sign in"}
+      <button className="btn-clay btn-clay--sm" onClick={send} disabled={busy}>
+        {busy ? "…" : t.auth.signIn}
       </button>
-      {msg && <span className="font-type" style={{ fontSize: ".7rem" }}>{msg}</span>}
+      {msg && <span className="font-body" style={{ fontSize: ".85rem" }}>{msg}</span>}
     </span>
   );
 }

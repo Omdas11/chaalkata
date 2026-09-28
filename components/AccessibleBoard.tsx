@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import type { BoardDef, Side } from "../lib/engine";
+import { useLang } from "../lib/i18n";
 
 interface Props {
   board: BoardDef;
@@ -17,6 +18,7 @@ interface Props {
  * move between points, Enter/Space selects or moves, exactly like tapping.
  */
 export default function AccessibleBoard({ board, occupant, movable, selected, onSelectPoint }: Props) {
+  const { t } = useLang();
   const btnRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const onKeyDown = (e: React.KeyboardEvent, idx: number) => {
@@ -33,13 +35,12 @@ export default function AccessibleBoard({ board, occupant, movable, selected, on
   };
 
   const stoneName = (s: Side | undefined) =>
-    s === "A" ? "dark stone" : s === "B" ? "pale stone" : "empty point";
+    s === "A" ? t.game.pointDark : s === "B" ? t.game.pointPale : t.game.pointEmpty;
 
   return (
     <div className="a11y-board">
       <p id="a11y-board-label">
-        Keyboard board: arrow keys move between the {board.points.length} points,
-        Enter selects a stone or moves to a marked point.
+        {t.game.keyboardHelp}
       </p>
       <div className="pts" role="group" aria-labelledby="a11y-board-label">
         {board.points.map((p, i) => {
@@ -55,9 +56,7 @@ export default function AccessibleBoard({ board, occupant, movable, selected, on
               data-side={side ?? ""}
               data-active={movable.includes(p.id) || undefined}
               aria-pressed={isSel}
-              aria-label={`Point ${p.id.replace("p", "")}, ${stoneName(side)}${isSel ? ", selected" : ""}${
-                movable.includes(p.id) ? ", can move" : ""
-              }`}
+              aria-label={t.game.pointLabel(Number(p.id.replace("p", "")), stoneName(side)) + (isSel ? t.game.pointSelected : "") + (movable.includes(p.id) ? t.game.pointCanMove : "")}
               onClick={() => onSelectPoint(p.id)}
               onKeyDown={(e) => onKeyDown(e, i)}
             >

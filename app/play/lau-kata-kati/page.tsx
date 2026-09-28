@@ -4,12 +4,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Board3D, { type LastMove } from "../../../components/Board3D";
 import AccessibleBoard from "../../../components/AccessibleBoard";
-import EarthPanel from "../../../components/EarthPanel";
+import LeafPanel from "../../../components/LeafPanel";
+import LeafField from "../../../components/LeafField";
 import GamosaStrip from "../../../components/GamosaStrip";
 import Icon from "../../../components/Icon";
 import Footer from "../../../components/Footer";
 import AccountChip from "../../../components/AccountChip";
 import Ambience from "../../../components/Ambience";
+import LangToggle from "../../../components/LangToggle";
 import SoilBackdrop, { SoilVignette } from "../../../components/SoilBackdrop";
 import SoilScene from "../../../components/SoilScene";
 import { HowToPlay, HistoryBlurb, FamilyLinks } from "../../../components/GameInfo";
@@ -38,24 +40,16 @@ import {
   type Side,
 } from "../../../lib/engine";
 import { getStorage } from "../../../lib/storage";
+import { useLang, translateReason, type Dict } from "../../../lib/i18n";
 
 const GAME_ID = "lau-kata-kati";
 const board = getBoard(GAME_ID);
 
-const RULES_BLURB =
-  "Two triangles share one apex. Each side holds its nine stones; the centre starts empty. " +
-  "Step along the scratched lines. Captures are by the short leap — and they are compulsory, " +
-  "chained while they last. If you cannot move, you lose; otherwise the most stones standing wins.";
+const DIFFICULTY_IDS: Difficulty[] = ["easy", "medium", "hard"];
 
-const DIFFICULTIES: Array<{ id: Difficulty; label: string; bn: string }> = [
-  { id: "easy", label: "Easy", bn: "সহজ" },
-  { id: "medium", label: "Medium", bn: "মাঝারি" },
-  { id: "hard", label: "Hard", bn: "কঠিন" },
-];
-
-function sideName(side: Side, mode: "ai" | "2p"): string {
-  if (mode === "ai") return side === "A" ? "You (dark)" : "AI (pale)";
-  return side === "A" ? "Side A (dark)" : "Side B (pale)";
+function sideName(side: Side, mode: "ai" | "2p", t: Dict): string {
+  if (mode === "ai") return side === "A" ? t.game.youDark : t.game.aiPale;
+  return side === "A" ? t.game.sideADark : t.game.sideBPale;
 }
 
 function isValidSaved(s: unknown): s is GameState {
@@ -92,6 +86,7 @@ function CounterTick({ n }: { n: number }) {
 }
 
 export default function LauKataKatiPage() {
+  const { t } = useLang();
   const [state, setState] = useState<GameState>(() => newGame(GAME_ID));
   const [selected, setSelected] = useState<string | null>(null);
   const [moveSeq, setMoveSeq] = useState(0);
@@ -113,6 +108,8 @@ export default function LauKataKatiPage() {
   const undoStack = useRef<GameState[]>([]);
   const noticeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const tRef = useRef(t);
+  tRef.current = t;
 
   useEffect(() => {
     setMutedState(getMuted());
@@ -145,6 +142,7 @@ export default function LauKataKatiPage() {
   );
 
   const doMove = (mv: Move) => {
+    const t = tRef.current;
     undoStack.current.push(state);
     if (undoStack.current.length > 200) undoStack.current.shift();
     setCanUndo(true);
@@ -162,13 +160,12 @@ export default function LauKataKatiPage() {
       playMove();
       buzz(15);
     }
-    const cap = mv.captures.length > 0 ? `, capturing ${mv.captures.length}` : "";
-    let msg = `${sideName(mover, mode)}: point ${pt(mv.from)} to ${pt(mv.to)}${cap}. `;
+    let msg = t.game.announceMove(sideName(mover, mode, t), pt(mv.from), pt(mv.to));
+    if (mv.captures.length > 0) msg += " " + t.game.announceCaptured(mv.captures.length);
     if (ns.winner) {
-      msg += ns.winner === "draw" ? "Draw. " : `${sideName(ns.winner as Side, mode)} wins. `;
-      msg += ns.winReason ?? "";
+      msg += " " + t.game.announceGameOver(translateReason(ns.winReason, t));
     } else {
-      msg += `${sideName(ns.turn, mode)} to move.`;
+      msg += " " + t.game.announceTurn(sideName(ns.turn, mode, t));
     }
     setAnnouncement(msg);
   };
@@ -176,6 +173,7 @@ export default function LauKataKatiPage() {
   doMoveRef.current = doMove;
 
   const onSelectPoint = (pid: string) => {
+    const t = tRef.current;
     if (state.winner) return;
     if (mode === "ai" && state.turn === "B") return; // AI's turn
     ensureAudio();
@@ -192,7 +190,7 @@ export default function LauKataKatiPage() {
       // Tapping elsewhere: not a legal destination from the selected stone.
       if (state.occupant[pid] !== state.turn) {
         flashNotice(
-          mustCapture ? "Captures are compulsory — take the leap." : "That step isn't allowed.",
+          mustCapture ? t.game.noticeCapture : t.game.noticeInvalid,
         );
         return;
       }
@@ -203,7 +201,7 @@ export default function LauKataKatiPage() {
       setSelected(pid);
       const mine = moves.filter((m) => m.from === pid);
       if (mine.length === 0 && mustCapture) {
-        flashNotice("You must capture — only the marked stones can move.");
+        flashNotice(t.game.noticeMustCapture);
       }
       return;
     }
@@ -213,6 +211,7 @@ export default function LauKataKatiPage() {
   // AI replies as Side B.
   useEffect(() => {
     if (mode !== "ai" || state.turn !== "B" || state.winner) return;
+    setAnnouncement(tRef.current.game.announceAi(tRef.current.game[difficulty]));
     const t = setTimeout(() => {
       const mv = aiChooseMove(state, difficulty);
       if (mv) doMoveRef.current(mv);
@@ -274,7 +273,7 @@ export default function LauKataKatiPage() {
     undoStack.current = [];
     startTime.current = Date.now();
     resultSaved.current = false;
-    setAnnouncement("New game. You move first, with the dark stones.");
+    setAnnouncement(tRef.current.game.announceRestarted);
     getStorage().clearGame(GAME_ID).catch(() => {});
   };
 
@@ -304,7 +303,7 @@ export default function LauKataKatiPage() {
     setDismissed(false);
     setCanUndo(stack.length > 0);
     resultSaved.current = prev.winner !== null;
-    setAnnouncement("Undone. Your move.");
+    setAnnouncement(tRef.current.game.announceUndone);
   };
 
   const resume = async () => {
@@ -320,7 +319,7 @@ export default function LauKataKatiPage() {
       undoStack.current = [];
       startTime.current = Date.now();
       resultSaved.current = (s.state as GameState).winner !== null;
-      setAnnouncement("Saved game resumed.");
+      setAnnouncement(tRef.current.game.announceResumed);
     }
   };
 
@@ -338,28 +337,32 @@ export default function LauKataKatiPage() {
 
   const resultText = state.winner
     ? state.winner === "draw"
-      ? "Draw"
-      : `${sideName(state.winner as Side, mode)} wins`
+      ? t.game.draw
+      : t.game.wins(sideName(state.winner as Side, mode, t))
     : null;
+
+  const diffLabel = (d: Difficulty) => t.game[d];
 
   return (
     <>
       <SoilBackdrop />
       <SoilScene />
+      <LeafField />
       <SoilVignette />
       <Ambience />
       <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "2.5rem 0 2rem" }}>
-        <EarthPanel tilt="l" labelledBy="lkk-title">
-          <p>
+        <LeafPanel shape="lobed" labelledBy="lkk-title">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem" }}>
             <Link href="/" className="row-action" style={{ display: "inline-flex", paddingLeft: 0 }}>
-              <span className="arr">←</span> all games
+              <span className="arr">←</span> {t.game.back}
             </Link>
-          </p>
-          <p className="eyebrow">{board.region}</p>
+            <LangToggle />
+          </div>
+          <p className="eyebrow">{t.game.region}</p>
           <h1 id="lkk-title" className="font-display" style={{ margin: "0 0 .25rem" }}>
-            {board.name} · <span className="font-bengali">লাউ কাটা কাটি</span>
+            {t.game.title}
           </h1>
-          <p className="font-body" style={{ fontSize: "1.2rem", maxWidth: "36rem" }}>{RULES_BLURB}</p>
+          <p className="font-body" style={{ fontSize: "1.2rem", maxWidth: "36rem" }}>{t.game.rules}</p>
           <p style={{ margin: ".25rem 0 .75rem" }}>
             <AccountChip />
           </p>
@@ -370,49 +373,49 @@ export default function LauKataKatiPage() {
               onClick={() => switchMode("2p")}
               aria-pressed={mode === "2p"}
             >
-              <Icon name="users" size={18} /> 2 players · <span className="font-bengali">দুজন</span>
+              <Icon name="users" size={18} /> {t.game.twoPlayers}
             </button>
             <button
               className={`btn-clay ${mode === "ai" ? "" : "btn-clay--ghost"}`}
               onClick={() => switchMode("ai")}
               aria-pressed={mode === "ai"}
             >
-              vs AI · <span className="font-bengali">এআই</span>
+              {t.game.vsAi}
             </button>
             {mode === "ai" && (
-              <div role="group" aria-label="AI difficulty" style={{ display: "inline-flex", gap: ".4rem", alignItems: "center" }}>
-                {DIFFICULTIES.map((d) => (
+              <div role="group" aria-label={t.game.difficulty} style={{ display: "inline-flex", gap: ".4rem", alignItems: "center" }}>
+                {DIFFICULTY_IDS.map((d) => (
                   <button
-                    key={d.id}
-                    className={`btn-clay btn-clay--sm ${difficulty === d.id ? "" : "btn-clay--ghost"}`}
-                    onClick={() => changeDifficulty(d.id)}
-                    aria-pressed={difficulty === d.id}
+                    key={d}
+                    className={`btn-clay btn-clay--sm ${difficulty === d ? "" : "btn-clay--ghost"}`}
+                    onClick={() => changeDifficulty(d)}
+                    aria-pressed={difficulty === d}
                   >
-                    {d.label} · <span className="font-bengali">{d.bn}</span>
+                    {diffLabel(d)}
                   </button>
                 ))}
               </div>
             )}
             <button className="btn-clay btn-clay--ghost" onClick={restart}>
-              <Icon name="restart" size={18} /> Restart
+              <Icon name="restart" size={18} /> {t.game.restart}
             </button>
             {mode === "ai" && (
               <button className="btn-clay btn-clay--ghost" onClick={undo} disabled={!canUndo}>
-                <Icon name="undo" size={18} /> Undo
+                <Icon name="undo" size={18} /> {t.game.undo}
               </button>
             )}
             <button
               className="btn-clay btn-clay--ghost"
               onClick={toggleMute}
               aria-pressed={muted}
-              aria-label={muted ? "Unmute sounds" : "Mute sounds"}
-              title={muted ? "Unmute sounds" : "Mute sounds"}
+              aria-label={muted ? t.game.unmute : t.game.mute}
+              title={muted ? t.game.unmute : t.game.mute}
             >
-              {muted ? <><Icon name="sound-off" size={18} /> Muted</> : <><Icon name="sound-on" size={18} /> Sound</>}
+              {muted ? <><Icon name="sound-off" size={18} /> {t.game.soundOff}</> : <><Icon name="sound-on" size={18} /> {t.game.soundOn}</>}
             </button>
             {saveAvailable && state.history.length === 0 && (
               <button className="btn-clay" onClick={resume}>
-                Resume saved game
+                {t.game.resume}
               </button>
             )}
           </div>
@@ -439,11 +442,11 @@ export default function LauKataKatiPage() {
               <span className="stamp" style={{ fontSize: ".95rem" }}>{resultText}</span>
             ) : (
               <span>
-                {sideName(state.turn, mode)} to move{thinking ? " — AI is thinking…" : ""}
+                {t.game.turnYou(sideName(state.turn, mode, t))}{thinking ? ` — ${t.game.turnThinking}` : ""}
               </span>
             )}
             <span className="font-label" style={{ opacity: 0.7, fontSize: ".72rem" }}>
-              move {state.history.length + 1}
+              {t.game.moveN(state.history.length + 1)}
             </span>
           </div>
 
@@ -486,15 +489,15 @@ export default function LauKataKatiPage() {
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}>
             <div>
-              <p className="eyebrow">Captured by dark · <span className="font-bengali">কালো</span></p>
+              <p className="eyebrow">{t.game.capturedBy(t.game.dark)}</p>
               <p className="font-body" style={{ fontSize: "1.3rem", margin: ".25rem 0" }}>
-                {dots(state.capturesA, "stones captured by dark")}
+                {dots(state.capturesA, t.game.capturedBy(t.game.dark))}
               </p>
             </div>
             <div>
-              <p className="eyebrow">Captured by pale · <span className="font-bengali">সাদা</span></p>
+              <p className="eyebrow">{t.game.capturedBy(t.game.pale)}</p>
               <p className="font-body" style={{ fontSize: "1.3rem", margin: ".25rem 0" }}>
-                {dots(state.capturesB, "stones captured by pale")}
+                {dots(state.capturesB, t.game.capturedBy(t.game.pale))}
               </p>
             </div>
           </div>
@@ -502,7 +505,7 @@ export default function LauKataKatiPage() {
           {state.history.length > 0 && (
             <>
               <GamosaStrip />
-              <p className="eyebrow">Moves</p>
+              <p className="eyebrow">{t.game.moves}</p>
               <ol
                 reversed
                 className="font-body"
@@ -516,7 +519,7 @@ export default function LauKataKatiPage() {
               >
                 {[...state.history].map((h, i) => (
                   <li key={i}>
-                    {h.side === "A" ? "Dark" : "Pale"}: {pt(h.from)} → {pt(h.to)}
+                    {h.side === "A" ? t.game.dark : t.game.pale}: {pt(h.from)} → {pt(h.to)}
                     {h.captures.length > 0 && (
                       <strong className="hl-turmeric"> ×{h.captures.length}</strong>
                     )}
@@ -532,14 +535,14 @@ export default function LauKataKatiPage() {
           <HistoryBlurb />
           <GamosaStrip />
           <FamilyLinks />
-        </EarthPanel>
+        </LeafPanel>
 
         <Footer />
       </main>
 
       {showDialog && (
         <div className="dialog-overlay" onKeyDown={(e) => e.key === "Escape" && setDismissed(true)}>
-          <EarthPanel className="dialog" labelledBy="game-over-title">
+          <LeafPanel shape="peepal" className="dialog" labelledBy="game-over-title">
             <div
               ref={dialogRef}
               tabIndex={-1}
@@ -548,25 +551,24 @@ export default function LauKataKatiPage() {
               aria-labelledby="game-over-title"
               style={{ outline: "none" }}
             >
-              <span className="stamp">{state.winner === "draw" ? "Draw" : "Game over"}</span>
+              <span className="stamp">{state.winner === "draw" ? t.game.draw : t.game.gameOver}</span>
               <h2 id="game-over-title" className="font-display">
                 {resultText}
               </h2>
-              <p className="font-body" style={{ opacity: 0.85 }}>{state.winReason}</p>
+              <p className="font-body" style={{ opacity: 0.85 }}>{translateReason(state.winReason, t)}</p>
               <p className="font-body">
-                Stones standing — <strong>dark {pieceCount(state, "A")}</strong>,{" "}
-                <strong>pale {pieceCount(state, "B")}</strong>
+                {t.game.standing(pieceCount(state, "A"), pieceCount(state, "B"))}
               </p>
               <div className="dialog-actions">
                 <button className="btn-clay" onClick={restart} autoFocus>
-                  <Icon name="play" size={18} /> Play again · <span className="font-bengali">আবার</span>
+                  <Icon name="play" size={18} /> {t.game.playAgain}
                 </button>
                 <Link href="/" className="btn-clay btn-clay--ghost">
-                  All games · <span className="font-bengali">সব খেলা</span>
+                  {t.game.allGames}
                 </Link>
               </div>
             </div>
-          </EarthPanel>
+          </LeafPanel>
         </div>
       )}
     </>

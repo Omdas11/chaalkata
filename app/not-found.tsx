@@ -1,35 +1,42 @@
+"use client";
+
 import Link from "next/link";
-import EarthPanel from "../components/EarthPanel";
+import LeafPanel from "../components/LeafPanel";
+import LeafField from "../components/LeafField";
 import GamosaStrip from "../components/GamosaStrip";
 import SoilBackdrop, { SoilVignette } from "../components/SoilBackdrop";
 import SoilScene from "../components/SoilScene";
 import Footer from "../components/Footer";
-
-export const metadata = { title: "Not found" };
+import LangToggle from "../components/LangToggle";
+import { useLang } from "../lib/i18n";
 
 export default function NotFound() {
+  const { t } = useLang();
   return (
     <>
       <SoilBackdrop />
       <SoilScene />
+      <LeafField />
       <SoilVignette />
       <main className="wrap" style={{ position: "relative", zIndex: 2, padding: "4rem 0" }}>
-        <EarthPanel tilt="l" labelledBy="nf-title">
-          <span className="stamp">404</span>
+        <LeafPanel shape="mango" labelledBy="nf-title">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", marginBottom: "0.4em" }}>
+            <span className="stamp">404</span>
+            <LangToggle />
+          </div>
           <h1 id="nf-title" className="font-display">
-            This path isn't on the board
+            {t.notFound.title}
           </h1>
           <p className="font-body" style={{ fontSize: "1.2rem" }}>
-            The page you reached for doesn't exist — like stepping onto a point
-            with no line to it.
+            {t.notFound.text}
           </p>
           <GamosaStrip />
           <p>
             <Link href="/" className="btn-clay">
-              ← Back to the games
+              ← {t.notFound.home}
             </Link>
           </p>
-        </EarthPanel>
+        </LeafPanel>
         <Footer />
       </main>
     </>
