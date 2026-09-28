@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import type { BoardDef, Move, Side } from "../lib/engine";
 
 const SIZE = 10; // board spans -5..5 in world units
-const PIECE_R = 0.42;
+const PIECE_R = 0.5;
 const REST_Y = PIECE_R * 0.82;
 
 export interface LastMove {
@@ -186,7 +186,7 @@ export default function Board3D({
       addGroove(pa, mid, width);
       addGroove(mid, pb, width);
     }
-    const pitGeo = new THREE.CircleGeometry(0.17, 20);
+    const pitGeo = new THREE.CircleGeometry(0.22, 20);
     for (const p of board.points) {
       const pit = new THREE.Mesh(pitGeo, pitMat);
       pit.rotation.x = -Math.PI / 2;
@@ -242,16 +242,16 @@ export default function Board3D({
 
     // --- selection ring + target markers + capture hints + last-move marker ---
     const ring = new THREE.Mesh(
-      new THREE.RingGeometry(0.52, 0.66, 32),
+      new THREE.RingGeometry(0.6, 0.74, 32),
       new THREE.MeshBasicMaterial({ color: 0xb3261e, transparent: true, opacity: 0.95, side: THREE.DoubleSide }),
     );
     ring.rotation.x = -Math.PI / 2;
     ring.visible = false;
     boardGroup.add(ring);
 
-    const markerGeo = new THREE.CircleGeometry(0.2, 20);
+    const markerGeo = new THREE.CircleGeometry(0.26, 20);
     const markerMat = new THREE.MeshBasicMaterial({ color: 0xe0a526, transparent: true, opacity: 0.95, side: THREE.DoubleSide });
-    const hintGeo = new THREE.RingGeometry(0.5, 0.6, 32);
+    const hintGeo = new THREE.RingGeometry(0.58, 0.7, 32);
     const hintMat = new THREE.MeshBasicMaterial({ color: 0xe0a526, transparent: true, opacity: 0.7, side: THREE.DoubleSide });
     let markers: THREE.Mesh[] = [];
     let hintRings: THREE.Mesh[] = [];
@@ -318,7 +318,7 @@ export default function Board3D({
       if (!lm) return;
       const w = worldPos(board, lm.to);
       const r = new THREE.Mesh(
-        new THREE.RingGeometry(0.5, 0.62, 32),
+        new THREE.RingGeometry(0.58, 0.72, 32),
         new THREE.MeshBasicMaterial({ color: 0xe0a526, transparent: true, opacity: 0.55, side: THREE.DoubleSide }),
       );
       r.rotation.x = -Math.PI / 2;
@@ -413,16 +413,35 @@ export default function Board3D({
     renderer.domElement.addEventListener("pointermove", onPointerMove);
 
     // --- sizing ---
+    // Auto-fit: pull the camera in until the board (plus a stone-radius
+    // margin) fills ~90% of the frame on any screen shape. This is what
+    // makes the board big on portrait phones without cropping corners.
+    const fitCorners = [
+      new THREE.Vector3(-3.6, 0, -5.6),
+      new THREE.Vector3(3.6, 0, -5.6),
+      new THREE.Vector3(-3.6, 0, 5.6),
+      new THREE.Vector3(3.6, 0, 5.6),
+    ];
+    const proj = new THREE.Vector3();
     const resize = () => {
       const w = mount.clientWidth;
       const h = mount.clientHeight;
       if (w === 0 || h === 0) return;
       camera.aspect = w / h;
-      // Zoom in on narrow/portrait screens so the board fills the frame.
-      const zoom = camera.aspect < 0.85 ? 0.72 : camera.aspect < 1.2 ? 0.86 : 1;
-      camera.position.set(0, 10.5 * zoom, -8.5 * zoom);
-      camera.lookAt(0, 0, -0.5);
-      camera.updateProjectionMatrix();
+      let k = 1;
+      for (let i = 0; i < 24; i++) {
+        camera.position.set(0, 10.5 * k, -8.5 * k);
+        camera.lookAt(0, 0, -0.5);
+        camera.updateProjectionMatrix();
+        let m = 0;
+        for (const c of fitCorners) {
+          proj.copy(c).project(camera);
+          m = Math.max(m, Math.abs(proj.x), Math.abs(proj.y));
+        }
+        if (m > 0.94) k *= 1.06;
+        else if (m < 0.86) k *= 0.96;
+        else break;
+      }
       renderer.setSize(w, h);
     };
     resize();
