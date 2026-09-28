@@ -44,6 +44,30 @@
  --clay: #b5623a;
  --clay-deep: #7e3f24;
  --shadow: rgba(12, 7, 3, 0.5);
+ /* shape language: clay tablets (chamfered, hand-cut) */
+ --shape-btn: 4px 16px 4px 16px;
+ --shape-card: 8px 28px 8px 28px;
+ --shape-chip: 3px 12px 3px 12px;
+ --bg-ink: #2a1e12;
+}
+
+/* canopy theme: leaf shapes, photo background */
+[data-theme="canopy"] {
+ --shape-btn: 20px 6px 20px 6px;
+ --shape-card: 34px 8px 34px 8px;
+ --shape-chip: 14px 4px 14px 4px;
+ --bg-ink: #16280f;
+}
+
+/* night theme: sharp shards */
+[data-theme="night"] {
+ --shape-btn: 3px;
+ --shape-card: 3px;
+ --shape-chip: 3px;
+ --bg-ink: #0d1021;
+ --turmeric: #f0b429;
+ --chalk: #ece7f5;
+ --chalk-dim: rgba(236, 231, 245, 0.72);
 }
 
 *,
@@ -60,12 +84,54 @@ body {
 
 body {
  overflow-x: clip;
- background: #16280f;
+ background: var(--bg-ink);
  color: var(--chalk);
  font-family: "Hind", "Hind Siliguri", system-ui, sans-serif;
  font-size: 19px;
  line-height: 1.5;
  min-height: 100vh;
+}
+
+/* ---- theme backgrounds (fixed layers, toggled by data-theme) ---- */
+.theme-bg {
+ position: fixed;
+ inset: 0;
+ z-index: -3;
+ pointer-events: none;
+ display: none;
+}
+[data-theme="soil"] .theme-bg--soil,
+[data-theme="night"] .theme-bg--night {
+ display: block;
+}
+/* soil: simple packed earth, subtle grain */
+.theme-bg--soil {
+ background:
+  radial-gradient(120% 90% at 50% 0%, rgba(107, 74, 46, 0.55), transparent 60%),
+  radial-gradient(100% 70% at 50% 110%, rgba(20, 12, 6, 0.8), transparent 65%),
+  repeating-linear-gradient(47deg, rgba(0, 0, 0, 0.05) 0 2px, transparent 2px 5px),
+  linear-gradient(180deg, #3a2a18 0%, #2a1e12 45%, #1c130b 100%);
+}
+/* night: monsoon night sky with fireflies */
+.theme-bg--night {
+ background:
+  radial-gradient(60% 40% at 78% 12%, rgba(240, 180, 41, 0.16), transparent 70%),
+  radial-gradient(2px 2px at 12% 22%, rgba(255, 244, 200, 0.9), transparent 60%),
+  radial-gradient(2px 2px at 32% 8%, rgba(255, 244, 200, 0.7), transparent 60%),
+  radial-gradient(1.5px 1.5px at 55% 30%, rgba(255, 244, 200, 0.8), transparent 60%),
+  radial-gradient(2px 2px at 71% 44%, rgba(190, 255, 170, 0.9), transparent 60%),
+  radial-gradient(1.5px 1.5px at 86% 62%, rgba(190, 255, 170, 0.75), transparent 60%),
+  radial-gradient(2px 2px at 24% 58%, rgba(255, 244, 200, 0.65), transparent 60%),
+  radial-gradient(1.5px 1.5px at 44% 74%, rgba(190, 255, 170, 0.7), transparent 60%),
+  radial-gradient(2px 2px at 63% 82%, rgba(255, 244, 200, 0.6), transparent 60%),
+  linear-gradient(180deg, #141a38 0%, #0d1021 55%, #070912 100%);
+}
+/* canopy photo layers only show in the canopy theme */
+.canopy-layer {
+ display: none;
+}
+[data-theme="canopy"] .canopy-layer {
+ display: block;
 }
 
 img {
@@ -472,7 +538,7 @@ a:hover {
  color: #2a1c10;
  background: linear-gradient(180deg, #cd7647 0%, var(--clay) 60%, #a3552f 100%);
  border: 0;
- border-radius: 9px;
+ border-radius: var(--shape-btn);
  padding: 0.7em 1.5em;
  min-height: 48px;
  cursor: pointer;
@@ -512,7 +578,7 @@ a:hover {
  padding: 0.55em 1em;
  min-height: 44px;
  min-width: 44px;
- border-radius: 8px;
+ border-radius: var(--shape-chip);
 }
 
 .btn-clay:disabled {
@@ -685,11 +751,19 @@ a:hover {
  display: flex;
  gap: var(--sp-1);
  overflow-x: auto;
- scroll-snap-type: x mandatory;
- padding: 0.5rem max(1rem, calc(50vw - 36rem)) 1.5rem;
- margin-inline: max(-1rem, calc(-50vw + 36rem));
+ scroll-snap-type: x proximity;
+ scroll-padding-inline: 1rem;
+ padding: 0.5rem 1rem 1.5rem;
+ margin-inline: -1rem;
  -webkit-overflow-scrolling: touch;
  scrollbar-width: none;
+}
+@media (min-width: 76rem) {
+ .carousel {
+  margin-inline: calc(36rem - 50vw);
+  padding-inline: calc(50vw - 36rem);
+  scroll-padding-inline: calc(50vw - 36rem);
+ }
 }
 
 .carousel::-webkit-scrollbar {
@@ -697,7 +771,7 @@ a:hover {
 }
 
 .game-card {
- scroll-snap-align: center;
+ scroll-snap-align: start;
  flex: 0 0 min(74vw, 300px);
  aspect-ratio: 1 / var(--phi);
  display: flex;
@@ -705,7 +779,7 @@ a:hover {
  justify-content: flex-end;
  gap: 0.5rem;
  padding: 1.4rem;
- border-radius: 20px;
+ border-radius: var(--shape-card);
  text-decoration: none;
  color: var(--chalk);
  background: linear-gradient(165deg, rgba(52, 36, 22, 0.9), rgba(26, 17, 10, 0.88));
@@ -926,4 +1000,134 @@ a:hover {
  height: 78vh;
  min-height: 420px;
  }
+}
+
+/* ---------- theme switch (drawer) ---------- */
+.theme-switch {
+ display: flex;
+ gap: 0.6rem;
+}
+.theme-pick {
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 0.45rem;
+ padding: 0.7rem 0.4rem;
+ background: rgba(20, 12, 6, 0.35);
+ border: 2px solid rgba(241, 233, 216, 0.25);
+ border-radius: var(--shape-chip);
+ color: var(--chalk);
+ cursor: pointer;
+ font-family: inherit;
+ transition: border-color 0.15s ease, transform 0.12s ease;
+}
+.theme-pick:hover {
+ border-color: var(--turmeric);
+}
+.theme-pick--active {
+ border-color: var(--turmeric);
+ box-shadow: 0 0 0 1px var(--turmeric), 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+.theme-pick__swatch {
+ width: 2rem;
+ height: 2rem;
+ border-radius: 50%;
+ border: 1px solid rgba(241, 233, 216, 0.4);
+}
+.theme-pick--soil .theme-pick__swatch {
+ background: radial-gradient(circle at 35% 30%, #8a6a45, #3a2a18 70%);
+}
+.theme-pick--canopy .theme-pick__swatch {
+ background: radial-gradient(circle at 35% 30%, #7bae4f, #16280f 70%);
+}
+.theme-pick--night .theme-pick__swatch {
+ background: radial-gradient(circle at 65% 30%, #f0b429 0 12%, #141a38 45%, #070912 100%);
+}
+.theme-pick__name {
+ font-size: 0.85rem;
+ font-weight: 600;
+}
+
+/* ---------- profile page ---------- */
+.stat-row {
+ display: flex;
+ gap: var(--sp-1);
+ flex-wrap: wrap;
+ margin: var(--sp-1) 0;
+}
+.stat-chip {
+ flex: 1 1 7rem;
+ text-align: center;
+ padding: 0.9rem 0.6rem;
+ background: rgba(20, 12, 6, 0.45);
+ border: 1px solid rgba(241, 233, 216, 0.22);
+ border-radius: var(--shape-card);
+}
+.stat-chip__num {
+ font-family: "Yatra One", "Hind", system-ui, sans-serif;
+ font-size: 2rem;
+ color: var(--turmeric);
+ line-height: 1.1;
+}
+.stat-chip__label {
+ font-size: 0.8rem;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ color: var(--chalk-dim);
+ margin-top: 0.2rem;
+}
+.record-list {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ display: flex;
+ flex-direction: column;
+ gap: 0.6rem;
+}
+.record-item {
+ display: flex;
+ align-items: center;
+ gap: 0.8rem;
+ padding: 0.7rem 0.9rem;
+ background: rgba(20, 12, 6, 0.45);
+ border: 1px solid rgba(241, 233, 216, 0.18);
+ border-radius: var(--shape-chip);
+ font-size: 0.95rem;
+}
+.record-item__result {
+ font-weight: 700;
+ min-width: 5.5rem;
+}
+.record-item--win .record-item__result {
+ color: var(--leaf-300);
+}
+.record-item--loss .record-item__result {
+ color: #e08a7a;
+}
+.record-item--draw .record-item__result {
+ color: var(--turmeric);
+}
+.record-item__meta {
+ margin-left: auto;
+ color: var(--chalk-dim);
+ font-size: 0.85rem;
+ white-space: nowrap;
+}
+.empty-note {
+ padding: 1.2rem;
+ border: 1px dashed rgba(241, 233, 216, 0.35);
+ border-radius: var(--shape-card);
+ color: var(--chalk-dim);
+ text-align: center;
+}
+.backend-badge {
+ display: inline-block;
+ font-size: 0.75rem;
+ text-transform: uppercase;
+ letter-spacing: 0.14em;
+ padding: 0.25rem 0.7rem;
+ border: 1px solid rgba(241, 233, 216, 0.35);
+ border-radius: var(--shape-chip);
+ color: var(--chalk-dim);
 }

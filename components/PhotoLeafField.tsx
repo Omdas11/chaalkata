@@ -15,7 +15,7 @@ const LEAVES = [
  *  black vanishes. Gentle CSS drift only — the gyro parallax is gone. */
 export default function PhotoLeafField() {
   return (
-    <div className="photo-leaves" aria-hidden="true">
+    <div className="photo-leaves canopy-layer" aria-hidden="true">
       {LEAVES.map((l, i) => {
         const imgStyle = {
           width: l.size,

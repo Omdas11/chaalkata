@@ -142,20 +142,35 @@ export default function Board3D({
     const boardGroup = new THREE.Group();
     scene.add(boardGroup);
 
-    // --- packed-earth patch (swept circle) ---
+    // --- packed-earth patch: an ellipse hugging the drawn board ---
+    // The substrate is sized from the actual graph bounds, so "the board"
+    // the player sees is exactly what the camera fits — nothing cropped.
+    let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity;
+    for (const p of board.points) {
+      const wx = (p.x - 0.5) * SIZE, wz = (p.y - 0.5) * SIZE;
+      if (wx < minX) minX = wx; if (wx > maxX) maxX = wx;
+      if (wz < minZ) minZ = wz; if (wz > maxZ) maxZ = wz;
+    }
+    const PAD = 1.25; // stone radius + breathing room
+    const ex = (maxX - minX) / 2 + PAD;
+    const ez = (maxZ - minZ) / 2 + PAD;
+    const cx = (minX + maxX) / 2, cz = (minZ + maxZ) / 2;
     const patch = new THREE.Mesh(
-      new THREE.CircleGeometry(7.4, 56),
+      new THREE.CircleGeometry(1, 64),
       new THREE.MeshStandardMaterial({ color: 0x7a5a38, roughness: 1 }),
     );
+    patch.scale.set(ex, ez, 1);
     patch.rotation.x = -Math.PI / 2;
+    patch.position.set(cx, 0, cz);
     patch.receiveShadow = true;
     boardGroup.add(patch);
     const rim = new THREE.Mesh(
-      new THREE.RingGeometry(7.4, 7.85, 56),
+      new THREE.RingGeometry(1, 1.07, 64),
       new THREE.MeshStandardMaterial({ color: 0x5a4128, roughness: 1 }),
     );
+    rim.scale.set(ex, ez, 1);
     rim.rotation.x = -Math.PI / 2;
-    rim.position.y = 0.005;
+    rim.position.set(cx, 0.005, cz);
     rim.receiveShadow = true;
     boardGroup.add(rim);
 
@@ -413,14 +428,15 @@ export default function Board3D({
     renderer.domElement.addEventListener("pointermove", onPointerMove);
 
     // --- sizing ---
-    // Auto-fit: pull the camera in until the board (plus a stone-radius
-    // margin) fills ~90% of the frame on any screen shape. This is what
-    // makes the board big on portrait phones without cropping corners.
+    // Auto-fit: pull the camera in until the packed-earth patch (the whole
+    // visible board) fills ~88% of the frame on any screen shape. Fitting
+    // the substrate itself — not just the graph corners — is what keeps the
+    // board from cropping at the left/right/top/bottom edges on phones.
     const fitCorners = [
-      new THREE.Vector3(-3.6, 0, -5.6),
-      new THREE.Vector3(3.6, 0, -5.6),
-      new THREE.Vector3(-3.6, 0, 5.6),
-      new THREE.Vector3(3.6, 0, 5.6),
+      new THREE.Vector3(cx - ex, 0, cz - ez),
+      new THREE.Vector3(cx + ex, 0, cz - ez),
+      new THREE.Vector3(cx - ex, 0, cz + ez),
+      new THREE.Vector3(cx + ex, 0, cz + ez),
     ];
     const proj = new THREE.Vector3();
     const resize = () => {
@@ -442,8 +458,8 @@ export default function Board3D({
           proj.copy(c).project(camera);
           m = Math.max(m, Math.abs(proj.x), Math.abs(proj.y));
         }
-        if (m > 0.94) k *= 1.06;
-        else if (m < 0.86) k *= 0.96;
+        if (m > 0.88) k *= 1.06;
+        else if (m < 0.8) k *= 0.96;
         else break;
       }
       renderer.setSize(w, h);

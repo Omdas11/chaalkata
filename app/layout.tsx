@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { LanguageProvider } from "../lib/i18n";
+import { ThemeProvider } from "../lib/theme";
 import { SiteHeader } from "../components/SiteChrome";
+
+/** Applies the stored theme before first paint (no flash). */
+const THEME_BOOT = `(function(){try{var t=localStorage.getItem('ck-theme');if(t==='canopy'||t==='night'){document.documentElement.dataset.theme=t}else{document.documentElement.dataset.theme='soil'}}catch(e){document.documentElement.dataset.theme='soil'}})();`;
 
 const SITE_URL = "https://chaalkata.vercel.app";
 
@@ -67,15 +71,22 @@ const websiteJsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
+      </head>
       <body>
-        <LanguageProvider>
-          <SiteHeader />
-          {children}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-          />
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <div className="theme-bg theme-bg--soil" aria-hidden="true" />
+            <div className="theme-bg theme-bg--night" aria-hidden="true" />
+            <SiteHeader />
+            {children}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+            />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

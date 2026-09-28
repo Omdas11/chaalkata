@@ -3,11 +3,11 @@
 export default function LeafCanopy() {
   return (
     <>
-      <div className="canopy" aria-hidden="true">
+      <div className="canopy canopy-layer" aria-hidden="true">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/leaves/canopy.jpg" alt="" className="canopy__img" />
       </div>
-      <div className="scrim" aria-hidden="true" />
+      <div className="scrim canopy-layer" aria-hidden="true" />
     </>
   );
 }

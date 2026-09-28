@@ -4,6 +4,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LangToggle from "./LangToggle";
+import ThemeSwitch from "./ThemeSwitch";
 import Icon from "./Icon";
 import { useLang } from "../lib/i18n";
 
@@ -112,6 +113,14 @@ export function MenuDrawer({ controls }: { controls?: ReactNode }) {
           <Link href="/history/lau-kata-kati" className="row-action" onClick={() => setOpen(false)}>
             <Icon name="scroll" size={18} /> {t.menu.history}
           </Link>
+          <Link href="/profile" className="row-action" onClick={() => setOpen(false)}>
+            <Icon name="user" size={18} /> {t.menu.profile}
+          </Link>
+        </section>
+
+        <section aria-label={t.menu.theme} className="drawer-section">
+          <p className="eyebrow">{t.menu.theme}</p>
+          <ThemeSwitch />
         </section>
 
         <section aria-label={t.menu.language} className="drawer-section">

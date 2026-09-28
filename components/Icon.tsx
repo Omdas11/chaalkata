@@ -1,5 +1,5 @@
 interface IconProps {
-  name: "sound-on" | "sound-off" | "restart" | "undo" | "close" | "play" | "users" | "home" | "book" | "scroll" | "code";
+  name: "sound-on" | "sound-off" | "restart" | "undo" | "close" | "play" | "users" | "home" | "book" | "scroll" | "code" | "user" | "eye";
   size?: number;
 }
 
@@ -99,6 +99,20 @@ export default function Icon({ name, size = 20 }: IconProps) {
         <svg {...common}>
           <path d="M8 6l-5 6 5 6" />
           <path d="M16 6l5 6-5 6" />
+        </svg>
+      );
+    case "user":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5" />
+        </svg>
+      );
+    case "eye":
+      return (
+        <svg {...common}>
+          <path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z" />
+          <circle cx="12" cy="12" r="2.5" />
         </svg>
       );
   }

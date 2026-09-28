@@ -54,3 +54,32 @@ create or replace view ck_leaderboard as
   from ck_results
   where user_id is not null
   group by game_id, user_id;
+
+-- Visitor counter: a single-row public counter bumped by /api/visits.
+create table if not exists ck_visits (
+  id int primary key default 1,
+  count bigint not null default 0,
+  updated_at timestamptz not null default now()
+);
+insert into ck_visits (id, count) values (1, 0)
+on conflict (id) do nothing;
+
+alter table ck_visits enable row level security;
+drop policy if exists "public read visits" on ck_visits;
+create policy "public read visits" on ck_visits
+  for select to anon, authenticated using (true);
+
+-- Atomic increment. Executable by anyone (it's a vanity counter);
+-- the only writable column path is through this function.
+create or replace function bump_visits()
+returns bigint
+language sql
+security definer
+set search_path = public
+as $$
+  update ck_visits
+  set count = count + 1, updated_at = now()
+  where id = 1
+  returning count;
+$$;
+grant execute on function bump_visits() to anon, authenticated;
