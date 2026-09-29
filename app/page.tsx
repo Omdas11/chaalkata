@@ -6,6 +6,7 @@ import GameCarousel from "../components/GameCarousel";
 import GamosaStrip from "../components/GamosaStrip";
 import Footer from "../components/Footer";
 import AccountChip from "../components/AccountChip";
+import AuthNotice from "../components/AuthNotice";
 import Leaderboard from "../components/Leaderboard";
 import Icon from "../components/Icon";
 import { useLang } from "../lib/i18n";
@@ -16,6 +17,7 @@ export default function Home() {
     <>
       <MenuDrawer />
       <main className="wrap page-main">
+        <AuthNotice />
         <section aria-labelledby="ck-title">
           <p className="eyebrow">{t.home.eyebrow}</p>
           <h1 id="ck-title" className="font-display">

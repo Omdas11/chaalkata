@@ -871,6 +871,21 @@ a:hover {
  outline-offset: 1px;
 }
 
+/* ---------- auth error notice (expired magic link etc.) ---------- */
+.auth-notice {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 1rem;
+ margin: 0 0 var(--sp-2);
+ padding: 0.9rem 1.1rem;
+ background: var(--panel-bg);
+ border: 2px solid var(--turmeric);
+ border-radius: var(--shape-chip);
+ color: var(--chalk);
+ font-size: 1rem;
+}
+
 /* ---------- footer ---------- */
 .site-footer {
  text-align: center;

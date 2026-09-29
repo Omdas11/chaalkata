@@ -184,6 +184,9 @@ const en = {
     checkEmail: "Check your email for the magic link.",
     signedInAs: (email: string) => `Signed in as ${email}`,
     captchaNeeded: "Please tick the captcha first.",
+    linkExpired: "That sign-in link expired or was already used. Request a fresh one from the Profile page.",
+    linkError: "Sign-in didn't go through. Please try again from the Profile page.",
+    dismiss: "Dismiss",
   },
   footer: {
     tagline: "Chaal-Kaata — traditional games, dug up with care.",
@@ -386,6 +389,9 @@ const bn: Dict = {
     checkEmail: "ম্যাজিক লিংকের জন্য ইমেইল দেখো।",
     signedInAs: (email: string) => `${email} হিসেবে সাইন ইন`,
     captchaNeeded: "আগে ক্যাপচায় টিক দাও।",
+    linkExpired: "সাইন-ইন লিংকটার মেয়াদ শেষ বা আগেই ব্যবহার হয়ে গেছে। প্রোফাইল পেজ থেকে নতুন লিংক নাও।",
+    linkError: "সাইন-ইন হয়নি। প্রোফাইল পেজ থেকে আবার চেষ্টা করো।",
+    dismiss: "বন্ধ করো",
   },
   footer: {
     tagline: "চাল-কাটা — ঐতিহ্যবাহী খেলা, যত্নে খুঁড়ে তোলা।",
