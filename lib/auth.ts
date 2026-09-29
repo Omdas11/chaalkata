@@ -32,12 +32,18 @@ export async function getSession(): Promise<Session | null> {
 }
 
 /** Passwordless sign-in: Supabase emails a magic link. */
-export async function signInWithEmail(email: string): Promise<{ error?: string }> {
+export async function signInWithEmail(
+  email: string,
+  captchaToken?: string | null,
+): Promise<{ error?: string }> {
   const sb = getSupabase();
   if (!sb) return { error: "backend not configured" };
   const { error } = await sb.auth.signInWithOtp({
     email,
-    options: { emailRedirectTo: window.location.origin },
+    options: {
+      emailRedirectTo: window.location.origin,
+      ...(captchaToken ? { captchaToken } : {}),
+    },
   });
   return error ? { error: error.message } : {};
 }

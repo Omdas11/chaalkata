@@ -183,6 +183,7 @@ const en = {
     sendLink: "Send magic link",
     checkEmail: "Check your email for the magic link.",
     signedInAs: (email: string) => `Signed in as ${email}`,
+    captchaNeeded: "Please tick the captcha first.",
   },
   footer: {
     tagline: "Chaal-Kaata — traditional games, dug up with care.",
@@ -384,6 +385,7 @@ const bn: Dict = {
     sendLink: "ম্যাজিক লিংক পাঠাও",
     checkEmail: "ম্যাজিক লিংকের জন্য ইমেইল দেখো।",
     signedInAs: (email: string) => `${email} হিসেবে সাইন ইন`,
+    captchaNeeded: "আগে ক্যাপচায় টিক দাও।",
   },
   footer: {
     tagline: "চাল-কাটা — ঐতিহ্যবাহী খেলা, যত্নে খুঁড়ে তোলা।",

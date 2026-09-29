@@ -10,6 +10,7 @@ import {
 } from "../lib/auth";
 import { useLang } from "../lib/i18n";
 import type { Session } from "@supabase/supabase-js";
+import HCaptcha, { HCAPTCHA_SITEKEY } from "./HCaptcha";
 
 /** Minimal account UI: magic-link sign-in when Supabase is configured. */
 export default function AccountChip() {
@@ -19,6 +20,9 @@ export default function AccountChip() {
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
+  const [captcha, setCaptcha] = useState<string | null>(null);
+  const [resetKey, setResetKey] = useState(0);
+  const captchaOn = enabled && !!HCAPTCHA_SITEKEY;
 
   useEffect(() => {
     if (!enabled) return;
@@ -46,10 +50,16 @@ export default function AccountChip() {
       setMsg(t.auth.emailPlaceholder);
       return;
     }
+    if (captchaOn && !captcha) {
+      setMsg(t.auth.captchaNeeded);
+      return;
+    }
     setBusy(true);
     setMsg(null);
-    const { error } = await signInWithEmail(em);
+    const { error } = await signInWithEmail(em, captcha);
     setBusy(false);
+    setCaptcha(null);
+    setResetKey((k) => k + 1);
     setMsg(error ?? t.auth.checkEmail);
   };
 
@@ -77,6 +87,7 @@ export default function AccountChip() {
       <button className="btn-clay btn-clay--sm" onClick={send} disabled={busy}>
         {busy ? "…" : t.auth.signIn}
       </button>
+      {captchaOn && <HCaptcha onToken={setCaptcha} resetKey={resetKey} />}
       {msg && <span className="font-body" style={{ fontSize: ".85rem" }}>{msg}</span>}
     </span>
   );
