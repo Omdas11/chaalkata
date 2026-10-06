@@ -1,0 +1,1050 @@
+[
+ {
+  "id": "2017F-601",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Select the related word from the given alternatives. Rain : Water :: Hail : ?",
+  "answer_text": "Ice"
+ },
+ {
+  "id": "2017F-602",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Select the related letters from the given alternatives. FHJ : CEG :: LNP : ?",
+  "answer_text": "IKM"
+ },
+ {
+  "id": "2017F-603",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Select the related number from the given alternatives. 1/4 : -1/2 :: -1/10 : ?",
+  "answer_text": "1/5"
+ },
+ {
+  "id": "2017F-604",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Select the odd word from the given alternatives.",
+  "answer_text": "Professor"
+ },
+ {
+  "id": "2017F-605",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Select the odd letters from the given alternatives.",
+  "answer_text": "GIK"
+ },
+ {
+  "id": "2017F-606",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Select the odd number from the given alternatives.",
+  "answer_text": "157"
+ },
+ {
+  "id": "2017F-607",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A series is given, with one word missing. Choose the correct alternative from the given ones that will complete the series. Parrot, Other, Eruption, Onset, Etcetera, ?",
+  "answer_text": "Ransom"
+ },
+ {
+  "id": "2017F-608",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A series is given, with one term missing. Choose the correct alternative from the given ones that will complete the series.? AAAAAAAB, BAAAAAAB, BAAAAABB, BBAAAABB, BBAAABBB, ?",
+  "answer_text": "BBBAABBB"
+ },
+ {
+  "id": "2017F-609",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A series is given, with one number missing. Choose the correct alternative from the given ones that will complete the series. 1.4, 2.2, ? , 3.8, 4.6",
+  "answer_text": "3"
+ },
+ {
+  "id": "2017F-610",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Parinaaz's birthday is on Saturday 29th April. On what day of the week will be Kiara's Birthday in the same year, if Kiara was born on 5th September?",
+  "answer_text": "Tuesday"
+ },
+ {
+  "id": "2017F-611",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The weights of 4 boxes are 30, 90, 80 and 20 Kg. Which of the following cannot be the total weight, in kilograms, of any combination of these boxes and in a combination a box can be used only once?",
+  "answer_text": "210"
+ },
+ {
+  "id": "2017F-612",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "From the given words, select the word which cannot be formed using the letters of the given word. COGENTLY",
+  "answer_text": "CLUNG"
+ },
+ {
+  "id": "2017F-613",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If MESTIZO is coded as KCQRGXM, then how will YAK be coded as?",
+  "answer_text": "WYI"
+ },
+ {
+  "id": "2017F-614",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In a certain code language, '+' represents '×', '-' represents '+', '×' represents '÷' and '÷' represents '-'. What is the answer to the following question? 9 × 3 ÷ 12 + 5 - 24 = ?",
+  "answer_text": "-33"
+ },
+ {
+  "id": "2017F-615",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If 17$5 = 11, 3$21 = 12, 2$4 = 3 then what is the value of 42$6 = ?",
+  "answer_text": "24"
+ },
+ {
+  "id": "2017F-617",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Two motorcyclists P and Q start from the same point. P rides 17 km West, then turns South and rides 11 km, then turns to his right and rides 10 km. Q rides 20 km South, then turns to his right and rides 27 km. Where is Q with respect to P now?",
+  "answer_text": "9 km South"
+ },
+ {
+  "id": "2017F-618",
+  "section": "reasoning",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In the question two statements are given, followed by two conclusions, I and II. You have to consider the statements to be true even if it seems to be at variance from commonly known facts. You have to decide which of the given conclusions, if any, follows from the given statements. Statement No two-wheelers are motorcycles. All motorcycles are bicycles. Conclusion Some two-wheelers are bicycles. No motorcycles are two-wheelers.",
+  "answer_text": "Only conclusion II follows"
+ },
+ {
+  "id": "2017F-676",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Census in India is generally done after how many years?",
+  "answer_text": "10"
+ },
+ {
+  "id": "2017F-677",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Which Schedule of Indian Constitution deals with division of powers between the union and the states?",
+  "answer_text": "Seventh Schedule"
+ },
+ {
+  "id": "2017F-678",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In which article of Indian constitution of India there is a provision of a Governor for each state?",
+  "answer_text": "Article 153"
+ },
+ {
+  "id": "2017F-679",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "During the British rule in India Holt Mackenzie was known for _______.",
+  "answer_text": "Mahalwari system"
+ },
+ {
+  "id": "2017F-680",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In which year was the historic Lucknow Pact signed?",
+  "answer_text": "1916"
+ },
+ {
+  "id": "2017F-681",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In which book were many of the Chanakya’s ideas written down?",
+  "answer_text": "Arthshastra"
+ },
+ {
+  "id": "2017F-682",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In which hemisphere does India lie?",
+  "answer_text": "Northern and Eastern"
+ },
+ {
+  "id": "2017F-683",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Out of which sea the Himalayas were uplifted?",
+  "answer_text": "Tethys Sea"
+ },
+ {
+  "id": "2017F-684",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The northern part of the western coast is called ______.",
+  "answer_text": "Konkan"
+ },
+ {
+  "id": "2017F-685",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A wet, swampy and marshy region in the northern plain is called ______.",
+  "answer_text": "Terai"
+ },
+ {
+  "id": "2017F-686",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "'Cape of Good Hope' is located in which country?",
+  "answer_text": "South Africa"
+ },
+ {
+  "id": "2017F-687",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Which of the following is not among the six major controls of the climate in India?",
+  "answer_text": "Population"
+ },
+ {
+  "id": "2017F-688",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In what ratio tea at Rs 240 per kg be mixed with tea at Rs 300 per kg so that on selling the mixture at Rs 336 per kg there is a profit of 20%?",
+  "answer_text": "1 : 2"
+ },
+ {
+  "id": "2017F-689",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The force, which takes an angle area towards a page, is called ______.",
+  "answer_text": "Pressure"
+ },
+ {
+  "id": "2017F-690",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Whittaker classified organisims into how many kingdoms?",
+  "answer_text": "5"
+ },
+ {
+  "id": "2017F-691",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "What is the chemical formula of chloroform?",
+  "answer_text": "CHCl3"
+ },
+ {
+  "id": "2017F-692",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The National Institution for Transforming India (NITI Aayog) launched National Nutrition Strategy aimed at ______.",
+  "answer_text": "Kuposhan Mukt Bharat"
+ },
+ {
+  "id": "2017F-693",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "What is the name of world’s biggest and powerful nuclear powered icebreaker ship launched by Russia?",
+  "answer_text": "Sibir"
+ },
+ {
+  "id": "2017F-694",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Who won men's single title of 2017 US Open tennis championship?",
+  "answer_text": "Rafael Nadal"
+ },
+ {
+  "id": "2017F-695",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "India and its which neighbouring country are counting tiger heads for the first time using same method recognized internationally?",
+  "answer_text": "Nepal"
+ },
+ {
+  "id": "2017F-696",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Carnatic vocalist T. M. Krishna won 30th Indira Gandhi Award for ______ for 2015-2016.",
+  "answer_text": "National Integration"
+ },
+ {
+  "id": "2017F-697",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "What is India’s rank in World Bank’s Ease of Doing Business Report, 2018?",
+  "answer_text": "100"
+ },
+ {
+  "id": "2017F-698",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "India became the 71st country to ratify which of the following Conventions?",
+  "answer_text": "United Nations TIR (Transports Internationaux Routiers)"
+ },
+ {
+  "id": "2017F-699",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The Union Government of India has launched which project to ensure conservation of Himalayan ecosystem?",
+  "answer_text": "SECURE Himalaya"
+ },
+ {
+  "id": "2017F-700",
+  "section": "ga",
+  "paper": "Paper-I",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Commemorative coins of Rs. 100 and Rs. 10 denomination were released on 101st Birth Centenary of noted ______ Dr. MS Subbulakshmi.",
+  "answer_text": "Carnatic Musician"
+ },
+ {
+  "id": "2017F-701",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In the ideal gas equation, PV = µRT, µ is the ________________ of the gas.",
+  "answer_text": "number of moles"
+ },
+ {
+  "id": "2017F-702",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "\"To every action, there is always an equal and opposite reaction.\" This statement is ________________.",
+  "answer_text": "Newton's 3rd Law"
+ },
+ {
+  "id": "2017F-703",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "[M-1L3T-2] are the dimensions of?",
+  "answer_text": "Gravitational constant"
+ },
+ {
+  "id": "2017F-705",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "1 atomic mass unit (u) is equivalent to ____________ the mass of carbon isotope C-12.",
+  "answer_text": "1/12th"
+ },
+ {
+  "id": "2017F-706",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "1n0 + 235U92 → 140Ba56 + yKr36 + 31n0. Find y from the given fission equation of an uranium nucleus?",
+  "answer_text": "93"
+ },
+ {
+  "id": "2017F-707",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "What does 32o Fahrenheit equals to?",
+  "answer_text": "273.15 K"
+ },
+ {
+  "id": "2017F-708",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "41H1 → 4He2 + _________ + energy. Find the missing element/s.",
+  "answer_text": "2 positrons"
+ },
+ {
+  "id": "2017F-709",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A ball is thrown vertically upwards with a velocity of 20 m/s. How high will the ball rise (in meters)? (use g = 10 m/s²)",
+  "answer_text": "20"
+ },
+ {
+  "id": "2017F-710",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A boy standing on a 20 m tall building throws a stone horizontally with a speed of 15 m/s. With what speed will the stone hit the ground (in m/s)? (use g = 10 m/s²)",
+  "answer_text": "25"
+ },
+ {
+  "id": "2017F-712",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A mono atomic molecule free to move in space has how many translational degrees of freedom?",
+  "answer_text": "three"
+ },
+ {
+  "id": "2017F-714",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A point of maximum positive displacement in a transverse wave is called?",
+  "answer_text": "crest"
+ },
+ {
+  "id": "2017F-715",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A ray emanating from the object parallel to the principal axis of a convex lens after refraction _______________.",
+  "answer_text": "passes through the second principal focus"
+ },
+ {
+  "id": "2017F-716",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "A resistor which has a silver coloured ring signifies that the resistor has __________ percent tolerance.",
+  "answer_text": "10"
+ },
+ {
+  "id": "2017F-717",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "An adiabatic wall between two thermodynamic systems _____________.",
+  "answer_text": "does not allow heat or matter to pass across it"
+ },
+ {
+  "id": "2017F-718",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "An alpha particle is same as?",
+  "answer_text": "a helium nucleus"
+ },
+ {
+  "id": "2017F-719",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "At what temperature (in oC) is the r.m.s. velocity of hydrogen molecules twice the r.m.s. velocity of oxygen molecules at 327o C?",
+  "answer_text": "-123"
+ },
+ {
+  "id": "2017F-720",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "B/µo - M is equal to? (B is magnetic field, M is magnetisation of the material and µo is permeability of free space)",
+  "answer_text": "magnetic intensity"
+ },
+ {
+  "id": "2017F-722",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Electric potential at a point with position vector r due to a point charge Q placed at the origin is given by the formula _____________.",
+  "answer_text": "V = Q/(4π?or)"
+ },
+ {
+  "id": "2017F-723",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Fermi is a unit of?",
+  "answer_text": "Length"
+ },
+ {
+  "id": "2017F-724",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Find the uniform angular acceleration of a wheel if its angular speed increases from 420 rpm to 660 rpm in 8 seconds?",
+  "answer_text": "? rad/s²"
+ },
+ {
+  "id": "2017F-725",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "For a transistor in common emitter configuration ____________________ is the ratio of change in base-emitter voltage (ΔVBE) to the resulting change in base current (ΔIB) at constant collector-emitter voltage (VCE).",
+  "answer_text": "Input resistance"
+ },
+ {
+  "id": "2017F-726",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "For small deformations, the stress and strain are proportional to each other. What is this known as?",
+  "answer_text": "Hooke’s law"
+ },
+ {
+  "id": "2017F-727",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "How much heat (in joules) would be required to raise the temperature of 500 g of an aluminium sphere from 20 oC to 720 oC? [Specific Heat Capacity of Aluminium is 900 J/(kgK)]",
+  "answer_text": "3.15 x 105"
+ },
+ {
+  "id": "2017F-728",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If 1,2 and 3 represent different mediums and 'n' is refractive index, then which of the following equations is true?",
+  "answer_text": "n32 = n31 × n12"
+ },
+ {
+  "id": "2017F-729",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If 'A' is the angle of a prism, 'I' is angle of incidence, 'e' is angle of emergence, then the angle of deviation 'δ' of light incident on the prism is equal to?",
+  "answer_text": "i + e - A"
+ },
+ {
+  "id": "2017F-730",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If a metal wire of length 'l' and cross section area 'A' has resistance 'R', then the resistivity of the material of the wire is equal to?",
+  "answer_text": "RA/l"
+ },
+ {
+  "id": "2017F-731",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If a projectile is thrown with velocity v and makes an angle θ with the x-axis then the time taken for achieving maximum height is given by which formula?",
+  "answer_text": "t= vsinθ/g"
+ },
+ {
+  "id": "2017F-732",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If an object is placed 10 cm in front of a convex lens of focal length 6 cm, then find the position of the image (in cm)?",
+  "answer_text": "15"
+ },
+ {
+  "id": "2017F-733",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If chlorine has two isotopes one of 35u and the other 37u and the average mass of chlorine atom is 35.5u, then the ratio of abundance of the two isotopes of masses 35u and 37u is _______.",
+  "answer_text": "3/1"
+ },
+ {
+  "id": "2017F-734",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If 'E' is magnitude of uniform electric field in a conductor, 'τ' is the relaxation time, ('e' is charge and'm' is mass of an electron) then, the term -eEτ/m is equal to the ______________ the electrons.",
+  "answer_text": "drift velocity of"
+ },
+ {
+  "id": "2017F-735",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If the empirical formula for the observed wavelengths for hydrogen is 1/λ = R(1/12 - 1/n2), where n is integral values higher than 1, then it represents the _____________ spectral series.",
+  "answer_text": "Lyman"
+ },
+ {
+  "id": "2017F-736",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If the energy of the electron in the 2nd orbit of hydrogen is -3.4 eV, then how much is the energy (in eV) in the 3rd orbit?",
+  "answer_text": "-1.511"
+ },
+ {
+  "id": "2017F-737",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If the gas particles are of diameter 'd', average speed 'v', number of particles per unit volume 'n', then the volume a particle sweeps in time 't' is?",
+  "answer_text": "?d2vt"
+ },
+ {
+  "id": "2017F-738",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If the ideal gas equation is written as PV = kBNT, where N is number of molecules, then kB represents?",
+  "answer_text": "Boltzmann constant"
+ },
+ {
+  "id": "2017F-739",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If x is displacement, time taken is t, initial velocity is u, final velocity is v and acceleration is a, then which of the following equations is true?",
+  "answer_text": "x = (v² - u²)/2a"
+ },
+ {
+  "id": "2017F-740",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If 'x' is the displacement of a particle performing simple harmonic motion, then \"kx2/2\" is equal to its ______________ energy. Options: 1) kinetic 2) potential 3) total mechanical 4) vibrational Correct Answer: potential",
+  "answer_text": "potential"
+ },
+ {
+  "id": "2017F-741",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "If 'φ' is Electric flux through a closed surface 'S', 'q' is total charge enclosed by 'S' and '?'o is permittivity of free space, then these three are related by Gauss' Law formula __________.",
+  "answer_text": "φ = q/?o"
+ },
+ {
+  "id": "2017F-742",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In ______________the conduction band overlaps on the valence band.",
+  "answer_text": "metallic conductors"
+ },
+ {
+  "id": "2017F-743",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In a nuclear power plant based on pressurised-water reactor, which substance is used both as the moderator and as the heat transfer medium?",
+  "answer_text": "water"
+ },
+ {
+  "id": "2017F-744",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In a stationary wave in a stretched string fixed at both ends the first anti-node is formed at x = __________. ('λ' is the wavelength of the stationary wave)",
+  "answer_text": "λ/4"
+ },
+ {
+  "id": "2017F-745",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In a uniform magnetic field 'B', a charge 'q' of mass 'm' executes a circular orbit in a plane normal to 'B'. Its frequency of uniform circular motion is called the cyclotron frequency which is equal to?",
+  "answer_text": "qB/(2πm)"
+ },
+ {
+  "id": "2017F-746",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In Einstein's mass-energy equivalence relation E = mc2, 'c' stands for?",
+  "answer_text": "speed of light"
+ },
+ {
+  "id": "2017F-747",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In equilibrium, the total energy is equally distributed in all possible energy modes for a molecule, with each mode having an average energy equal to?",
+  "answer_text": "kBT/2"
+ },
+ {
+  "id": "2017F-748",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In Rutherford's gold foil experiment which of the following were directed towards the gold foil?",
+  "answer_text": "α-particles"
+ },
+ {
+  "id": "2017F-749",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In simple harmonic motion, the particle velocity lags behind the displacement by a phase angle of __________.",
+  "answer_text": "π/2"
+ },
+ {
+  "id": "2017F-752",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In the simple harmonic motion x = √2 sin(ωt – π/4), the phase constant can be shown as?",
+  "answer_text": "7π/4"
+ },
+ {
+  "id": "2017F-753",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "In which Thermodynamic process is temperature constant?",
+  "answer_text": "Isothermal"
+ },
+ {
+  "id": "2017F-754",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Inductive reactance is equal to?",
+  "answer_text": "ωL"
+ },
+ {
+  "id": "2017F-755",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Louis de Broglie argued that the electron in its circular orbit must be seen as a particle wave, whose wavelength is equal to _______ , where 'p' is the magnitude of the electron’s momentum and 'h' is Planck's constant.",
+  "answer_text": "h/p"
+ },
+ {
+  "id": "2017F-756",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "One end of a cylindrical pipe of cross-section 6.6 cm² has 14 holes each of radius 1 mm. If water is flowing in the pipe at 1 m/min then what is the speed (in m/s) of efflux through the holes?",
+  "answer_text": "0.25"
+ },
+ {
+  "id": "2017F-757",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "What does STP means?",
+  "answer_text": "0 degree Celsius and 1 atm pressure."
+ },
+ {
+  "id": "2017F-758",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Tensile stress on a metal wire of radius 1 mm is 10,000 N/m². How much is the restoring force developed in it (in N)?",
+  "answer_text": "3.14 x 10-2"
+ },
+ {
+  "id": "2017F-759",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The _____________ of thermodynamics states that if two thermodynamic systems are each in thermal equilibrium with a third system separately are in thermal equilibrium with each other.",
+  "answer_text": "Zeroth Law"
+ },
+ {
+  "id": "2017F-760",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The _______________ Law is an equation that describes the magnetic field created by a current-carrying wire, and allows you to calculate its strength at various points.",
+  "answer_text": "Biot-Savart's"
+ },
+ {
+  "id": "2017F-761",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The ______________________ is a device to measure the flow speed of incompressible fluid.",
+  "answer_text": "Venturi-meter"
+ },
+ {
+  "id": "2017F-762",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The acceleration of an object moving with speed 'v' in a circle of radius 'R' has a magnitude given by which formula?",
+  "answer_text": "a = v²/R"
+ },
+ {
+  "id": "2017F-763",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The amount of scattering of light is inversely proportional to the fourth power of its wavelength. This is known as ____________ scattering.",
+  "answer_text": "Rayleigh"
+ },
+ {
+  "id": "2017F-764",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The capacity of a parallel plate capacitor where 'A' is the area of each plate, 'd' the separation between them and with vacuum between the plates is given as?",
+  "answer_text": "C = ?oA/d"
+ },
+ {
+  "id": "2017F-765",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The charge on an electron is ___________x 10-19 C.",
+  "answer_text": "1.6"
+ },
+ {
+  "id": "2017F-766",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The current in the inductor __________________.",
+  "answer_text": "lags the voltage by π/2"
+ },
+ {
+  "id": "2017F-767",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The expression eτ/m, where 'τ' is the relaxation time, 'e' is charge and 'm' is mass of an electron is equal to the ______________.",
+  "answer_text": "mobility of the electrons"
+ },
+ {
+  "id": "2017F-768",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The fringe pattern observed in Young's Experiment to produce interference pattern will strictly be a?",
+  "answer_text": "Hyperbola"
+ },
+ {
+  "id": "2017F-769",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The human eye can detect electromagnetic radiation in the range of wavelength _______________. Options: 1) 800 nm to 1050 nm 2) 400 nm to 750 nm 3) 1200 nm to 1550 nm 4) 1600 nm to 1950 nm Correct Answer: 400 nm to 750 nm",
+  "answer_text": "400 nm to 750 nm"
+ },
+ {
+  "id": "2017F-770",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The hydraulic lift is based on which of the following?",
+  "answer_text": "Pascal's Law"
+ },
+ {
+  "id": "2017F-771",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Which of the following is the ice point of water in the Fahrenheit scale?",
+  "answer_text": "32o F"
+ },
+ {
+  "id": "2017F-772",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The mass of the hydrogen isotope, tritium is about the same as the masses of?",
+  "answer_text": "1 proton + 2 neutrons"
+ },
+ {
+  "id": "2017F-773",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The mathematical difference between molar specific heat capacities of an ideal gas at constant pressure and volume is equal to which of the following?",
+  "answer_text": "Universal gas constant"
+ },
+ {
+  "id": "2017F-774",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The molar specific heat at constant volume for monoatomic gas is which of the following?",
+  "answer_text": "3R/2"
+ },
+ {
+  "id": "2017F-775",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The nucleus of which of the following atoms whose atomic mass numbers 'A' are given in the options would have the highest binding energy per nucleon?",
+  "answer_text": "100"
+ },
+ {
+  "id": "2017F-776",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The period 'T' a pendulum of string length 'L', bob of mass 'm' and moment of inertia 'I' is given by _________________.",
+  "answer_text": "T = 2π √(I/mgL)"
+ },
+ {
+  "id": "2017F-777",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The phenomenon of rainbow is due to the combined effect of all of the following properties of light except ____________.",
+  "answer_text": "polarization"
+ },
+ {
+  "id": "2017F-778",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The power loss in a conductor of resistance 'R' across which a potential difference of 'V' is equal to which of the following?",
+  "answer_text": "V2/R"
+ },
+ {
+  "id": "2017F-780",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The radius of orbit of the electron in a hydrogen atom is equal to? (?o is permittivity of free space, 'e' is charge and 'm' is mass of an electron)",
+  "answer_text": "e2/(4π?omv2)"
+ },
+ {
+  "id": "2017F-781",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The refractive index of denser medium 2 with respect to rarer medium 1 will be ____________ (where 'C' is the measure of the critical angle).",
+  "answer_text": "n12 = 1/sinC"
+ },
+ {
+  "id": "2017F-782",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The speed 'c' of electromagnetic wave in vacuum is equal to? (where μo and ?o are free space permeability and permittivity constants)",
+  "answer_text": "1/√(µo?o)"
+ },
+ {
+  "id": "2017F-783",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The speed 'v' of transverse waves on a stretched string of linear mass density 'μ' and tension 'T' is equal to?",
+  "answer_text": "√(T/µ)"
+ },
+ {
+  "id": "2017F-784",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "The statement, \"The liquid pressure is the same at all points at the same horizontal level irrespective of cross sectional area or base area or the shape of the container\" represents which of the following?",
+  "answer_text": "The hydrostatic paradox"
+ },
+ {
+  "id": "2017F-785",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Electric flux through a closed surface 'S' enclosing a charge 'q' is equal to ______________. (?o is permittivity of free space)",
+  "answer_text": "q/?o"
+ },
+ {
+  "id": "2017F-786",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "There is a fundamental limit on the efficiency of a heat engine set by an independent principle of nature called the ____________Law of Thermodynamics.",
+  "answer_text": "Second"
+ },
+ {
+  "id": "2017F-789",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "What is the magnifying power of a compound microscope whose eyepiece has a focal length of 10 cm and the magnifying power of objective is 4? (Use least distance of distinct vision as 25 cm)",
+  "answer_text": "14"
+ },
+ {
+  "id": "2017F-790",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "What is the Moment of Inertia of a thin circular ring of mass 'M' and radius 'R' about its diameter?",
+  "answer_text": "MR²/2"
+ },
+ {
+  "id": "2017F-791",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "What would be the acceleration (in m/s²) due to gravity on a planet whose mass is 1/7th the mass of earth and radius, half the radius of earth?",
+  "answer_text": "5.6"
+ },
+ {
+  "id": "2017F-792",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "What would be the frequency (in Hz) of the beats when two sounds of frequencies 256 Hz and 260 Hz superimpose?",
+  "answer_text": "4"
+ },
+ {
+  "id": "2017F-793",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "When temperature is held constant, the pressure and volume of a quantity of gas are related as PV = constant. This relationship is known as?",
+  "answer_text": "Boyle’s law"
+ },
+ {
+  "id": "2017F-794",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "When the transistor is used in the cut-off or saturation state, it acts as?",
+  "answer_text": "A switch"
+ },
+ {
+  "id": "2017F-795",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Which formula represents Newton's Law of Gravitation?",
+  "answer_text": "F= Gm1m2/r² (G is gravitational constant)"
+ },
+ {
+  "id": "2017F-797",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Which of the following is a periodic function if 'ω' is a constant and 't' represents time?",
+  "answer_text": "sin ωt + cos 2 ωt + sin 4 ωt"
+ },
+ {
+  "id": "2017F-798",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Which of the following is false about Electrostatic field lines?",
+  "answer_text": "Electrostatic field lines form closed loops."
+ },
+ {
+  "id": "2017F-799",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "source": "22-Nov-2017 Shift-2 (official key)",
+  "question": "Which of the following statements is consistent with the Doppler effect?",
+  "answer_text": "As the source of sound moves towards the listener the pitch of the sound appears to be higher."
+ }
+]

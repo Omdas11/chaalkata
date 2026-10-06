@@ -1,0 +1,6158 @@
+[
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Rearrange to dr(1 + a cosθ) = a r sinθ dθ, so dr/r = a sinθ dθ/(1 + a cosθ). Integrating gives ln r = −ln(1 + a cosθ) + C, hence r(1 + a cosθ) = constant.",
+  "id": "2022P-001",
+  "options": [
+   "r(1 + a cosθ) = C",
+   "r(1 − a cosθ) = C",
+   "r(1 + a sinθ) = C",
+   "r(1 + a cosθ) = 0"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Solution of the differential equation dr = a(r sinθ dθ − cosθ dr) is __.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "For hydrogen-like atoms E_n ∝ −1/n², so the spacing E_(n+1) − E_n ∝ (2n+1)/(n²(n+1)²) shrinks as n grows.",
+  "id": "2022P-002",
+  "options": [
+   "increases",
+   "decreases",
+   "remains constant",
+   "becomes zero"
+  ],
+  "paper": "Paper-I+II",
+  "question": "With increasing quantum number, the energy difference between adjacent levels in atoms __.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Since d/dx(a^x) = a^x ln a, dividing by ln a gives ∫a^x dx = a^x/ln a + C (repeated as Q92).",
+  "id": "2022P-003",
+  "options": [
+   "a^x/ln a + C",
+   "a^x·ln a + C",
+   "x·a^(x−1) + C",
+   "a^x + C"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Value of ∫a^x dx?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "de-Broglie quantization 2πr = nλ gives n = 3, and Bohr time period T_n ∝ n³, so T_3/T_1 = 27.",
+  "id": "2022P-004",
+  "options": [
+   "27",
+   "9",
+   "3",
+   "1/27"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the ratio of the time period of revolution of the electron of He+ in the orbit where the path length is 3× the de-Broglie wavelength, to the time period in the ground state?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "cosγ = (√2)/√(1+1+2) = √2/2, so γ = 45°.",
+  "id": "2022P-005",
+  "options": [
+   "45°",
+   "60°",
+   "30°",
+   "90°"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What angle does the vector A = i + j + √2 k make with the z-axis?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "In a series circuit the same current flows through every element, so the capacitor current and resistor current are in phase.",
+  "id": "2022P-006",
+  "options": [
+   "0",
+   "90°",
+   "180°",
+   "45°"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In a series RLC circuit, what is the phase difference between the current in the capacitor and the current in the resistor?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Efficiency η = W_out/Q_in = 4.8/8 = 0.6 = 60%.",
+  "id": "2022P-007",
+  "options": [
+   "60%",
+   "40%",
+   "50%",
+   "75%"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A steam engine absorbs 8 kJ of heat per minute and delivers 4.8 kJ of work per minute. What is its efficiency?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "T = 2π√(L/g), so a larger L gives a larger T.",
+  "id": "2022P-008",
+  "options": [
+   "increases",
+   "decreases",
+   "remains the same",
+   "becomes zero"
+  ],
+  "paper": "Paper-I+II",
+  "question": "If the length of a simple pendulum is increased, its time period __.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Oscillations",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "medium",
+  "explanation": "Induction separates charges in the neutral body and grounding lets one sign escape, leaving a net charge of opposite sign to the inducing body — all without contact.",
+  "id": "2022P-009",
+  "options": [
+   "It acquires a net charge opposite in sign to the inducing charge, without any physical contact",
+   "It can only be charged after touching the inducing body",
+   "Its net charge remains zero throughout",
+   "It becomes magnetic"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What happens to a body when it is charged by induction?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "medium",
+  "explanation": "Vm = 150√2 ≈ 212.1 V; peak current Im = Vm/(100+10) ≈ 1.93 A; Idc = 2Im/π ≈ 1.23 A; Vdc = Idc×100 ≈ 122.8 V.",
+  "id": "2022P-010",
+  "options": [
+   "≈123 V",
+   "≈135 V",
+   "≈106 V",
+   "≈60 V"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A full-wave diode rectifier uses a 150V-0-150V transformer, a 100Ω load, and diodes with forward resistance 10Ω. What is the average (DC) output voltage?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Analog Electronics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "This is the standard definition of Euler's number e.",
+  "id": "2022P-011",
+  "options": [
+   "e",
+   "1",
+   "0",
+   "∞"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the value of lim x→∞ (1 + 1/x)^x?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "|A+B|² = 4+9+2A·B = 1 gives A·B = −6 = 2·3·cosθ, so cosθ = −1, θ = 180° and |A×B| = 2·3·sin180° = 0.",
+  "id": "2022P-012",
+  "options": [
+   "0",
+   "6",
+   "√5",
+   "1"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The resultant of two vectors of magnitudes 2 and 3 is 1. What is the magnitude of their cross product?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "At saturation the plate current no longer changes with plate voltage, so the dynamic plate resistance dVp/dIp → ∞.",
+  "id": "2022P-013",
+  "options": [
+   "infinite",
+   "zero",
+   "equal to the load resistance",
+   "equal to the forward resistance"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In a diode, at saturation current, the plate resistance is __.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Semiconductor Devices",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "γ = 1.4 means a diatomic gas; 11.2 L at NTP = 0.5 mol of molecules = 1 mol of atoms = Avogadro's number of atoms.",
+  "id": "2022P-014",
+  "options": [
+   "6.023×10^23",
+   "3.011×10^23",
+   "1.204×10^24",
+   "6.023×10^22"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Gas X has Cp/Cv = 1.4. At NTP, 11.2 litres of gas X contains __ atoms.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "a_21 = (1/2)|2 − 3×1| = (1/2)(1) = 0.5.",
+  "id": "2022P-015",
+  "options": [
+   "0.5",
+   "1",
+   "−0.5",
+   "2"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Find a_21 when a_ij = (1/2)|i − 3j|.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Magnitude = 2, so direction cosines are (1/2, 1/2, √2/2), giving angles 60°, 60°, 45°.",
+  "id": "2022P-016",
+  "options": [
+   "60°, 60°, 45°",
+   "45°, 45°, 90°",
+   "60°, 45°, 60°",
+   "30°, 60°, 45°"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What angles does the vector i + j + √2 k make with the X, Y and Z axes respectively?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "In the freely-falling (non-inertial) cabin frame the pseudo-force exactly cancels gravity, so the effective weight is zero and the cord needs no tension to hold the lamp at rest: T = 0 (weightlessness).",
+  "id": "2022P-017",
+  "options": [
+   "T = 0",
+   "T = W",
+   "T > W",
+   "T < W"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A lamp hangs in an elevator cabin whose cable has broken, so the cabin is in free fall. If W is the gravitational force on the lamp and T the tension in its cord, what is the correct relation in the cabin's frame?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "(x−h)² + (y−2)² = 25; differentiating gives x−h = −(y−2)y′, and substituting back eliminates h: (y−2)²(y′² + 1) = 25.",
+  "id": "2022P-018",
+  "options": [
+   "((dy/dx)² + 1)(y − 2)² = 25",
+   "((dy/dx)² + 1)(x − h)² = 25",
+   "(dy/dx)²(y − 2)² = 25",
+   "((dy/dx)² − 1)(y − 2)² = 25"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the differential equation of the family of circles of radius 5 with centres on the line y = 2?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "v = c/n = (3×10^8)/2.5 = 1.2×10^8 m/s.",
+  "id": "2022P-020",
+  "options": [
+   "1.2×10^8 m/s",
+   "7.5×10^7 m/s",
+   "2.5×10^8 m/s",
+   "3×10^8 m/s"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the velocity of light in diamond if its refractive index with respect to vacuum is 2.5?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "With no external torque, L = Iω is conserved; pulling the arms in reduces the moment of inertia I, so the angular speed ω increases.",
+  "id": "2022P-021",
+  "options": [
+   "Conservation of angular momentum",
+   "Conservation of linear momentum",
+   "Newton's third law",
+   "Bernoulli's principle"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A circus acrobat performing spins pulls in their arms to spin faster — which principle does this illustrate?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Expanding (and verifying with symbolic algebra) shows the rows are linearly dependent, so the determinant vanishes identically.",
+  "id": "2022P-022",
+  "options": [
+   "0",
+   "(a−b)(b−c)(c−a)",
+   "abc(a+b+c)",
+   "1"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the value of the 3×3 determinant with rows (b²c², bc, b+c), (c²a², ca, c+a), (a²b², ab, a+b)?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Momentum conservation from rest: mV = Mv, so v = mV/M (recoil of the daughter nucleus).",
+  "id": "2022P-023",
+  "options": [
+   "mV/M",
+   "MV/m",
+   "(M−m)V/M",
+   "mV/(M−m)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A radioactive nucleus at rest emits an alpha particle of mass number m with speed V. What is the speed of the residual nucleus of mass number M?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "medium",
+  "explanation": "î + ĵ − k̂ has magnitude √3, so dividing by √3 gives the unit vector in its direction.",
+  "id": "2022P-024",
+  "options": [
+   "(î + ĵ − k̂)/√3",
+   "î + ĵ − k̂",
+   "√3(î + ĵ − k̂)",
+   "(î − ĵ + k̂)/√3"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The unit vector î + ĵ − k̂ is __.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Positive charge means a deficiency of electrons relative to protons; protons are bound in nuclei and do not leave in ordinary charging.",
+  "id": "2022P-025",
+  "options": [
+   "It has lost some electrons",
+   "It has gained extra electrons",
+   "It has lost some protons",
+   "It has equal numbers of electrons and protons"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What does a positively charged body imply?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-026",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Oscillations",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A particle executes SHM with amplitude A and time period T. How much time does it take to travel from x = A to x = A/√2?",
+  "options": [
+   "T/4",
+   "T/8",
+   "T/6",
+   "T/12"
+  ],
+  "answer": 1,
+  "explanation": "Take x = A cos(ωt) with x = A at t = 0. At x = A/√2, cos(ωt) = 1/√2 so ωt = π/4, giving t = π/(4ω) = π/(4·2π/T) = T/8.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-027",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "In the Bohr model of the atom, the angular momentum of the electron in the nth orbit is an integral multiple of __.",
+  "options": [
+   "h",
+   "h/2π",
+   "h/π",
+   "2π/h"
+  ],
+  "answer": 1,
+  "explanation": "Bohr's quantization condition: mvr = nh/(2π), so angular momentum is an integral multiple of h/(2π) = ħ.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-028",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A dipositive zinc ion (Zn²⁺) has mass number 70. How many neutrons does it contain?",
+  "options": [
+   "30",
+   "38",
+   "40",
+   "42"
+  ],
+  "answer": 2,
+  "explanation": "Zinc has atomic number 30. Neutrons = mass number − atomic number = 70 − 30 = 40; ionization removes electrons only, leaving the nucleus unchanged.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-029",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A 40 µF capacitor is connected across a 220 V, 50 Hz AC supply. What is the rms current through it?",
+  "options": [
+   "1.38 A",
+   "2.76 A",
+   "5.53 A",
+   "3.90 A"
+  ],
+  "answer": 1,
+  "explanation": "I_rms = V/Xc = V·2πfC = 220 × 2π × 50 × 40×10⁻⁶ ≈ 2.76 A.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-030",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "When a compact disc is illuminated by white light, coloured lines are observed on it. This is due to __.",
+  "options": [
+   "Refraction",
+   "Diffraction",
+   "Total internal reflection",
+   "Polarisation"
+  ],
+  "answer": 1,
+  "explanation": "The closely spaced tracks on a CD act as a reflection diffraction grating, splitting white light into its component colours.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-031",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Magnetism",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "What is the magnetic susceptibility of an ideal diamagnetic material?",
+  "options": [
+   "0",
+   "+1",
+   "−1",
+   "+∞"
+  ],
+  "answer": 2,
+  "explanation": "An ideal diamagnet (e.g. a superconductor) completely expels magnetic flux (Meissner effect), so B = 0 inside gives χ = −1.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-032",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Oscillations",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "The displacement of a particle is given by x = 2 sin(2t) + 4 sin²t. What is the amplitude of this motion?",
+  "options": [
+   "2",
+   "6",
+   "2√2",
+   "4"
+  ],
+  "answer": 2,
+  "explanation": "4 sin²t = 2 − 2 cos(2t), so x = 2 + 2 sin(2t) − 2 cos(2t); the oscillatory part 2 sin(2t) − 2 cos(2t) has amplitude 2√(1² + 1²) = 2√2.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-033",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Oscillations",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "The displacement of a particle is x = cos²(ωt) − sin²(ωt). Is this simple harmonic motion?",
+  "options": [
+   "No, it is not SHM",
+   "Yes, SHM of angular frequency ω",
+   "Yes, SHM of angular frequency 2ω",
+   "Yes, SHM of angular frequency 4ω"
+  ],
+  "answer": 2,
+  "explanation": "cos²(ωt) − sin²(ωt) = cos(2ωt), which is a single sinusoid, hence SHM with angular frequency 2ω.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-034",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "In an AC circuit with R = 0, X_L = 5 Ω and X_C = 3 Ω, what is the phase difference between voltage and current?",
+  "options": [
+   "0",
+   "π/4",
+   "π/2",
+   "π"
+  ],
+  "answer": 2,
+  "explanation": "Net reactance X = X_L − X_C = 2 Ω > 0, so the circuit is purely inductive and the voltage leads the current by 90° = π/2.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-035",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A current flows between two junctions formed by two different metals when the junctions are at different temperatures. This phenomenon is the __.",
+  "options": [
+   "Peltier effect",
+   "Joule heating",
+   "Seebeck effect",
+   "Thomson effect"
+  ],
+  "answer": 2,
+  "explanation": "A temperature difference across junctions of dissimilar metals generates a thermoelectric EMF that drives a current — the Seebeck effect (the basis of thermocouples).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-036",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A spherical surface encloses a charge of 30 µC. What is the net electric flux through the surface?",
+  "options": [
+   "3.39 × 10⁶ N·m²/C",
+   "1.69 × 10⁶ N·m²/C",
+   "6.78 × 10⁶ N·m²/C",
+   "3.00 × 10⁷ N·m²/C"
+  ],
+  "answer": 0,
+  "explanation": "By Gauss's law, flux Φ = q/ε₀ = 30×10⁻⁶ / 8.85×10⁻¹² ≈ 3.39 × 10⁶ N·m²/C.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-037",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A ring rolls purely (without slipping) down an incline of angle θ from a vertical height h. What is its speed at the bottom?",
+  "options": [
+   "√(2gh)",
+   "√(gh)",
+   "√(4gh/3)",
+   "√(gh/2)"
+  ],
+  "answer": 1,
+  "explanation": "mgh = ½mv² + ½Iω² with I = mR² and ω = v/R gives mgh = mv², so v = √(gh).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-038",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mathematical Methods",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "What angle does the vector A = î + ĵ make with the x-axis?",
+  "options": [
+   "30°",
+   "45°",
+   "60°",
+   "90°"
+  ],
+  "answer": 1,
+  "explanation": "tan θ = A_y/A_x = 1/1 = 1, so θ = 45°.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-039",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A fluid offers resistance to the motion of a body through it due to internal friction between its layers. This property is called __.",
+  "options": [
+   "Surface tension",
+   "Viscosity",
+   "Density",
+   "Elasticity"
+  ],
+  "answer": 1,
+  "explanation": "Viscosity is precisely the internal-friction property of a fluid that opposes relative motion between its layers.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-040",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A spherical surface encloses a charge of 20 µC. What is the net electric flux through the surface?",
+  "options": [
+   "4.52 × 10⁶ N·m²/C",
+   "1.13 × 10⁶ N·m²/C",
+   "2.26 × 10⁶ N·m²/C",
+   "2.26 × 10⁷ N·m²/C"
+  ],
+  "answer": 2,
+  "explanation": "By Gauss's law, flux Φ = q/ε₀ = 20×10⁻⁶ / 8.85×10⁻¹² ≈ 2.26 × 10⁶ N·m²/C.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-041",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Which structure is responsible for most of the refraction of light entering the human eye?",
+  "options": [
+   "Pupil",
+   "Lens",
+   "Cornea",
+   "Retina"
+  ],
+  "answer": 2,
+  "explanation": "The cornea, with its large curvature and the air–tissue index jump, provides about two-thirds of the eye's total refractive power.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-042",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mathematical Methods",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A matrix A = [a_ij] of order 4 × 1 is a __.",
+  "options": [
+   "Row matrix",
+   "Square matrix",
+   "Column matrix",
+   "Null matrix"
+  ],
+  "answer": 2,
+  "explanation": "A matrix with a single column (m × 1 order) is a column matrix.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-043",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Kinetic Theory",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "For an ideal gas, the pressure and volume are both doubled. If the initial temperature was 47 °C, what is the final temperature?",
+  "options": [
+   "188 °C",
+   "1007 °C",
+   "94 °C",
+   "1280 °C"
+  ],
+  "answer": 1,
+  "explanation": "From PV/T = constant, doubling P and V multiplies T by 4: T₂ = 4 × (47 + 273) K = 1280 K = 1007 °C.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-044",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "How much work is done in moving a charge of 3 coulomb across a potential difference of 12 V?",
+  "options": [
+   "4 J",
+   "15 J",
+   "36 J",
+   "9 J"
+  ],
+  "answer": 2,
+  "explanation": "W = qV = 3 × 12 = 36 J.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-045",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A fluid drains from a large container through a tube whose discharge end is 80 m below the fluid surface. What is the velocity of flow at the discharge? (Take g = 10 m/s²)",
+  "options": [
+   "28.3 m/s",
+   "40 m/s",
+   "56.6 m/s",
+   "20 m/s"
+  ],
+  "answer": 1,
+  "explanation": "Torricelli's law: v = √(2gh) = √(2 × 10 × 80) = √1600 = 40 m/s.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-046",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Oscillations",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "The displacement of a particle in SHM is f(t) = A cos(ωt + φ). What is its acceleration?",
+  "options": [
+   "−ω²f(t)",
+   "ω²f(t)",
+   "−ωf(t)",
+   "−ω²A"
+  ],
+  "answer": 0,
+  "explanation": "a = d²f/dt² = −ω²A cos(ωt + φ) = −ω²f(t), the defining relation of SHM.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-047",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mathematical Methods",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Which curve passes through (1, 0) and satisfies the differential equation (1 + y²)dx − xy dy = 0?",
+  "options": [
+   "x² + y² = 1",
+   "y = x² − 1",
+   "x² − y² = 1",
+   "xy = 1"
+  ],
+  "answer": 2,
+  "explanation": "Separating variables: dx/x = y dy/(1 + y²) → ln x = ½ ln(1 + y²) + C → x² = C(1 + y²); the point (1, 0) gives C = 1, i.e. x² − y² = 1.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-048",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mathematical Methods",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "If A and B are square matrices of the same order and A is non-singular, then (A⁻¹BA)ⁿ equals __.",
+  "options": [
+   "Bⁿ",
+   "A⁻¹Bⁿ",
+   "A⁻¹BⁿA",
+   "A⁻ⁿBⁿAⁿ"
+  ],
+  "answer": 2,
+  "explanation": "(A⁻¹BA)² = A⁻¹BA A⁻¹BA = A⁻¹B(AA⁻¹)BA = A⁻¹B²A; induction gives A⁻¹BⁿA.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-049",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Semiconductor Devices",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A 10 V Zener diode is used as a voltage reference, fed from a 30 V supply through a series resistor chosen so that the Zener test current is 20 mA (no load). If the supply voltage drops to 20 V, what is the Zener current?",
+  "options": [
+   "20 mA",
+   "10 mA",
+   "6.67 mA",
+   "13.3 mA"
+  ],
+  "answer": 1,
+  "explanation": "R = (30 − 10)/20 mA = 1 kΩ. At 20 V supply, I_Z = (20 − 10)/1 kΩ = 10 mA.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2022P-050",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Kinetic Theory",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "The rms speed of gas molecules at 17 °C is V. What is the rms speed at 307 °C?",
+  "options": [
+   "2V",
+   "√2 V",
+   "4V",
+   "V/√2"
+  ],
+  "answer": 1,
+  "explanation": "v_rms ∝ √T. T₁ = 290 K, T₂ = 580 K, so the ratio is √(580/290) = √2.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Gravitational force F = Gm1m2/r^2 depends only on the masses and their separation. Unlike electrostatic force, gravity is not screened by any intervening medium, so filling the space with liquid changes nothing.",
+  "id": "2022P-051",
+  "options": [
+   "F (it remains unchanged)",
+   "F/5",
+   "5F",
+   "4F/5"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Two balls attract each other with a gravitational force F. If the space between them is completely filled with a liquid of specific gravity 5, what is the new gravitational force between them?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "a_23 = 0 because A is diagonal (all off-diagonal entries are zero), and the logarithm of 0 is undefined for every base.",
+  "id": "2022P-052",
+  "options": [
+   "Not defined",
+   "0",
+   "1",
+   "c"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Let A = [a_ij] be a 3x3 diagonal matrix with a_ii = c and a_ij = 0 for i != j. What is the value of log_{a_11}(a_23)?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Integrate term by term: integral of 4x^3 is x^4 and integral of 6 is 6x, plus the constant of integration C.",
+  "id": "2022P-053",
+  "options": [
+   "x^4 - 6x + C",
+   "12x^2 + C",
+   "x^4 - 6 + C",
+   "4x^4 - 6x + C"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the anti-derivative (indefinite integral) of 4x^3 - 6?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "(A^4)^T = (A^T)^4 = (-A)^4 = A^4 because the power is even, so A^4 equals its own transpose and is therefore symmetric.",
+  "id": "2022P-054",
+  "options": [
+   "A symmetric matrix",
+   "A skew-symmetric matrix",
+   "The zero matrix",
+   "A diagonal matrix"
+  ],
+  "paper": "Paper-I+II",
+  "question": "If A is a 3x3 skew-symmetric matrix, then A^4 is ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "At high pressure the finite molecular volume and intermolecular attractions cannot be ignored, so real gases follow the Van der Waals equation (P + a/V^2)(V - b) = RT rather than the ideal gas law.",
+  "id": "2022P-055",
+  "options": [
+   "The Van der Waals equation",
+   "The ideal gas equation",
+   "Boyle's law alone",
+   "Charles's law alone"
+  ],
+  "paper": "Paper-I+II",
+  "question": "At high pressure, real gases conform to ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Resistivity rho is an intrinsic property fixed by the material and its temperature; the geometry dependence (length, area) sits in R = rho*L/A, not in rho itself.",
+  "id": "2022P-056",
+  "options": [
+   "The material of the wire and its temperature",
+   "The length and cross-sectional area of the wire",
+   "The length of the wire only",
+   "The current flowing through the wire"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The resistivity of a wire depends on ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The microscopic pits and grooves on a CD act as a reflection grating, spreading white light into its colours by diffraction.",
+  "id": "2022P-058",
+  "options": [
+   "The rainbow colours seen on a compact disc (CD)",
+   "A mirage on a hot road",
+   "The blue colour of the sky",
+   "The twinkling of stars"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following is an example of diffraction of light?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "sin(pi*cos^2(x)) = sin(pi - pi*sin^2(x)) = sin(pi*sin^2(x)) which behaves like pi*sin^2(x) near x = 0, so the ratio tends to pi*(sin x / x)^2 = pi.",
+  "id": "2022P-059",
+  "options": [
+   "pi",
+   "0",
+   "1",
+   "infinity"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Evaluate: limit as x -> 0 of sin(pi*cos^2(x)) / x^2.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Specific heat = heat energy / (mass x temperature change), so its dimensions are [ML^2T^-2] / ([M][K]) = [M^0 L^2 T^-2 K^-1].",
+  "id": "2022P-060",
+  "options": [
+   "[M^0 L^2 T^-2 K^-1]",
+   "[M L^2 T^-2 K^-1]",
+   "[M^0 L^2 T^-2]",
+   "[M L T^-2 K^-1]"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the dimensional formula of specific heat?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "A plane mirror forms an image behind the mirror (virtual) that is upright (erect) and of the same size as the object.",
+  "id": "2022P-061",
+  "options": [
+   "Virtual and erect",
+   "Real and inverted",
+   "Real and erect",
+   "Virtual and inverted"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The image formed by a plane mirror is always ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Horizontal range R = u^2 sin(2*theta)/g, which is zero (its minimum) at theta = 90 degrees, where the projectile goes straight up and lands back at the launch point.",
+  "id": "2022P-063",
+  "options": [
+   "90 degrees",
+   "45 degrees",
+   "30 degrees",
+   "60 degrees"
+  ],
+  "paper": "Paper-I+II",
+  "question": "For a projectile, the horizontal range is minimum when the angle of projection theta is ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Bernoulli: P_A + (1/2)*rho*v_A^2 = P_B + (1/2)*rho*v_B^2, so v_B^2 = v_A^2 + 2(P_A - P_B)/rho = 4 + 2(1000)/1000 = 6, giving v_B = sqrt(6) m/s with rho = 1000 kg/m^3 for water.",
+  "id": "2022P-064",
+  "options": [
+   "sqrt(6) m/s (about 2.45 m/s)",
+   "2 m/s",
+   "3 m/s",
+   "sqrt(2) m/s (about 1.41 m/s)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Water flows through a horizontal pipe. At point A the velocity is 2 m/s and the pressure is 2.5 kPa; at point B the pressure is 1.5 kPa. Using Bernoulli's theorem, the velocity at B is ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Planck's law E_lambda = (2*pi*h*c^2/lambda^5)/(e^{h*c/(lambda*k*T)} - 1) with h*c/(lambda*k*T) about 6 at lambda = 3 um and T = 800 K gives about 3.84x10^9 W/m^3 = 3.84x10^3 W/m^2 per um.",
+  "id": "2022P-065",
+  "options": [
+   "3.84x10^3 W/m^2 per um",
+   "3.84x10^5 W/m^2 per um",
+   "3.84x10^9 W/m^2 per um",
+   "3.84x10^1 W/m^2 per um"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A black ball at 800 K radiates as a blackbody. Using Planck's law, the spectral emissive power at wavelength 3 um is approximately ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Far above its saturation temperature, a vapour's molecules are far apart and intermolecular forces are negligible, so it closely follows PV = nRT like an ideal gas.",
+  "id": "2022P-066",
+  "options": [
+   "A highly superheated vapour",
+   "A saturated vapour",
+   "A liquid at high pressure",
+   "A gas close to condensation"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following can be approximated as an ideal gas?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Subtracting row 1 from rows 2 and 3 and expanding along the first column gives (x-y)(x-z)(z-y), which equals (x-y)(y-z)(z-x).",
+  "id": "2022P-067",
+  "options": [
+   "(x-y)(y-z)(z-x)",
+   "(x+y)(y+z)(z+x)",
+   "xyz(x+y+z)",
+   "0"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Evaluate the determinant | 1  yz  y+z ; 1  xz  x+z ; 1  xy  x+y |.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Brewster's angle theta_B = tan^-1(n2/n1); since n2/n1 is positive, theta_B is always an acute angle, i.e. between 0 and 90 degrees.",
+  "id": "2022P-068",
+  "options": [
+   "0 degrees to 90 degrees",
+   "0 degrees to 45 degrees",
+   "45 degrees to 90 degrees",
+   "Exactly 90 degrees"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Brewster's angle for an interface between two media lies in the range ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "For a triangle the shear stress at depth y from the apex is tau(y) = 12*V*y*(h-y)/(b*h^3), which is maximised at y = h/2, giving tau_max = 1.5 times the average shear stress.",
+  "id": "2022P-069",
+  "options": [
+   "h/2 (mid-height)",
+   "At the neutral axis (h/3 from the base)",
+   "2h/3 from the apex",
+   "h (at the base)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In a simply supported beam of triangular cross-section, the maximum shear stress occurs at a distance of ____ from the apex (top)?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "At low pressure the molecules are far apart (volume correction negligible) and at high temperature their kinetic energy dwarfs intermolecular attractions, so PV = nRT holds.",
+  "id": "2022P-070",
+  "options": [
+   "Low pressure and high temperature",
+   "High pressure and low temperature",
+   "High pressure and high temperature",
+   "Low pressure and low temperature"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A real gas obeys the ideal gas equation under which condition?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Using p_c = a/(27b^2), V_c = 3b and T_c = 8a/(27Rb) for the Van der Waals gas, z_c = p_c*V_c/(R*T_c) = 3/8 = 0.375.",
+  "id": "2022P-071",
+  "options": [
+   "0.375 (3/8)",
+   "1",
+   "0.5",
+   "0.25"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The compressibility factor z = pV/RT at the critical point for a gas obeying the Van der Waals equation is ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "medium",
+  "explanation": "The Brackett series consists of transitions ending at the n = 4 level (from n >= 5); its first and longest-wavelength line is the n = 5 to n = 4 jump.",
+  "id": "2022P-072",
+  "options": [
+   "n = 5 to n = 4",
+   "n = 4 to n = 3",
+   "n = 3 to n = 2",
+   "n = 2 to n = 1"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The Brackett series of the hydrogen spectrum arises when the electron jumps from ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Bohr's model correctly predicts the line spectra of hydrogen and hydrogen-like ions (He+, Li2+) but fails for multi-electron atoms and for fine structure.",
+  "id": "2022P-073",
+  "options": [
+   "The spectrum of hydrogen and hydrogen-like (one-electron) ions",
+   "The spectra of multi-electron atoms",
+   "The fine structure of spectral lines",
+   "Molecular spectra"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Bohr's atomic model can successfully explain ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Expanding: a x a - a x b + b x a - b x b = -a x b + b x a; since b x a = -(a x b), this equals 2(b x a).",
+  "id": "2022P-074",
+  "options": [
+   "2(b x a)",
+   "2(a x b)",
+   "0 (the zero vector)",
+   "a x b"
+  ],
+  "paper": "Paper-I+II",
+  "question": "If a and b are vectors, then (a + b) x (a - b) equals ____?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Differentiating tan^-1(x) + tan^-1(y) = c gives dx/(1+x^2) + dy/(1+y^2) = 0, i.e. (1+x^2)dy + (1+y^2)dx = 0.",
+  "id": "2022P-075",
+  "options": [
+   "(1+x^2)dy + (1+y^2)dx = 0",
+   "(1+x^2)dy - (1+y^2)dx = 0",
+   "(1+y^2)dy + (1+x^2)dx = 0",
+   "x*dy + y*dx = 0"
+  ],
+  "paper": "Paper-I+II",
+  "question": "tan^-1(x) + tan^-1(y) = c is the general solution of which differential equation?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Molecular orbital filling of N2+ gives 13 electrons: (σ1s)^2 (σ*1s)^2 (σ2s)^2 (σ*2s)^2 (π2p)^4 (σ2p)^1, leaving exactly one unpaired electron in the σ2p orbital.",
+  "id": "2022P-076",
+  "options": [
+   "3",
+   "1",
+   "0",
+   "2"
+  ],
+  "paper": "Paper-I+II",
+  "question": "How many unpaired electrons are present in the N2+ ion?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Total removal energy = IE1 + IE2 = 79 eV. IE2 for He+ = 13.6 × Z^2 = 13.6 × 4 = 54.4 eV, so IE1 = 79 − 54.4 = 24.6 eV.",
+  "id": "2022P-077",
+  "options": [
+   "54.4 eV",
+   "13.6 eV",
+   "24.6 eV",
+   "40.8 eV"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The total energy required to convert a He atom into He2+ is 79 eV. What is the first ionisation energy of helium?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "The emitter is heavily doped so that it can inject a large number of majority carriers into the thin, lightly doped base.",
+  "id": "2022P-078",
+  "options": [
+   "Base",
+   "Emitter",
+   "Collector",
+   "Intrinsic region"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which region of a transistor is highly doped?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Semiconductor Devices",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "New position = old position + displacement = (2 + 8, 5 − 2, 1 + 1) = (10, 3, 2) cm.",
+  "id": "2022P-079",
+  "options": [
+   "(10, 3, 2)",
+   "(6, 7, 0)",
+   "(10, 7, 2)",
+   "(2, 5, 1)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A point (2, 5, 1) is displaced by the vector 8i − 2j + k cm. What are its new coordinates?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "By international definition, 1 kelvin is 1/273.16 of the thermodynamic temperature of the triple point of water.",
+  "id": "2022P-080",
+  "options": [
+   "Boiling point of water at 1 atm",
+   "Melting point of ice at 1 atm",
+   "Triple point of water",
+   "Absolute zero"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the reference point temperature used to define the Kelvin scale?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "1/F = 1/f1 + 1/f2 = 1/20 − 1/40 = 1/40, so F = 40 cm; an object at infinity forms its image at the focal plane, 40 cm from the combination.",
+  "id": "2022P-081",
+  "options": [
+   "20 cm on the other side",
+   "40 cm",
+   "80 cm",
+   "The image is virtual at −20 cm"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Two thin lenses of focal lengths 20 cm and −40 cm are placed in contact. Where is the image of an object at infinity?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "R^2 = a^2 + b^2 + 2ab cosθ gives 576 = 468 + 432 cosθ, so cosθ = 0.25 and θ ≈ 75.52°.",
+  "id": "2022P-082",
+  "options": [
+   "60°",
+   "104.48°",
+   "75.52°",
+   "90°"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the angle between two vectors of 12 units and 18 units if their resultant has a magnitude of 24 units?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "The ball's centre moves on a circular arc of radius (R − r), so for small oscillations it behaves like a simple pendulum of length (R − r): T = 2π√((R − r)/g).",
+  "id": "2022P-083",
+  "options": [
+   "2π√(R/g)",
+   "2π√((R − r)/g)",
+   "2π√(r/g)",
+   "2π√(Rr/g)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A small ball of radius r oscillates inside a fixed hemispherical bowl of radius R. What is its time period of small oscillations?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Oscillations",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "medium",
+  "explanation": "The positively charged constituent of the nucleus, observed in canal-ray (anode-ray) experiments, is the proton.",
+  "id": "2022P-084",
+  "options": [
+   "Electron",
+   "Neutron",
+   "Proton",
+   "Photon"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following is an infinitesimal part of an atom that carries one unit of positive charge?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Phase difference φ = (2π/λ)(path difference) = π/2 at path diff λ/4, and I = K cos^2(φ/2) = K cos^2(π/4) = K/2.",
+  "id": "2022P-085",
+  "options": [
+   "K",
+   "K/4",
+   "K/2",
+   "zero"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In a Young's double-slit experiment, the intensity at a point with path difference λ is K. What is the intensity at a point with path difference λ/4?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Displacement vector = (−2 − 4, −2 + 4, 0 − 0) = (−6, 2, 0); magnitude = √(36 + 4) = √40 = 2√10.",
+  "id": "2022P-086",
+  "options": [
+   "2√10",
+   "√44",
+   "4√3",
+   "6√2"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the magnitude of the vector joining the points (4, −4, 0) and (−2, −2, 0)?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Deflection θ = (NAB/k)I, so deflection is directly proportional to the current through the coil.",
+  "id": "2022P-087",
+  "options": [
+   "Decreases",
+   "Remains the same",
+   "Increases",
+   "Becomes zero"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In a moving-coil galvanometer, if the current through the coil is increased, what happens to the deflection?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Magnetism",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "The Wheatstone bridge is a null method: balance depends only on the resistance ratios, not on the supply voltage, so the measured resistance is unchanged.",
+  "id": "2022P-088",
+  "options": [
+   "10 kΩ",
+   "15 kΩ",
+   "22.5 kΩ",
+   "Cannot be determined"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A Wheatstone bridge measures a resistance of 15 kΩ when powered at 10 V. What will it measure at 15 V?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "λ = h/(mv) = 6.626 × 10^−34 / (0.66 × 100) ≈ 1.0 × 10^−35 m.",
+  "id": "2022P-089",
+  "options": [
+   "1.0 × 10^−35 m",
+   "6.6 × 10^−34 m",
+   "1.5 × 10^−34 m",
+   "1.0 × 10^−32 m"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A 0.66 kg ball moves at 100 m/s. What is its de Broglie wavelength?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "A matrix with a single row and n columns (1 × n) is a row matrix.",
+  "id": "2022P-090",
+  "options": [
+   "Column matrix",
+   "Row matrix",
+   "Square matrix",
+   "Scalar matrix"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A matrix A = [a_ij] of order 1 × n is a ___ matrix.",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Reflection from a denser (higher refractive index) medium imposes a phase reversal of π (180°).",
+  "id": "2022P-091",
+  "options": [
+   "0",
+   "π/2",
+   "π",
+   "2π"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A wave is reflected from a denser medium. What phase change does the reflected wave suffer?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "∫a^x dx = a^x/ln a + C, since d/dx(a^x) = a^x ln a. (repeated as Q3)",
+  "id": "2022P-092",
+  "options": [
+   "a^x ln a + C",
+   "a^x / ln a + C",
+   "x a^(x−1) + C",
+   "e^x / ln a + C"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is ∫a^x dx?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "At the extreme position the particle momentarily stops before reversing direction, so its velocity (speed) is zero while displacement, acceleration and restoring force are maximal.",
+  "id": "2022P-093",
+  "options": [
+   "Acceleration",
+   "Speed",
+   "Displacement",
+   "Restoring force"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In simple harmonic motion, which of the following is zero at the extreme position?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Oscillations",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Dissipated energy = mg(h1 − h2) = 1 × 10 × 5 = 50 J; ΔT = Q/(mc) = 50/(1 × 450) ≈ 0.11 °C.",
+  "id": "2022P-094",
+  "options": [
+   "0.11 °C",
+   "1.1 °C",
+   "0.22 °C",
+   "11 °C"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A 1 kg ball falls 10 m and bounces back up 5 m. The lost mechanical energy heats the ball (specific heat 450 J/kg·°C). What is the temperature rise?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "A concave mirror normally forms real images of real objects (except when the object is inside the focus), but a virtual object — rays converging toward a point beyond the mirror — must reflect into a real image.",
+  "id": "2022P-095",
+  "options": [
+   "Always real",
+   "Always virtual",
+   "Certainly real if the object is virtual",
+   "Always magnified"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The image formed by a concave mirror is:",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "A periscope uses two plane mirrors inclined at 45° to reflect light down through the tube and out to the observer's eye.",
+  "id": "2022P-096",
+  "options": [
+   "Two convex lenses",
+   "Two concave mirrors",
+   "Two plane mirrors",
+   "One prism and one plane mirror"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A periscope uses:",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Plane angle is measured in radians; solid angle is the 3-D analogue, measured in steradians (sr).",
+  "id": "2022P-097",
+  "options": [
+   "Radian",
+   "Steradian",
+   "Candela",
+   "Lumen"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the SI unit for solid angle?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods/units",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Stefan-Boltzmann law E ∝ T^4 with T1 = 290 K and T2 = 580 K gives E1:E2 = (290/580)^4 = (1/2)^4 = 1:16.",
+  "id": "2022P-098",
+  "options": [
+   "1:4",
+   "1:8",
+   "1:16",
+   "1:32"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A black body emits radiation at 17 °C and at 307 °C. What is the ratio of the radiation emitted?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "For symmetric A, B: X^T = (AB + BA)^T = BA + AB = X, and Y^T = (AB − BA)^T = BA − AB = −Y, so (XY)^T = Y^T X^T = −YX.",
+  "id": "2022P-099",
+  "options": [
+   "(XY)^T",
+   "(YX)^T",
+   "XY",
+   "−(XY)^T"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A and B are symmetric matrices. If X = AB + BA and Y = AB − BA, what is (−YX)?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Methods",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "SHM obeys a = −ω^2 x, so the acceleration-vs-displacement graph is a straight line through the origin with negative slope.",
+  "id": "2022P-100",
+  "options": [
+   "A straight line through the origin with positive slope",
+   "A straight line through the origin with negative slope",
+   "A parabola symmetric about the a-axis",
+   "A sine curve"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which graph correctly shows acceleration (a) versus displacement (x) for simple harmonic motion?",
+  "section": "physics",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Oscillations",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Successive differences are -29, -23, -17, -11, each shrinking by 6, so the next difference is -5 and 25 - 5 = 20.",
+  "id": "2022R-001",
+  "options": [
+   "16",
+   "20",
+   "18",
+   "22"
+  ],
+  "paper": "Paper-I",
+  "question": "Which of the following numbers will replace the question mark (?) in the given series? 105, 76, 53, 36, 25, ?",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Number Series",
+  "options_kind": "original"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Interchanging 345 with 121 and + with / gives 456 - 345 + 234 - 121 / 11 = 456 - 345 + 234 - 11 = 334.",
+  "id": "2022R-002",
+  "options": [
+   "234 and 121, - and /",
+   "345 and 121, + and /",
+   "456 and 121, + and -",
+   "11 and 121, + and -"
+  ],
+  "paper": "Paper-I",
+  "question": "Which two signs and two numbers should be interchanged in the following equation to make it correct? 456 - 121 / 234 - 345 + 11 = 334",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Operators",
+  "options_kind": "original"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "The code is the reverse of the Atbash (opposite-alphabet) form of the word: Atbash(BEANS) = YVZMH, reversed = HMZVY.",
+  "id": "2022R-003",
+  "options": [
+   "HMULO",
+   "HMZEB",
+   "HMZVB",
+   "HMZVY"
+  ],
+  "paper": "Paper-I",
+  "question": "In a certain code language, 'BREAD' is written as 'WZVIY' and 'YEAST' is written as 'GHZVB'. How will 'BEANS' be written in that language?",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Coding-Decoding",
+  "options_kind": "original"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "The clockwise order (viewed from above) is D, A, E, B, F, C. Facing the centre, D's immediate right is the counter-clockwise neighbour, which is C.",
+  "id": "2022R-004",
+  "options": [
+   "E",
+   "C",
+   "A",
+   "B"
+  ],
+  "paper": "Paper-I",
+  "question": "Six friends (A, B, C, D, E and F) are sitting around a circular table, facing the centre. A is sitting to the immediate left of D. F is sitting to the immediate left of B. E is an immediate neighbour of A. F is not an immediate neighbour of D. Who is sitting to the immediate right of D?",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Seating Arrangement",
+  "options_kind": "original"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Each letter shifts forward by 8 (P to X, N to V, L to T); only FDB to NLJ follows the same +8 shift for every letter.",
+  "id": "2022R-005",
+  "options": [
+   "FDB : JLN",
+   "FDB : NLJ",
+   "CEF : JLM",
+   "FED : JKL"
+  ],
+  "paper": "Paper-I",
+  "question": "Select the letter-cluster pair that best represents a similar relationship to the one expressed in the pair of letter-clusters given below. PNL : XVT",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Operators",
+  "options_kind": "original"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "The code is the digit-reversal of the sum of alphabetical positions: ART = 1+18+20 = 39 to 93; CHIEF = 3+8+9+5+6 = 31 to 13.",
+  "id": "2022R-008",
+  "options": [
+   "87",
+   "31",
+   "43",
+   "13"
+  ],
+  "paper": "Paper-I",
+  "question": "In a certain code language, 'ART' is coded as 93 and 'BUY' is coded as 84. How will 'CHIEF' be coded in that language?",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Coding-Decoding",
+  "options_kind": "original"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Interchanging 17 with 853 and + with / gives 853 + 2499 / 17 = 853 + 147 = 1000.",
+  "id": "2022R-009",
+  "options": [
+   "17 and 853, + and =",
+   "1000 and 853, + and /",
+   "17 and 2499, + and /",
+   "17 and 853, + and /"
+  ],
+  "paper": "Paper-I",
+  "question": "Which two signs and two numbers should be interchanged in the following equation to make it correct? 17 / 2499 + 853 = 1000",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Operators",
+  "options_kind": "original"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "All boats are cars, so some cars are boats (I follows); 'some cars are green' supports neither all trucks being green (II) nor all green being cars (III).",
+  "id": "2022R-010",
+  "options": [
+   "All conclusions follow.",
+   "Only conclusion II follows.",
+   "Only conclusion III follows.",
+   "Only conclusion I follows."
+  ],
+  "paper": "Paper-I",
+  "question": "Three Statements are given followed by Three conclusions numbered I, II and III. Assuming the statements to be true, even if they seem to be at variance with commonly known facts, decide which of the conclusions logically follow(s) from the statements. Statements: All boats are trucks. All trucks are cars. Some cars are green. Conclusions: I. Some cars are boats. II. All trucks are green. III. All green are cars.",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Syllogism",
+  "options_kind": "original"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Ink is what a pen consumes to function; electricity is what a bulb consumes to glow.",
+  "id": "2022R-011",
+  "options": [
+   "Socket",
+   "Electricity",
+   "Switch",
+   "Plug"
+  ],
+  "paper": "Paper-I",
+  "question": "Select the option that is related to the third word in the same way as the second word is related to the first word. (The words must be considered as meaningful English words and must not be related to each other based on the number of letters/number of consonants/vowels in the word) Pen : Ink :: Bulb : ?",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Analogy",
+  "options_kind": "original"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "F (husband) and U (mother) are the parents of R, K, E and W, so F is the father of W, not the brother of the father of W; the other three statements hold.",
+  "id": "2022R-013",
+  "options": [
+   "R is the brother of W.",
+   "E is the daughter of U.",
+   "F is the brother of the father of W.",
+   "K is the son of F."
+  ],
+  "paper": "Paper-I",
+  "question": "'A + B' means 'A is brother of B'. 'A - B' means 'A is mother of B'. 'A x B' means 'A is husband of B'. 'A / B' means 'A is sister of B'. If F x U - R + K + E / W, then which of the following statements is NOT correct?",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Blood Relations",
+  "options_kind": "original"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "In BYEX, CXFW and EVHU the 1st+2nd letters sum to 27 (Atbash pairs: B+Y, C+X, E+V) and the 3rd+4th sum to 29 (E+X, F+W, H+U). In AZCY the 3rd+4th (C+Y) sum to 28, so it is the odd one out.",
+  "id": "2022R-014",
+  "options": [
+   "BYEX",
+   "CXFW",
+   "EVHU",
+   "AZCY"
+  ],
+  "paper": "Paper-I",
+  "question": "Three of the following four letter-clusters are alike in a certain way and one is different. Select the one that is different.",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Odd One Out",
+  "options_kind": "original"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Filling BDFHH gives AAAB B C DDDE EFGGGHHI, i.e. A(3)B(2)C(1) D(3)E(2)F(1) G(3)H(2)I(1): each letter group repeats in a 3-2-1 cycle.",
+  "id": "2022R-015",
+  "options": [
+   "ADFHH",
+   "BCEGH",
+   "BDFFH",
+   "BDFHH"
+  ],
+  "paper": "Paper-I",
+  "question": "Select the combination of letters, which when sequentially placed in the blanks of the given series, will complete the series. AAA _ BC_ DDEE _ GGG _ _ I",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Letter Series",
+  "options_kind": "original"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Going clockwise: F, J, G, H, I (H is 3rd to the left/clockwise of F; G is immediately clockwise of J and immediately counter-clockwise of H). Facing the centre, a person's right is the counter-clockwise neighbour, so I's immediate right is F.",
+  "id": "2022R-016",
+  "options": [
+   "J",
+   "F",
+   "H",
+   "G"
+  ],
+  "paper": "Paper-I",
+  "question": "Five friends F, G, H, I and J are sitting around a circular table facing the centre. H is sitting third to the left of F. G is sitting to the immediate left of J and to the immediate right of H. Who is sitting to the immediate right of I?",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Seating Arrangement",
+  "options_kind": "original"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Filling MNLONPNO produces LMNOP repeated four times.",
+  "id": "2022R-017",
+  "options": [
+   "PQSTSTOQ",
+   "MNLONPNO",
+   "OPLONONO",
+   "MNQONPNR"
+  ],
+  "paper": "Paper-I",
+  "question": "Select the option that represents the letters that, when sequentially placed from left to right in the blanks below, will complete the letter series. L _ _ OP _ MN _ PLM _ O _ LM _ _ P",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Operators",
+  "options_kind": "original"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Alphabetical order is Telecom (Tel), Tension (Ten), Thereby (Th), Tonight (Ton), Touched (Tou), i.e. 2, 1, 5, 3, 4.",
+  "id": "2022R-018",
+  "options": [
+   "2, 1, 5, 3, 4",
+   "1, 2, 5, 3, 4",
+   "2, 5, 1, 4, 3",
+   "5, 2, 4, 1, 3"
+  ],
+  "paper": "Paper-I",
+  "question": "Which option represents the correct order of the given words as they would appear in an English dictionary? 1. Tension 2. Telecom 3. Tonight 4. Touched 5. Thereby",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Mathematical Operators",
+  "options_kind": "original"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The clues chain into E > A > F > B > C > D > G, so the second highest is A.",
+  "id": "2022R-019",
+  "options": [
+   "A",
+   "F",
+   "E",
+   "B"
+  ],
+  "paper": "Paper-I",
+  "question": "There are seven students A, B, C, D, E, F and G. Each scored different marks in a test. B got higher marks than C but scored less marks than F. D scored higher marks than G, who scored the least marks among all. A scored higher than F but less than E. C scored higher than D but less than B. Who scored the second highest marks among all?",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Ranking/Comparison",
+  "options_kind": "original"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Each pair follows n to n-squared-plus-2 (57^2+2 = 3251, 76^2+2 = 5778), so 61^2+2 = 3723.",
+  "id": "2022R-020",
+  "options": [
+   "3721",
+   "3750",
+   "3723",
+   "3725"
+  ],
+  "paper": "Paper-I",
+  "question": "Select the option that is related to the third term in the same way as the second term is related to the first term and the sixth term is related to the fifth term. 57 : 3251 :: 61 : ? :: 76 : 5778",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Analogy",
+  "options_kind": "original"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Facing outward, the clockwise order is U, W, V, P, T, R, S, Q. T's third person to the right (clockwise) is Q.",
+  "id": "2022R-022",
+  "options": [
+   "U",
+   "Q",
+   "R",
+   "S"
+  ],
+  "paper": "Paper-I",
+  "question": "P, Q, R, S, T, U, V and W are sitting around a square table not facing the centre. Some of them are sitting at the corners while some are sitting at the exact centre of the sides. Q is sitting to the immediate left of U. U is sitting to the immediate left of W. S is sitting between Q and R. T is sitting between P and R. V is sitting to the immediate left of P. W is sitting to the immediate right of U. Who is sitting third to the right of T?",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Seating Arrangement",
+  "options_kind": "original"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Successive differences are 11, 13, 17, 19, 23, 29 (consecutive primes), so the missing number is 15 + 11 = 26.",
+  "id": "2022R-023",
+  "options": [
+   "24",
+   "36",
+   "26",
+   "30"
+  ],
+  "paper": "Paper-I",
+  "question": "Which of the following numbers will replace the question mark (?) in the given series? 15, ?, 39, 56, 75, 98, 127",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Number Series",
+  "options_kind": "original"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "All books are caps and all caps are shirts, so all books are shirts (I follows); the converse, all shirts are caps (II), does not follow.",
+  "id": "2022R-024",
+  "options": [
+   "Neither conclusion I nor II follows",
+   "Only conclusion I follows",
+   "Only conclusion II follows",
+   "Both conclusions I and II follow"
+  ],
+  "paper": "Paper-I",
+  "question": "Read the given statements and conclusions carefully. Assuming that the information given in the statements is true, even if it appears to be at variance with commonly known facts, decide which of the given conclusions logically follow(s) from the statements. Statements: 1) All books are caps. 2) All caps are shirts. Conclusions: I. All books are shirts. II. All shirts are caps.",
+  "section": "reasoning",
+  "source": "14-Dec-2022 Shift-1",
+  "topic": "Syllogism",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-001",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Polity",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "A major part of the Constitution of India is derived from _______.",
+  "options": [
+   "Indian Council Act of 1909",
+   "Government of India Act of 1909",
+   "Charter Act of 1853",
+   "Government of India Act of 1935"
+  ],
+  "answer": 3,
+  "explanation": "The Government of India Act of 1935 is the single largest source of the Indian Constitution, contributing about 250 of its provisions including federal features, the judiciary, and emergency provisions.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-002",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Culture & Arts",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Rupa Rani Das Bora is an exponent of which of the following Indian classical dance forms?",
+  "options": [
+   "Kathak",
+   "Sattriya",
+   "Manipuri",
+   "Bharatanatyam"
+  ],
+  "answer": 0,
+  "explanation": "Rupa Rani Das Bora is a Kathak exponent from Assam (reported as \"Ruparani Das Bora (Kathak)\" in The Hindu's Sattriya festival coverage); the Sattriya option is the trap.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-003",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Current Affairs",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "As per the Medical Termination of Pregnancy (Amendment) Act, 2021, what is the new length of pregnancy allowed for the termination of pregnancy if there is a risk to the life of the pregnant woman?",
+  "options": [
+   "26 weeks",
+   "27 weeks",
+   "25 weeks",
+   "24 weeks"
+  ],
+  "answer": 3,
+  "explanation": "The MTP (Amendment) Act, 2021 raised the upper gestation limit for termination from 20 weeks to 24 weeks for prescribed categories of women.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-004",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Current Affairs",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "The Central Universities (Amendment) Bill, 2022 is related to which of the following?",
+  "options": [
+   "Amendment in rule of Chancellors",
+   "Establishment of New Universities",
+   "Change in Conditions of Appointment of Professors",
+   "Amendment in the procedure of Selection of Vice Chancellors"
+  ],
+  "answer": 1,
+  "explanation": "The Central Universities (Amendment) Act, 2022 established the Gati Shakti Vishwavidyalaya as a new Central University by upgrading the National Rail and Transportation Institute, Vadodara.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-005",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "History",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Narasimha, the military commander, founded the ________ of Vijayanagara Empire",
+  "options": [
+   "Tuluva Dynasty",
+   "Aravidu Dynasty",
+   "Saluva Dynasty",
+   "Sangama Dynasty"
+  ],
+  "answer": 2,
+  "explanation": "Saluva Narasimha, the military commander (senapati) under the Sangama king Virupaksha II, founded the Saluva dynasty, the second dynasty of the Vijayanagara Empire.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-006",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Economy",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Which of the following is NOT a category of loans offered under the MUDRA Scheme?",
+  "options": [
+   "Shishu",
+   "Vridh",
+   "Tarun",
+   "Kishor"
+  ],
+  "answer": 1,
+  "explanation": "MUDRA loans have three categories: Shishu (up to Rs 50,000), Kishore (Rs 50,000 to 5 lakh) and Tarun (Rs 5 to 10 lakh); Vridh is not a MUDRA category.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-007",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Polity",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Which of the following Articles provided for some Fundamental Duties as an exception in the initial Constitution of India, even before provisions of the Fundamental Duties were introduced in the Constitution of India?",
+  "options": [
+   "Article 36",
+   "Article 33",
+   "Article 35",
+   "Article 34"
+  ],
+  "answer": 2,
+  "explanation": "Article 35 empowers Parliament to make laws prescribing punishments for offences under Part III (e.g. untouchability under Article 17 and forced labour under Article 23), thereby imposing duties on citizens even in the original Constitution.",
+  "confidence": "medium",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-008",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Economy",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Which measure is an estimation of the total borrowings by the government?",
+  "options": [
+   "GDP growth rate",
+   "Fiscal deficit",
+   "Inflation",
+   "Revenue deficit"
+  ],
+  "answer": 1,
+  "explanation": "Fiscal deficit is total expenditure minus total receipts excluding borrowings, so it measures the total amount the government must borrow in a year.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-009",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Current Affairs",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "In March 2022, which State announced its plan to set up India's first medical city Indrayani Medicity?",
+  "options": [
+   "Uttar Pradesh",
+   "Rajasthan",
+   "Andhra Pradesh",
+   "Maharashtra"
+  ],
+  "answer": 3,
+  "explanation": "In March 2022 the Maharashtra government announced Indrayani Medicity near Pune, projected as India's first medical city.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-010",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Sports",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "In August 2021, Uttarakhand Chief Minister announced that the Indian women's hockey team player ______ would be the brand ambassador of the state's Women's Empowerment and Child Development Department.",
+  "options": [
+   "Lalremsiami",
+   "Vandana Kataria",
+   "Deep Grace Ekka",
+   "Nikki Pradhan"
+  ],
+  "answer": 1,
+  "explanation": "Vandana Kataria, the Tokyo 2020 women's hockey star from Haridwar, Uttarakhand, was named brand ambassador of the Uttarakhand Women's Empowerment and Child Development Department in August 2021.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-011",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Physics/Chemistry",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "What is the size of the image in a convex mirror if it is placed at infinity?",
+  "options": [
+   "Erect",
+   "Inverted",
+   "Point sized",
+   "Diminished"
+  ],
+  "answer": 2,
+  "explanation": "For an object at infinity, a convex mirror forms the image at its focus; the image is point-sized (a point on the focal plane).",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-012",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Sports",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "In December 2021, which badminton player won the silver medal in the men's singles at the BWF 2021 World Championship?",
+  "options": [
+   "Anders Antorsen",
+   "Viktor Axelson",
+   "Loh Kean Yew",
+   "Kidambi Srikanth"
+  ],
+  "answer": 3,
+  "explanation": "At the BWF World Championships 2021 in Huelva, Singapore's Loh Kean Yew won gold and India's Kidambi Srikanth took the silver medal.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-013",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "History",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "In which of the following Indian National Congress sessions was a pact signed between the Congress and Muslim League by which the separate electorates was accepted by both the parties?",
+  "options": [
+   "Surat, 1907",
+   "Lucknow, 1916",
+   "Lahore, 1929",
+   "Lucknow, 1936"
+  ],
+  "answer": 1,
+  "explanation": "The Lucknow Pact of 1916, signed at the Lucknow session of the Congress, saw the Congress and the Muslim League jointly accept the system of separate electorates.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-014",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "History",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Who among the following preached the doctrine of Akriya or non-action?",
+  "options": [
+   "Nigantha Nataputta",
+   "Arya Sudharma",
+   "Purana Kassapa",
+   "Makkali Gosala"
+  ],
+  "answer": 2,
+  "explanation": "Purana Kassapa, one of the six heterodox teachers (sramanas), preached Akriyavada, the doctrine that actions have no moral consequences (non-action).",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-015",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Sports",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Name the para-athlete who received Padma Award in 2021?",
+  "options": [
+   "KY Venkatesh",
+   "Devendra Jhajharia",
+   "Deepa Malik",
+   "Sumit Antil"
+  ],
+  "answer": 0,
+  "explanation": "Para-athlete K.Y. Venkatesh received the Padma Shri in 2021; Devendra Jhajharia and Deepa Malik received theirs in 2012 and 2017 respectively, and Sumit Antil in 2022.",
+  "confidence": "medium",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-016",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Geography",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "According to the Census 2011, which statement is INCORRECT about the definition of a literate person in India?",
+  "options": [
+   "The person should be a male.",
+   "The person's age should be 7 years and above.",
+   "The person should be able to read.",
+   "The person should be able to write."
+  ],
+  "answer": 0,
+  "explanation": "Census 2011 defines a literate person as anyone aged 7 years and above who can read and write with understanding in any language; there is no gender condition, so the male-only statement is incorrect.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-017",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Economy",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Which of the following spheres or activities is most suited for privatisation in an economy?",
+  "options": [
+   "Law and order in an economy",
+   "Legal system in an economy",
+   "Communication system in an economy",
+   "Defence system of the economy"
+  ],
+  "answer": 2,
+  "explanation": "Communication (telecom) is a competitive commercial service suitable for private ownership, while law and order, the legal system and defence are sovereign functions that must remain with the state.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-018",
+  "section": "ga",
+  "topic": "Geography",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "What was the male-female gap in the literacy rate in the 2011 Census of India data?",
+  "paper": "Paper-I",
+  "options": [
+   "16.68 percentage points",
+   "21.59 percentage points",
+   "18.12 percentage points",
+   "9.34 percentage points"
+  ],
+  "answer": 0,
+  "confidence": "medium",
+  "explanation": "Census 2011: male literacy 82.14%, female literacy 65.46%, so the gap is 16.68 percentage points. (Original options were blank in the source paper; options reconstructed.)",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-019",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Economy",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "_________ was set up in 1963 to promote the growth and distribution of high yielding variety seeds.",
+  "options": [
+   "National Agricultural Corporation",
+   "National Seeds Corporation",
+   "Indian Seeds Corporation",
+   "Indian Agricultural Institute"
+  ],
+  "answer": 1,
+  "explanation": "The National Seeds Corporation was set up in 1963 under the Ministry of Agriculture to promote the production and distribution of high-yielding variety seeds.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-020",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Economy",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "The vision of 'Faster, Sustainable, and More Inclusive Growth' was emphasised in which of the following Five-Year Plans?",
+  "options": [
+   "Tenth",
+   "Twelth",
+   "First",
+   "Third"
+  ],
+  "answer": 1,
+  "explanation": "'Faster, Sustainable and More Inclusive Growth' was the theme and title of the Twelfth Five-Year Plan (2012-17).",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-021",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Polity",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "Which of the following features of the Indian Constitution was NOT borrowed from the US constitution?",
+  "options": [
+   "Judicial Review",
+   "Independence of Judiciary",
+   "Single Citizenship",
+   "Fundamental Right"
+  ],
+  "answer": 2,
+  "explanation": "Judicial review, independence of the judiciary and fundamental rights were borrowed from the US Constitution, while single citizenship was borrowed from the British Constitution.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-022",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Physics/Chemistry",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "What is the nature of the image if the object is placed at infinity in a convex mirror?",
+  "options": [
+   "Virtual and erect",
+   "Diminished",
+   "Inverted",
+   "Point sized"
+  ],
+  "answer": 0,
+  "explanation": "A convex mirror always forms a virtual, erect and diminished image; for an object at infinity the image is a virtual, erect point image at the focus.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-023",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Culture & Arts",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "In which of the following state chhau dance is generally NOT performed?",
+  "options": [
+   "Tamil Nadu",
+   "West Bengal",
+   "Jharkhand",
+   "Odisha"
+  ],
+  "answer": 0,
+  "explanation": "Chhau dance is traditionally performed in the eastern states of West Bengal (Purulia Chhau), Jharkhand (Seraikella Chhau) and Odisha (Mayurbhanj Chhau), not in Tamil Nadu.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-024",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Culture & Arts",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "The famous work 'Natya Shastra' is associated with which author?",
+  "options": [
+   "Aryabhatta",
+   "Ramanujan",
+   "Bharat Muni",
+   "Ved Vyasa"
+  ],
+  "answer": 2,
+  "explanation": "The Natya Shastra, the ancient Sanskrit treatise on performing arts, is attributed to Bharata Muni.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2022G-025",
+  "section": "ga",
+  "paper": "Paper-I",
+  "topic": "Geography",
+  "source": "14-Dec-2022 Shift-1",
+  "question": "In February 2022, the Ministry of Education approved the continuation of the Rashtriya Uchchatar Shiksha Abhiyan (RUSA) scheme until_________.",
+  "options": [
+   "31 March 2026",
+   "31 March 2025",
+   "31 May 2030",
+   "31 May 2024"
+  ],
+  "answer": 0,
+  "explanation": "In February 2022 the government approved continuation of the Rashtriya Uchchatar Shiksha Abhiyan (RUSA) scheme until 31 March 2026.",
+  "confidence": "high",
+  "options_kind": "original"
+ },
+ {
+  "id": "2017PA-001",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "“amu” is a unit of?",
+  "options": [
+   "mass",
+   "length",
+   "time",
+   "energy"
+  ],
+  "answer": 0,
+  "explanation": "amu (atomic mass unit) measures the mass of atoms and subatomic particles.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-002",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "If ‘x’ is displacement, time taken ‘t’, initial velocity ‘u’, final velocity ‘v’ and acceleration ‘a’. Which of the following equations is true?",
+  "options": [
+   "v = u + a²t",
+   "x = ut + at³",
+   "v² = u² + 2ax",
+   "v = u − 2at"
+  ],
+  "answer": 2,
+  "explanation": "The third kinematic equation v² = u² + 2ax is dimensionally and physically correct; the others are not.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-003",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "________ law of motion may be phrased as: An external force is required to keep a body in uniform motion.",
+  "options": [
+   "Newton’s first law of motion",
+   "Newton’s second law of motion",
+   "Newton’s third law of motion",
+   "Newton’s law of gravitation"
+  ],
+  "answer": 0,
+  "explanation": "Newton’s first law (law of inertia): a body persists in uniform motion unless acted upon by an external force — the expected exam answer.",
+  "confidence": "medium",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-004",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "If a projectile is thrown with velocity ‘v’ and making an angle ‘θ’ with the x-axis then the vertical component of velocity is given by which of the following formula?",
+  "options": [
+   "v cos θ",
+   "v sin θ",
+   "v tan θ",
+   "v / sin θ"
+  ],
+  "answer": 1,
+  "explanation": "Resolving velocity into components: vertical component = v sin θ, horizontal = v cos θ.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-005",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "What is the Moment of Inertia of a thin circular ring of mass ‘M’ and radius ‘R’ about an axis perpendicular to its plane and passing through its centre?",
+  "options": [
+   "(1/2)MR²",
+   "2MR²",
+   "(2/3)MR²",
+   "MR²"
+  ],
+  "answer": 3,
+  "explanation": "Every mass element of a thin ring is at distance R from the central perpendicular axis, so I = ∫R²dm = MR².",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-006",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The expression Iω²/2 represents Rotational ________.",
+  "options": [
+   "kinetic energy",
+   "potential energy",
+   "angular momentum",
+   "torque"
+  ],
+  "answer": 0,
+  "explanation": "Iω²/2 is the exact analogue of (1/2)mv² for rotation — rotational kinetic energy.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-007",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The unit of Gravitational constant is?",
+  "options": [
+   "N·m/kg",
+   "kg·m²/s",
+   "N·m²/kg²",
+   "N/kg²"
+  ],
+  "answer": 2,
+  "explanation": "From F = Gm₁m₂/r², [G] = N·m²/kg².",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-008",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "2017 SA-IMD (set A)",
+  "question": "A square tungsten slab of the side of 30 cm and thickness of 5 cm is subject to a shearing force (on its narrow face) of 7.5×10^7 N. The lower edge is riveted to the floor. How much (in cm) will the upper edge be displaced? (Shear modulus (G) of tungsten is 150×10^9 N/m²)",
+  "options": [
+   "1.667 cm",
+   "0.1667 cm",
+   "0.01667 cm",
+   "16.67 cm"
+  ],
+  "answer": 1,
+  "explanation": "Shear strain = stress/G = (F/A)/G = (7.5×10^7/0.015)/(150×10^9) = 1/30; displacement = strain × 0.05 m = 1.667×10⁻³ m = 0.1667 cm.",
+  "confidence": "medium",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-009",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "2017 SA-IMD (set A)",
+  "question": "Which of the following has the lowest relative density?",
+  "options": [
+   "gold (19.3)",
+   "mercury (13.6)",
+   "lead (11.3)",
+   "platinum (21.4)"
+  ],
+  "answer": 2,
+  "explanation": "Relative density = density/water: lead 11.3 is the smallest of the four.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-010",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "2017 SA-IMD (set A)",
+  "question": "1 atm = ________ Pa",
+  "options": [
+   "101325 Pa",
+   "10132.5 Pa",
+   "1.01325 Pa",
+   "760 Pa"
+  ],
+  "answer": 0,
+  "explanation": "1 atm = 1.01325×10^5 Pa = 101325 Pa.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-011",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "2017 SA-IMD (set A)",
+  "question": "________ equation relates the pressure difference between two points in a pipe to changes in Kinetic as well as potential energy.",
+  "options": [
+   "Torricelli’s",
+   "Pascal’s",
+   "Archimedes’",
+   "Bernoulli’s"
+  ],
+  "answer": 3,
+  "explanation": "Bernoulli’s equation p + (1/2)ρv² + ρgh = constant relates pressure to kinetic and potential energy density.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-012",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The Venturi-meter is a device to measure the ________ of fluids.",
+  "options": [
+   "viscosity",
+   "flow rate",
+   "density",
+   "surface tension"
+  ],
+  "answer": 1,
+  "explanation": "A Venturi-meter uses the Bernoulli pressure drop in a constriction to measure the fluid flow rate (discharge).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-013",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "What is the unit of centripetal acceleration?",
+  "options": [
+   "m/s²",
+   "m/s",
+   "rad/s",
+   "m²/s²"
+  ],
+  "answer": 0,
+  "explanation": "Centripetal acceleration a = v²/r has units of acceleration: m/s².",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-014",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "If a particle starts from rest and accelerates at the rate of ‘a’ m/s², and if its velocity at the end of time t is equal to ‘a’ m/s then what will its velocity be (in m/s) at end of time ‘2t’?",
+  "options": [
+   "a",
+   "a/2",
+   "2a",
+   "4a"
+  ],
+  "answer": 2,
+  "explanation": "v = at = a gives t = 1 s; at time 2t = 2 s, v = a×2 = 2a.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-015",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "A fielder throws a ball at 20 m/s at an angle of 15° with the ground. How far (in m) from the fielder does the ball land? (use g = 10 m/s²)",
+  "options": [
+   "20 m",
+   "10 m",
+   "40 m",
+   "30 m"
+  ],
+  "answer": 0,
+  "explanation": "Range R = v² sin2θ/g = 400×sin30°/10 = 400×0.5/10 = 20 m.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-016",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The dimensions of Young’s Modulus match with the dimensions of ________.",
+  "options": [
+   "force",
+   "energy",
+   "pressure",
+   "momentum"
+  ],
+  "answer": 2,
+  "explanation": "Young’s modulus = stress/strain has dimensions [ML⁻¹T⁻²], the same as pressure.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-017",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The radius of gyration of a rod of length ‘L’ rotating about an axis perpendicular to the rod at its mid-point is ________.",
+  "options": [
+   "L/(2√3)",
+   "L/√3",
+   "L/2",
+   "L/12"
+  ],
+  "answer": 0,
+  "explanation": "I = ML²/12 = Mk² gives k = L/√12 = L/(2√3).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-018",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "What would be the acceleration due to gravity (in m/s²) at a depth of 1/7th the radius of earth? (take g = 9.8 m/s²)",
+  "options": [
+   "9.8",
+   "8.4",
+   "1.4",
+   "7.0"
+  ],
+  "answer": 1,
+  "explanation": "g at depth d is g(1 − d/R) = 9.8×(1 − 1/7) = 9.8×6/7 = 8.4 m/s².",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-019",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "2017 SA-IMD (set A)",
+  "question": "If the flow speeds of the upper and lower surfaces of the wings of an aeroplane are 260 m/s and 250 m/s, the wings cover an area of 500 m² then what would be the lift generated (in kN)? (take density of air as 1 kg/m³)",
+  "options": [
+   "2550 kN",
+   "637.5 kN",
+   "12750 kN",
+   "1275 kN"
+  ],
+  "answer": 3,
+  "explanation": "Δp = (1/2)ρ(v²_upper − v²_lower) = 0.5×(67600 − 62500) = 2550 Pa; lift = Δp×A = 2550×500 = 1.275×10^6 N = 1275 kN.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-020",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "Heat is the form of energy transferred between two (or more) systems or a system and its surroundings by virtue of ________ difference.",
+  "options": [
+   "temperature",
+   "pressure",
+   "volume",
+   "mass"
+  ],
+  "answer": 0,
+  "explanation": "Heat flows between systems because of a temperature difference.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-021",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "Which is the correct formula expressing relationship between celsius ‘C’ and kelvin ‘K’ temperature scales?",
+  "options": [
+   "K = C − 273.15",
+   "C = K + 273.15",
+   "K = C + 273.15",
+   "K = 273.15 − C"
+  ],
+  "answer": 2,
+  "explanation": "Kelvin = Celsius + 273.15.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-022",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "Which temperature represents absolute zero?",
+  "options": [
+   "0 °C",
+   "−273.15 °C",
+   "−100 °C",
+   "273.15 °C"
+  ],
+  "answer": 1,
+  "explanation": "Absolute zero is 0 K = −273.15 °C.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-023",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Kinetic Theory",
+  "source": "2017 SA-IMD (set A)",
+  "question": "For an ideal gas ‘αv’ (coefficient of volume expansion) is equal to?",
+  "options": [
+   "1/T",
+   "T",
+   "R/T",
+   "1/(RT)"
+  ],
+  "answer": 0,
+  "explanation": "For an ideal gas V = RT/p at constant p, so αv = (1/V)(dV/dT) = 1/T.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-024",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "In thermodynamics ________ is not a state variable.",
+  "options": [
+   "pressure",
+   "temperature",
+   "volume",
+   "heat"
+  ],
+  "answer": 3,
+  "explanation": "Heat (like work) is a path function, not a state function; p, T, V are state variables.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-025",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "A process in which the ________ of the system is kept fixed throughout is called an isothermal process",
+  "options": [
+   "pressure",
+   "temperature",
+   "volume",
+   "mass"
+  ],
+  "answer": 1,
+  "explanation": "Isothermal means constant temperature (ΔT = 0).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-026",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The coefficient of performance (α) of a refrigerator is equal to? (Q1 is the heat released to the hot reservoir, Q2 is the heat extracted from the cold reservoir and W is the work done on the system – the refrigerant.)",
+  "options": [
+   "Q2/(Q1 − Q2)",
+   "Q1/(Q1 − Q2)",
+   "(Q1 − Q2)/Q2",
+   "Q1/Q2"
+  ],
+  "answer": 0,
+  "explanation": "COP = heat extracted / work input = Q2/W = Q2/(Q1 − Q2).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-027",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "In a Carnot cycle ________. (Where, Q1 is the heat absorbed by the gas from the reservoir at temperature T1 and Q2 is the Heat released by the gas to the reservoir at temperature T2.)",
+  "options": [
+   "Q1/T1 < Q2/T2",
+   "Q1×T1 = Q2×T2",
+   "Q1/T1 = Q2/T2",
+   "Q1/T2 = Q2/T1"
+  ],
+  "answer": 2,
+  "explanation": "For a reversible Carnot cycle Q1/Q2 = T1/T2, i.e. Q1/T1 = Q2/T2.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-028",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Mechanics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "Motion of a body as a whole from one point to another is called?",
+  "options": [
+   "rotatory motion",
+   "translatory motion",
+   "oscillatory motion",
+   "circular motion"
+  ],
+  "answer": 1,
+  "explanation": "Motion of the body as a whole from one place to another is translatory (translational) motion.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-029",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "________ are made up of quarks.",
+  "options": [
+   "hadrons",
+   "leptons",
+   "photons",
+   "gravitons"
+  ],
+  "answer": 0,
+  "explanation": "Hadrons (protons, neutrons, mesons) are composed of quarks; leptons are elementary.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-030",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Kinetic Theory",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The value of Boltzmann constant in SI units is?",
+  "options": [
+   "1.38×10⁻¹⁶ J/K",
+   "8.314 J/K",
+   "1.38×10⁻²³ J/K",
+   "1.6×10⁻¹⁹ J/K"
+  ],
+  "answer": 2,
+  "explanation": "kB = 1.38×10⁻²³ J/K.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-031",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Kinetic Theory",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The internal energy ‘E’ of an ideal gas is equal to ________. (‘T’ is temperature, ‘N’ is the number of molecules in the sample and ‘kB’ is Boltzmann constant)",
+  "options": [
+   "(3/2)Nk_BT",
+   "(1/2)Nk_BT",
+   "Nk_BT",
+   "(5/2)Nk_BT"
+  ],
+  "answer": 0,
+  "explanation": "For the standard (monoatomic-type) fill-in, E = (3/2)Nk_BT from equipartition.",
+  "confidence": "medium",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-032",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "2017 SA-IMD (set A)",
+  "question": "If a 1 km long steel rail suffers 50°C increase in temperature then by how much will its length increase (in m)? (Coefficient of linear expansion for steel is 1.2×10⁻⁵ K⁻¹)",
+  "options": [
+   "0.06 m",
+   "0.6 m",
+   "6 m",
+   "60 m"
+  ],
+  "answer": 1,
+  "explanation": "ΔL = LαΔT = 1000×1.2×10⁻⁵×50 = 0.6 m.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-033",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Kinetic Theory",
+  "source": "2017 SA-IMD (set A)",
+  "question": "Molecules of Argon have how many degrees of freedom?",
+  "options": [
+   "5",
+   "6",
+   "2",
+   "3"
+  ],
+  "answer": 3,
+  "explanation": "Argon is monoatomic, so only 3 translational degrees of freedom.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-034",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The total internal energy of a mole of a monoatomic gas is equal to?",
+  "options": [
+   "(1/2)RT",
+   "(3/2)RT",
+   "(5/2)RT",
+   "RT"
+  ],
+  "answer": 1,
+  "explanation": "Monoatomic: f = 3, so U = (f/2)RT = (3/2)RT per mole.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-035",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "0 Kelvin equals?",
+  "options": [
+   "−273.15 °C",
+   "273.15 °C",
+   "0 °C",
+   "−100 °C"
+  ],
+  "answer": 0,
+  "explanation": "0 K = −273.15 °C (absolute zero).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-036",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Thermodynamics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "If 100 g of iron at 20°C is given 2250 joules of heat then its temperature will rise to ________ °C. [Specific heat capacity of iron is 450 J/(kg·K)]",
+  "options": [
+   "50 °C",
+   "45 °C",
+   "70 °C",
+   "90 °C"
+  ],
+  "answer": 2,
+  "explanation": "ΔT = Q/(mc) = 2250/(0.1×450) = 50 °C, so T = 20 + 50 = 70 °C.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-037",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Kinetic Theory",
+  "source": "2017 SA-IMD (set A)",
+  "question": "What is the ratio of r.m.s. velocities of the molecules of two gases ‘A’ and ‘B’ if temperature of ‘A’ (molecular mass 16) is 200 K, temperature of ‘B’ (molecular mass 2) is 400 K?",
+  "options": [
+   "1/4",
+   "4",
+   "1/2",
+   "1/8"
+  ],
+  "answer": 0,
+  "explanation": "vrms ∝ √(T/M): ratio = √[(200/16)/(400/2)] = √(12.5/200) = √(1/16) = 1/4.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-038",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "General Properties of Matter",
+  "source": "2017 SA-IMD (set A)",
+  "question": "If an enclosed gas is compressed to 60% of its original volume then by how much (in %) will its pressure increase, temperature remaining constant?",
+  "options": [
+   "60%",
+   "66.67%",
+   "40%",
+   "166.67%"
+  ],
+  "answer": 1,
+  "explanation": "Boyle’s law: p2 = p1/0.6 = 1.6667p1, so the increase is 66.67%.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-039",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Oscillations",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The smallest interval of time after which the motion is repeated is called its ________.",
+  "options": [
+   "frequency",
+   "amplitude",
+   "time period",
+   "phase"
+  ],
+  "answer": 2,
+  "explanation": "The time period is the smallest interval after which periodic motion repeats.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-040",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Oscillations",
+  "source": "2017 SA-IMD (set A)",
+  "question": "If f(t) = A sin ωt + B cos ωt is written as f(t) = D sin(ωt + φ) then ‘φ’ is equal to?",
+  "options": [
+   "tan⁻¹(B/A)",
+   "tan⁻¹(A/B)",
+   "sin⁻¹(B/D)",
+   "A/B"
+  ],
+  "answer": 0,
+  "explanation": "D sin(ωt+φ) = D cosφ sinωt + D sinφ cosωt gives A = D cosφ, B = D sinφ, so tan φ = B/A.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-041",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Oscillations",
+  "source": "2017 SA-IMD (set A)",
+  "question": "________ motion is the projection of uniform circular motion on a diameter of the circle in which the latter motion takes place.",
+  "options": [
+   "damped",
+   "simple harmonic",
+   "forced",
+   "circular"
+  ],
+  "answer": 1,
+  "explanation": "Simple harmonic motion is the projection of uniform circular motion on a diameter.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-042",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Oscillations",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The kinetic energy of a particle performing simple harmonic motion is ________ whose displacement is f(t) = A cos(ωt + φ).",
+  "options": [
+   "½mω²A² cos²(ωt + φ)",
+   "½mω²A²",
+   "mω²A² sin(ωt + φ)",
+   "½mω²A² sin²(ωt + φ)"
+  ],
+  "answer": 3,
+  "explanation": "v = df/dt = −Aω sin(ωt+φ), so KE = ½mv² = ½mω²A² sin²(ωt+φ).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-043",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Oscillations",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The displacement of a particle performing damped simple harmonic motion is ________. (‘b’ is damping constant, ‘a’ is the amplitude and ‘ω’ is the angular frequency of the damped oscillator)",
+  "options": [
+   "a e^(−bt) sin(ωt)",
+   "a e^(bt) sin(ωt)",
+   "a sin(ωt − bt)",
+   "a e^(−bt) sin(ωt/b)"
+  ],
+  "answer": 0,
+  "explanation": "Damping multiplies the oscillation by an exponentially decaying envelope e^(−bt).",
+  "confidence": "medium",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-044",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "________ waves associated with electrons are employed in electron microscopes.",
+  "options": [
+   "sound waves",
+   "electromagnetic waves",
+   "matter waves",
+   "seismic waves"
+  ],
+  "answer": 2,
+  "explanation": "Electron microscopes exploit the short de Broglie (matter) wavelength of electrons.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-045",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Waves",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The speed of transverse waves on a stretched string is given by v = √(T/X), where ‘T’ is tension in the string and the unknown term ‘X’ is?",
+  "options": [
+   "total mass of the string",
+   "mass per unit length of the string",
+   "length of the string",
+   "tension per unit area"
+  ],
+  "answer": 1,
+  "explanation": "v = √(T/μ) where μ is the mass per unit length (linear density).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-046",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Waves",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The frequency observed if the source is moving away from the observer is equal to ________. (‘fo’ is the frequency observed if both source and observer are stationary, ‘Vs’ is speed of source and ‘v’ is speed of the wave)",
+  "options": [
+   "fo × v/(v + Vs)",
+   "fo × v/(v − Vs)",
+   "fo × (v + Vs)/v",
+   "fo × Vs/v"
+  ],
+  "answer": 0,
+  "explanation": "Receding source stretches the wavelength: f′ = fo × v/(v + Vs).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-047",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Waves",
+  "source": "2017 SA-IMD (set A)",
+  "question": "The gap between two successive anti-nodes in a stationary wave is?",
+  "options": [
+   "λ",
+   "λ/4",
+   "2λ",
+   "λ/2"
+  ],
+  "answer": 3,
+  "explanation": "Adjacent antinodes (and adjacent nodes) are λ/2 apart.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-048",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Waves",
+  "source": "2017 SA-IMD (set A)",
+  "question": "In a standing wave, in a pipe open at both ends, the first harmonic has?",
+  "options": [
+   "two nodes and one antinode",
+   "a single node with antinodes at both ends",
+   "nodes at both ends",
+   "no node"
+  ],
+  "answer": 1,
+  "explanation": "Fundamental of an open-open pipe (λ = 2L): displacement antinodes at both open ends, one node at the centre.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-049",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "Match the position of the image with the position of an object placed in front of a convex lens. Image positions: A. At infinity; B. At focal point; C. At centre of curvature. Object positions: 1. At infinity; 2. At focal point; 3. At centre of curvature. Which is the correct matching?",
+  "options": [
+   "A-1, B-2, C-3",
+   "A-2, B-1, C-3",
+   "A-2, B-3, C-1",
+   "A-3, B-1, C-2"
+  ],
+  "answer": 1,
+  "explanation": "Object at infinity → image at F; object at F → image at infinity; object at 2F → image at 2F on the other side.",
+  "confidence": "medium",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PA-050",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "2017 SA-IMD (set A)",
+  "question": "A ray parallel to the principal axis incident on a concave mirror after reflection ________",
+  "options": [
+   "passes through the principal focus",
+   "returns along the same path",
+   "passes through the centre of curvature",
+   "goes parallel to the axis after reflection"
+  ],
+  "answer": 0,
+  "explanation": "A ray parallel to the principal axis reflects through the principal focus F of a concave mirror.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "By the continuity equation A1v1 = A2v2: the volume flow in the pipe (6.6 cm² × 1 m/min) equals the total flow through the 14 holes (14 × πr² × u); solving gives u = 0.25 m/s.",
+  "id": "2017PB-001",
+  "options": [
+   "0.25",
+   "0.50",
+   "2.5",
+   "0.025"
+  ],
+  "paper": "Paper-I+II",
+  "question": "One end of a cylindrical pipe of cross-section 6.6 cm² has 14 holes each of radius 1 mm. If water is flowing in the pipe at 1 m/min then what is the speed (in m/s) of efflux through the holes?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "STP stands for Standard Temperature and Pressure: 273.15 K (0 °C) and 1 atm, the reference state for gas measurements.",
+  "id": "2017PB-002",
+  "options": [
+   "Standard Temperature and Pressure",
+   "Standard Thermal Power",
+   "Stable Temperature Point",
+   "Standard Temperature Programme"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What does STP means?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Restoring force = stress × area = 10000 × π(10⁻³)² = 0.0314 N.",
+  "id": "2017PB-003",
+  "options": [
+   "0.0314",
+   "0.314",
+   "3.14",
+   "0.00314"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Stress on a metal wire of radius 1 mm is 10,000 N/m². How much is the restoring force developed in it (in N)?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The zeroth law of thermodynamics defines thermal equilibrium transitively, which is what lets temperature be a meaningful quantity.",
+  "id": "2017PB-004",
+  "options": [
+   "Zeroth",
+   "First",
+   "Second",
+   "Third"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The ________ of thermodynamics states that if two thermodynamic systems are each in thermal equilibrium with a third system separately are in thermal equilibrium with each other.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Ampere's law relates the magnetic field around a current-carrying wire to the current it encloses, letting you compute B at various points.",
+  "id": "2017PB-005",
+  "options": [
+   "Ampere's",
+   "Faraday's",
+   "Lenz's",
+   "Coulomb's"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The ________ Law is an equation that describes the magnetic field created by a current-carrying wire, and allows you to calculate its strength at various points.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Magnetism",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "A venturimeter measures flow speed from the pressure drop at a constriction, using Bernoulli's principle for incompressible flow.",
+  "id": "2017PB-006",
+  "options": [
+   "Venturimeter",
+   "Manometer",
+   "Barometer",
+   "Hydrometer"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The ________ is a device to measure the flow speed of incompressible fluid.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Uniform circular motion needs a centripetal acceleration of magnitude v²/R directed toward the centre.",
+  "id": "2017PB-007",
+  "options": [
+   "v²/R",
+   "v/R",
+   "vR",
+   "R²/v"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The acceleration of an object moving with speed 'v' in a circle of radius 'R' has a magnitude given by which formula?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Rayleigh scattering intensity varies as 1/λ⁴, which is why blue (short-wavelength) light scatters most strongly in the atmosphere.",
+  "id": "2017PB-008",
+  "options": [
+   "Rayleigh",
+   "Raman",
+   "Compton",
+   "Tyndall"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The amount of scattering of light is inversely proportional to the fourth power of its wavelength. This is known as ________ scattering.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "For a parallel plate capacitor, C = Q/V = ε₀A/d with vacuum between the plates.",
+  "id": "2017PB-009",
+  "options": [
+   "ε₀A/d",
+   "ε₀d/A",
+   "A/(ε₀d)",
+   "ε₀Ad"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The capacity of a parallel plate capacitor where 'A' is the area of each plate, 'd' the separation between them and with vacuum between the plates is given as?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The elementary charge e = 1.602 × 10⁻¹⁹ C, so the blank is 1.6.",
+  "id": "2017PB-010",
+  "options": [
+   "1.6",
+   "1.5",
+   "1.7",
+   "1.8"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The charge on an electron is ________ × 10⁻¹⁹ C.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "medium",
+  "explanation": "In a pure inductor the current lags the applied voltage by 90° (π/2) because the inductor opposes changes in current.",
+  "id": "2017PB-011",
+  "options": [
+   "lags the applied voltage by 90°",
+   "leads the applied voltage by 90°",
+   "is in phase with the applied voltage",
+   "is always zero"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The current in the inductor ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Mobility μ = drift velocity per unit electric field = eτ/m.",
+  "id": "2017PB-012",
+  "options": [
+   "mobility",
+   "conductivity",
+   "drift velocity",
+   "resistivity"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The expression eτ/m, where 'τ' is the relaxation time, 'e' is charge and 'm' is mass of an electron is equal to the ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Loci of constant path difference from two point sources are hyperbolas; they only look like straight lines far from the slits.",
+  "id": "2017PB-013",
+  "options": [
+   "hyperbola",
+   "straight line",
+   "parabola",
+   "circle"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The fringe pattern observed in Young's Experiment to produce interference pattern will strictly be a?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The human eye responds to visible light, roughly 380 nm (violet) to 750 nm (red).",
+  "id": "2017PB-014",
+  "options": [
+   "380 nm to 750 nm",
+   "300 nm to 400 nm",
+   "750 nm to 1100 nm",
+   "100 nm to 380 nm"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The human eye can detect electromagnetic radiation in the range of wavelength ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Water freezes at 0 °C = 32 °F on the Fahrenheit scale.",
+  "id": "2017PB-015",
+  "options": [
+   "32 °F",
+   "0 °F",
+   "212 °F",
+   "273 °F"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following is the ice point of water in the Fahrenheit scale?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Tritium (³H) has mass ≈ 3.016 u, essentially the same as the helium-3 (³He) nucleus at ≈ 3.016 u.",
+  "id": "2017PB-016",
+  "options": [
+   "helium-3 nucleus",
+   "deuterium nucleus",
+   "alpha particle",
+   "lithium-6 nucleus"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The mass of the hydrogen isotope, tritium is about the same as the masses of?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Mayer's relation: Cp − Cv = R for one mole of an ideal gas.",
+  "id": "2017PB-017",
+  "options": [
+   "R",
+   "2R",
+   "R/2",
+   "0"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The mathematical difference between molar specific heat capacities of an ideal gas at constant pressure and volume is equal to which of the following?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "A monoatomic gas has 3 translational degrees of freedom, so Cv = (f/2)R = 3R/2.",
+  "id": "2017PB-018",
+  "options": [
+   "3R/2",
+   "5R/2",
+   "R",
+   "R/2"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The molar specific heat at constant volume for monoatomic gas is which of the following?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The binding-energy-per-nucleon curve peaks near iron-56, so A = 56 gives the highest value among the choices.",
+  "id": "2017PB-019",
+  "options": [
+   "56",
+   "4",
+   "12",
+   "238"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The nucleus of which of the following atoms whose atomic mass numbers 'A' are given in the options would have the highest binding energy per nucleon?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "A physical pendulum has T = 2π√(I/mgd); with the pivot-to-centre distance d = L this becomes 2π√(I/mgL).",
+  "id": "2017PB-020",
+  "options": [
+   "2π√(I/mgL)",
+   "2π√(mgL/I)",
+   "2π√(L/g)",
+   "2π√(I/mL)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The period 'T' of a pendulum of string length 'L', bob of mass 'm' and moment of inertia 'I' is given by ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Oscillations",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Joule heating power loss P = VI = V²/R = I²R.",
+  "id": "2017PB-021",
+  "options": [
+   "V²/R",
+   "V/R",
+   "V²R",
+   "VR²"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The power loss in a conductor of resistance 'R' across which a potential difference of 'V' is equal to which of the following?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Angular momentum L = Iω, the rotational analogue of linear momentum p = mv.",
+  "id": "2017PB-022",
+  "options": [
+   "Angular momentum",
+   "Torque",
+   "Angular acceleration",
+   "Rotational kinetic energy"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following is the product of moment of inertia and angular velocity?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Equating centripetal force to Coulomb attraction with Bohr's angular-momentum condition gives r = ε₀n²h²/(πme²); n = 1 for the ground-state orbit.",
+  "id": "2017PB-023",
+  "options": [
+   "ε₀h²/(πme²)",
+   "πme²/(ε₀h²)",
+   "ε₀h/(πme²)",
+   "ε₀h²/(π²me²)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The radius of orbit of the electron in a hydrogen atom is equal to? (ε₀ is permittivity of free space, 'e' is charge and 'm' is mass of an electron)",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "At the critical angle sin C = n₁/n₂, so the refractive index of the denser medium 2 with respect to the rarer medium 1 is n₂₁ = 1/sin C.",
+  "id": "2017PB-024",
+  "options": [
+   "1/sin C",
+   "sin C",
+   "1/cos C",
+   "cos C"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The refractive index of denser medium 2 with respect to rarer medium 1 will be ________ (where 'C' is the measure of the critical angle).",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Maxwell's equations in vacuum give wave speed c = 1/√(μ₀ε₀).",
+  "id": "2017PB-025",
+  "options": [
+   "1/√(μ₀ε₀)",
+   "√(μ₀ε₀)",
+   "μ₀ε₀",
+   "1/(μ₀ε₀)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The speed 'c' of electromagnetic wave in vacuum is equal to? (where μ₀ and ε₀ are free space permeability and permittivity constants)",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Magnetism",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "For a stretched string, v = √(tension / linear mass density) = √(T/μ).",
+  "id": "2017PB-026",
+  "options": [
+   "√(T/μ)",
+   "√(μ/T)",
+   "T/μ",
+   "√(Tμ)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The speed 'v' of transverse waves on a stretched string of linear mass density 'μ' and tension 'T' is equal to?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Pressure at a given horizontal level depends only on depth, not on the container's shape or cross-section — the hydrostatic paradox.",
+  "id": "2017PB-027",
+  "options": [
+   "Hydrostatic paradox",
+   "Pascal's law",
+   "Archimedes' principle",
+   "Bernoulli's theorem"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The statement, 'The liquid pressure is the same at all points at the same horizontal level irrespective of cross sectional area or base area or the shape of the container' represents which of the following?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Gauss's law: the total electric flux through a closed surface equals the enclosed charge divided by ε₀.",
+  "id": "2017PB-028",
+  "options": [
+   "q/ε₀",
+   "ε₀q",
+   "qε₀²",
+   "q²/ε₀"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Electric flux through a closed surface 'S' enclosing a charge 'q' is equal to ________. (ε₀ is permittivity of free space)",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The second law of thermodynamics (Kelvin–Planck statement) sets the Carnot limit on heat-engine efficiency.",
+  "id": "2017PB-029",
+  "options": [
+   "Second",
+   "First",
+   "Zeroth",
+   "Third"
+  ],
+  "paper": "Paper-I+II",
+  "question": "There is a fundamental limit on the efficiency of a heat engine set by an independent principle of nature called the ________ Law of Thermodynamics.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Earth's magnetic elements are declination, angle of dip (inclination) and the horizontal component; the permeability of free space is a universal constant, not a field element.",
+  "id": "2017PB-030",
+  "options": [
+   "Magnetic declination",
+   "Angle of dip",
+   "Horizontal component of earth's field",
+   "Magnetic permeability of free space"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Three quantities are needed to specify the magnetic field of the earth on its surface. Which of the following is not needed?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Magnetism",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Water contracts on cooling down to 4 °C and expands below it, so its density is maximum at 4 °C (anomalous expansion of water).",
+  "id": "2017PB-031",
+  "options": [
+   "density",
+   "volume",
+   "viscosity",
+   "surface tension"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Water at 4 °C has maximum ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "M = M_o × (1 + D/f_e) = 4 × (1 + 25/10) = 4 × 3.5 = 14.",
+  "id": "2017PB-032",
+  "options": [
+   "14",
+   "10",
+   "40",
+   "35"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the magnifying power of a compound microscope whose eyepiece has a focal length of 10 cm and the magnifying power of objective is 4? (Use least distance of distinct vision as 25 cm)",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "For a thin ring, I about the central perpendicular axis is MR²; by the perpendicular-axis theorem the two in-plane diameters share this equally, so I_diameter = MR²/2.",
+  "id": "2017PB-033",
+  "options": [
+   "(1/2)MR²",
+   "MR²",
+   "2MR²",
+   "(2/3)MR²"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the Moment of Inertia of a thin circular ring of mass 'M' and radius 'R' about its diameter?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "g ∝ M/R², so g' = (1/7)/(1/2)² × 9.8 = (4/7) × 9.8 = 5.6 m/s².",
+  "id": "2017PB-034",
+  "options": [
+   "5.6",
+   "2.8",
+   "11.2",
+   "1.4"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What would be the acceleration (in m/s²) due to gravity on a planet whose mass is 1/7 the mass of earth and radius half the radius of earth? (g = 9.8 m/s²)",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Beat frequency equals the difference of the two frequencies: |260 − 256| = 4 Hz.",
+  "id": "2017PB-035",
+  "options": [
+   "4",
+   "2",
+   "8",
+   "516"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What would be the frequency (in Hz) of the beats when two sounds of frequencies 256 Hz and 260 Hz superimpose?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "In cut-off the transistor is fully OFF and in saturation it is fully ON, so it functions as a two-state switch.",
+  "id": "2017PB-036",
+  "options": [
+   "a switch",
+   "an amplifier",
+   "an oscillator",
+   "a rectifier"
+  ],
+  "paper": "Paper-I+II",
+  "question": "When the transistor is used in the cut-off or saturation state, it acts as?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Digital Electronics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Newton's law of gravitation: F = Gm₁m₂/r², an inverse-square attraction between two masses.",
+  "id": "2017PB-037",
+  "options": [
+   "F = Gm₁m₂/r²",
+   "F = Gm₁m₂/r",
+   "F = Gm₁m₂r²",
+   "F = G(m₁ + m₂)/r²"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which formula represents Newton's Law of Gravitation?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The output is 1 whenever at least one input is 1 (and 0 only for 0,0), which is the OR gate truth table.",
+  "id": "2017PB-038",
+  "options": [
+   "OR",
+   "AND",
+   "NAND",
+   "XOR"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which logic gate will produce the following output? Input Output: A B Y → 0 0 0, 0 1 1, 1 0 1, 1 1 1",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Digital Electronics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "sin(ωt) repeats every 2π/ω, so it is periodic in t; exponentials, logarithms and powers of t are not.",
+  "id": "2017PB-039",
+  "options": [
+   "sin(ωt)",
+   "e^(ωt)",
+   "ln(ωt)",
+   "ωt²"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following is a periodic function if 'ω' is a constant and 't' represents time?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Oscillations",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Electrostatic field lines begin on positive charges and end on negative charges (or infinity); they never form closed loops, unlike magnetic field lines.",
+  "id": "2017PB-040",
+  "options": [
+   "They form closed loops",
+   "They start on positive charges and end on negative charges",
+   "They never cross each other",
+   "They are normal to equipotential surfaces"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following is false about Electrostatic field lines?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The Doppler effect shifts observed frequency up when source and observer approach and down when they recede, while the emitted frequency is unchanged.",
+  "id": "2017PB-041",
+  "options": [
+   "The observed pitch rises as the source approaches and falls as it recedes",
+   "The observed frequency changes only if the observer moves, not the source",
+   "The wavelength measured by a moving observer is the same as at rest",
+   "The Doppler effect applies only to sound waves"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following statements is consistent with the Doppler effect?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "A Zener diode uses a heavily doped p-n junction so the depletion layer is very thin, enabling Zener (tunnel) breakdown at a sharp reverse voltage.",
+  "id": "2017PB-042",
+  "options": [
+   "heavy doping",
+   "light doping",
+   "no doping",
+   "reverse biasing"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Zener diode is fabricated by ________ of the junction.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set B)",
+  "topic": "Semiconductor Devices",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-001",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "If the object is at the centre of curvature, then the image obtained after reflection from a concave mirror is formed ________.",
+  "options": [
+   "at infinity, highly enlarged, real and inverted",
+   "at the centre of curvature, same size, real and erect",
+   "at the centre of curvature, same size, real and inverted",
+   "between F and C, diminished, real and inverted"
+  ],
+  "answer": 2,
+  "explanation": "For a concave mirror an object at C (u = 2f) gives 1/v = 1/f - 1/(2f) = 1/(2f), so v = 2f = C; magnification m = -v/u = -1, i.e. same size, real and inverted.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-002",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Red light emerges at an angle of ________ related to the incoming sunlight in case of a primary rainbow.",
+  "options": [
+   "40°",
+   "53°",
+   "42°",
+   "50°"
+  ],
+  "answer": 2,
+  "explanation": "In the primary rainbow red light emerges at about 42° (deviation minimum for red; violet at ~40°) from the antisolar point.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-003",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "What is the linear magnification m, for the image formed at the near point D, by a simple microscope equal to? (f is focal length)",
+  "options": [
+   "1 + D/f",
+   "1 − D/f",
+   "1 + f/D",
+   "D/f"
+  ],
+  "answer": 0,
+  "explanation": "A simple microscope with the image at the near point gives m = 1 + D/f, where D is the least distance of distinct vision.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-004",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "If an object is placed 20 cm in front of a convex lens of focal length 7.5 cm then find the position of the image (in cm).",
+  "options": [
+   "24",
+   "30",
+   "12",
+   "15"
+  ],
+  "answer": 2,
+  "explanation": "Lens formula 1/v = 1/f − 1/u = 1/7.5 − 1/20 = (8−3)/60 = 1/12, so v = 12 cm on the other side of the lens.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-005",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Intensity of light at a point on the screen due to two coherent sources each generating an intensity I0 at the point and reaching the point at a phase difference of φ is given by ________.",
+  "options": [
+   "I = I0·cos²(φ/2)",
+   "I = 4·I0·cos²(φ)",
+   "I = I0·cos²(φ)",
+   "I = 4·I0·cos²(φ/2)"
+  ],
+  "answer": 3,
+  "explanation": "Superposing two equal amplitudes A0 with phase difference φ gives I = 2I0(1 + cosφ) = 4I0·cos²(φ/2).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-006",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Waves",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Experimental observation in a single slit experiment shows that the intensity has a central maximum at θ = 0 and minima at θ = ________. (where θ is the angle between the central line and the line joining the midpoint of the slit of width 'a' to any point P on the screen, λ is the wavelength of the light and n = ±1, ±2, ±3, …)",
+  "options": [
+   "θ = nλ/a",
+   "θ = (n + 1/2)λ/a",
+   "θ = na/λ",
+   "θ = (n + 1/2)a/λ"
+  ],
+  "answer": 0,
+  "explanation": "Single-slit diffraction minima occur when the path difference across the slit is a whole wavelength, i.e. a·sinθ = nλ, so θ ≈ nλ/a for small angles.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-007",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Optics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "To obtain a magnification of 6 at near point 25 cm what must be the focal length (in cm) of the convex lens?",
+  "options": [
+   "4.167",
+   "10",
+   "5",
+   "20"
+  ],
+  "answer": 2,
+  "explanation": "m = 1 + D/f gives 6 = 1 + 25/f, so 25/f = 5 and f = 5 cm.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-009",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Due to an electric field 'E' directed upwards an electron of charge 'e' and mass 'm' will have an acceleration ________.",
+  "options": [
+   "eE/m upwards",
+   "e/(Em) downwards",
+   "eE/m downwards",
+   "meE upwards"
+  ],
+  "answer": 2,
+  "explanation": "The electron feels F = −eE (opposite to the field), so a = F/m = eE/m directed downwards.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-010",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "What is the magnitude of torque experienced by a dipole of length 2a and charges q and −q at each end of the dipole placed in a uniform electric field E, if the dipole axis makes an angle θ with the field?",
+  "options": [
+   "2qEasinθ",
+   "qEasinθ",
+   "2q²Easinθ",
+   "4qEasinθ"
+  ],
+  "answer": 0,
+  "explanation": "τ = p × E with dipole moment p = q·(2a), so |τ| = 2qaE·sinθ.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-011",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Assuming there are no other charges, the work done in bringing a charge q2 from infinity to a distance r12 from charge q1 is ________.",
+  "options": [
+   "q1q2/(4πε0r12)",
+   "q1q2/(4πε0r12²)",
+   "q1q2/√(4πε0r12)",
+   "4πε0q1q2r12"
+  ],
+  "answer": 0,
+  "explanation": "External work against the Coulomb force equals the electrostatic potential energy W = ∫(q1q2/4πε0r²)dr from ∞ to r12 = q1q2/(4πε0r12).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-012",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Which of the following statements regarding electrostatics of conductors is false?",
+  "options": [
+   "At the surface of a charged conductor, the electrostatic field is normal to the surface at every point.",
+   "The interior of a conductor has uniform charge distribution in the static situation.",
+   "Inside a conductor, the electrostatic field is zero.",
+   "The electrostatic potential is constant throughout the volume of a conductor and has the same value on its surface as inside."
+  ],
+  "answer": 1,
+  "explanation": "Excess charge on an isolated conductor resides entirely on its surface (the interior has no net charge), so a uniform interior charge distribution in the static case is the false statement; the other three are standard electrostatic properties of conductors.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-013",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "The electric field in the inner region between two charged plates of a parallel plate capacitor is equal to ________. (σ is surface charge density)",
+  "options": [
+   "σ/ε0",
+   "σ/(2ε0)",
+   "2σ/ε0",
+   "ε0σ"
+  ],
+  "answer": 0,
+  "explanation": "Each plate produces σ/(2ε0); between two oppositely charged plates the fields add, giving E = σ/ε0.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-014",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "What is the energy density (energy stored per unit volume of space) of the parallel plate capacitor? (where E is the electric field between the two plates)",
+  "options": [
+   "ε0E²/2",
+   "ε0E/2",
+   "2ε0E²",
+   "ε0E²"
+  ],
+  "answer": 0,
+  "explanation": "Total energy U = Q²/(2C); with Q = σε0A... dividing by volume Ad gives u = ε0E²/2.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-015",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "If the effective resistance is 6 kΩ and one of the two resistors connected in parallel is 8 kΩ then find the value of the other resistor (in kΩ).",
+  "options": [
+   "12",
+   "24",
+   "16",
+   "48"
+  ],
+  "answer": 1,
+  "explanation": "1/R = 1/6 − 1/8 = (4−3)/24 = 1/24, so the other resistor is 24 kΩ.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-016",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "While studying electron drift through a metallic conductor, what is conductivity (σ) of the material equal to? (Where e is charge on an electron, m is mass of an electron, E is the electric field, τ is relaxation time and n is the number of free electrons per unit volume)",
+  "options": [
+   "ne²τE/m",
+   "ne²τ/m",
+   "neτ/m",
+   "σE"
+  ],
+  "answer": 1,
+  "explanation": "From the Drude model J = nev_d with v_d = eEτ/m, conductivity σ = J/E = ne²τ/m.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-017",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Magnetism",
+  "source": "2017 SA-IMD (set C)",
+  "question": "If the electric and magnetic fields (E and B respectively) are perpendicular to each other and also perpendicular to the velocity v of a charged particle then the particles with velocity equal to ________ will pass through undeviated.",
+  "options": [
+   "E/B",
+   "B/E",
+   "√(E/B)",
+   "E·B"
+  ],
+  "answer": 0,
+  "explanation": "Zero net force requires qE = qvB, the velocity-selector condition, so v = E/B.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-018",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Magnetism",
+  "source": "2017 SA-IMD (set C)",
+  "question": "The kinetic energy of the particle of mass m carrying a charge q that exits the cyclotron equal to? (Where R is the radius of the trajectory at the exit and B is the magnetic field perpendicular to the Dees)",
+  "options": [
+   "(qBR)²/(2m)",
+   "(qBR)²/m",
+   "q²B²R²/(2R)",
+   "(qB)²/(2m)"
+  ],
+  "answer": 0,
+  "explanation": "At exit qvB = mv²/R gives v = qBR/m, so KE = mv²/2 = (qBR)²/(2m).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-019",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Magnetism",
+  "source": "2017 SA-IMD (set C)",
+  "question": "The magnetic dipole moment of a revolving electron is ________. (e is charge on an electron, v is orbital speed and r is radius of orbit)",
+  "options": [
+   "evr/2",
+   "evr",
+   "2ev/r",
+   "ev/(2r)"
+  ],
+  "answer": 0,
+  "explanation": "Current I = ev/(2πr) and loop area A = πr², so μ = IA = evr/2.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-020",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Magnetism",
+  "source": "2017 SA-IMD (set C)",
+  "question": "The earth's magnetic field arises due to electrical currents produced by convective motion of metallic fluids in the outer core of the earth. This is known as the ________ effect.",
+  "options": [
+   "cyclotron",
+   "dynamo",
+   "induction",
+   "solenoid"
+  ],
+  "answer": 1,
+  "explanation": "The geodynamo (dynamo) theory explains the earth's field through convection-driven currents in the liquid outer core.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-021",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Magnetism",
+  "source": "2017 SA-IMD (set C)",
+  "question": "What is magnetic intensity (H) equal to? (where B is the magnetic field generated inside an electromagnet, M is magnetisation of the material of the core and μ0 is permeability of vacuum)",
+  "options": [
+   "B/μ0 − M",
+   "B/μ0 + M",
+   "μ0B − M",
+   "M − B/μ0"
+  ],
+  "answer": 0,
+  "explanation": "From B = μ0(H + M) we get H = B/μ0 − M.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-022",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Magnetism",
+  "source": "2017 SA-IMD (set C)",
+  "question": "A bar of diamagnetic material placed in an external magnetic field will ________ field.",
+  "options": [
+   "repel out the field lines and move from high to low",
+   "pull in the field lines and move from high to low",
+   "pull in the field lines and move from low to high",
+   "repel out the field lines and move from low to high"
+  ],
+  "answer": 0,
+  "explanation": "Diamagnetic materials are repelled by magnetic fields: they expel field lines and move toward the weaker-field region.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-023",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "An ac voltage v = vm·sin(ωt) applied to a pure inductor L, drives a current in the inductor, i = ________",
+  "options": [
+   "im·sin(ωt + π/2)",
+   "im·sin(ωt − π)",
+   "im·sin(ωt − π/2)",
+   "im·sin(ωt + π)"
+  ],
+  "answer": 2,
+  "explanation": "For a pure inductor v = L·di/dt, so i = −(vm/ωL)·cos(ωt) = im·sin(ωt − π/2): the current lags the voltage by π/2.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-024",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Electricity",
+  "source": "2017 SA-IMD (set C)",
+  "question": "For a series RLC circuit driven by voltage v = vm·sin(ωt), the current is given by i = im·sin(ωt + φ) and the power factor = ________",
+  "options": [
+   "tanφ",
+   "sinφ",
+   "cosφ",
+   "cos²φ"
+  ],
+  "answer": 2,
+  "explanation": "Power factor is the cosine of the phase angle between voltage and current, cosφ.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-025",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Magnetism",
+  "source": "2017 SA-IMD (set C)",
+  "question": "The equation ∮ E·dl = −dΦB/dt represents ________.",
+  "options": [
+   "Gauss's law for magnetism",
+   "Faraday's law",
+   "Gauss's law for electricity",
+   "Ampere–Maxwell law"
+  ],
+  "answer": 1,
+  "explanation": "The line integral of E around a closed loop equal to minus the rate of change of magnetic flux is Faraday's law of induction in integral form.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-026",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Waves",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Which waves are produced by using a magnetron valve?",
+  "options": [
+   "X-rays",
+   "ultraviolet rays",
+   "microwaves",
+   "gamma rays"
+  ],
+  "answer": 2,
+  "explanation": "A magnetron valve (cavity magnetron) is the microwave oscillator used in radar and microwave ovens.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-027",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Match the type of nuclear radiation with its ionizing power. A. Alpha, B. Beta, C. Gamma — 1. Very high, 2. Low, 3. Moderate",
+  "options": [
+   "A-1, B-3, C-2",
+   "A-1, B-2, C-3",
+   "A-2, B-3, C-1",
+   "A-3, B-1, C-2"
+  ],
+  "answer": 0,
+  "explanation": "Alpha particles ionize very heavily over short ranges, beta moderately, and gamma only weakly per unit path: A-1, B-3, C-2.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-028",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "The empirical formula for the observed wavelengths (λ) for hydrogen is 1/λ = R(1/k² − 1/n²), where R is Rydberg constant. What is the value of k for the Paschen series?",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "answer": 2,
+  "explanation": "The Paschen series corresponds to transitions ending at n = 3, so k = 3 (k = 1 Lyman, k = 2 Balmer, k = 4 Brackett).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-029",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "When an electron makes a transition from one of its specified non-radiating orbits to another of lower energy it emits a photon. The frequency of this photon is given by ________.",
+  "options": [
+   "(Planck's constant)/(energy difference of the orbitals)",
+   "(energy difference of the orbitals)/(Planck's constant)",
+   "(energy difference of the orbitals)²/(Planck's constant)",
+   "(energy difference of the orbitals)·(Planck's constant)"
+  ],
+  "answer": 1,
+  "explanation": "Bohr's frequency condition hν = E_initial − E_final, so ν = ΔE/h.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-030",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "The magnitude of the energy of a hydrogen electron is ________ its principal quantum number.",
+  "options": [
+   "directly proportional to",
+   "inversely proportional to",
+   "directly proportional to the square of",
+   "inversely proportional to the square of"
+  ],
+  "answer": 3,
+  "explanation": "Bohr energy E_n = −13.6/n² eV, so |E_n| ∝ 1/n², inversely proportional to the square of the principal quantum number.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-031",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "The kinetic energy of the electron of a hydrogen atom is ________ its radius of orbit.",
+  "options": [
+   "directly proportional to",
+   "inversely proportional to",
+   "directly proportional to the square of",
+   "inversely proportional to the square of"
+  ],
+  "answer": 1,
+  "explanation": "KE = 13.6/n² eV and r_n = a0·n², so KE = (13.6·a0)/r — inversely proportional to the orbit radius.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-032",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Waves",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Calculate the wavelength (in nm) of the spectral line of Lyman series for n = 4. (Rydberg constant = 1.1 × 10^7 m⁻¹)",
+  "options": [
+   "97",
+   "121",
+   "656",
+   "486"
+  ],
+  "answer": 0,
+  "explanation": "Lyman: 1/λ = R(1/1² − 1/4²) = 15R/16, so λ = 16/(15 × 1.1×10^7) m ≈ 9.7×10⁻⁸ m ≈ 97 nm.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-033",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Nucleus of 233Pa91 emits one beta particle to give nucleus of ________.",
+  "options": [
+   "233Pa91",
+   "225Ac89",
+   "228Ra88",
+   "233U92"
+  ],
+  "answer": 3,
+  "explanation": "In β⁻ decay a neutron becomes a proton: Z increases by 1 while A is unchanged, so 233Pa91 → 233U92.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-034",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "233U92 → AAc89 + 2α particles + β particle. What is the value of A?",
+  "options": [
+   "226",
+   "229",
+   "225",
+   "221"
+  ],
+  "answer": 2,
+  "explanation": "Nucleon number: A = 233 − 2×4 = 225 (each α removes 4 nucleons; the β does not change A). Charge check: 92 = 89 + 2×2 − 1.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-035",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "What are 130Xe54 and 130Te52 examples of?",
+  "options": [
+   "isotopes",
+   "isomers",
+   "isobars",
+   "isotones"
+  ],
+  "answer": 2,
+  "explanation": "Same mass number (130) with different atomic numbers makes them isobars.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-036",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "In about 5 billion years after the sun has consumed almost all of its hydrogen fuel it will become a ________.",
+  "options": [
+   "blue dwarf",
+   "black hole",
+   "supernova",
+   "red giant"
+  ],
+  "answer": 3,
+  "explanation": "A ~1 solar-mass star expands into a red giant after core hydrogen exhaustion (it lacks the mass for a supernova/black hole).",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-037",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "How many neutrons an atom of 131Xe54 has?",
+  "options": [
+   "131",
+   "77",
+   "54",
+   "92"
+  ],
+  "answer": 1,
+  "explanation": "Neutrons = mass number − atomic number = 131 − 54 = 77.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-038",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Half life of Fermium-253 is 3 days. How many days will it take for 2 gm of Fermium to become 0.125 gm?",
+  "options": [
+   "24",
+   "6",
+   "12",
+   "9"
+  ],
+  "answer": 2,
+  "explanation": "2 → 0.125 gm is a factor of 1/16 = (1/2)^4, i.e. 4 half-lives = 4 × 3 = 12 days.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-039",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "1n0 + 235U92 → ySb52 + 99Nb41 + 41n0. Find y from the given fission equation of an uranium nucleus?",
+  "options": [
+   "131",
+   "132",
+   "133",
+   "134"
+  ],
+  "answer": 2,
+  "explanation": "Nucleon-number balance: 1 + 235 = y + 99 + 4, so y = 133.",
+  "confidence": "medium",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-040",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "3H1 + 3H1 → 4He2 + 2 ________",
+  "options": [
+   "protons",
+   "neutrons",
+   "positrons",
+   "electrons"
+  ],
+  "answer": 1,
+  "explanation": "Nucleons: 3 + 3 = 6 = 4 + 2, and charge: 1 + 1 = 2 + 0, so the two emitted particles are neutral neutrons.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-041",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Modern Physics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "Calculate the mass defect (in u) of an atom of 7Li3 having atomic mass 7.016 u. (masses of neutron, proton and electron are 1.00866 u, 1.00727 u and 0.00055 u respectively).",
+  "options": [
+   "0.0421",
+   "0.0405",
+   "0.0842",
+   "0.0210"
+  ],
+  "answer": 0,
+  "explanation": "Nuclear mass = 7.016 − 3×0.00055 = 7.01435 u; constituents = 3×1.00727 + 4×1.00866 = 7.05645 u; defect = 7.05645 − 7.01435 = 0.0421 u.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-042",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Semiconductor Devices",
+  "source": "2017 SA-IMD (set C)",
+  "question": "When a diode is reverse biased then the barrier height ________.",
+  "options": [
+   "decreases and the depletion region widens",
+   "increases and the depletion region widens",
+   "increases and the depletion region narrows",
+   "decreases and the depletion region narrows"
+  ],
+  "answer": 1,
+  "explanation": "Reverse bias adds to the built-in potential, raising the barrier height and pulling more carriers away, so the depletion region widens.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-043",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Semiconductor Devices",
+  "source": "2017 SA-IMD (set C)",
+  "question": "In a transistor, the ________ is moderately doped and largest in size.",
+  "options": [
+   "emitter",
+   "base",
+   "collector",
+   "junction"
+  ],
+  "answer": 2,
+  "explanation": "The collector is the largest region (it must dissipate power) and is moderately doped between the heavily doped emitter and lightly doped base.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-044",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Semiconductor Devices",
+  "source": "2017 SA-IMD (set C)",
+  "question": "When a transistor is used in common emitter configuration, input resistance is defined as the ratio of change in ________ current at constant collector-emitter voltage.",
+  "options": [
+   "base-collector voltage to the resulting change in base",
+   "base-emitter voltage to the resulting change in base",
+   "base-emitter voltage to the resulting change in emitter",
+   "base-collector voltage to the resulting change in emitter"
+  ],
+  "answer": 1,
+  "explanation": "CE input resistance r_in = ΔV_BE/ΔI_B at constant V_CE — the input port is base-emitter, and the input current is the base current.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "id": "2017PC-045",
+  "section": "physics",
+  "paper": "Paper-I+II",
+  "topic": "Digital Electronics",
+  "source": "2017 SA-IMD (set C)",
+  "question": "The output of a NAND gate is 0 if the inputs are ________.",
+  "options": [
+   "(0,0)",
+   "(0,1)",
+   "(1,0)",
+   "(1,1)"
+  ],
+  "answer": 3,
+  "explanation": "NAND = NOT(AND); AND is 1 only for (1,1), so the NAND output is 0 only when both inputs are 1.",
+  "confidence": "high",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "A receding source stretches the observed wavelength toward the red end; redshift means the wavelength increases (Doppler effect).",
+  "id": "2017PD-001",
+  "options": [
+   "decrease in wavelength",
+   "increase in wavelength",
+   "source moving closer to the observer",
+   "observer moving closer to the source"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What astronomers call “the red shift” is due to the ________ because of Doppler effect.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Diathermic means heat-conducting: heat flows across it until thermal equilibrium, while matter stays confined on each side.",
+  "id": "2017PD-002",
+  "options": [
+   "does not allow matter to pass but allows heat to pass across it",
+   "does not allow heat or matter to pass across it",
+   "allows both heat and matter to pass across it at constant temperature",
+   "does not allow heat to pass across it but allows matter to pass"
+  ],
+  "paper": "Paper-I+II",
+  "question": "A diathermic wall between two thermodynamic systems ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Outside the shell, Gauss's law gives the same field as a point charge q at the center: E = q/(4πε₀r²).",
+  "id": "2017PD-003",
+  "options": [
+   "E = q/(2πε₀r²)",
+   "E = q/(4πε₀r)",
+   "E = q/(4πε₀r²)",
+   "E = q/(2πε₀r)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The electric field due to a thin spherical shell having a charge ‘q’ is given as ________, where ‘r’ is the distance of the point from the center of the shell (outside the shell). (‘ε₀’ is the permittivity of free space)",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "By the definition of electric field, E = F/q, so the force on the charge is F = qE.",
+  "id": "2017PD-004",
+  "options": [
+   "E = qF",
+   "F = E/q",
+   "F = qE",
+   "E = F/q"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The force ‘F’ experienced by a charge ‘q’ kept in an electric field ‘E’ are related to each other as ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "η = 1 − Q₂/Q₁ is the thermal efficiency of a heat engine (work output per unit heat input).",
+  "id": "2017PD-005",
+  "options": [
+   "Efficiency",
+   "Cp/Cv",
+   "Coefficient of performance",
+   "Cv/Cp"
+  ],
+  "paper": "Paper-I+II",
+  "question": "η = 1 − (Q₂/Q₁), where ‘Q₁’ is the heat input, i.e., the heat absorbed by the heat engine in one complete cycle and ‘Q₂’ is the heat lost to the environment. Here ‘η’ is ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The Fresnel (near-field) distance is F = a²/λ; beyond it the diffraction pattern becomes Fraunhofer-type.",
+  "id": "2017PD-006",
+  "options": [
+   "F = a²/λ",
+   "F = a/λ",
+   "F = a/λ²",
+   "F = a²λ"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The Fresnel distance ‘F’, where an aperture of size ‘a’ illuminated by a parallel beam of wavelength ‘λ’ is given by the formula ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Beats arise from the amplitude envelope of the superposed waves; the beat frequency equals the difference |f₂ − f₁|.",
+  "id": "2017PD-007",
+  "options": [
+   "f₂ + f₁",
+   "(f₂ − f₁)/2",
+   "(f₂ + f₁)/2",
+   "f₂ − f₁"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The frequency of the beats heard when two sounds of close frequencies ‘f₁’ and ‘f₂’ superimpose is ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "This is the Kelvin-Planck statement of the second law: no heat engine can be 100% efficient.",
+  "id": "2017PD-008",
+  "options": [
+   "First Law",
+   "Second Law (Clausius statement)",
+   "Zeroth Law",
+   "Second Law (Kelvin-Planck statement)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The ________ of thermodynamics states that no process is possible whose sole result is the absorption of heat from a reservoir and the complete conversion of the heat into work.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "3 translational + 2 rotational (rotation about the bond axis is negligible) = 5; vibrational modes are frozen at ordinary temperatures.",
+  "id": "2017PD-009",
+  "options": [
+   "four",
+   "five",
+   "three",
+   "two"
+  ],
+  "paper": "Paper-I+II",
+  "question": "For a diatomic molecule free to move in space, the sum of its translational and rotational degrees of freedom is ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Gravitational intensity = GM/r² has units of acceleration, i.e., M⁰LT⁻².",
+  "id": "2017PD-010",
+  "options": [
+   "Gravitational potential energy",
+   "Gravitational intensity",
+   "Gravitational potential",
+   "Gravitational constant"
+  ],
+  "paper": "Paper-I+II",
+  "question": "[M⁰LT⁻²] are the dimensions of ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Adiabatic means ΔQ = 0; the system is thermally insulated so no heat enters or leaves.",
+  "id": "2017PD-011",
+  "options": [
+   "Isobaric",
+   "Isochoric",
+   "Adiabatic",
+   "Isothermal"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In which thermodynamic process is there no flow of heat between the system and the surroundings?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Same A but different Z are isobars; isotopes share Z and isotones share neutron number N.",
+  "id": "2017PD-012",
+  "options": [
+   "isotopes",
+   "isomers",
+   "isotones",
+   "isobars"
+  ],
+  "paper": "Paper-I+II",
+  "question": "All nuclides with same mass number ‘A’ are called ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Current leads voltage by 90° in a pure capacitor, so the average power ⟨P⟩ = VIcosφ = 0 over a full cycle.",
+  "id": "2017PD-013",
+  "options": [
+   "IV/2",
+   "0",
+   "VI/2",
+   "IR²"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The average power supplied to a capacitor over one complete alternating current cycle is ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Magnetic field lines always form closed loops because there are no monopoles; the other three statements are true.",
+  "id": "2017PD-014",
+  "options": [
+   "Magnetic field lines do not form closed loops.",
+   "Magnetic monopoles do not exist.",
+   "Ferromagnetic materials have large magnetic susceptibility.",
+   "Permeability of free space is a scalar quantity."
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following statements related to magnetism is false?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Magnetism",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "∮B·dA = 0: the net magnetic flux through any closed surface is zero, i.e., no magnetic monopoles exist.",
+  "id": "2017PD-015",
+  "options": [
+   "magnetic susceptibility",
+   "magnetic flux",
+   "relative magnetic permeability",
+   "magnetic intensity"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Gauss’s law for magnetism states that the net ________ through any closed surface is zero.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Magnetism",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Malus’s law: transmitted intensity I = I₀cos²θ, where θ is the angle between the polarization direction and the analyzer axis.",
+  "id": "2017PD-016",
+  "options": [
+   "Malus’s Law",
+   "Brewster’s Law",
+   "Huygens’s Law",
+   "Rayleigh’s Law"
+  ],
+  "paper": "Paper-I+II",
+  "question": "“The intensity of a beam of plane-polarized light after passing through a rotatable polarizer varies as the square of the cosine of the angle through which the polarizer is rotated from the position that gives maximum intensity.” This statement is ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "The phase (ωt + φ) is an angle, so the phase constant φ is measured in radians.",
+  "id": "2017PD-017",
+  "options": [
+   "meters",
+   "hertz",
+   "radians",
+   "seconds"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The phase constant in a simple harmonic motion is measured in ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Fusion raises the binding energy per nucleon, so the nucleons become more tightly bound and the mass difference is released as energy.",
+  "id": "2017PD-018",
+  "options": [
+   "more tightly bound and energy would be absorbed",
+   "less tightly bound and energy would be released",
+   "less tightly bound and energy would be absorbed",
+   "more tightly bound and energy would be released"
+  ],
+  "paper": "Paper-I+II",
+  "question": "If two very light nuclei (A ≤ 10) join to form a heavier nucleus, then the nucleons of the new nucleus formed will get ________ in the process.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "About the central perpendicular axis I = MR²/2; by the perpendicular-axis theorem, about a diameter I = (MR²/2)/2 = MR²/4.",
+  "id": "2017PD-019",
+  "options": [
+   "MR²/2",
+   "MR²/3",
+   "MR²/6",
+   "MR²/4"
+  ],
+  "paper": "Paper-I+II",
+  "question": "What is the Moment of Inertia of a thin circular disc of mass ‘M’ and radius ‘R’ about its diameter?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Equal and opposite action-reaction pairs are the content of Newton’s third law.",
+  "id": "2017PD-020",
+  "options": [
+   "Newton’s 1st Law",
+   "Newton’s 3rd Law",
+   "Newton’s 2nd Law",
+   "Law of conservation of energy"
+  ],
+  "paper": "Paper-I+II",
+  "question": "“Forces always occur in pairs. Force on a body ‘A’ by ‘B’ is equal and opposite to the force on the body ‘B’ by ‘A’.” This statement represents ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "The two common commercial types are wire-wound resistors and carbon (composition/film) resistors.",
+  "id": "2017PD-021",
+  "options": [
+   "Nichrome",
+   "Manganin",
+   "Silicon",
+   "Carbon"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Commercially produced resistors for domestic use or in laboratories are of two major types: wire bound resistors and ________ resistors.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "PV = (1/3)(number of molecules) × (mass per molecule) × (mean square speed); with M as the molecular mass, n counts the molecules.",
+  "id": "2017PD-022",
+  "options": [
+   "number of particles",
+   "number of moles of the gas",
+   "Avogadro’s number",
+   "number of collisions per unit volume"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In the relation from kinetic theory of gases, PV = (1/3) n M v², if ‘M’ is molecular mass then ‘n’ is ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Kinetic Theory",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "The emitter is heavily doped (to inject carriers) and of moderate size; the base is the thinnest, lightest-doped region.",
+  "id": "2017PD-023",
+  "options": [
+   "of moderate size and lightly",
+   "of moderate size and heavily",
+   "very thin and heavily",
+   "very thin and lightly"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The emitter of a transistor is ________ doped.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Semiconductor Devices",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "In CE mode the base-emitter junction is the input circuit and the collector-emitter the output circuit, with the emitter common to both.",
+  "id": "2017PD-024",
+  "options": [
+   "output is between the base and the emitter",
+   "input is between the base and the emitter",
+   "input is between the collector and the emitter",
+   "output is between the base and the collector"
+  ],
+  "paper": "Paper-I+II",
+  "question": "When a transistor is used in common emitter configuration, the ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Semiconductor Devices",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Voltage gain Aᵥ = V_out/V_in ≈ βR_C/R_B: current gain times the ratio of collector to base load resistances.",
+  "id": "2017PD-025",
+  "options": [
+   "Output resistance",
+   "Current amplification factor",
+   "Input resistance",
+   "Voltage gain"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The ________ of a transistor amplifier in common emitter configuration is βR_C/R_B, where ‘R_C’ and ‘R_B’ are respectively the resistances in collector and base sides of the circuit and ‘β’ is current amplification factor.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Semiconductor Devices",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Cyclotron frequency f = qB/(2πm) depends on charge, mass and field but not on the (non-relativistic) speed.",
+  "id": "2017PD-026",
+  "options": [
+   "particle’s charge",
+   "particle’s mass",
+   "magnetic field strength",
+   "particle’s speed"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The frequency of circular motion of a charged particle, moving with a velocity normal to the magnetic field, is independent of the ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Magnetism",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Thomson’s “plum-pudding” model has electrons embedded in a uniform spherical cloud of positive charge.",
+  "id": "2017PD-027",
+  "options": [
+   "Planck",
+   "Thomson’s",
+   "Bohr’s",
+   "Rydberg’s"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In whose model is an atom a spherical cloud of positive charges with electrons embedded in it?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Ferromagnets magnetize strongly in the direction of the applied field, so χ is positive and very large (≫ 1).",
+  "id": "2017PD-028",
+  "options": [
+   "positive and large",
+   "positive and small",
+   "negative and large",
+   "negative and small"
+  ],
+  "paper": "Paper-I+II",
+  "question": "For ferromagnetic materials magnetic susceptibility (χ) is ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Magnetism",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Charge sprayed onto the belt is carried to the inside, where the smaller inner sphere sits at a higher potential than the outer shell.",
+  "id": "2017PD-029",
+  "options": [
+   "potential",
+   "charge",
+   "capacitance",
+   "current"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In a Van de Graaff Generator the inner sphere has higher ________ than the outer sphere.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The principal quantum number n = 1, 2, 3, … labels electron shells in ascending order of energy.",
+  "id": "2017PD-030",
+  "options": [
+   "principal",
+   "electron spin",
+   "magnetic",
+   "orbital"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The ________ quantum number labels the stationary states in the ascending order of energy of the electron.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Modern Physics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Mirror formula: 1/f = 1/(−10) + 1/(−15) = −1/6, so f = −6 cm (concave mirror) and R = 2f = 12 cm.",
+  "id": "2017PD-031",
+  "options": [
+   "R = 6 cm and the mirror is concave",
+   "R = 12 cm and the mirror is concave",
+   "R = 12 cm and the mirror is convex",
+   "R = 6 cm and the mirror is convex"
+  ],
+  "paper": "Paper-I+II",
+  "question": "If a real image is obtained at 10 cm from a curved mirror by keeping an object at 15 cm from the mirror, then find its radius of curvature and name the type of mirror?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Range = (horizontal velocity)(time of flight) = (v cosθ)(2v sinθ/g) = v² sin 2θ/g.",
+  "id": "2017PD-032",
+  "options": [
+   "R = v² sin 2θ/2g",
+   "R = v sin 2θ/g",
+   "R = v sin 2θ/2g",
+   "R = v² sin 2θ/g"
+  ],
+  "paper": "Paper-I+II",
+  "question": "If a projectile is thrown with velocity ‘v’ and makes an angle ‘θ’ with the x-axis then the horizontal range of the projectile is given by the formula ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Joule heating: P = VI = I²R for a conductor of resistance R carrying current I.",
+  "id": "2017PD-033",
+  "options": [
+   "R²I",
+   "I²R",
+   "R²/I",
+   "I²/R"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The power loss in a conductor of resistance ‘R’ carrying a current ‘I’ is equal to ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Electricity",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Gamma rays sit at the high-frequency end of the electromagnetic spectrum (above X-rays).",
+  "id": "2017PD-034",
+  "options": [
+   "Radio waves",
+   "Gamma rays",
+   "Microwaves",
+   "Infra-red light"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following electromagnetic waves has the highest frequency?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Stokes’ law gives the viscous drag on a small sphere; η is the coefficient of (dynamic) viscosity of the fluid.",
+  "id": "2017PD-035",
+  "options": [
+   "Reynolds number",
+   "pressure",
+   "viscosity",
+   "relative density"
+  ],
+  "paper": "Paper-I+II",
+  "question": "In the Stokes’ Law formula (F = −6πηav), ‘η’ represents ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Heat per mole per kelvin is the molar specific heat capacity C = ΔQ/(μΔT).",
+  "id": "2017PD-036",
+  "options": [
+   "specific heat capacity",
+   "heat capacity",
+   "molar specific heat capacity",
+   "molar heat capacity"
+  ],
+  "paper": "Paper-I+II",
+  "question": "If ΔQ stands for the amount of heat absorbed or rejected by a substance of ‘μ’ moles when it undergoes a temperature change ΔT, then ΔQ/(μΔT) is equal to ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Thermodynamics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Stress is defined as the internal restoring force per unit area; strain is the fractional deformation.",
+  "id": "2017PD-037",
+  "options": [
+   "strain",
+   "modulus of elasticity",
+   "shear",
+   "stress"
+  ],
+  "paper": "Paper-I+II",
+  "question": "When a force is applied on a body, it is deformed and a restoring force is developed in the body. The restoring force per unit area is known as ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Chromatic aberration arises because the refractive index (hence focal length) varies with wavelength — dispersion of light.",
+  "id": "2017PD-038",
+  "options": [
+   "total internal reflection",
+   "reflection of light",
+   "dispersion of light",
+   "interference of light"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Thick lenses show chromatic aberration due to ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Total internal reflection needs light going denser → rarer with the angle of incidence exceeding the critical angle.",
+  "id": "2017PD-039",
+  "options": [
+   "TIR occurs when light travels from a denser medium to a rarer one and the angle of incidence is less than the critical angle.",
+   "TIR occurs when light travels from a denser medium to a rarer one and the angle of incidence is greater than the critical angle.",
+   "TIR occurs when light travels from a rarer medium to a denser one and the angle of incidence is greater than the critical angle.",
+   "TIR occurs when light travels from a rarer medium to a denser one and the angle of incidence is less than the critical angle."
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following is the correct definition of Total internal reflection?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Optics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "There is no horizontal acceleration, so the horizontal position is x = (v cosθ)·t.",
+  "id": "2017PD-040",
+  "options": [
+   "tv sinθ",
+   "tv cosθ",
+   "(v cosθ)/t",
+   "(v sinθ)/t"
+  ],
+  "paper": "Paper-I+II",
+  "question": "If an object is projected from the origin with initial velocity ‘v’ making an angle θ with the x-axis, then the horizontal position of the projectile at time ‘t’ will be equal to ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "U = −Gm₁m₂/r: negative, inverse-distance law with the universal gravitational constant G (not g).",
+  "id": "2017PD-041",
+  "options": [
+   "U = −Gm₁m₂/r² (‘G’ is gravitational constant)",
+   "U = −gm₁m₂/r (‘g’ is acceleration due to gravity)",
+   "U = −gm₁m₂/r² (‘g’ is acceleration due to gravity)",
+   "U = −Gm₁m₂/r (‘G’ is gravitational constant)"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The gravitational potential energy (U) associated with two particles of masses ‘m₁’ and ‘m₂’ separated by a distance ‘r’ is given by ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Gases are poor conductors; air (≈0.026 W/m·K) conducts far less heat than water, mercury or brass.",
+  "id": "2017PD-042",
+  "options": [
+   "Water",
+   "Air",
+   "Mercury",
+   "Brass"
+  ],
+  "paper": "Paper-I+II",
+  "question": "Which of the following substances has the least thermal conductivity?",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "General Properties of Matter",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "At the turning point the particle momentarily stops (V = 0) while displacement and restoring acceleration |A| = ω²|X| are maximal.",
+  "id": "2017PD-043",
+  "options": [
+   "X and A are maximum and V is zero.",
+   "V is maximum and X and A are zero.",
+   "A is maximum and X and V are zero.",
+   "V and A are maximum and X is zero."
+  ],
+  "paper": "Paper-I+II",
+  "question": "If ‘V’ is magnitude of velocity, ‘A’ is magnitude of acceleration and ‘X’ is magnitude of displacement, then at the extreme position of the particle performing simple harmonic motion, ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Mechanics",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "A Zener diode’s sharp reverse-breakdown voltage stays nearly constant, making it ideal as a voltage regulator.",
+  "id": "2017PD-044",
+  "options": [
+   "Zener",
+   "Light emitting",
+   "Peltier",
+   "Laser"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The ________ diode is designed to operate under reverse bias in the breakdown region and used as a voltage regulator.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Semiconductor Devices",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Restoring torque τ = −mgL sinθ = Iα, so α = −mgL sinθ/I (the minus sign shows it opposes the displacement).",
+  "id": "2017PD-045",
+  "options": [
+   "α = (Lmg sinθ)/I",
+   "α = (−Lmg sin2θ)/I",
+   "α = (Lmg sin2θ)/I",
+   "α = (−Lmg sinθ)/I"
+  ],
+  "paper": "Paper-I+II",
+  "question": "For a pendulum of string length ‘L’, bob of mass ‘m’, moment of inertia ‘I’, and the string makes an angle ‘θ’ with the vertical, then the angular acceleration ‘α’ of the pendulum is given by ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Oscillations",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Nodes of a standing wave are spaced half a wavelength apart; node to adjacent antinode is λ/4.",
+  "id": "2017PD-046",
+  "options": [
+   "λ/2",
+   "λ",
+   "2λ",
+   "λ/4"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The gap between two successive nodes in a stationary wave is ________.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Waves",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Q = ω₀L/R = 1/(ω₀CR); a higher Q means less damping and a sharper resonance peak.",
+  "id": "2017PD-047",
+  "options": [
+   "ω₀L/R",
+   "ω₀R/L",
+   "LR/ω₀",
+   "LRω₀"
+  ],
+  "paper": "Paper-I+II",
+  "question": "The quality factor ‘Q’ is equal to ________ and it is an indicator of the sharpness of the resonance in a RLC circuit.",
+  "section": "physics",
+  "source": "2017 SA-IMD (set D)",
+  "topic": "Oscillations",
+  "options_kind": "reconstructed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Rewrite fully: 30 ÷ 5 + 2960 − 74 × 4 = 6 + 2960 − 296 = 2670.",
+  "id": "JE2024R-011",
+  "options": [
+   "2671",
+   "2670",
+   "2673",
+   "2674"
+  ],
+  "paper": "Paper-I",
+  "question": "If '+' means −, '−' means ÷, '÷' means × and '×' means +, what is 30 − 5 × 2960 + 74 ÷ 4?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Mathematical Operators",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Rewrite: 55 ÷ 5 + 3 × 6 − 12 = 11 + 18 − 12 = 17.",
+  "id": "JE2024R-019",
+  "options": [
+   "17",
+   "27",
+   "7",
+   "37"
+  ],
+  "paper": "Paper-I",
+  "question": "If '+' and '−' are interchanged and '×' and '÷' are interchanged, what is 55 × 5 − 3 ÷ 6 + 12?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Mathematical Operators",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Rewrite: 12 × 6 − 4 ÷ 2 + 3 = 72 − 2 + 3 = 73.",
+  "id": "2017R-014",
+  "options": [
+   "73",
+   "37",
+   "71",
+   "75"
+  ],
+  "paper": "Paper-I",
+  "question": "In a certain code '+' means ×, '−' means +, '×' means ÷ and '÷' means −. What is 12 + 6 ÷ 4 × 2 − 3?",
+  "section": "reasoning",
+  "source": "2017 SA-IMD",
+  "topic": "Mathematical Operators",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Name the relation first: taste. Jaggery is sweet; lemon is sour.",
+  "id": "2017R-001",
+  "options": [
+   "Bitter",
+   "Sour",
+   "Yellow",
+   "Round"
+  ],
+  "paper": "Paper-I",
+  "question": "Jaggery : Sweet :: Lemon : ?",
+  "section": "reasoning",
+  "source": "2017 SA-IMD",
+  "topic": "Analogy",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Shifts +5, +3, +1: F→K, G→J, H→I. So U→Z, V→Y, W→X.",
+  "id": "2017R-002",
+  "options": [
+   "TVX",
+   "RTV",
+   "IGE",
+   "ZYX"
+  ],
+  "paper": "Paper-I",
+  "question": "FGH : KJI :: UVW : ?",
+  "section": "reasoning",
+  "source": "2017 SA-IMD",
+  "topic": "Analogy",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "+8 each: C→K, E→M, G→O. So M→U, O→W, Q→Y.",
+  "id": "JE2024R-003",
+  "options": [
+   "LNP",
+   "BDF",
+   "UWY",
+   "IKM"
+  ],
+  "paper": "Paper-I",
+  "question": "CEG : KMO :: GIK : OQS :: MOQ : ?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Analogy",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Columns go −3, −2, −3: Z→W, X→V, Q→N.",
+  "id": "JE2024R-008",
+  "options": [
+   "UWM",
+   "WVN",
+   "XZR",
+   "XYP"
+  ],
+  "paper": "Paper-I",
+  "question": "LFC, IDZ, FBW, CZT, ZXQ, ?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Letter Series",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Columns go −2, −1, +5: Z→X, W→V, E→J.",
+  "id": "JE2024R-014",
+  "options": [
+   "YOU",
+   "ZUM",
+   "XVJ",
+   "YWN"
+  ],
+  "paper": "Paper-I",
+  "question": "FZP, DYU, BXZ, ZWE, ?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Letter Series",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "−4 down every column; D−4 wraps to Z: ZBD.",
+  "id": "JE2024R-017",
+  "options": [
+   "ZBD",
+   "YBD",
+   "ZAD",
+   "YAD"
+  ],
+  "paper": "Paper-I",
+  "question": "PRT, LNP, HJL, DFH, ?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Letter Series",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "−2 down every column: P→N, O→M, L→J.",
+  "id": "JE2024R-026",
+  "options": [
+   "MLI",
+   "NMK",
+   "NMJ",
+   "MLK"
+  ],
+  "paper": "Paper-I",
+  "question": "VUR, TSP, RQN, POL, ?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Letter Series",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "'right' is the common word, 'km' the common code.",
+  "id": "JE2024R-004",
+  "options": [
+   "gh",
+   "yo",
+   "ab",
+   "km"
+  ],
+  "paper": "Paper-I",
+  "question": "'he is right' is coded as 'ab yo km' and 'right now here' is coded as 'km gh bd'. How is 'right' coded?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Coding-Decoding",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Atbash: Z→A, I→R, G→T (pairs sum to 27).",
+  "id": "2017R-013",
+  "options": [
+   "ART",
+   "PQE",
+   "UJM",
+   "GYP"
+  ],
+  "paper": "Paper-I",
+  "question": "If BLURTED is coded as YOFIGVW, how is ZIG coded?",
+  "section": "reasoning",
+  "source": "2017 SA-IMD",
+  "topic": "Coding-Decoding",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "−2 each: F→D, I→G, T→R.",
+  "id": "2017Rb-013",
+  "options": [
+   "DGR",
+   "OLJ",
+   "HZK",
+   "PSU"
+  ],
+  "paper": "Paper-I",
+  "question": "If PRANCED is coded as NPYLACB, how is FIT coded?",
+  "section": "reasoning",
+  "source": "2017 SA-IMD",
+  "topic": "Coding-Decoding",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Differences −11, −10, −9, −8, −7: 16 − 7 = 9.",
+  "id": "JE2024R-031",
+  "options": [
+   "8",
+   "6",
+   "11",
+   "9"
+  ],
+  "paper": "Paper-I",
+  "question": "54, 43, 33, 24, 16, ?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Number Series",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Differences +6, +12, +18, +24, +30: 71 + 30 = 101.",
+  "id": "JE2024R-050",
+  "options": [
+   "100",
+   "99",
+   "101",
+   "102"
+  ],
+  "paper": "Paper-I",
+  "question": "11, 17, 29, 47, 71, ?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Number Series",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "152 ÷ 8 = 19 and 232 ÷ 8 = 29, so 392 ÷ 8 = 49.",
+  "id": "JE2024R-046",
+  "options": [
+   "49",
+   "47",
+   "46",
+   "48"
+  ],
+  "paper": "Paper-I",
+  "question": "152 is related to 19 and 232 is related to 29, following the same logic. To which number is 392 related?",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Number Relations",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Third = a×b + 15: 6×18+15 = 123, 17×9+15 = 168, so 14×8+15 = 127.",
+  "id": "JE2024R-006",
+  "options": [
+   "(18, 5, 100)",
+   "(14, 8, 127)",
+   "(21, 7, 147)",
+   "(20, 6, 94)"
+  ],
+  "paper": "Paper-I",
+  "question": "Select the set in which the numbers are related the same way as (6, 18, 123) and (17, 9, 168).",
+  "section": "reasoning",
+  "source": "SSC JE 2024 Paper-I",
+  "topic": "Number Relations",
+  "options_kind": "verified-seed"
+ }
+]
