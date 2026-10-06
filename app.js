@@ -1,7 +1,8 @@
 /* SA-IMD Prep — daily MCQs, practice, PYQ bank, notes. All client-side. */
 const EXAM_DATE = new Date('2026-11-02T09:00:00+05:30');
 const PER_SECTION_DAILY = 5;
-/* Supabase backend: chaal-kaata project (shared). Anon key is public by design. */
+/* Supabase backend (optional): fill these in to enable cloud saves + leaderboard.
+   Leave empty for offline-only mode (progress stays in this browser). */
 const SB_URL = 'https://uvtqofsjyzwfoifxsnhu.supabase.co';
 const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2dHFvZnNqeXp3Zm9pZnhzbmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA1OTIwNTcsImV4cCI6MjEwNjE2ODA1N30.PyZto65x9RXpgk4g4KJ6jzKagaOxKbVnSF9xJRkjuIg';
 let MCQ = [], FLASH = [], NOTES = {};
@@ -18,6 +19,7 @@ const store={
 };
 const SECNAME={physics:'Physics',reasoning:'Reasoning',ga:'General Awareness'};
 const PROV={original:'original options',reconstructed:'reconstructed options','verified-seed':'verified'};
+const LETTERS=['A','B','C','D'];
 
 /* ---------- header ---------- */
 function renderHeader(){
@@ -53,9 +55,9 @@ function runQuiz(containerId,questions,title,onDone){
     if(i>=qs.length){finish();return}
     const q=qs[i];
     el.innerHTML=`<div class="card"><div class="progress"><div style="width:${(i/qs.length)*100}%"></div></div>
-      <div class="q-meta">${esc(SECNAME[q.section]||q.section)} · ${esc(q.topic)} · ${esc(q.source||'')}${q.options_kind?` · <span class="tag">${PROV[q.options_kind]||esc(q.options_kind)}</span>`:''}</div>
-      <div class="q-text">${esc(q.question)}</div>
-      <div class="opts">${q.options.map((o,k)=>`<button class="opt" data-k="${k}">${esc(o)}</button>`).join('')}</div>
+      <div class="q-meta"><span class="tag">${esc(SECNAME[q.section]||q.section)}</span><span class="tag plain">${esc(q.topic)}</span>${q.source?`<span class="tag plain">${esc(q.source)}</span>`:''}${q.options_kind?`<span class="tag">${PROV[q.options_kind]||esc(q.options_kind)}</span>`:''}</div>
+      <div class="q-text">Q${i+1} · ${esc(q.question)}</div>
+      <div class="opts">${q.options.map((o,k)=>`<button class="opt" data-k="${k}"><span class="letter">${LETTERS[k]||''}</span><span>${esc(o)}</span></button>`).join('')}</div>
       <div class="explain" hidden></div>
       <button class="btn" data-next hidden>Next →</button></div>`;
     const card=el.firstElementChild;
@@ -98,11 +100,21 @@ function renderToday(){
   const el=document.getElementById('tab-today');
   const s=store.get();const t=todayStr();
   const done=s.history&&s.history[t]&&s.history[t].done;
-  const n=buildDaily().length;
-  el.innerHTML=`<div class="card"><h3>Today's MCQs — ${t}</h3>
-    <p class="small">${n} questions · Physics + Reasoning + GA · answers with explanations</p>
-    ${done?`<p style="margin-top:8px">✅ Done today — score ${s.history[t].score}/${s.history[t].total}. Come back tomorrow for a fresh set.</p><button class="btn secondary" id="redo">Redo anyway</button>`
-   :`<button class="btn" id="start">Start (${n} Qs)</button>`}</div>
+  const daily=buildDaily();
+  const n=daily.length;
+  const counts={physics:0,reasoning:0,ga:0};
+  daily.forEach(q=>{if(counts[q.section]!==undefined)counts[q.section]++});
+  const rows=[['physics','Physics'],['reasoning','Reasoning'],['ga','General Awareness']]
+    .map(([k,l],ix)=>`<div class="sec-row"><span class="num">${ix+1}</span><span class="lbl">${l}</span><span class="cnt">${counts[k]} Qs</span></div>`).join('');
+  el.innerHTML=`
+    <div class="hero">
+      <span class="live">● Live set</span>
+      <h2>Today's MCQs</h2>
+      <p class="sub">${t} · ${n} questions · answers with explanations</p>
+      ${rows}
+      ${done?`<p class="sub" style="margin:8px 0 0">✅ Done today — ${s.history[t].score}/${s.history[t].total}. Come back tomorrow for a fresh set.</p>`:''}
+      <button class="btn" id="${done?'redo':'start'}">${done?'Redo anyway':'Start ('+n+' Qs)'}</button>
+    </div>
     <div class="card"><h3>How it works</h3><p class="small">A fresh seeded set every day from the solved PYQ bank. Finish it to grow your streak 🔥. Explanations appear after each answer.</p></div>`;
   const start=()=>runQuiz('tab-today',buildDaily(),"Today's MCQs",(score,total)=>{
     const st=store.get();st.history=st.history||{};
@@ -121,9 +133,9 @@ function renderPractice(){
   const el=document.getElementById('tab-practice');
   const secs=[...new Set(MCQ.map(q=>q.section))];
   el.innerHTML=`<div class="card"><h3>Practice by topic</h3>
-    <select id="p-sec">${secs.map(s=>`<option value="${s}">${SECNAME[s]||s}</option>`).join('')}</select>
-    <select id="p-topic"></select>
-    <button class="btn" id="p-go">Start (10 Qs)</button></div><div id="p-quiz"></div>`;
+    <div class="field"><label>Section</label><select id="p-sec">${secs.map(s=>`<option value="${s}">${SECNAME[s]||s}</option>`).join('')}</select></div>
+    <div class="field"><label>Topic</label><select id="p-topic"></select></div>
+    <button class="btn big" id="p-go">Start (10 Qs)</button></div><div id="p-quiz"></div>`;
   const secSel=el.querySelector('#p-sec'),topSel=el.querySelector('#p-topic');
   function fillTopics(){
     const topics=[...new Set(MCQ.filter(q=>q.section===secSel.value).map(q=>q.topic))].sort();
@@ -146,38 +158,48 @@ function renderBank(){
   const el=document.getElementById('tab-bank');
   const secs=['all',...new Set([...MCQ.map(q=>q.section),...FLASH.map(q=>q.section)])];
   const topics=['all',...new Set([...MCQ.map(q=>q.topic)])].sort();
+  let fSec='all',fType='all';
   el.innerHTML=`<div class="card"><h3>PYQ Bank</h3>
-    <div class="row"><select id="b-sec">${secs.map(s=>`<option value="${s}">${s==='all'?'All sections':SECNAME[s]}</option>`).join('')}</select>
-    <select id="b-type"><option value="all">MCQ + Flashcards</option><option value="mcq">MCQ only</option><option value="flash">Flashcards only</option></select></div>
-    <select id="b-topic">${topics.map(t=>`<option value="${t}">${t==='all'?'All topics':esc(t)}</option>`).join('')}</select>
-    <input type="text" id="b-q" placeholder="Search questions…"></div>
+    <div class="searchbar"><input type="text" id="b-q" placeholder="Search questions…"></div>
+    <div class="chiprow" id="b-secs">${secs.map(s=>`<button class="fchip${s==='all'?' active':''}" data-v="${s}">${s==='all'?'All':(SECNAME[s]||s)}</button>`).join('')}</div>
+    <div class="chiprow" id="b-types">${[['all','MCQ + Flashcards'],['mcq','MCQ only'],['flash','Flashcards only']].map(([v,l],i)=>`<button class="fchip${i===0?' active':''}" data-v="${v}">${l}</button>`).join('')}</div>
+    <div class="field"><label>Topic</label><select id="b-topic">${topics.map(t=>`<option value="${t}">${t==='all'?'All topics':esc(t)}</option>`).join('')}</select></div>
+    </div>
     <div id="b-list"></div><div class="center"><button class="btn secondary" id="b-more" hidden>Show more</button></div>`;
   let shown=0;const PAGE=20;
   function items(){
-    const sec=el.querySelector('#b-sec').value,type=el.querySelector('#b-type').value,
-          topic=el.querySelector('#b-topic').value,q=el.querySelector('#b-q').value.toLowerCase();
+    const topic=el.querySelector('#b-topic').value,q=el.querySelector('#b-q').value.toLowerCase();
     let arr=[];
-    if(type!=='flash')arr=arr.concat(MCQ.map(x=>({...x,_t:'mcq'})));
-    if(type!=='mcq')arr=arr.concat(FLASH.map(x=>({...x,_t:'flash'})));
-    return arr.filter(x=>(sec==='all'||x.section===sec)&&(topic==='all'||x.topic===topic)&&(!q||x.question.toLowerCase().includes(q)));
+    if(fType!=='flash')arr=arr.concat(MCQ.map(x=>({...x,_t:'mcq'})));
+    if(fType!=='mcq')arr=arr.concat(FLASH.map(x=>({...x,_t:'flash'})));
+    return arr.filter(x=>(fSec==='all'||x.section===fSec)&&(topic==='all'||x.topic===topic)&&(!q||x.question.toLowerCase().includes(q)));
   }
   function draw(){
     const arr=items();const list=el.querySelector('#b-list');
     list.innerHTML=arr.slice(0,shown).map(x=>{
-      if(x._t==='mcq')return `<div class="card"><div class="q-meta"><span class="tag">${esc(SECNAME[x.section])}</span><span class="tag">${esc(x.topic)}</span><span class="tag">${esc(x.source||'')}</span><span class="tag">${PROV[x.options_kind]||'official key'}</span></div>
+      if(x._t==='mcq')return `<div class="qcard"><div class="q-meta"><span class="tag">${esc(SECNAME[x.section])}</span><span class="tag plain">${esc(x.topic)}</span>${x.source?`<span class="tag plain">${esc(x.source)}</span>`:''}<span class="tag">${PROV[x.options_kind]||'official key'}</span></div>
         <div class="q-text">${esc(x.question)}</div>
-        <details><summary>Show answer</summary><div class="explain"><b>${esc(x.options[x.answer])}</b><br>${esc(x.explanation||'')}</div></details></div>`;
+        <details><summary>Show answer ▾</summary><div class="explain"><b>${esc(x.options[x.answer])}</b><br>${esc(x.explanation||'')}</div></details></div>`;
       return `<div class="flip" data-flip><div class="q-meta"><span class="tag">${esc(SECNAME[x.section])}</span><span class="tag">official key</span></div>
-        <div class="q-text">${esc(x.question)}</div><div class="ans" hidden>${esc(x.answer_text)}<div class="small">tap to hide</div></div><div class="small">tap to reveal answer</div></div>`;
+        <div class="q-text">${esc(x.question)}</div><div class="ans" hidden>${esc(x.answer_text)}</div><div class="hint">tap to reveal answer</div></div>`;
     }).join('')||'<div class="card">No matches.</div>';
     list.querySelectorAll('[data-flip]').forEach(f=>f.addEventListener('click',()=>{
-      const a=f.querySelector('.ans');a.hidden=!a.hidden;f.querySelector('.small').textContent=a.hidden?'tap to reveal answer':'';
+      const a=f.querySelector('.ans');a.hidden=!a.hidden;f.querySelector('.hint').textContent=a.hidden?'tap to reveal answer':'';
     }));
     el.querySelector('#b-more').hidden=shown>=arr.length;
   }
   shown=PAGE;draw();
-  ['b-sec','b-type','b-topic'].forEach(id=>el.querySelector('#'+id).addEventListener('change',()=>{shown=PAGE;draw()}));
+  el.querySelector('#b-topic').addEventListener('change',()=>{shown=PAGE;draw()});
   el.querySelector('#b-q').addEventListener('input',()=>{shown=PAGE;draw()});
+  function chips(id,fn){
+    el.querySelector(id).addEventListener('click',e=>{
+      const b=e.target.closest('.fchip');if(!b)return;
+      el.querySelectorAll(id+' .fchip').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');fn(b.dataset.v);shown=PAGE;draw();
+    });
+  }
+  chips('#b-secs',v=>fSec=v);
+  chips('#b-types',v=>fType=v);
   el.querySelector('#b-more').addEventListener('click',()=>{shown+=PAGE;draw()});
 }
 
@@ -185,13 +207,13 @@ function renderBank(){
 function renderNotes(){
   const el=document.getElementById('tab-notes');
   const names={physics:'Physics (Paper-I + II)',reasoning:'Reasoning',ga:'General Awareness'};
-  el.innerHTML=Object.keys(NOTES).map(sec=>`<div class="card"><h3>${names[sec]||sec}</h3>`+
-    NOTES[sec].map(n=>`<details><summary>${esc(n.topic)} <span class="weight">${esc(n.weight||'')}</span></summary>`+
+  el.innerHTML=Object.keys(NOTES).map(sec=>`<div class="notes-group"><h3>${names[sec]||sec}</h3>`+
+    NOTES[sec].map(n=>`<details class="note"><summary>${esc(n.topic)}${n.weight?`<span class="weight">${esc(n.weight)}</span>`:''}</summary>`+
       n.points.map(p=>`<div class="note-pt">${esc(p)}</div>`).join('')+`</details>`).join('')+`</div>`).join('');
 }
 
 /* ---------- supabase backend (optional cloud saves + leaderboard) ---------- */
-let sb=null,sbUser=null;
+let sb=null,sbUser=null,sbName=null;
 const sbReady=()=>!!(sb&&sbUser);
 function initBackend(){
   const el=document.getElementById('auth');
@@ -240,6 +262,7 @@ async function setUser(u){
   sbUser=u;
   const el=document.getElementById('auth');
   if(!u){
+    sbName=null;
     el.innerHTML='<span id="sb-form"><input id="sb-email" type="email" placeholder="Email for sign-in link" autocomplete="email"><span id="hc-box"></span><button class="btn secondary" id="signinbtn">Send link</button></span>';
     el.querySelector('#signinbtn').addEventListener('click',signIn);
     hcToken=null;loadHCaptcha();
@@ -252,8 +275,9 @@ async function setUser(u){
     name=name.trim().slice(0,24)||u.email.split('@')[0];
     await sb.from('saimd_profiles').upsert({id:u.id,display_name:name});
   }
+  sbName=name;
   el.innerHTML='<span class="small">👤 '+esc(name)+'</span> <button class="btn secondary" id="signoutbtn">Sign out</button>';
-  el.querySelector('#signoutbtn').addEventListener('click',()=>sb.auth.signOut());
+  el.querySelector('#signoutbtn').addEventListener('click',()=>{sbName=null;sb.auth.signOut()});
   pullCloud();
 }
 async function saveAttempt(a){

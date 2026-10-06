@@ -7,24 +7,18 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <div>
+<div class="app">
+<header class="appbar">
+  <div class="brand">
     <h1>SA-IMD Prep</h1>
-    <p class="sub">SSC JE 2026 · Scientific Assistant (IMD)</p>
+    <p>SSC JE 2026 · Scientific Assistant (IMD)</p>
   </div>
-  <div class="badges">
-    <span id="countdown" class="badge"></span>
-    <span id="streak" class="badge">🔥 0</span>
+  <div class="chips">
+    <span id="countdown" class="chip">📝 …</span>
+    <span id="streak" class="chip streak">🔥 0</span>
   </div>
 </header>
 <div id="authbar"><span id="auth"></span></div>
-<nav id="tabs">
-  <button data-tab="today" class="active">Today</button>
-  <button data-tab="practice">Practice</button>
-  <button data-tab="bank">PYQ Bank</button>
-  <button data-tab="notes">Notes</button>
-  <button data-tab="ranks">Ranks</button>
-</nav>
 <main>
   <section id="tab-today"></section>
   <section id="tab-practice" hidden></section>
@@ -32,7 +26,14 @@
   <section id="tab-notes" hidden></section>
   <section id="tab-ranks" hidden></section>
 </main>
-<footer><p>Solved PYQs · topic notes · daily MCQs. Paper-I: 2–6 Nov 2026 (qualifying).</p></footer>
+<nav id="tabs">
+  <button data-tab="today" class="active"><span class="ico">📅</span>Today</button>
+  <button data-tab="practice"><span class="ico">🎯</span>Practice</button>
+  <button data-tab="bank"><span class="ico">🗂️</span>Bank</button>
+  <button data-tab="notes"><span class="ico">📝</span>Notes</button>
+  <button data-tab="ranks"><span class="ico">🏆</span>Ranks</button>
+</nav>
+</div>
 <script src="app.js"></script>
 </body>
 </html>
