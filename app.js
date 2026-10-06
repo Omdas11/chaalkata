@@ -413,7 +413,12 @@ async function signInPw(){
   authBusy('signinbtn','Signing in…');
   const {error}=await sb.auth.signInWithPassword({email,password:pass,options:{captchaToken:hcToken||undefined}});
   authDone('signinbtn');hcReset();
-  if(error){alert('Error: '+error.message);return}
+  if(error){
+    let msg=error.message;
+    if(/invalid login credentials/i.test(msg))
+      msg='No password is set for this email yet.\n\n• New here? Tap "New here? Create account" below.\n• Signed in with a magic link before? Tap "Forgot password?" to set a password.';
+    alert('Error: '+msg);return;
+  }
 }
 async function signUp(){
   if(!sb){alert('Still loading — try again in a moment.');return}
@@ -426,7 +431,7 @@ async function signUp(){
   authDone('signinbtn');hcReset();
   if(error){alert('Error: '+error.message);return}
   if(data.session){alert('Account created — you are signed in.')}
-  else{alert('Account created — check your email for the confirmation link, then sign in.');pwMode='signin';renderAuthForm()}
+  else{alert('If this is a new email, check your inbox for the confirmation link, then sign in.\n\nNo email arrived? This address may already have an account — try "Sign in" or "Forgot password?".');pwMode='signin';renderAuthForm()}
 }
 async function resetPw(){
   if(!sb){alert('Still loading — try again in a moment.');return}
