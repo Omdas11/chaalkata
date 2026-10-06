@@ -128,14 +128,133 @@ function renderToday(){
   const rd=document.getElementById('redo');if(rd)rd.addEventListener('click',start);
 }
 
+/* ---------- mock test: Paper-I pattern, timed like the real exam ---------- */
+const MOCK_SECTIONS=[['reasoning','Reasoning',50],['ga','General Awareness',50],['physics','Physics',100]];
+const MOCK_TOTAL=200,MOCK_SECS=2*3600,MOCK_NEG=0.25;
+let mock=null;
+function sampleN(arr,n){
+  const a=arr.slice();
+  for(let i=a.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;const t=a[i];a[i]=a[j];a[j]=t}
+  return a.slice(0,n);
+}
+function fmtTime(s){const p=n=>String(n).padStart(2,'0');return p((s/3600)|0)+':'+p(((s%3600)/60)|0)+':'+p(s%60)}
+function buildMock(){
+  const qs=[];
+  MOCK_SECTIONS.forEach(([sec,,n])=>{
+    sampleN(MCQ.filter(q=>q.section===sec),n).forEach(q=>{
+      const order=q.options.map((_,i)=>i);
+      for(let i=order.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;const t=order[i];order[i]=order[j];order[j]=t}
+      qs.push({q,order,ans:order.indexOf(q.answer)});
+    });
+  });
+  return qs;
+}
+function mockGuard(e){if(mock&&!mock.done){e.preventDefault();e.returnValue=''}}
+function startMock(){
+  if(!confirm('Full mock test — Paper-I pattern:\n200 questions (Reasoning 50, GA 50, Physics 100)\n2 hours, -0.25 per wrong answer.\n\nThe timer starts immediately and cannot be paused, like the real exam. Ready?'))return;
+  mock={qs:buildMock(),ans:new Array(MOCK_TOTAL).fill(-1),i:0,done:false,palOpen:false,
+        t0:Date.now(),endAt:Date.now()+MOCK_SECS*1000,timer:null};
+  window.addEventListener('beforeunload',mockGuard);
+  mock.timer=setInterval(mockTick,1000);
+  renderMock();mockTick();
+}
+function mockTick(){
+  if(!mock||mock.done)return;
+  const left=Math.max(0,Math.round((mock.endAt-Date.now())/1000));
+  const t=document.getElementById('mock-timer');
+  if(t){t.textContent=fmtTime(left);t.classList.toggle('danger',left<=600)}
+  if(left<=0)finishMock(true);
+}
+function renderMock(){
+  const el=document.getElementById('tab-practice');
+  const m=mock;if(!m||m.done)return;
+  const x=m.qs[m.i],picked=m.ans[m.i];
+  const answered=m.ans.filter(a=>a>=0).length;
+  const last=m.i===MOCK_TOTAL-1;
+  el.innerHTML=`
+  <div class="testbar"><span id="mock-timer" class="timer">--:--:--</span>
+    <span class="small">${answered}/${MOCK_TOTAL} answered</span>
+    <span style="flex:1"></span>
+    <button class="btn secondary sm" id="mock-pal">☰</button>
+    <button class="btn secondary sm" id="mock-end">End</button></div>
+  <div id="mock-palwrap" ${m.palOpen?'':'hidden'}><div class="pal-grid">
+    ${m.qs.map((q,k)=>`<button class="pal${k===m.i?' cur':''}${m.ans[k]>=0?' ans':''}" data-j="${k}">${k+1}</button>`).join('')}
+  </div><p class="small" style="text-align:center">tap a number to jump · green = answered</p></div>
+  <div class="card">
+    <div class="q-meta"><span class="tag">${esc(SECNAME[x.q.section])}</span><span class="tag plain">Q ${m.i+1} / ${MOCK_TOTAL}</span></div>
+    <div class="q-text">${esc(x.q.question)}</div>
+    <div class="opts">${x.order.map((oi,k)=>`<button class="opt${picked===k?' sel':''}" data-k="${k}"><span class="letter">${LETTERS[k]||''}</span><span>${esc(x.q.options[oi])}</span></button>`).join('')}</div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn secondary" id="mock-prev"${m.i===0?' disabled':''}>← Prev</button>
+      <button class="btn secondary" id="mock-clear">Clear</button>
+      ${last?'<button class="btn" id="mock-submit">Submit ✓</button>':'<button class="btn" id="mock-next">Next →</button>'}
+    </div>
+  </div>`;
+  el.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{m.ans[m.i]=+b.dataset.k;renderMock()}));
+  el.querySelectorAll('.pal').forEach(b=>b.addEventListener('click',()=>{m.i=+b.dataset.j;renderMock()}));
+  el.querySelector('#mock-pal').addEventListener('click',()=>{m.palOpen=!m.palOpen;renderMock()});
+  el.querySelector('#mock-prev').addEventListener('click',()=>{if(m.i>0){m.i--;renderMock()}});
+  el.querySelector('#mock-next')&&el.querySelector('#mock-next').addEventListener('click',()=>{m.i++;renderMock()});
+  el.querySelector('#mock-clear').addEventListener('click',()=>{m.ans[m.i]=-1;renderMock()});
+  el.querySelector('#mock-submit').addEventListener('click',()=>finishMock(false));
+  el.querySelector('#mock-end').addEventListener('click',()=>finishMock(false));
+  mockTick();
+}
+function finishMock(auto){
+  const m=mock;if(!m||m.done)return;
+  const answered=m.ans.filter(a=>a>=0).length;
+  if(!auto&&!confirm('Submit the test?\n\nAnswered: '+answered+'/'+MOCK_TOTAL+'\nUnanswered: '+(MOCK_TOTAL-answered)+'\n\nWrong answers cost -0.25 each.'))return;
+  m.done=true;clearInterval(m.timer);window.removeEventListener('beforeunload',mockGuard);
+  let correct=0,wrong=0,skipped=0;const secs={};
+  m.qs.forEach((x,i)=>{
+    const s=x.q.section;secs[s]=secs[s]||{c:0,w:0,sk:0,t:0};secs[s].t++;
+    const a=m.ans[i];
+    if(a<0){skipped++;secs[s].sk++}
+    else if(a===x.ans){correct++;secs[s].c++}
+    else{wrong++;secs[s].w++}
+  });
+  const score=Math.round((correct-MOCK_NEG*wrong)*100)/100;
+  const secsUsed=Math.round((Date.now()-m.t0)/1000);
+  const st=store.get();st.mocks=st.mocks||[];
+  st.mocks.unshift({d:todayStr(),score,total:MOCK_TOTAL,correct,wrong,skipped});
+  st.mocks=st.mocks.slice(0,20);store.set(st);
+  saveAttempt('mock-paper1-'+todayStr(),score,MOCK_TOTAL);
+  mock=null;
+  renderMockResult({score,correct,wrong,skipped,secs,secsUsed});
+}
+function renderMockResult(r){
+  const el=document.getElementById('tab-practice');
+  const rows=MOCK_SECTIONS.map(([sec,label])=>{
+    const d=r.secs[sec]||{c:0,w:0,sk:0,t:0};
+    const sc=Math.round((d.c-MOCK_NEG*d.w)*100)/100;
+    return '<div class="sec-row"><span class="lbl">'+label+'</span><span class="cnt">'+d.c+'/'+d.t+' correct · '+sc+'</span></div>';
+  }).join('');
+  const att=r.correct+r.wrong,acc=att?Math.round(r.correct/att*100):0;
+  el.innerHTML='<div class="hero"><h2>Mock Test Result</h2>'
+    +'<p class="big-score">'+r.score+' <span>/ '+MOCK_TOTAL+'</span></p>'
+    +'<p class="sub">Correct '+r.correct+' · Wrong '+r.wrong+' (−0.25 each) · Skipped '+r.skipped+'</p>'
+    +'<p class="sub">Accuracy '+acc+'% · Time used '+fmtTime(r.secsUsed)+'</p>'
+    +rows
+    +'<button class="btn" id="mock-back">Back to Practice</button></div>';
+  el.querySelector('#mock-back').addEventListener('click',renderPractice);
+}
+
 /* ---------- practice ---------- */
 function renderPractice(){
   const el=document.getElementById('tab-practice');
+  if(mock&&!mock.done){renderMock();return}
+  const st=store.get();
+  const best=(st.mocks||[]).reduce((b,m)=>!b||m.score>b.score?m:b,null);
   const secs=[...new Set(MCQ.map(q=>q.section))];
   el.innerHTML=`<div class="card"><h3>Practice by topic</h3>
     <div class="field"><label>Section</label><select id="p-sec">${secs.map(s=>`<option value="${s}">${SECNAME[s]||s}</option>`).join('')}</select></div>
     <div class="field"><label>Topic</label><select id="p-topic"></select></div>
-    <button class="btn big" id="p-go">Start (10 Qs)</button></div><div id="p-quiz"></div>`;
+    <button class="btn big" id="p-go">Start (10 Qs)</button></div>
+  <div class="card"><h3>⏱️ Full Mock Test</h3>
+    <p class="small">Paper-I pattern, timed like the real exam: <b>200 questions</b> (Reasoning 50 · GA 50 · Physics 100), <b>2 hours</b>, <b>−0.25</b> per wrong answer. No pauses.</p>
+    ${best?`<p class="small">Best score so far: <b>${best.score}/${MOCK_TOTAL}</b> (${best.d})</p>`:''}
+    <button class="btn big" id="mock-go">Start mock test</button></div>
+  <div id="p-quiz"></div>`;
   const secSel=el.querySelector('#p-sec'),topSel=el.querySelector('#p-topic');
   function fillTopics(){
     const topics=[...new Set(MCQ.filter(q=>q.section===secSel.value).map(q=>q.topic))].sort();
@@ -151,6 +270,7 @@ function renderPractice(){
     });
     document.getElementById('p-quiz').scrollIntoView({behavior:'smooth'});
   });
+  el.querySelector('#mock-go').addEventListener('click',startMock);
 }
 
 /* ---------- bank ---------- */
@@ -217,55 +337,123 @@ let sb=null,sbUser=null,sbName=null;
 const sbReady=()=>!!(sb&&sbUser);
 function initBackend(){
   const el=document.getElementById('auth');
+  if(!SB_URL){el.innerHTML='<span class="small">offline mode</span>';return}
   const sc=document.createElement('script');
   sc.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
   sc.onload=async()=>{
     sb=window.supabase.createClient(SB_URL,SB_KEY);
     const {data}=await sb.auth.getSession();
     setUser(data.session&&data.session.user?data.session.user:null);
-    sb.auth.onAuthStateChange((_ev,s)=>setUser(s&&s.user?s.user:null));
+    sb.auth.onAuthStateChange((ev,s)=>{
+      if(ev==='PASSWORD_RECOVERY'){showPwUpdate();return}
+      setUser(s&&s.user?s.user:null);
+    });
   };
   sc.onerror=()=>{el.innerHTML='<span class="small">backend unreachable — offline mode</span>'};
   document.head.appendChild(sc);
-  el.innerHTML='<span id="sb-form"><input id="sb-email" type="email" placeholder="Email for sign-in link" autocomplete="email"><span id="hc-box"></span><button class="btn secondary" id="signinbtn">Send link</button></span>';
-  el.querySelector('#signinbtn').addEventListener('click',signIn);
-  loadHCaptcha();
+  renderAuthForm();
 }
-let hcToken=null;
+let hcToken=null,hcWidget=null;
+let authMode='link',pwMode='signin';
+const $id=id=>document.getElementById(id);
+function okEmail(e){return e&&e.indexOf('@')>0}
+function needCaptcha(){if(window.hcaptcha&&!hcToken){alert('Please complete the captcha checkbox first.');return true}return false}
+function hcReset(){hcToken=null;if(window.hcaptcha&&hcWidget!==null){try{window.hcaptcha.reset(hcWidget)}catch(e){}}}
+function authBusy(id,label){const b=$id(id);if(b){b.disabled=true;b.dataset.label=b.textContent;b.textContent=label}}
+function authDone(id){const b=$id(id);if(b){b.disabled=false;if(b.dataset.label)b.textContent=b.dataset.label}}
 function loadHCaptcha(){
   const render=()=>{
-    if(!window.hcaptcha||!document.getElementById('hc-box')||document.getElementById('hc-box').dataset.done)return;
-    document.getElementById('hc-box').dataset.done='1';
-    window.hcaptcha.render(document.getElementById('hc-box'),{
+    const box=$id('hc-box');
+    if(!window.hcaptcha||!box||box.dataset.done)return;
+    box.dataset.done='1';
+    hcWidget=window.hcaptcha.render(box,{
       sitekey:'6af2681a-cac2-4d4a-85da-b79a5d5057b8',theme:'light',
       callback:t=>{hcToken=t},'expired-callback':()=>{hcToken=null},'error-callback':()=>{hcToken=null}
     });
   };
   if(window.hcaptcha){render();return}
+  if(document.querySelector('script[data-hc]'))return;
   const s=document.createElement('script');
-  s.src='https://js.hcaptcha.com/1/api.js?render=explicit';s.async=true;s.defer=true;s.onload=render;
+  s.src='https://js.hcaptcha.com/1/api.js?render=explicit';s.async=true;s.defer=true;s.dataset.hc='1';s.onload=render;
   document.head.appendChild(s);
 }
-async function signIn(){
-  const emEl=document.getElementById('sb-email');
-  const email=(emEl&&emEl.value||'').trim();
-  if(!email||email.indexOf('@')<0){alert('Enter your email address first.');return}
-  if(window.hcaptcha&&!hcToken){alert('Please complete the captcha checkbox first.');return}
-  const btn=document.getElementById('signinbtn');btn.disabled=true;btn.textContent='Sending…';
+function renderAuthForm(){
+  const el=$id('auth');if(!el)return;
+  if(authMode==='link'){
+    el.innerHTML='<span id="sb-form"><input id="sb-email" type="email" placeholder="Email for sign-in link" autocomplete="email"><span id="hc-box"></span><button class="btn secondary" id="signinbtn">Send link</button><button class="linklike" id="to-pw">Use password instead</button></span>';
+    el.querySelector('#signinbtn').addEventListener('click',signInLink);
+    el.querySelector('#to-pw').addEventListener('click',()=>{authMode='pw';renderAuthForm()});
+  }else{
+    const su=pwMode==='signup';
+    el.innerHTML='<span id="sb-form"><input id="sb-email" type="email" placeholder="Email" autocomplete="email"><input id="sb-pass" type="password" placeholder="Password (min 6 characters)" autocomplete="'+(su?'new-password':'current-password')+'"><span id="hc-box"></span><button class="btn secondary" id="signinbtn">'+(su?'Create account':'Sign in')+'</button><button class="linklike" id="pw-toggle">'+(su?'Have an account? Sign in':'New here? Create account')+'</button>'+(su?'':'<button class="linklike" id="pw-forgot">Forgot password?</button>')+'<button class="linklike" id="to-link">Use magic link instead</button></span>';
+    el.querySelector('#signinbtn').addEventListener('click',su?signUp:signInPw);
+    el.querySelector('#pw-toggle').addEventListener('click',()=>{pwMode=su?'signin':'signup';renderAuthForm()});
+    const fg=el.querySelector('#pw-forgot');if(fg)fg.addEventListener('click',resetPw);
+    el.querySelector('#to-link').addEventListener('click',()=>{authMode='link';renderAuthForm()});
+  }
+  hcToken=null;loadHCaptcha();
+}
+async function signInLink(){
+  if(!sb){alert('Still loading — try again in a moment.');return}
+  const email=($id('sb-email').value||'').trim();
+  if(!okEmail(email)){alert('Enter your email address first.');return}
+  if(needCaptcha())return;
+  authBusy('signinbtn','Sending…');
   const {error}=await sb.auth.signInWithOtp({email,options:{emailRedirectTo:location.href,captchaToken:hcToken||undefined}});
-  btn.disabled=false;btn.textContent='Send link';
+  authDone('signinbtn');hcReset();
   if(error){alert('Error: '+error.message);return}
   alert('Check your email for the sign-in link, then reopen the site.');
-  hcToken=null;
+}
+async function signInPw(){
+  if(!sb){alert('Still loading — try again in a moment.');return}
+  const email=($id('sb-email').value||'').trim(),pass=$id('sb-pass').value||'';
+  if(!okEmail(email)){alert('Enter your email address first.');return}
+  if(!pass){alert('Enter your password.');return}
+  if(needCaptcha())return;
+  authBusy('signinbtn','Signing in…');
+  const {error}=await sb.auth.signInWithPassword({email,password:pass,options:{captchaToken:hcToken||undefined}});
+  authDone('signinbtn');hcReset();
+  if(error){alert('Error: '+error.message);return}
+}
+async function signUp(){
+  if(!sb){alert('Still loading — try again in a moment.');return}
+  const email=($id('sb-email').value||'').trim(),pass=$id('sb-pass').value||'';
+  if(!okEmail(email)){alert('Enter your email address first.');return}
+  if(pass.length<6){alert('Password must be at least 6 characters.');return}
+  if(needCaptcha())return;
+  authBusy('signinbtn','Creating…');
+  const {data,error}=await sb.auth.signUp({email,password:pass,options:{emailRedirectTo:location.href,captchaToken:hcToken||undefined}});
+  authDone('signinbtn');hcReset();
+  if(error){alert('Error: '+error.message);return}
+  if(data.session){alert('Account created — you are signed in.')}
+  else{alert('Account created — check your email for the confirmation link, then sign in.');pwMode='signin';renderAuthForm()}
+}
+async function resetPw(){
+  if(!sb){alert('Still loading — try again in a moment.');return}
+  const email=($id('sb-email').value||'').trim();
+  if(!okEmail(email)){alert('Enter your email address first.');return}
+  const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:location.href});
+  if(error){alert('Error: '+error.message);return}
+  alert('Password reset link sent — check your email.');
+}
+function showPwUpdate(){
+  const el=$id('auth');
+  el.innerHTML='<span id="sb-form"><input id="sb-pass" type="password" placeholder="New password (min 6 characters)" autocomplete="new-password"><button class="btn secondary" id="signinbtn">Set new password</button></span>';
+  el.querySelector('#signinbtn').addEventListener('click',async()=>{
+    const p=$id('sb-pass').value||'';
+    if(p.length<6){alert('Password must be at least 6 characters.');return}
+    const {error}=await sb.auth.updateUser({password:p});
+    if(error){alert('Error: '+error.message);return}
+    alert('Password updated — you are signed in.');
+    const {data}=await sb.auth.getUser();setUser(data.user);
+  });
 }
 async function setUser(u){
   sbUser=u;
   const el=document.getElementById('auth');
   if(!u){
     sbName=null;
-    el.innerHTML='<span id="sb-form"><input id="sb-email" type="email" placeholder="Email for sign-in link" autocomplete="email"><span id="hc-box"></span><button class="btn secondary" id="signinbtn">Send link</button></span>';
-    el.querySelector('#signinbtn').addEventListener('click',signIn);
-    hcToken=null;loadHCaptcha();
+    renderAuthForm();
     return;
   }
   const {data:prof}=await sb.from('saimd_profiles').select('display_name').eq('id',u.id).single();

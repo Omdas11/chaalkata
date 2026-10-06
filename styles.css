@@ -46,12 +46,13 @@ body{
 #authbar{padding:6px 16px 2px;display:flex;justify-content:flex-end}
 #authbar .small{color:var(--faint);font-size:.78rem}
 #sb-form{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-#sb-email{
+#sb-email,#sb-pass{
   padding:9px 12px;border:1.5px solid var(--line);border-radius:12px;
   font-size:.88rem;max-width:210px;background:#fff;color:var(--ink);
 }
-#sb-email:focus{outline:none;border-color:var(--primary)}
+#sb-email:focus,#sb-pass:focus{outline:none;border-color:var(--primary)}
 #authbar .btn{padding:9px 14px;font-size:.85rem}
+.linklike{background:none;border:0;color:var(--primary);font-size:.75rem;text-decoration:underline;cursor:pointer;padding:4px 2px}
 
 /* ---------- layout ---------- */
 main{flex:1;padding:10px 16px 24px}
@@ -263,3 +264,20 @@ details.note[open] summary::after{transform:rotate(-90deg)}
 }
 #tabs button .ico{font-size:1.25rem;line-height:1}
 #tabs button.active{color:var(--primary)}
+
+/* ---------- mock test ---------- */
+.testbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 12px;margin-bottom:10px;box-shadow:var(--shadow)}
+.timer{font-weight:800;font-size:1.15rem;color:var(--primary);font-variant-numeric:tabular-nums;letter-spacing:.5px}
+.timer.danger{color:#c0392b;animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.45}}
+.btn.sm{padding:8px 12px;font-size:.82rem;width:auto;margin:0;flex:none}
+.opt.sel{border-color:var(--primary);background:#eef2ff;box-shadow:0 0 0 1px var(--primary)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row .btn{flex:1;margin:0;min-width:0}
+.btn:disabled{opacity:.4;cursor:default}
+.pal-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:8px}
+.pal{aspect-ratio:1;border:1px solid var(--line);background:#f1f5f9;border-radius:8px;font-size:.72rem;font-weight:700;color:#64748b;cursor:pointer;padding:0;min-width:0}
+.pal.ans{background:#dcfce7;border-color:#16a34a;color:#166534}
+.pal.cur{outline:2px solid var(--primary);outline-offset:1px}
+.big-score{font-size:2.6rem;font-weight:800;margin:6px 0;line-height:1}
+.big-score span{font-size:1.1rem;font-weight:600;color:#c7d2fe}

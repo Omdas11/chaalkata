@@ -6154,5 +6154,689 @@
   "source": "SSC JE 2024 Paper-I",
   "topic": "Number Relations",
   "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Grandfather's only son = Ravi's father. Father's daughter = Ravi's sister.",
+  "id": "SEED2R-001",
+  "options": [
+   "Sister",
+   "Mother",
+   "Aunt",
+   "Cousin"
+  ],
+  "paper": "Paper-I",
+  "question": "Pointing to a photograph, Ravi said, 'She is the daughter of my grandfather's only son.' How is the woman related to Ravi?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Blood Relations",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "The path forms three sides of a rectangle (5 up, 3 right, 5 down). He ends 3 km due east of the start.",
+  "id": "SEED2R-002",
+  "options": [
+   "3 km East",
+   "3 km West",
+   "5 km South",
+   "8 km East"
+  ],
+  "paper": "Paper-I",
+  "question": "A man walks 5 km North, turns right and walks 3 km, then turns right again and walks 5 km. How far is he from the starting point, and in which direction?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Direction Sense",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 3,
+  "confidence": "high",
+  "explanation": "Apple, mango and banana are fruits; potato is a vegetable (root/tuber).",
+  "id": "SEED2R-003",
+  "options": [
+   "Apple",
+   "Mango",
+   "Banana",
+   "Potato"
+  ],
+  "paper": "Paper-I",
+  "question": "Find the odd one out:",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Odd One Out",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Pattern is n(n+1): 6x7 = 42, so 9x10 = 90.",
+  "id": "SEED2R-004",
+  "options": [
+   "72",
+   "81",
+   "90",
+   "99"
+  ],
+  "paper": "Paper-I",
+  "question": "6 : 42 :: 9 : ?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Number Analogy",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Sum of letter positions: D=4, O=15, G=7; 4+15+7 = 26.",
+  "id": "SEED2R-005",
+  "options": [
+   "24",
+   "25",
+   "26",
+   "28"
+  ],
+  "paper": "Paper-I",
+  "question": "If CAT is coded as 24 (C=3, A=1, T=20 and 3+1+20=24), how is DOG coded?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Coding-Decoding",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Position from right = total - position from left + 1 = 40-12+1 = 29th.",
+  "id": "SEED2R-006",
+  "options": [
+   "27th",
+   "28th",
+   "29th",
+   "30th"
+  ],
+  "paper": "Paper-I",
+  "question": "In a row of 40 students, Ravi is 12th from the left end. What is his position from the right end?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Ranking",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "At 3:15 the minute hand is at 3 (90 degrees). The hour hand moves 15/60 x 30 = 7.5 degrees past 3, so the gap is 7.5 degrees.",
+  "id": "SEED2R-007",
+  "options": [
+   "0 degrees",
+   "7.5 degrees",
+   "15 degrees",
+   "22.5 degrees"
+  ],
+  "paper": "Paper-I",
+  "question": "What is the angle between the hands of a clock at 3:15?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Clocks",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Let ages be 3x and 4x. (3x+5)/(4x+5) = 4/5 gives 15x+25 = 16x+20, so x = 5 and A's age = 3x = 15 years.",
+  "id": "SEED2R-008",
+  "options": [
+   "12 years",
+   "15 years",
+   "18 years",
+   "20 years"
+  ],
+  "paper": "Paper-I",
+  "question": "The ages of A and B are in the ratio 3:4. After 5 years the ratio becomes 4:5. What is the present age of A?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Age Problems",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Each letter moves +3: A->D->G->J->M.",
+  "id": "SEED2R-009",
+  "options": [
+   "K",
+   "L",
+   "M",
+   "N"
+  ],
+  "paper": "Paper-I",
+  "question": "A, D, G, J, ?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Letter Series",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Pages are the units that make up a book, just as bricks are the units that make up a wall.",
+  "id": "SEED2R-010",
+  "options": [
+   "Cement",
+   "Bricks",
+   "Paint",
+   "Roof"
+  ],
+  "paper": "Paper-I",
+  "question": "Book : Pages :: Wall : ?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Word Analogy",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Replacing symbols: 12 x 3 - 4 / 2 + 6 = 36 - 2 + 6 = 40.",
+  "id": "SEED2R-011",
+  "options": [
+   "36",
+   "40",
+   "44",
+   "48"
+  ],
+  "paper": "Paper-I",
+  "question": "If 'x' means 'divided by', 'divided by' means 'plus', 'plus' means 'minus' and 'minus' means 'multiplied by', what is the value of 12 minus 3 plus 4 x 2 divided by 6?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Mathematical Operators",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Pens are a subset of books, and books are a subset of chairs, so pens are necessarily a subset of chairs. The conclusion follows.",
+  "id": "SEED2R-012",
+  "options": [
+   "Follows",
+   "Does not follow",
+   "Either follows or not",
+   "Cannot be determined"
+  ],
+  "paper": "Paper-I",
+  "question": "Statements: All pens are books. All books are chairs. Conclusion: All pens are chairs.",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Statement & Conclusion",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Numbers double (2,4,8,16,32); letters move +2 (A,C,E,G,I). Next term: 32I.",
+  "id": "SEED2R-013",
+  "options": [
+   "24I",
+   "30H",
+   "32I",
+   "32J"
+  ],
+  "paper": "Paper-I",
+  "question": "2A, 4C, 8E, 16G, ?",
+  "section": "reasoning",
+  "source": "Practice set (verified)",
+  "topic": "Alphanumeric Series",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Dr. Rajendra Prasad became the first President of India on 26 January 1950.",
+  "id": "SEED2G-001",
+  "options": [
+   "Jawaharlal Nehru",
+   "Dr. Rajendra Prasad",
+   "Dr. S. Radhakrishnan",
+   "Sardar Vallabhbhai Patel"
+  ],
+  "paper": "Paper-I",
+  "question": "Who was the first President of India?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Polity",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "The Constituent Assembly adopted Jana Gana Mana as the National Anthem on 24 January 1950.",
+  "id": "SEED2G-002",
+  "options": [
+   "15 August 1947",
+   "26 January 1950",
+   "24 January 1950",
+   "26 November 1949"
+  ],
+  "paper": "Paper-I",
+  "question": "The National Anthem 'Jana Gana Mana' was adopted by the Constituent Assembly on -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Polity",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Article 14 guarantees equality before law and equal protection of the laws.",
+  "id": "SEED2G-003",
+  "options": [
+   "Article 14",
+   "Article 19",
+   "Article 21",
+   "Article 32"
+  ],
+  "paper": "Paper-I",
+  "question": "Which Article of the Indian Constitution guarantees the Right to Equality?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Polity",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Article 84 requires a Lok Sabha candidate to be at least 25 years old.",
+  "id": "SEED2G-004",
+  "options": [
+   "21 years",
+   "25 years",
+   "30 years",
+   "35 years"
+  ],
+  "paper": "Paper-I",
+  "question": "What is the minimum age required to become a member of the Lok Sabha?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Polity",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 0,
+  "confidence": "high",
+  "explanation": "Robert Clive's East India Company defeated Siraj-ud-Daulah at Plassey in 1757.",
+  "id": "SEED2G-005",
+  "options": [
+   "1757",
+   "1764",
+   "1772",
+   "1782"
+  ],
+  "paper": "Paper-I",
+  "question": "The Battle of Plassey was fought in the year -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "History",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Chandragupta Maurya founded the Maurya Empire around 321 BCE with Chanakya's guidance.",
+  "id": "SEED2G-006",
+  "options": [
+   "Ashoka",
+   "Chandragupta Maurya",
+   "Bindusara",
+   "Harshavardhana"
+  ],
+  "paper": "Paper-I",
+  "question": "Who founded the Maurya Empire?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "History",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Lothal in Gujarat is the Harappan site famous for its dockyard.",
+  "id": "SEED2G-007",
+  "options": [
+   "Rajasthan",
+   "Gujarat",
+   "Haryana",
+   "Punjab"
+  ],
+  "paper": "Paper-I",
+  "question": "Lothal, the famous Harappan dockyard site, is located in which state?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "History",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "General Dyer's troops fired on the gathering at Jallianwala Bagh, Amritsar, on 13 April 1919.",
+  "id": "SEED2G-008",
+  "options": [
+   "1915",
+   "1919",
+   "1921",
+   "1930"
+  ],
+  "paper": "Paper-I",
+  "question": "The Jallianwala Bagh massacre took place in the year -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "History",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Shah Jahan commissioned the Red Fort in Delhi in the 17th century.",
+  "id": "SEED2G-009",
+  "options": [
+   "Akbar",
+   "Jahangir",
+   "Shah Jahan",
+   "Aurangzeb"
+  ],
+  "paper": "Paper-I",
+  "question": "The Red Fort in Delhi was built by -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "History",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Jawaharlal Nehru wrote 'The Discovery of India' during his imprisonment (1944).",
+  "id": "SEED2G-010",
+  "options": [
+   "M. K. Gandhi",
+   "Jawaharlal Nehru",
+   "B. R. Ambedkar",
+   "Rabindranath Tagore"
+  ],
+  "paper": "Paper-I",
+  "question": "Who wrote the book 'The Discovery of India'?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "History",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "The Ganga (about 2,525 km) is the longest river flowing within India.",
+  "id": "SEED2G-011",
+  "options": [
+   "Yamuna",
+   "Godavari",
+   "Ganga",
+   "Brahmaputra"
+  ],
+  "paper": "Paper-I",
+  "question": "Which is the longest river of India?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Geography",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "The Tropic of Cancer passes through 8 Indian states: Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram.",
+  "id": "SEED2G-012",
+  "options": [
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "paper": "Paper-I",
+  "question": "The Tropic of Cancer passes through how many Indian states?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Geography",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Jupiter is the largest planet in the Solar System.",
+  "id": "SEED2G-013",
+  "options": [
+   "Saturn",
+   "Jupiter",
+   "Neptune",
+   "Uranus"
+  ],
+  "paper": "Paper-I",
+  "question": "Which is the largest planet in the Solar System?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Geography",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Nitrogen makes up about 78% of the Earth's atmosphere.",
+  "id": "SEED2G-014",
+  "options": [
+   "Oxygen",
+   "Carbon dioxide",
+   "Nitrogen",
+   "Hydrogen"
+  ],
+  "paper": "Paper-I",
+  "question": "Which gas is most abundant in the Earth's atmosphere?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Science",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Scurvy is caused by Vitamin C deficiency; rickets by Vitamin D, night blindness by Vitamin A, goitre by iodine deficiency.",
+  "id": "SEED2G-015",
+  "options": [
+   "Rickets",
+   "Scurvy",
+   "Night blindness",
+   "Goitre"
+  ],
+  "paper": "Paper-I",
+  "question": "Deficiency of Vitamin C causes -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Science",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "The newton (N) is the SI unit of force; joule is energy, watt is power, pascal is pressure.",
+  "id": "SEED2G-016",
+  "options": [
+   "Joule",
+   "Watt",
+   "Newton",
+   "Pascal"
+  ],
+  "paper": "Paper-I",
+  "question": "The SI unit of force is -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Science",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "A neutral solution at 25 degC has pH 7; below 7 is acidic, above 7 is alkaline.",
+  "id": "SEED2G-017",
+  "options": [
+   "0",
+   "1",
+   "7",
+   "14"
+  ],
+  "paper": "Paper-I",
+  "question": "The pH value of a neutral solution is -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Science",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "Mercury is the only metal that is liquid at room temperature.",
+  "id": "SEED2G-018",
+  "options": [
+   "Sodium",
+   "Mercury",
+   "Aluminium",
+   "Iron"
+  ],
+  "paper": "Paper-I",
+  "question": "Which metal is liquid at room temperature?",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Science",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "A photovoltaic (solar) cell converts sunlight directly into electrical energy.",
+  "id": "SEED2G-019",
+  "options": [
+   "heat energy into light energy",
+   "solar energy into electrical energy",
+   "chemical energy into electrical energy",
+   "electrical energy into light energy"
+  ],
+  "paper": "Paper-I",
+  "question": "A solar cell converts -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Science",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "India's First Five Year Plan ran from 1951 to 1956, focused on agriculture.",
+  "id": "SEED2G-020",
+  "options": [
+   "1947",
+   "1950",
+   "1951",
+   "1956"
+  ],
+  "paper": "Paper-I",
+  "question": "The First Five Year Plan of India was launched in -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Economy",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "UNESCO is headquartered in Paris, France.",
+  "id": "SEED2G-021",
+  "options": [
+   "Geneva",
+   "Paris",
+   "New York",
+   "Rome"
+  ],
+  "paper": "Paper-I",
+  "question": "The headquarters of UNESCO is located in -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Misc",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "Japan's currency is the yen; won is Korea's, yuan is China's, ringgit is Malaysia's.",
+  "id": "SEED2G-022",
+  "options": [
+   "Won",
+   "Yuan",
+   "Yen",
+   "Ringgit"
+  ],
+  "paper": "Paper-I",
+  "question": "The currency of Japan is -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Misc",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 2,
+  "confidence": "high",
+  "explanation": "ISRO headquarters is at Antariksh Bhavan, Bengaluru.",
+  "id": "SEED2G-023",
+  "options": [
+   "Sriharikota",
+   "Thiruvananthapuram",
+   "Bengaluru",
+   "Hyderabad"
+  ],
+  "paper": "Paper-I",
+  "question": "The headquarters of ISRO is located in -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Misc",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "The USSR launched Sputnik 1 on 4 October 1957, the first artificial satellite.",
+  "id": "SEED2G-024",
+  "options": [
+   "Explorer 1",
+   "Sputnik 1",
+   "Aryabhata",
+   "Luna 2"
+  ],
+  "paper": "Paper-I",
+  "question": "The first artificial satellite launched into space was -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Misc",
+  "options_kind": "verified-seed"
+ },
+ {
+  "answer": 1,
+  "confidence": "high",
+  "explanation": "The Dronacharya Award honours outstanding coaches in sports and games.",
+  "id": "SEED2G-025",
+  "options": [
+   "sports performance",
+   "sports coaching",
+   "sports journalism",
+   "sports medicine"
+  ],
+  "paper": "Paper-I",
+  "question": "The Dronacharya Award is given for excellence in -",
+  "section": "ga",
+  "source": "Practice set (verified)",
+  "topic": "Sports",
+  "options_kind": "verified-seed"
  }
 ]
