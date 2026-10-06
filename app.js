@@ -218,7 +218,7 @@ function finishMock(auto){
   const st=store.get();st.mocks=st.mocks||[];
   st.mocks.unshift({d:todayStr(),score,total:MOCK_TOTAL,correct,wrong,skipped});
   st.mocks=st.mocks.slice(0,20);store.set(st);
-  saveAttempt('mock-paper1-'+todayStr(),score,MOCK_TOTAL);
+  saveAttempt({date:todayStr(),kind:'mock',score,total:MOCK_TOTAL});
   mock=null;
   renderMockResult({score,correct,wrong,skipped,secs,secsUsed});
 }
